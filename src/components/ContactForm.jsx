@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import logo from "../assets/logo512.png";
 
 const ContactForm = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+  const [showForm, setShowForm] = useState(isOpen);
+  const [fadeClass, setFadeClass] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      setShowForm(true);
+      setFadeClass("fade-in-background");
+    } else {
+      setFadeClass("fade-out-background");
+      setTimeout(() => setShowForm(false), 500); // Duration of the fade-out animation
+    }
+  }, [isOpen]);
+
+  if (!showForm) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 transition-opacity duration-300 ease-in-out fade-in">
-      <div className="relative bg-bg p-10 rounded-md shadow-md w-full max-w-md">
+    <div
+      className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 ${fadeClass}`}
+    >
+      <div className="relative bg-bg p-10 rounded-md shadow-md w-full max-w-md fade-up">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
