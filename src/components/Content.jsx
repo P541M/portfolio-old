@@ -3,15 +3,15 @@ import React from "react";
 const projects = [
   {
     title: "BoscoBoys Distributors",
-    description: "Newly Revamped Website",
-    state: "In development",
+    description: "Newly revamped website",
+    state: "In Development",
     link: "#",
     image: "https://via.placeholder.com/300", // Replace with actual image URL
   },
   {
     title: "FreshStart",
-    description: "Twitter with 24 database.",
-    state: "In development",
+    description: "Twitter with a 24hr database",
+    state: "Development Paused",
     link: "#",
     image: "https://via.placeholder.com/300", // Replace with actual image URL
   },
@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Metric x Imperial",
-    description: "Description of project 4",
+    description: "Simple conversion tool",
     state: "Deployed",
     link: "#",
     image: "https://via.placeholder.com/300", // Replace with actual image URL
@@ -39,7 +39,7 @@ const projects = [
   {
     title: "Personal Portfolio V1.5",
     description: "An incomplete portfolio of mine",
-    state: "Deployed",
+    state: "Pending Continuation",
     link: "#",
     image: "https://via.placeholder.com/300", // Replace with actual image URL
   },
@@ -137,6 +137,21 @@ const Content = () => {
     window.location.href = link;
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Deployed":
+        return "bg-green-500";
+      case "In Development":
+        return "bg-yellow-500";
+      case "Pending Continuation":
+        return "bg-red-500";
+      case "Development Paused":
+        return "bg-blue-500";
+      default:
+        return "bg-gray-500";
+    }
+  };
+
   return (
     <div className="px-20 fade-up-two">
       {/* Projects here */}
@@ -160,9 +175,24 @@ const Content = () => {
                 <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                   {project.description}
                 </p>
-                <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg italic">
-                  {project.state}
-                </p>
+                <div className="flex items-center">
+                  <span
+                    className={`rounded-full mr-2 ${
+                      project.state === "Deployed"
+                        ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
+                        : project.state === "In Development"
+                        ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
+                        : project.state === "Development Paused"
+                        ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
+                        : project.state === "Pending Continuation"
+                        ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
+                        : "w-1.5 h-1.5"
+                    } ${getStatusColor(project.state)}`}
+                  ></span>
+                  <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg italic">
+                    {project.state}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
