@@ -1,5 +1,58 @@
-/* Global Styling */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Header Font */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+body {
+  @apply bg-bg;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar stuff */
+.navbar,
+.navbar-small-screen,
+.nav-link {
+  /* Remove transition properties */
+}
+
+/* Small screen navbar styling */
+.navbar-small-screen {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10%);
+}
+
+.navbar-small-screen.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Logo styling */
+.logo-container {
+  position: relative;
+  z-index: 50; /* Higher than navbar */
+}
+
+/* Navbar dropdown */
+.navbar-dropdown {
+  z-index: 40; /* Lower than logo */
+}
+
+/* Transitons */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.75s ease-in-out;
+}
