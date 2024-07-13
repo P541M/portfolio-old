@@ -65,12 +65,12 @@ const Content = () => {
             <div
               key={index}
               onClick={() => handleNavigation(project.link)}
-              className="bg-bgContrast p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
+              className="bg-bgContrast p-6 rounded-sm cursor-pointer"
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-sm mb-4 fade-up"
+                className="w-full h-48 object-cover rounded-sm mb-4 fade-up shadow-md"
               />
               <div className="text-sm sm:text-md md:text-md lg:text-lg xl:text-lg fade-up">
                 <h3>{project.title}</h3>
@@ -81,6 +81,9 @@ const Content = () => {
           ))}
         </div>
       </section>
+
+      <div className="border-t border-gray-300 my-20 mx-20"></div>
+
       {/* Experiences here */}
       <section className="experiences mt-20">
         <div className="space-y-10">
