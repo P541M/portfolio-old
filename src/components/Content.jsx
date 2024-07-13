@@ -13,7 +13,7 @@ const projects = [
     title: "FreshStart",
     description: "Twitter with a 24hr database",
     state: "Development Paused",
-    link: "#",
+    link: "https://github.com/P541M/fresh-start",
     image: freshStart,
   },
   {
@@ -134,10 +134,6 @@ const experiences = [
 ];
 
 const Content = () => {
-  const handleNavigation = (link) => {
-    window.location.href = link;
-  };
-
   const getStatusColor = (status) => {
     switch (status) {
       case "Deployed":
@@ -159,9 +155,11 @@ const Content = () => {
       <section className="projects">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              onClick={() => handleNavigation(project.link)}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-bgContrast p-16 rounded-md cursor-pointer group"
             >
               <div className="relative w-full pb-[56.25%] mb-8">
@@ -195,7 +193,7 @@ const Content = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
