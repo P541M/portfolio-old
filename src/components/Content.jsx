@@ -44,9 +44,9 @@ const projects = [
   },
   {
     title: "Personal Portfolio V2",
-    description: "First take on a minimalist portfolio, incomplete.",
+    description: "First take on a minimalist portfolio",
     state: "Deployed",
-    link: "#",
+    link: "https://github.com/P541M/personal-website.git",
     image: pimg5,
   },
 ];
