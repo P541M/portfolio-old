@@ -173,7 +173,7 @@ const Content = () => {
 
       {/* Experiences here */}
       <section className="experiences my-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
             <div key={index} className="bg-bgContrast p-16 rounded-sm">
               <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 fade-up font-semibold">
