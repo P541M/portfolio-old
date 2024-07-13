@@ -1,4 +1,5 @@
 import React from "react";
+import freshStart from "../assets/pimg.PNG"; // Import the local image
 
 const projects = [
   {
@@ -13,7 +14,7 @@ const projects = [
     description: "Twitter with a 24hr database",
     state: "Development Paused",
     link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    image: freshStart,
   },
   {
     title: "Savory Sips",
@@ -161,13 +162,13 @@ const Content = () => {
             <div
               key={index}
               onClick={() => handleNavigation(project.link)}
-              className="bg-bgContrast p-16 rounded-sm cursor-pointer group"
+              className="bg-bgContrast p-16 rounded-md cursor-pointer group"
             >
-              <div className="relative">
+              <div className="relative w-full pb-[56.25%] mb-8">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover rounded-sm mb-8 shadow-sm transition-transform duration-300 group-hover:scale-102"
+                  className="absolute top-0 left-0 w-full h-full object-cover rounded-md shadow-md transition-transform duration-300 group-hover:scale-102"
                 />
               </div>
               <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
@@ -205,7 +206,7 @@ const Content = () => {
       <section className="experiences my-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
-            <div key={index} className="bg-bgContrast p-16 rounded-sm">
+            <div key={index} className="bg-bgContrast p-16 rounded-md">
               <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold">
                 {experience.company}
               </h3>

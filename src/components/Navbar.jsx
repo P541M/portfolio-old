@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo512.png";
+import logo from "../assets/logo.png";
 import ContactForm from "./ContactForm";
 
 const Navbar = () => {
@@ -19,12 +19,12 @@ const Navbar = () => {
         <div className="mx-auto max-w-[1250px] flex justify-between items-center h-full px-20 text-text">
           <div
             onClick={() => (window.location.href = "/")}
-            className="logo-container nav-link flex flex-col items-start lg:items-center cursor-pointer"
+            className="logo-container nav-link flex flex-col items-start lg:items-center cursor-pointer "
           >
             <img
               src={logo}
               alt="Logo"
-              className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
+              className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11 "
             />
           </div>
 
