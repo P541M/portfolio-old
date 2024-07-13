@@ -1,5 +1,10 @@
 import React from "react";
-import freshStart from "../assets/pimg.PNG"; // Import the local image
+import pimg from "../assets/pimg.PNG"; // Import the local image
+import pimg2 from "../assets/pimg2.PNG"; // Import the local image
+import pimg3 from "../assets/pimg3.PNG"; // Import the local image
+import pimg4 from "../assets/pimg4.PNG"; // Import the local image
+import pimg5 from "../assets/pimg5.PNG"; // Import the local image
+import pimg6 from "../assets/pimg6.PNG"; // Import the local image
 
 const projects = [
   {
@@ -7,42 +12,42 @@ const projects = [
     description: "Newly revamped website",
     state: "In Development",
     link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    image: pimg6,
   },
   {
     title: "FreshStart",
     description: "Twitter with a 24hr database",
     state: "Development Paused",
     link: "https://github.com/P541M/fresh-start",
-    image: freshStart,
+    image: pimg,
   },
   {
     title: "Savory Sips",
     description: "Your personal sommelier",
     state: "Deployed",
-    link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    link: "https://p541m.github.io/savory-sips/",
+    image: pimg2,
   },
   {
     title: "Metric x Imperial",
     description: "Simple conversion tool",
     state: "Deployed",
-    link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    link: "https://p541m.github.io/Metric-Imperial-Converter/",
+    image: pimg3,
   },
   {
     title: "Personal Portfolio V1",
     description: "My first ever portfolio",
     state: "Deployed",
-    link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    link: "https://p541m.github.io/personal-portfolio/",
+    image: pimg4,
   },
   {
-    title: "Personal Portfolio V1.5",
-    description: "An incomplete portfolio of mine",
-    state: "Pending Continuation",
+    title: "Personal Portfolio V2",
+    description: "First take on a minimalist portfolio",
+    state: "Deployed",
     link: "#",
-    image: "https://via.placeholder.com/300", // Replace with actual image URL
+    image: pimg5,
   },
 ];
 
