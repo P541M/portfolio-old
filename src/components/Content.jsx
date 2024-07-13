@@ -153,7 +153,7 @@ const Content = () => {
   };
 
   return (
-    <div className="px-20 fade-up-two">
+    <div className="px-20 fade-up-three">
       {/* Projects here */}
       <section className="projects">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -170,7 +170,7 @@ const Content = () => {
                   className="w-full h-48 object-cover rounded-sm mb-8 shadow-sm transition-transform duration-300 group-hover:scale-102"
                 />
               </div>
-              <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl fade-up">
+              <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
                 <p className="font-semibold">{project.title}</p>
                 <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                   {project.description}
@@ -206,11 +206,11 @@ const Content = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
             <div key={index} className="bg-bgContrast p-16 rounded-sm">
-              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 fade-up font-semibold">
+              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold">
                 {experience.company}
               </h3>
               {experience.roles.map((role, idx) => (
-                <div key={idx} className="mb-4 fade-up">
+                <div key={idx} className="mb-4">
                   <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium">
                     {role.title}
                     <span className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic ml-2">

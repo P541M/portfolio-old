@@ -14,7 +14,7 @@ body {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -23,9 +23,13 @@ body {
 }
 
 .fade-up {
-  animation: fadeUp 0.75s ease-in-out;
+  animation: fadeUp 1s ease-in-out;
 }
 
 .fade-up-two {
   animation: fadeUp 1.5s ease-in-out;
+}
+
+.fade-up-three {
+  animation: fadeUp 2s ease-in-out;
 }

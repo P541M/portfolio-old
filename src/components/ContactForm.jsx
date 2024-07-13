@@ -1,26 +1,34 @@
 import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import logo from "../assets/logo512.png";
 
 const ContactForm = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 transition-opacity duration-300 ease-in-out fade-in">
       <div className="relative bg-bg p-10 rounded-md shadow-md w-full max-w-md">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
         >
-          <XMarkIcon className="h-6 w-6" />
+          <XMarkIcon className="h-5 w-5" />
         </button>
-        <h2 className="text-xl mb-4">Get In Touch</h2>
+        <div className="flex items-center mb-4">
+          <h2 className="font-semibold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+            Get In Touch
+          </h2>
+        </div>
         <form
           action="https://getform.io/f/rbeqzqgb"
           method="post"
           className="flex flex-col"
         >
           <div className="flex flex-col mb-4">
-            <label className="block text-sm mb-2" htmlFor="name">
+            <label
+              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              htmlFor="name"
+            >
               Name
             </label>
             <input
@@ -32,7 +40,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label className="block text-sm mb-2" htmlFor="email">
+            <label
+              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -44,7 +55,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label className="block text-sm mb-2" htmlFor="message">
+            <label
+              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              htmlFor="message"
+            >
               Message
             </label>
             <textarea
