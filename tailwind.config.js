@@ -11,7 +11,7 @@ module.exports = {
         accent: "#E85E5E", // Accent colour
       },
       scale: {
-        103: "1.03", // Custom scale value
+        102: "1.02", // Custom scale value
       },
     },
   },
