@@ -7,16 +7,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="z-50 fixed top-0 left-0 right-0 h-[95px] transition-all duration-300 ease-in-out">
-      <div className="mx-auto max-w-[1250px] flex justify-between items-center h-full px-4 text-l text-text">
+    <div className="z-50 fixed top-0 left-0 right-0 h-[95px] bg-bg fade-up">
+      <div className="mx-auto max-w-[1250px] flex justify-between items-center h-full px-20 text-text">
         <div
           onClick={() => handleNavigation("/")}
-          className="logo-container mx-5 nav-link flex flex-col items-start lg:items-center lg:ml-0 cursor-pointer"
+          className="logo-container nav-link flex flex-col items-start lg:items-center cursor-pointer"
         >
           <img
             src={logo}
             alt="Logo"
-            className="h-11 w-11" // Adjust the size as needed
+            className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
           />
         </div>
 

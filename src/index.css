@@ -10,37 +10,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Navbar stuff */
-.navbar,
-.navbar-small-screen,
-.nav-link {
-  /* Remove transition properties */
-}
-
-/* Small screen navbar styling */
-.navbar-small-screen {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10%);
-}
-
-.navbar-small-screen.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Logo styling */
-.logo-container {
-  position: relative;
-  z-index: 50; /* Higher than navbar */
-}
-
-/* Navbar dropdown */
-.navbar-dropdown {
-  z-index: 40; /* Lower than logo */
-}
-
 /* Transitons */
 @keyframes fadeUp {
   from {
@@ -55,4 +24,8 @@ body {
 
 .fade-up {
   animation: fadeUp 0.75s ease-in-out;
+}
+
+.fade-up-two {
+  animation: fadeUp 1.25s ease-in-out;
 }
