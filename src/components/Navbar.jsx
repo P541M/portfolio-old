@@ -29,7 +29,7 @@ const Navbar = () => {
           </div>
 
           <ul className="flex font-semibold items-center text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
-            <li className="my-2 mx-5 lg:my-5 nav-link hover:text-primary transition-colors duration-300">
+            <li className="my-2 mx-5 lg:my-5 nav-link hover:text-primary transition-colors duration-500 ease-in-out">
               <button onClick={handleOpenContactForm}>Get In Touch</button>
             </li>
           </ul>

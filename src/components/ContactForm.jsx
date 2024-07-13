@@ -72,7 +72,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div className="flex mt-4 justify-center">
             <button
               type="submit"
-              className="px-4 py-2 bg-bgContrast text-text rounded-md hover:bg-primary hover:text-bg transition duration-300 ease-in-out"
+              className="px-4 py-2 bg-bgContrast text-text rounded-md hover:bg-primary hover:text-bg transition duration-500 ease-in-out"
             >
               Submit
             </button>
