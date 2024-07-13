@@ -10,6 +10,9 @@ module.exports = {
         bgContrast: "#E6E6E6", // Darker contrast background
         accent: "#E85E5E", // Accent colour
       },
+      scale: {
+        103: "1.03", // Custom scale value
+      },
     },
   },
   plugins: [],
