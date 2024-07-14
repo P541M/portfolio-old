@@ -33,6 +33,9 @@ const ContactForm = ({ isOpen, onClose }) => {
             Get In Touch
           </h2>
         </div>
+        <p className="mb-4 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+          Have a project in mind? Want to discuss something? Let's talk.
+        </p>
         <form
           action="https://getform.io/f/rbeqzqgb"
           method="post"
@@ -78,7 +81,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             <textarea
               name="message"
               id="message"
-              placeholder="Your Message"
+              placeholder="Message"
               className="w-full px-3 py-2 border rounded-md bg-bgContrast"
               rows="4"
             ></textarea>
