@@ -118,7 +118,7 @@ const experiences = [
         duration: "Jan 2022 - May 2022",
       },
       {
-        title: "Frontend Dev Intern",
+        title: "Frontend Developer Intern",
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
         duration: "Jan 2022 - May 2022",
@@ -210,17 +210,20 @@ const Content = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
             <div key={index} className="bg-bgContrast p-16 rounded-md">
-              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold fade-up">
+              <h3
+                className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold fade-up"
+                style={{ color: experience.color }}
+              >
                 {experience.company}
               </h3>
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
                   <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium fade-up-two">
                     {role.title}
-                    <span className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic ml-2 fade-up-two">
-                      ({role.duration})
-                    </span>
                   </h4>
+                  <span className="block text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic mb-2 fade-up-two">
+                    {role.duration}
+                  </span>
                   <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg fade-up-three">
                     {role.description}
                   </p>
