@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  ChartBarIcon,
+  CodeBracketIcon,
+  MicrophoneIcon,
+  ComputerDesktopIcon,
+  BuildingStorefrontIcon,
+  UserGroupIcon,
+  PencilIcon,
+  FilmIcon,
+} from "@heroicons/react/24/solid";
 import pimg from "../assets/pimg.PNG"; // Import the local image
 import pimg2 from "../assets/pimg2.PNG"; // Import the local image
 import pimg3 from "../assets/pimg3.PNG"; // Import the local image
@@ -57,12 +67,14 @@ const experiences = [
     roles: [
       {
         title: "Fullstack Developer Intern",
+        icon: <ComputerDesktopIcon className="h-5 w-5 mr-2" />,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
         duration: "May 2024 - Present",
       },
       {
         title: "Business Analyst Intern",
+        icon: <ChartBarIcon className="h-5 w-5 mr-2" />,
         description:
           "Identified pain points and streamlined business operations.",
         duration: "May 2024 - Present",
@@ -74,6 +86,7 @@ const experiences = [
     roles: [
       {
         title: "Founder & CEO",
+        icon: <UserGroupIcon className="h-5 w-5 mr-2" />,
         description:
           "Founded and led a platform connecting creative professionals with clients, addressing freelancing challenges in the creative industry.",
         duration: "Jun 2021 - Aug 2023",
@@ -85,23 +98,27 @@ const experiences = [
     roles: [
       {
         title: "Video Editor",
+        icon: <FilmIcon className="h-5 w-5 mr-2" />,
         description:
           "Collaborated with leading creators, contributing to content that garnered over 20+ million views across various platforms.",
         duration: "Jan 2017 - Jan 2023",
       },
       {
         title: "Graphic Designer",
+        icon: <PencilIcon className="h-5 w-5 mr-2" />,
         description:
           "Utilized creativity and technical skills to design compelling visual content for diverse projects.",
         duration: "Jan 2016 - Aug 2020",
       },
     ],
   },
+
   {
     company: "Im a Mortal",
     roles: [
       {
         title: "Podcast Sound Engineer Intern",
+        icon: <MicrophoneIcon className="h-5 w-5 mr-2" />,
         description:
           "Edited all podcast audio and assisted in the publishing process, ensuring high-quality sound production and timely releases.",
         duration: "Jan 2022 - May 2022",
@@ -113,12 +130,14 @@ const experiences = [
     roles: [
       {
         title: "Video Editor",
+        icon: <FilmIcon className="h-5 w-5 mr-2" />,
         description:
           "Edited numerous interviews with leading individuals in the environmental field, ensuring high-quality production and compelling storytelling.",
         duration: "Jan 2022 - May 2022",
       },
       {
         title: "Frontend Developer Intern",
+        icon: <CodeBracketIcon className="h-5 w-5 mr-2" />,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
         duration: "Jan 2022 - May 2022",
@@ -130,6 +149,7 @@ const experiences = [
     roles: [
       {
         title: "Crew Member",
+        icon: <BuildingStorefrontIcon className="h-5 w-5 mr-2" />,
         description:
           "Worked in a fast-paced environment, providing efficient and friendly service to customers.",
         duration: "Jun 2019 - Aug 2019",
@@ -210,17 +230,17 @@ const Content = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
             <div key={index} className="bg-bgContrast p-16 rounded-md">
-              <h3
-                className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold fade-up"
-                style={{ color: experience.color }}
-              >
+              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold fade-up">
                 {experience.company}
               </h3>
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
-                  <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium fade-up-two">
-                    {role.title}
-                  </h4>
+                  <div className="flex items-center fade-up-two">
+                    {role.icon}
+                    <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium">
+                      {role.title}
+                    </h4>
+                  </div>
                   <span className="block text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic mb-2 fade-up-two">
                     {role.duration}
                   </span>
