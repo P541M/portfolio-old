@@ -11,7 +11,7 @@ const projects = [
     title: "BoscoBoys Distributors",
     description: "New company website.",
     state: "In Development",
-    link: "#",
+    link: "https://www.boscoboysdistributors.com/",
     image: pimg6,
   },
   {
@@ -171,10 +171,10 @@ const Content = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute top-0 left-0 w-full h-full object-cover rounded-md shadow-md transition-transform duration-300 group-hover:scale-102"
+                  className="absolute top-0 left-0 w-full h-full object-cover rounded-md shadow-md transition-transform duration-300 group-hover:scale-102 fade-up-two"
                 />
               </div>
-              <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+              <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl fade-up-three">
                 <p className="font-semibold">{project.title}</p>
                 <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                   {project.description}
@@ -210,18 +210,18 @@ const Content = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
             <div key={index} className="bg-bgContrast p-16 rounded-md">
-              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold">
+              <h3 className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 font-semibold fade-up">
                 {experience.company}
               </h3>
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
-                  <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium">
+                  <h4 className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium fade-up-two">
                     {role.title}
-                    <span className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic ml-2">
+                    <span className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic ml-2 fade-up-two">
                       ({role.duration})
                     </span>
                   </h4>
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                  <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg fade-up-three">
                     {role.description}
                   </p>
                 </div>
