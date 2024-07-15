@@ -25,18 +25,18 @@ const projects = [
     image: pimg6,
   },
   {
-    title: "FreshStart",
-    description: "Daily thoughts, wiped clean.",
-    state: "Development Paused",
-    link: "https://github.com/P541M/fresh-start",
-    image: pimg,
-  },
-  {
     title: "Savory Sips",
     description: "Your personal sommelier.",
     state: "Deployed",
     link: "https://p541m.github.io/savory-sips/",
     image: pimg2,
+  },
+  {
+    title: "FreshStart",
+    description: "Daily thoughts, wiped clean.",
+    state: "Development Paused",
+    link: "https://github.com/P541M/fresh-start",
+    image: pimg,
   },
   {
     title: "Metric x Imperial",
