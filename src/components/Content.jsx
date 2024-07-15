@@ -244,7 +244,7 @@ const Content = () => {
                   <span className="block text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-text italic mb-2 fade-up-two">
                     {role.duration}
                   </span>
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg fade-up-three">
+                  <p className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base fade-up-three">
                     {role.description}
                   </p>
                 </div>
