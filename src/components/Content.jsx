@@ -16,7 +16,7 @@ import pimg4 from "../assets/pimg4.PNG"; // Import the local image
 import pimg5 from "../assets/pimg5.PNG"; // Import the local image
 import pimg6 from "../assets/pimg6.PNG"; // Import the local image
 import pimg7 from "../assets/pimg7.PNG"; // Import the local image
-import pendingimg from "../assets/pendingimg.png"; // Import the local image
+// import pendingimg from "../assets/pendingimg.png"; // Import the local image
 
 const projects = [
   {
@@ -25,13 +25,6 @@ const projects = [
     state: "In Development",
     link: "https://www.boscoboysdistributors.com/",
     image: pimg6,
-  },
-  {
-    title: "Strength Matrix",
-    description: "Where technology meets tenacity.",
-    state: "In Development",
-    link: "https://github.com/P541M/strength-matrix-frontend",
-    image: pendingimg,
   },
   {
     title: "Savory Sips",
