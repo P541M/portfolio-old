@@ -34,10 +34,10 @@ const projects = [
     image: pimg2,
   },
   {
-    title: "CryptoVista",
-    description: "Gateway to the crypto world.",
-    state: "In Development",
-    link: "https://github.com/P541M/crypto-vista",
+    title: "CRYPTo EL1Te",
+    description: "Showcasing the top cryptos.",
+    state: "Deployed",
+    link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
   },
   {
