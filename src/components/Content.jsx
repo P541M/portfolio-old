@@ -16,6 +16,7 @@ import pimg4 from "../assets/pimg4.PNG"; // Import the local image
 import pimg5 from "../assets/pimg5.PNG"; // Import the local image
 import pimg6 from "../assets/pimg6.PNG"; // Import the local image
 import pimg7 from "../assets/pimg7.PNG"; // Import the local image
+import pimg8 from "../assets/pimg8.PNG"; // Import the local image
 // import pendingimg from "../assets/pendingimg.png"; // Import the local image
 
 const projects = [
@@ -32,6 +33,13 @@ const projects = [
     state: "Deployed",
     link: "https://p541m.github.io/savory-sips/",
     image: pimg2,
+  },
+  {
+    title: "Verbatim",
+    description: "Collection of quotes.",
+    state: "Deployed",
+    link: "https://verbatim-frontend.vercel.app/",
+    image: pimg8,
   },
   {
     title: "CRYPTo EL1Te",
