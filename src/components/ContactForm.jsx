@@ -104,7 +104,7 @@ const ContactForm = ({ isOpen, onClose }) => {
         </form>
         <div className="mt-10 flex justify-center space-x-4">
           <a
-            href="https://www.linkedin.com/in/yi-ning-cen"
+            href="https://www.linkedin.com/in/pevidena/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -124,7 +124,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             />
           </a>
           <a
-            href="https://twitter.com/your-twitter-handle"
+            href="https://twitter.com/psalmeleazar"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -134,7 +134,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             />
           </a>
           <a
-            href="mailto:2020yicen@gmail.com"
+            href="mailto:videna.psalmeleazar@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
