@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faGithub,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = ({ isOpen, onClose }) => {
   const [showForm, setShowForm] = useState(isOpen);
@@ -34,7 +41,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           </h2>
         </div>
         <p className="mb-4 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
-          Have a project in mind? Want to discuss something? Let's talk.
+          Have a project in mind? Have a general inquiry? Let's talk.
         </p>
         <form
           action="https://getform.io/f/rbeqzqgb"
@@ -95,6 +102,48 @@ const ContactForm = ({ isOpen, onClose }) => {
             </button>
           </div>
         </form>
+        <div className="mt-10 flex justify-center space-x-4">
+          <a
+            href="https://www.linkedin.com/in/yi-ning-cen"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
+            />
+          </a>
+          <a
+            href="https://github.com/P541M"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
+            />
+          </a>
+          <a
+            href="https://twitter.com/your-twitter-handle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
+            />
+          </a>
+          <a
+            href="mailto:2020yicen@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

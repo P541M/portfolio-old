@@ -2,15 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Header Font */
+/* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+/* Base styles */
 body {
   @apply bg-bg;
   font-family: "Montserrat", sans-serif;
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
 }
 
-/* Transitons */
+/* Keyframe animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -20,18 +25,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fade-up {
-  animation: fadeUp 1s ease-in-out;
-}
-
-.fade-up-two {
-  animation: fadeUp 1.5s ease-in-out;
-}
-
-.fade-up-three {
-  animation: fadeUp 2s ease-in-out;
 }
 
 @keyframes fadeInBackground {
@@ -45,10 +38,6 @@ body {
   }
 }
 
-.fade-in-background {
-  animation: fadeInBackground 0.5s ease-in-out;
-}
-
 @keyframes fadeOutBackground {
   from {
     opacity: 1;
@@ -58,6 +47,23 @@ body {
     opacity: 0;
     backdrop-filter: blur(0);
   }
+}
+
+/* Applying animations */
+.fade-up {
+  animation: fadeUp 1s ease-in-out;
+}
+
+.fade-up-two {
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+.fade-up-three {
+  animation: fadeUp 2s ease-in-out;
+}
+
+.fade-in-background {
+  animation: fadeInBackground 0.5s ease-in-out;
 }
 
 .fade-out-background {
