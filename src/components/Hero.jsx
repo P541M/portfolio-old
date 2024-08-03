@@ -21,7 +21,7 @@ const Hero = () => {
           creates engaging and effective digital experiences. Currently, he is a
           Fullstack Developer & Business Analyst Intern at{" "}
           <a
-            href="https://www.boscoboysdistributors.com/"
+            href="https://www.boscoboys.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="italic hover:underline"
