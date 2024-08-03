@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Content from "./components/Content.jsx";
@@ -7,8 +8,10 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Hero />
-      <Content />
+      <main id="main-content">
+        <Hero />
+        <Content />
+      </main>
       <Footer />
     </div>
   );

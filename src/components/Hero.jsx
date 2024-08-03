@@ -1,5 +1,5 @@
 import React from "react";
-import resumePDF from "../assets/Resume.pdf"; // Adjust the path to your resume PDF
+import resumePDF from "../assets/Resume.pdf";
 
 const Hero = () => {
   const handleOpenResume = () => {
@@ -7,9 +7,15 @@ const Hero = () => {
   };
 
   return (
-    <div className="fade-up-two flex h-[550px] items-center justify-center px-20 text-center text-text">
+    <section
+      className="fade-up-two flex h-[550px] items-center justify-center px-20 text-center text-text"
+      aria-labelledby="hero-title"
+    >
       <div>
-        <p className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+        <p
+          id="hero-title"
+          className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+        >
           Eleazar is a dedicated software engineering student based in the
           Greater Toronto Area. Specializing in fullstack development, he
           creates engaging and effective digital experiences. Currently, he is a
@@ -18,7 +24,7 @@ const Hero = () => {
             href="https://www.boscoboysdistributors.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="italic"
+            className="italic hover:underline"
           >
             BoscoBoys Distributors
           </a>
@@ -27,11 +33,12 @@ const Hero = () => {
         <button
           onClick={handleOpenResume}
           className="fade-up-three mt-10 rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
+          aria-label="Open Resume"
         >
           Resume
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

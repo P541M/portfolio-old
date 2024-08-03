@@ -18,7 +18,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       setFadeClass("fade-in-background");
     } else {
       setFadeClass("fade-out-background");
-      setTimeout(() => setShowForm(false), 500); // Duration of the fade-out animation
+      setTimeout(() => setShowForm(false), 500);
     }
   }, [isOpen]);
 
@@ -27,16 +27,23 @@ const ContactForm = ({ isOpen, onClose }) => {
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm ${fadeClass}`}
+      aria-labelledby="contact-form-title"
+      aria-modal="true"
+      role="dialog"
     >
       <div className="fade-up relative w-full max-w-md rounded-md bg-bg p-10 shadow-md">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+          aria-label="Close contact form"
         >
           <XMarkIcon className="h-5 w-5" />
         </button>
         <div className="mb-4 flex items-center">
-          <h2 className="text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+          <h2
+            id="contact-form-title"
+            className="text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+          >
             Get In Touch
           </h2>
         </div>
@@ -50,8 +57,8 @@ const ContactForm = ({ isOpen, onClose }) => {
         >
           <div className="mb-4 flex flex-col">
             <label
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="name"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
             >
               Name
             </label>
@@ -61,12 +68,13 @@ const ContactForm = ({ isOpen, onClose }) => {
               id="name"
               placeholder="Full Name"
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
+              required
             />
           </div>
           <div className="mb-4 flex flex-col">
             <label
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="email"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
             >
               Email
             </label>
@@ -76,12 +84,13 @@ const ContactForm = ({ isOpen, onClose }) => {
               id="email"
               placeholder="Email"
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
+              required
             />
           </div>
           <div className="mb-4 flex flex-col">
             <label
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="message"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
             >
               Message
             </label>
@@ -91,6 +100,7 @@ const ContactForm = ({ isOpen, onClose }) => {
               placeholder="Message"
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
               rows="4"
+              required
             ></textarea>
           </div>
           <div className="mt-4 flex justify-center">
@@ -107,6 +117,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             href="https://www.linkedin.com/in/pevidena/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -117,6 +128,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             href="https://github.com/P541M"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <FontAwesomeIcon
               icon={faGithub}
@@ -127,6 +139,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             href="https://twitter.com/psalmeleazar"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Twitter"
           >
             <FontAwesomeIcon
               icon={faTwitter}
@@ -137,6 +150,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             href="mailto:videna.psalmeleazar@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Email"
           >
             <FontAwesomeIcon
               icon={faEnvelope}

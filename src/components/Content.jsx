@@ -9,16 +9,15 @@ import {
   PencilIcon,
   FilmIcon,
 } from "@heroicons/react/24/solid";
-import pimg from "../assets/pimg.PNG"; // Import the local image
-import pimg2 from "../assets/pimg2.PNG"; // Import the local image
-import pimg3 from "../assets/pimg3.PNG"; // Import the local image
-import pimg4 from "../assets/pimg4.PNG"; // Import the local image
-import pimg5 from "../assets/pimg5.PNG"; // Import the local image
-import pimg6 from "../assets/pimg6.PNG"; // Import the local image
-import pimg7 from "../assets/pimg7.PNG"; // Import the local image
-import pimg8 from "../assets/pimg8.PNG"; // Import the local image
-import pimg9 from "../assets/pimg9.PNG"; // Import the local image
-// import pendingimg from "../assets/pendingimg.png"; // Import the local image
+import pimg from "../assets/pimg.PNG";
+import pimg2 from "../assets/pimg2.PNG";
+import pimg3 from "../assets/pimg3.PNG";
+import pimg4 from "../assets/pimg4.PNG";
+import pimg5 from "../assets/pimg5.PNG";
+import pimg6 from "../assets/pimg6.PNG";
+import pimg7 from "../assets/pimg7.PNG";
+import pimg8 from "../assets/pimg8.PNG";
+import pimg9 from "../assets/pimg9.PNG";
 
 const projects = [
   {
@@ -92,14 +91,14 @@ const experiences = [
     roles: [
       {
         title: "Fullstack Developer Intern",
-        icon: <ComputerDesktopIcon className="mr-2 h-5 w-5" />,
+        icon: ComputerDesktopIcon,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
         duration: "May 2024 - Present",
       },
       {
         title: "Business Analyst Intern",
-        icon: <ChartBarIcon className="mr-2 h-5 w-5" />,
+        icon: ChartBarIcon,
         description:
           "Identified pain points and streamlined business operations.",
         duration: "May 2024 - Present",
@@ -111,7 +110,7 @@ const experiences = [
     roles: [
       {
         title: "Founder & CEO",
-        icon: <UserGroupIcon className="mr-2 h-5 w-5" />,
+        icon: UserGroupIcon,
         description:
           "Founded and led a platform connecting creative professionals with clients, addressing freelancing challenges in the creative industry.",
         duration: "Jun 2021 - Aug 2023",
@@ -123,27 +122,26 @@ const experiences = [
     roles: [
       {
         title: "Video Editor",
-        icon: <FilmIcon className="mr-2 h-5 w-5" />,
+        icon: FilmIcon,
         description:
           "Collaborated with leading creators, contributing to content that garnered over 20+ million views across various platforms.",
         duration: "Jan 2017 - Jan 2023",
       },
       {
         title: "Graphic Designer",
-        icon: <PencilIcon className="mr-2 h-5 w-5" />,
+        icon: PencilIcon,
         description:
           "Utilized creativity and technical skills to design compelling visual content for diverse projects.",
         duration: "Jan 2016 - Aug 2020",
       },
     ],
   },
-
   {
     company: "Im a Mortal",
     roles: [
       {
         title: "Podcast Sound Engineer Intern",
-        icon: <MicrophoneIcon className="mr-2 h-5 w-5" />,
+        icon: MicrophoneIcon,
         description:
           "Edited all podcast audio and assisted in the publishing process, ensuring high-quality sound production and timely releases.",
         duration: "Jan 2022 - May 2022",
@@ -155,14 +153,14 @@ const experiences = [
     roles: [
       {
         title: "Video Editor",
-        icon: <FilmIcon className="mr-2 h-5 w-5" />,
+        icon: FilmIcon,
         description:
           "Edited numerous interviews with leading individuals in the environmental field, ensuring high-quality production and compelling storytelling.",
         duration: "Jan 2022 - May 2022",
       },
       {
         title: "Frontend Developer Intern",
-        icon: <CodeBracketIcon className="mr-2 h-5 w-5" />,
+        icon: CodeBracketIcon,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
         duration: "Jan 2022 - May 2022",
@@ -174,7 +172,7 @@ const experiences = [
     roles: [
       {
         title: "Crew Member",
-        icon: <BuildingStorefrontIcon className="mr-2 h-5 w-5" />,
+        icon: BuildingStorefrontIcon,
         description:
           "Worked in a fast-paced environment, providing efficient and friendly service to customers.",
         duration: "Jun 2019 - Aug 2019",
@@ -203,8 +201,10 @@ const Content = () => {
 
   return (
     <div className="fade-up-three px-20">
-      {/* Projects here */}
-      <section className="projects">
+      <section aria-labelledby="projects-title" className="projects">
+        <h2 id="projects-title" className="sr-only">
+          Projects
+        </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <a
@@ -213,6 +213,8 @@ const Content = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group cursor-pointer rounded-md bg-bgContrast p-16"
+              aria-labelledby={`project-title-${index}`}
+              aria-describedby={`project-description-${index}`}
             >
               <div className="relative mb-8 w-full pb-[56.25%]">
                 <img
@@ -222,25 +224,18 @@ const Content = () => {
                 />
               </div>
               <div className="fade-up-three text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
-                <p className="font-semibold">{project.title}</p>
-                <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                <p id={`project-title-${index}`} className="font-semibold">
+                  {project.title}
+                </p>
+                <p
+                  id={`project-description-${index}`}
+                  className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg"
+                >
                   {project.description}
                 </p>
                 <div className="flex items-center">
                   <span
-                    className={`mr-2 rounded-full ${
-                      project.state === "Deployed"
-                        ? "h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5"
-                        : project.state === "Testing"
-                          ? "h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5"
-                          : project.state === "In Development"
-                            ? "h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5"
-                            : project.state === "Development Paused"
-                              ? "h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5"
-                              : project.state === "Pending Continuation"
-                                ? "h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5"
-                                : "h-1.5 w-1.5"
-                    } ${getStatusColor(project.state)}`}
+                    className={`mr-2 h-1.5 w-1.5 rounded-full sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5 ${getStatusColor(project.state)}`}
                   ></span>
                   <p className="text-sm italic sm:text-base md:text-base lg:text-lg xl:text-lg">
                     {project.state}
@@ -254,8 +249,13 @@ const Content = () => {
 
       <div className="mx-20 my-20 border-t border-gray-300"></div>
 
-      {/* Experiences here */}
-      <section className="experiences my-20">
+      <section
+        aria-labelledby="experiences-title"
+        className="experiences my-20"
+      >
+        <h2 id="experiences-title" className="sr-only">
+          Experiences
+        </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {experiences.map((experience, index) => (
             <div key={index} className="rounded-md bg-bgContrast p-16">
@@ -265,7 +265,9 @@ const Content = () => {
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
                   <div className="fade-up-two flex items-center">
-                    {role.icon}
+                    {React.createElement(role.icon, {
+                      className: "mr-2 h-5 w-5",
+                    })}
                     <h4 className="text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg">
                       {role.title}
                     </h4>
