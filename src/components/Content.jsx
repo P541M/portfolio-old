@@ -17,15 +17,30 @@ import pimg5 from "../assets/pimg5.PNG"; // Import the local image
 import pimg6 from "../assets/pimg6.PNG"; // Import the local image
 import pimg7 from "../assets/pimg7.PNG"; // Import the local image
 import pimg8 from "../assets/pimg8.PNG"; // Import the local image
+import pimg9 from "../assets/pimg9.PNG"; // Import the local image
 // import pendingimg from "../assets/pendingimg.png"; // Import the local image
 
 const projects = [
   {
     title: "BoscoBoys Distributors",
     description: "New company website.",
-    state: "In Development",
-    link: "https://www.boscoboysdistributors.com/",
+    state: "Testing",
+    link: "https://boscoboys.com/",
     image: pimg6,
+  },
+  {
+    title: "Echo",
+    description: "Your voice, your echo.",
+    state: "In Development",
+    link: "https://github.com/P541M/fresh-start",
+    image: pimg,
+  },
+  {
+    title: "Waffles OR Pancakes?!",
+    description: "Literally, waffles or pancakes.",
+    state: "In Development",
+    link: "https://github.com/P541M/waffles-or-pancakes-frontend",
+    image: pimg9,
   },
   {
     title: "Savory Sips",
@@ -47,13 +62,6 @@ const projects = [
     state: "Deployed",
     link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
-  },
-  {
-    title: "FreshStart",
-    description: "Daily thoughts, wiped clean.",
-    state: "Development Paused",
-    link: "https://github.com/P541M/fresh-start",
-    image: pimg,
   },
   {
     title: "Metric x Imperial",
@@ -180,6 +188,8 @@ const Content = () => {
     switch (status) {
       case "Deployed":
         return "bg-green-500";
+      case "Testing":
+        return "bg-orange-500";
       case "In Development":
         return "bg-yellow-500";
       case "Pending Continuation":
@@ -220,6 +230,8 @@ const Content = () => {
                   <span
                     className={`rounded-full mr-2 ${
                       project.state === "Deployed"
+                        ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
+                        : project.state === "Testing"
                         ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"
                         : project.state === "In Development"
                         ? "w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 xl:w-2.5 xl:h-2.5"

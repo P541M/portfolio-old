@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         text: "#070707", // Text colour
         bg: "#F2F2F2", // Background colour
-        primary: "#57A4DB", // Main colour
+        primary: "#ADADAD", // Main colour
         bgContrast: "#E6E6E6", // Darker contrast background
       },
       scale: {
