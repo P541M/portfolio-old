@@ -19,17 +19,17 @@ const ContactForm = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 ${fadeClass}`}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm ${fadeClass}`}
     >
-      <div className="relative bg-bg p-10 rounded-md shadow-md w-full max-w-md fade-up">
+      <div className="fade-up relative w-full max-w-md rounded-md bg-bg p-10 shadow-md">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
         >
           <XMarkIcon className="h-5 w-5" />
         </button>
-        <div className="flex items-center mb-4">
-          <h2 className="font-semibold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+        <div className="mb-4 flex items-center">
+          <h2 className="text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
             Get In Touch
           </h2>
         </div>
@@ -41,9 +41,9 @@ const ContactForm = ({ isOpen, onClose }) => {
           method="post"
           className="flex flex-col"
         >
-          <div className="flex flex-col mb-4">
+          <div className="mb-4 flex flex-col">
             <label
-              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="name"
             >
               Name
@@ -53,12 +53,12 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="name"
               id="name"
               placeholder="Full Name"
-              className="w-full px-3 py-2 border rounded-md bg-bgContrast"
+              className="w-full rounded-md border bg-bgContrast px-3 py-2"
             />
           </div>
-          <div className="flex flex-col mb-4">
+          <div className="mb-4 flex flex-col">
             <label
-              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="email"
             >
               Email
@@ -68,12 +68,12 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="email"
               id="email"
               placeholder="Email"
-              className="w-full px-3 py-2 border rounded-md bg-bgContrast"
+              className="w-full rounded-md border bg-bgContrast px-3 py-2"
             />
           </div>
-          <div className="flex flex-col mb-4">
+          <div className="mb-4 flex flex-col">
             <label
-              className="block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg font-medium my-2"
+              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
               htmlFor="message"
             >
               Message
@@ -82,14 +82,14 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="message"
               id="message"
               placeholder="Message"
-              className="w-full px-3 py-2 border rounded-md bg-bgContrast"
+              className="w-full rounded-md border bg-bgContrast px-3 py-2"
               rows="4"
             ></textarea>
           </div>
-          <div className="flex mt-4 justify-center">
+          <div className="mt-4 flex justify-center">
             <button
               type="submit"
-              className="px-4 py-2 bg-bgContrast text-text rounded-md hover:bg-primary hover:text-bg transition duration-500 ease-in-out"
+              className="rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
             >
               Submit
             </button>

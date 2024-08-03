@@ -7,9 +7,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-[550px] text-text text-center fade-up-two px-20">
+    <div className="fade-up-two flex h-[550px] items-center justify-center px-20 text-center text-text">
       <div>
-        <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl max-w-[800px] fade-up-two mt-10">
+        <p className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
           Eleazar is a dedicated software engineering student based in the
           Greater Toronto Area. Specializing in fullstack development, he
           creates engaging and effective digital experiences. Currently, he is a
@@ -26,7 +26,7 @@ const Hero = () => {
         </p>
         <button
           onClick={handleOpenResume}
-          className="mt-10 px-4 py-2 bg-bgContrast text-text rounded-md hover:bg-primary hover:text-bg transition duration-500 ease-in-out fade-up-three"
+          className="fade-up-three mt-10 rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
         >
           Resume
         </button>
