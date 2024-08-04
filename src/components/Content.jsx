@@ -23,7 +23,7 @@ const projects = [
   {
     title: "BoscoBoys Distributors",
     description: "New company website.",
-    state: "Testing",
+    state: "In Testing",
     link: "https://boscoboys.com/",
     image: pimg6,
   },
@@ -51,7 +51,7 @@ const projects = [
   {
     title: "Verbatim",
     description: "Collection of quotes.",
-    state: "Deployed",
+    state: "In Testing",
     link: "https://verbatim-frontend.vercel.app/",
     image: pimg8,
   },
@@ -186,13 +186,13 @@ const Content = () => {
     switch (status) {
       case "Deployed":
         return "bg-green-500";
-      case "Testing":
+      case "In Testing":
         return "bg-orange-500";
       case "In Development":
         return "bg-yellow-500";
-      case "Pending Continuation":
+      case "On Hold":
         return "bg-red-500";
-      case "Development Paused":
+      case "Paused Development":
         return "bg-blue-500";
       default:
         return "bg-gray-500";
