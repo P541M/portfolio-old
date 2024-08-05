@@ -13,6 +13,10 @@ const Navbar = () => {
     setContactFormOpen(false);
   };
 
+  const handleLogoClick = () => {
+    window.location.href = "/portfolio/";
+  };
+
   return (
     <nav>
       <div
@@ -21,7 +25,7 @@ const Navbar = () => {
       >
         <div className="mx-auto flex h-full max-w-[1250px] items-center justify-between px-20 text-text">
           <div
-            onClick={() => (window.location.href = "/")}
+            onClick={handleLogoClick}
             className="logo-container nav-link flex cursor-pointer flex-col items-start lg:items-center"
             aria-label="Homepage"
           >
