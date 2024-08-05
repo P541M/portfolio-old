@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   const handleLogoClick = () => {
-    window.location.href = "/portfolio/";
+    window.location.href = "https://p541m.github.io/portfolio/";
   };
 
   return (
