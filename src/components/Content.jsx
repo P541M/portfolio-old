@@ -35,10 +35,10 @@ const projects = [
     image: pimg,
   },
   {
-    title: "Waffles OR Pancakes?!",
+    title: "Waffles Or Pancakes?!",
     description: "Literally, waffles or pancakes.",
     state: "Deployed",
-    link: "https://github.com/P541M/waffles-or-pancakes-frontend",
+    link: "https://waffles-or-pancakes-frontend.vercel.app/",
     image: pimg9,
   },
   {
