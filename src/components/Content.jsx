@@ -37,7 +37,7 @@ const projects = [
   {
     title: "Waffles OR Pancakes?!",
     description: "Literally, waffles or pancakes.",
-    state: "In Development",
+    state: "Deployed",
     link: "https://github.com/P541M/waffles-or-pancakes-frontend",
     image: pimg9,
   },
@@ -58,7 +58,7 @@ const projects = [
   {
     title: "CRYPTo EL1Te",
     description: "Showcasing the top cryptos.",
-    state: "Deployed",
+    state: "In Testing",
     link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
   },
