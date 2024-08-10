@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Echo",
     description: "Your voice, your echo.",
-    state: "In Development",
+    state: "Paused Development",
     link: "https://github.com/P541M/fresh-start",
     image: pimg,
   },
@@ -190,7 +190,7 @@ const Content = () => {
         return "bg-orange-500";
       case "In Development":
         return "bg-yellow-500";
-      case "On Hold":
+      case "Temporarily Paused":
         return "bg-red-500";
       case "Paused Development":
         return "bg-blue-500";
