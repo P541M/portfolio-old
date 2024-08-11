@@ -18,6 +18,7 @@ import pimg6 from "../assets/pimg6.PNG";
 import pimg7 from "../assets/pimg7.PNG";
 import pimg8 from "../assets/pimg8.PNG";
 import pimg9 from "../assets/pimg9.PNG";
+import pimg10 from "../assets/pimg10.PNG";
 
 const projects = [
   {
@@ -28,19 +29,27 @@ const projects = [
     image: pimg6,
   },
   {
-    title: "Echo",
-    description: "Your voice, your echo.",
-    state: "Paused Development",
-    link: "https://github.com/P541M/fresh-start",
-    image: pimg,
-  },
-  {
     title: "Waffles Or Pancakes?!",
     description: "Literally, waffles or pancakes.",
     state: "Deployed",
     link: "https://waffles-or-pancakes-frontend.vercel.app/",
     image: pimg9,
   },
+  {
+    title: "Password Generator",
+    description: "The strongest password generator.",
+    state: "In Development",
+    link: "https://github.com/P541M/password-generator-frontend",
+    image: pimg10,
+  },
+  {
+    title: "Echo",
+    description: "Your voice, your echo.",
+    state: "Paused Development",
+    link: "https://github.com/P541M/fresh-start",
+    image: pimg,
+  },
+
   {
     title: "Savory Sips",
     description: "Your personal sommelier.",
