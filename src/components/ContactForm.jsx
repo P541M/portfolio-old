@@ -14,7 +14,7 @@ const ContactForm = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [formStatus, setFormStatus] = useState(""); // New state for form status
+  const [formStatus, setFormStatus] = useState("");
 
   useEffect(() => {
     if (isOpen) {
@@ -28,6 +28,8 @@ const ContactForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormStatus("Processing...");
+
     try {
       const response = await fetch("http://localhost:5000/send-email", {
         method: "POST",
@@ -35,25 +37,25 @@ const ContactForm = ({ isOpen, onClose }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name, // Send user's name
-          email, // Send user's email
-          message, // Send user's message
+          name,
+          email,
+          message,
         }),
       });
 
       if (response.status === 200) {
-        setFormStatus("Message sent! I'll be in touch with you soon!"); // Set success message
+        setFormStatus("Message sent! I'll be in touch with you soon!");
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        setFormStatus("Failed to send email. Please try again."); // Set failure message
+        setFormStatus("Failed to send email. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setFormStatus(
         "An error occurred while sending your message. Please try again later.",
-      ); // Set error message
+      );
     }
   };
 
@@ -150,7 +152,13 @@ const ContactForm = ({ isOpen, onClose }) => {
           </div>
         </form>
         {formStatus && (
-          <div className="mt-4 text-center text-sm text-green-500">
+          <div
+            className={`mt-4 text-center text-sm ${
+              formStatus === "Processing..."
+                ? "text-yellow-500"
+                : "text-green-500"
+            }`}
+          >
             {formStatus}
           </div>
         )}
