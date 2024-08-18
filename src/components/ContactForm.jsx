@@ -31,17 +31,20 @@ const ContactForm = ({ isOpen, onClose }) => {
     setFormStatus("Processing...");
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://portfolio-backend-drab-one.vercel.app/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+          }),
         },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-        }),
-      });
+      );
 
       if (response.status === 200) {
         setFormStatus("Message sent! I'll be in touch with you soon!");
