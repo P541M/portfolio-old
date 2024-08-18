@@ -11,6 +11,10 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const ContactForm = ({ isOpen, onClose }) => {
   const [showForm, setShowForm] = useState(isOpen);
   const [fadeClass, setFadeClass] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [formStatus, setFormStatus] = useState(""); // New state for form status
 
   useEffect(() => {
     if (isOpen) {
@@ -21,6 +25,37 @@ const ContactForm = ({ isOpen, onClose }) => {
       setTimeout(() => setShowForm(false), 500);
     }
   }, [isOpen]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name, // Send user's name
+          email, // Send user's email
+          message, // Send user's message
+        }),
+      });
+
+      if (response.status === 200) {
+        setFormStatus("Message sent! I'll be in touch with you soon!"); // Set success message
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setFormStatus("Failed to send email. Please try again."); // Set failure message
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus(
+        "An error occurred while sending your message. Please try again later.",
+      ); // Set error message
+    }
+  };
 
   if (!showForm) return null;
 
@@ -50,11 +85,7 @@ const ContactForm = ({ isOpen, onClose }) => {
         <p className="mb-4 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
           Have a project in mind? Have a general inquiry? Let's talk.
         </p>
-        <form
-          action="https://getform.io/f/rbeqzqgb"
-          method="post"
-          className="flex flex-col"
-        >
+        <form onSubmit={handleSubmit} className="flex flex-col">
           <div className="mb-4 flex flex-col">
             <label
               htmlFor="name"
@@ -67,6 +98,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="name"
               id="name"
               placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
               required
             />
@@ -83,6 +116,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="email"
               id="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
               required
             />
@@ -98,6 +133,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               name="message"
               id="message"
               placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full rounded-md border bg-bgContrast px-3 py-2"
               rows="4"
               required
@@ -112,6 +149,11 @@ const ContactForm = ({ isOpen, onClose }) => {
             </button>
           </div>
         </form>
+        {formStatus && (
+          <div className="mt-4 text-center text-sm text-green-500">
+            {formStatus}
+          </div>
+        )}
         <div className="mt-10 flex justify-center space-x-4">
           <a
             href="https://www.linkedin.com/in/pevidena/"
