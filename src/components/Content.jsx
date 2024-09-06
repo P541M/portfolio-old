@@ -19,6 +19,7 @@ import pimg7 from "../assets/pimg7.PNG";
 import pimg8 from "../assets/pimg8.PNG";
 import pimg9 from "../assets/pimg9.PNG";
 import pimg10 from "../assets/pimg10.PNG";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -208,6 +209,11 @@ const experiences = [
 
 const Content = () => {
   const [openDropdowns, setOpenDropdowns] = useState({});
+  const navigate = useNavigate();
+
+  const navigateToReport = () => {
+    navigate("/s24-work-term-report");
+  };
 
   const toggleDropdown = (index) => {
     setOpenDropdowns((prevState) => ({
@@ -298,6 +304,7 @@ const Content = () => {
               <h3 className="fade-up mb-4 text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
                 {experience.company}
               </h3>
+
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
                   <div className="fade-up-two flex items-center">
@@ -335,6 +342,15 @@ const Content = () => {
                   )}
                 </div>
               ))}
+
+              {experience.company === "BoscoBoys Distributors" && (
+                <button
+                  onClick={navigateToReport}
+                  className="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white"
+                >
+                  View Work Term Report
+                </button>
+              )}
             </div>
           ))}
         </div>
