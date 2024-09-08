@@ -42,6 +42,37 @@ const S24WorkTermReport = () => {
 
         <section className="mb-12">
           <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Key Takeaways from the Internship
+          </h3>
+          <ul className="mt-4 list-inside list-disc text-lg leading-relaxed text-text">
+            <li>
+              <strong>Problem-solving:</strong> Through critical and creative
+              thinking in technical tasks.
+            </li>
+            <li className="mt-2">
+              <strong>Technological literacy:</strong> Developed through
+              hands-on experience in database management and website
+              development.
+            </li>
+            <li className="mt-2">
+              <strong>Teamwork and collaboration:</strong> Enhanced while
+              working on financial analysis and business projects.
+            </li>
+            <li className="mt-2">
+              <strong>Efficiency through automation:</strong> Achieved by
+              developing programs that streamlined business operations and
+              reduced manual workload.
+            </li>
+            <li className="mt-2">
+              <strong>Time management and personal organization:</strong>
+              Strengthened by balancing multiple projects and deadlines
+              effectively.
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
             BoscoBoys: Connecting Businesses, Bridging Distances
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
