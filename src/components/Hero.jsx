@@ -19,7 +19,7 @@ const Hero = () => {
           Eleazar is a dedicated software engineering student based in the
           Greater Toronto Area. Specializing in fullstack development, he
           creates engaging and effective digital experiences. Currently, he is a
-          Website Redesign Coordinator at{" "}
+          Website Redesign Coordinator at the{" "}
           <a
             href="https://www.uoguelph.ca/arts"
             target="_blank"

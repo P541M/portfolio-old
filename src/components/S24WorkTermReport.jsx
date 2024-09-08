@@ -22,7 +22,8 @@ const S24WorkTermReport = () => {
         </button>
 
         <h2 className="mb-12 text-center text-4xl font-bold leading-snug text-text">
-          Internship Report: Fullstack Developer & Business Analyst at BoscoBoys
+          Being a Fullstack Developer & Business Analyst at Boscoboys
+          Distributors{" "}
         </h2>
 
         <section className="mb-12">
