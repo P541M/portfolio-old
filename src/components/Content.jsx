@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ChartBarIcon,
   CodeBracketIcon,
@@ -8,6 +8,7 @@ import {
   UserGroupIcon,
   PencilIcon,
   FilmIcon,
+  GlobeAltIcon,
 } from "@heroicons/react/24/solid";
 import pimg from "../assets/pimg.PNG";
 import pimg2 from "../assets/pimg2.PNG";
@@ -96,6 +97,18 @@ const projects = [
 ];
 
 const experiences = [
+  {
+    company: "College of Arts, University of Guelph",
+    roles: [
+      {
+        title: "Website Redesign Coordinator",
+        icon: GlobeAltIcon,
+        description:
+          "Led the redesign of the College of Arts website at the University of Guelph, improving user experience and ensuring accessibility compliance.",
+        duration: "Sept 2024 - Present",
+      },
+    ],
+  },
   {
     company: "BoscoBoys Distributors",
     roles: [
