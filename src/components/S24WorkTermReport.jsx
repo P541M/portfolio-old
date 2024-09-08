@@ -9,162 +9,147 @@ const S24WorkTermReport = () => {
   };
 
   return (
-    <div className="mt-20 flex justify-center">
-      <div id="s24-work-term-report" className="max-w-[800px] p-8">
-        {/* Back Button */}
+    <div className="mt-16 flex justify-center px-8">
+      <div
+        id="s24-work-term-report"
+        className="w-full max-w-[1200px] rounded-lg bg-bgContrast p-16 shadow-lg"
+      >
         <button
           onClick={handleBack}
-          className="mb-6 flex items-center text-blue-500 hover:underline"
+          className="mb-8 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-bg"
         >
-          ← Back
+          ← Back to Portfolio
         </button>
 
-        <h2 className="mb-6 text-center text-3xl font-bold text-gray-800">
-          Co-op Work Term Report
+        <h2 className="mb-12 text-center text-4xl font-bold leading-snug text-text">
+          Internship Report: Fullstack Developer & Business Analyst at BoscoBoys
         </h2>
 
-        {/* Abstract/Introduction */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            Introduction
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            A Summer of Innovation at BoscoBoys
           </h3>
-          <p className="mt-2 text-center text-gray-600">
-            From May to August 2024, I had the opportunity to work as a
-            Fullstack Developer & Business Analyst Intern at BoscoBoys
-            Distributors. This role challenged me technically and
-            professionally, allowing me to lead significant projects, such as
-            revamping the company website, optimizing database management, and
-            automating key business processes. This report reflects on my
-            experiences, challenges, and growth throughout this internship.
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            From May to August 2024, I worked as a Fullstack Developer &
+            Business Analyst Intern at BoscoBoys Distributors. This experience
+            challenged me both technically and professionally, allowing me to
+            lead significant projects such as revamping the company website,
+            optimizing database management, and automating key business
+            processes.
           </p>
         </section>
 
-        {/* Employer Information */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            About the Employer
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            BoscoBoys: Connecting Businesses, Bridging Distances
           </h3>
-          <p className="mt-2 text-center text-gray-600">
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
             and distribution company headquartered in Toronto, Ontario, Canada.
-            Originally established to manage newspaper distribution in the
-            Greater Toronto Area, BoscoBoys has since expanded its operations to
-            encompass a broad range of services, including freight shipping,
-            warehousing, and supply chain management.
+            Originally established to manage newspaper distribution, BoscoBoys
+            has since expanded into a full-service logistics provider, offering
+            services such as freight shipping, warehousing, and supply chain
+            management.
           </p>
-          <p className="mt-2 text-center text-gray-600">
-            BoscoBoys remains committed to its roots in newspaper distribution
-            but has grown into a pivotal player in the logistics and trucking
-            industry. The company now offers both B2B and B2C delivery solutions
-            while maintaining its focus on integrity, innovation, and customer
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            The company remains committed to its roots in newspaper distribution
+            while growing into a pivotal player in the logistics and trucking
+            industry. BoscoBoys is dedicated to providing both B2B and B2C
+            delivery solutions, prioritizing integrity, innovation, and customer
             satisfaction.
           </p>
         </section>
 
-        {/* Goals & Reflections */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            Goals & Reflections
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Project Goals & Reflections
           </h3>
-          <ul className="mt-2 list-inside list-disc text-gray-600">
+          <ul className="mt-6 list-inside list-disc text-lg leading-relaxed text-text">
             <li>
               <strong>Goal 1:</strong> Lead the revamp of the company website to
               enhance user experience and functionality.
             </li>
-            <p className="ml-6">
-              <strong>Reflection:</strong> I successfully completed the website
-              revamp using React.js, overcoming challenges in creating a
-              multi-page web application for the first time. The new design
-              resulted in increased user engagement, and I received positive
-              feedback from both users and stakeholders.
+            <p className="ml-6 mt-2">
+              <strong>Reflection:</strong> Successfully completed the website
+              revamp using React.js, creating a multi-page web application and
+              improving user engagement. Positive feedback was received from
+              both users and stakeholders.
             </p>
 
-            <li>
+            <li className="mt-6">
               <strong>Goal 2:</strong> Improve database management by optimizing
-              database structures to enhance performance.
+              database structures for better performance.
             </li>
-            <p className="ml-6">
-              <strong>Reflection:</strong> Through my efforts, I reduced query
-              times and transitioned the database to a more flexible structure.
-              This significantly improved data management efficiency, making it
-              easier to handle larger datasets and streamline operations.
+            <p className="ml-6 mt-2">
+              <strong>Reflection:</strong> I reduced query times and
+              transitioned the database to a more flexible structure,
+              significantly improving data management and overall operational
+              efficiency.
             </p>
 
-            <li>
+            <li className="mt-6">
               <strong>Goal 3:</strong> Develop innovative programs to automate
               business operations, focusing on payroll automation and route
               sequencing.
             </li>
-            <p className="ml-6">
-              <strong>Reflection:</strong> I automated several manual processes,
-              including payroll and driver route assignments, saving time and
-              reducing errors. The automation tools I created were highly
-              praised for their usability and efficiency.
+            <p className="ml-6 mt-2">
+              <strong>Reflection:</strong> I developed tools for payroll
+              automation and route sequencing, saving time and reducing errors
+              in the process. These automation tools were well-received by the
+              team.
             </p>
           </ul>
         </section>
 
-        {/* Job Description */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            My Role & Responsibilities
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Key Contributions & Responsibilities
           </h3>
-          <p className="mt-2 text-center text-gray-600">
-            As a Fullstack Developer & Business Analyst Intern, I was
-            responsible for leading several technical projects that directly
-            impacted the company's efficiency. My work involved revamping the
-            website using React.js and Node.js, optimizing database performance,
-            and developing business software for automating payroll and delivery
-            route management. I also worked closely with stakeholders to gather
-            business requirements and ensure the successful execution of these
-            projects.
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            As a Fullstack Developer & Business Analyst Intern, I led several
+            technical projects, including revamping the company website using
+            React.js and Node.js, optimizing database performance, and
+            automating payroll and delivery route management. My role also
+            involved close collaboration with stakeholders to ensure successful
+            project delivery.
           </p>
         </section>
 
-        {/* Challenges & Accomplishments */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            Challenges & Accomplishments
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Overcoming Challenges & Celebrating Achievements
           </h3>
-          <p className="mt-2 text-center text-gray-600">
-            One of the biggest challenges I faced during this internship was
-            managing multiple projects simultaneously. I applied agile
-            methodologies and effective project management strategies to ensure
-            each project was completed on time. Through these challenges, I
-            significantly enhanced my skills in fullstack development,
-            particularly in React.js, and improved my problem-solving abilities
-            in database management.
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            One of the primary challenges I faced was managing multiple projects
+            simultaneously. By implementing agile methodologies and strong
+            project management skills, I successfully completed each project on
+            time, sharpening my fullstack development skills and problem-solving
+            capabilities.
           </p>
         </section>
 
-        {/* Employer Evaluation & Feedback */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            Employer Evaluation & Feedback
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Feedback from Leadership
           </h3>
-          <p className="mt-2 text-center text-gray-600">
-            According to my final employer evaluation from Franklin Hamilton
-            Donbosco, CEO of BoscoBoys Distributors, I consistently delivered
-            high-quality work with attention to detail and organization. I was
-            commended for my strong initiative, excellent judgment, and ability
-            to work collaboratively within the team. The feedback encouraged me
-            to further develop my written communication skills and explore
-            leadership training for future roles.
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            According to my final evaluation from Franklin Hamilton Donbosco,
+            CEO of BoscoBoys, I consistently delivered high-quality work with
+            strong initiative and excellent judgment. My leadership and
+            collaboration skills were recognized, with constructive feedback
+            encouraging further leadership development.
           </p>
         </section>
 
-        {/* Conclusions */}
-        <section className="mb-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-700">
-            Conclusions & Acknowledgments
+        <section className="mb-12">
+          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+            Final Thoughts & Gratitude
           </h3>
-          <p className="mt-2 text-center text-gray-600">
-            My time at BoscoBoys Distributors was incredibly rewarding, both
-            personally and professionally. I would like to express my gratitude
-            to the entire team, especially Franklin Hamilton Donbosco, for their
-            mentorship and support. I am proud of the contributions I made to
-            the company, and I look forward to applying the skills I have
-            developed in future roles.
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            My internship at BoscoBoys Distributors was a rewarding experience.
+            I gained invaluable skills in fullstack development and business
+            analysis, and I am grateful to Franklin Hamilton Donbosco and the
+            entire BoscoBoys team for their support and mentorship.
           </p>
         </section>
       </div>

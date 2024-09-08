@@ -1,15 +1,22 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Content from "./components/Content.jsx";
 import Footer from "./components/Footer.jsx";
 import S24WorkTermReport from "./components/S24WorkTermReport";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const Layout = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {location.pathname !== "/s24-work-term-report" && <Navbar />}
       <main id="main-content">
         <Routes>
           <Route
@@ -25,6 +32,14 @@ function App() {
         </Routes>
       </main>
       <Footer />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <Layout />
     </Router>
   );
 }
