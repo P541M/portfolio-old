@@ -105,11 +105,6 @@ const experiences = [
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
         duration: "May 2024 - August 2024",
-        highlights: [
-          'Developed "Disperse" payroll app for payroll distribution efficiency.',
-          "Collaborated with company president to define new website goals.",
-          'Created "RouteView" for drivers to view their designated routes for the day.',
-        ],
       },
       {
         title: "Business Analyst Intern",
@@ -117,10 +112,6 @@ const experiences = [
         description:
           "Analyzed and optimized business workflows to increase operational efficiency and reduce costs.",
         duration: "May 2024 - August 2024",
-        highlights: [
-          "Collaborated with CFO on streamlining payroll and company financials",
-          "Worked with business operators to streamline several operations (dispatch, invoicing, human resources, etc.).",
-        ],
       },
     ],
   },
@@ -133,7 +124,6 @@ const experiences = [
         description:
           "Founded and led a platform connecting creative professionals with clients, addressing freelancing challenges in the creative industry.",
         duration: "Jun 2021 - Aug 2023",
-        highlights: ["pending", "pending"],
       },
     ],
   },
@@ -146,7 +136,6 @@ const experiences = [
         description:
           "Collaborated with leading creators, contributing to content that garnered over 20+ million views across various platforms.",
         duration: "Jan 2017 - Jan 2023",
-        highlights: ["pending", "pending"],
       },
       {
         title: "Graphic Designer",
@@ -154,7 +143,6 @@ const experiences = [
         description:
           "Utilized creativity and technical skills to design compelling visual content for diverse projects.",
         duration: "Jan 2016 - Aug 2020",
-        highlights: ["pending", "pending"],
       },
     ],
   },
@@ -167,7 +155,6 @@ const experiences = [
         description:
           "Edited all podcast audio and assisted in the publishing process, ensuring high-quality sound production and timely releases.",
         duration: "Jan 2022 - May 2022",
-        highlights: ["pending", "pending"],
       },
     ],
   },
@@ -180,7 +167,6 @@ const experiences = [
         description:
           "Edited numerous interviews with leading individuals in the environmental field, ensuring high-quality production and compelling storytelling.",
         duration: "Jan 2022 - May 2022",
-        highlights: ["pending", "pending"],
       },
       {
         title: "Frontend Developer Intern",
@@ -188,7 +174,6 @@ const experiences = [
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
         duration: "Jan 2022 - May 2022",
-        highlights: ["pending", "pending"],
       },
     ],
   },
@@ -201,25 +186,16 @@ const experiences = [
         description:
           "Worked in a fast-paced environment, providing efficient and friendly service to customers.",
         duration: "Jun 2019 - Aug 2019",
-        highlights: ["pending", "pending"],
       },
     ],
   },
 ];
 
 const Content = () => {
-  const [openDropdowns, setOpenDropdowns] = useState({});
   const navigate = useNavigate();
 
   const navigateToReport = () => {
     navigate("/s24-work-term-report");
-  };
-
-  const toggleDropdown = (index) => {
-    setOpenDropdowns((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }));
   };
 
   const getStatusColor = (status) => {
@@ -321,25 +297,6 @@ const Content = () => {
                   <p className="fade-up-three text-xs sm:text-sm md:text-sm lg:text-base xl:text-base">
                     {role.description}
                   </p>
-                  {role.highlights && role.highlights.length > 0 && (
-                    <div className="fade-up-four">
-                      <button
-                        onClick={() => toggleDropdown(`${index}-${idx}`)}
-                        className="my-2 text-xs text-text transition-colors hover:text-primary focus:outline-none sm:text-sm md:text-sm lg:text-base xl:text-base"
-                      >
-                        Job Highlights
-                      </button>
-                      {openDropdowns[`${index}-${idx}`] && (
-                        <ul
-                          className={`fade-in-dropdown ml-7 list-disc text-xs sm:text-sm md:text-sm lg:text-base xl:text-base`}
-                        >
-                          {role.highlights.map((highlight, hIdx) => (
-                            <li key={hIdx}>{highlight}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  )}
                 </div>
               ))}
 
