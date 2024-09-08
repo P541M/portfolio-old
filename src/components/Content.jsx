@@ -104,7 +104,7 @@ const experiences = [
         icon: ComputerDesktopIcon,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
-        duration: "May 2024 - Present",
+        duration: "May 2024 - August 2024",
         highlights: [
           'Developed "Disperse" payroll app for payroll distribution efficiency.',
           "Collaborated with company president to define new website goals.",
@@ -116,7 +116,7 @@ const experiences = [
         icon: ChartBarIcon,
         description:
           "Analyzed and optimized business workflows to increase operational efficiency and reduce costs.",
-        duration: "May 2024 - Present",
+        duration: "May 2024 - August 2024",
         highlights: [
           "Collaborated with CFO on streamlining payroll and company financials",
           "Worked with business operators to streamline several operations (dispatch, invoicing, human resources, etc.).",
@@ -344,12 +344,14 @@ const Content = () => {
               ))}
 
               {experience.company === "BoscoBoys Distributors" && (
-                <button
-                  onClick={navigateToReport}
-                  className="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white"
-                >
-                  View Work Term Report
-                </button>
+                <div className="fade-up-four mt-8 flex">
+                  <button
+                    onClick={navigateToReport}
+                    className="rounded-lg border border-primary bg-bgContrast px-6 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bg"
+                  >
+                    View Work Term Report
+                  </button>
+                </div>
               )}
             </div>
           ))}
