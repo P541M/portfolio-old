@@ -19,17 +19,18 @@ const Hero = () => {
           Eleazar is a dedicated software engineering student based in the
           Greater Toronto Area. Specializing in fullstack development, he
           creates engaging and effective digital experiences. Currently, he is a
-          Fullstack Developer & Business Analyst Intern at{" "}
+          Website Redesign Coordinator at{" "}
           <a
-            href="https://www.boscoboys.com/"
+            href="https://www.uoguelph.ca/arts"
             target="_blank"
             rel="noopener noreferrer"
             className="italic hover:underline"
           >
-            BoscoBoys Distributors
+            College of Arts, University of Guelph
           </a>
           .
         </p>
+
         <button
           onClick={handleOpenResume}
           className="fade-up-three mt-10 rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
