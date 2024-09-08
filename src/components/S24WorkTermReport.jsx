@@ -1,4 +1,16 @@
 import React from "react";
+import {
+  AcademicCapIcon,
+  BriefcaseIcon,
+  ClipboardDocumentListIcon,
+  ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
+  BuildingOfficeIcon,
+  LightBulbIcon,
+  TrophyIcon,
+  UserGroupIcon,
+  HeartIcon,
+} from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
 const S24WorkTermReport = () => {
@@ -21,73 +33,114 @@ const S24WorkTermReport = () => {
           ← Back to Portfolio
         </button>
 
-        <h2 className="mb-12 text-center text-4xl font-bold leading-snug text-text">
-          Fullstack Developer & Business Analyst Internship at BoscoBoys
-          Distributors
+        <h2 className="mb-12 text-left text-4xl font-bold leading-snug text-text">
+          My Journey as a Fullstack Developer & Business Analyst Intern at
+          BoscoBoys
         </h2>
 
         {/* Introduction */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Introduction
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Key Insights and Learnings
+            <LightBulbIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            From May to August 2024, I interned at BoscoBoys Distributors as a
-            Fullstack Developer & Business Analyst. During this time, I was
-            involved in a wide array of projects, from revamping the company
-            website to optimizing their database structures. My primary takeaway
-            from this experience was learning to balance both technical and
-            business-oriented responsibilities, a skill I believe will shape my
-            future career in software development and business analysis.
+            From May to August 2024, I had the privilege of interning at
+            BoscoBoys Distributors, a dynamic logistics and distribution
+            company. As a Fullstack Developer & Business Analyst, I contributed
+            to several technical and business projects aimed at streamlining
+            operations.
           </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            My key reflections from this internship, which I will carry into
+            future roles, include:
+          </p>
+          <ul className="mt-4 space-y-4 text-lg leading-relaxed text-text">
+            <li className="flex items-center">
+              <AcademicCapIcon className="mr-4 inline-block h-5 w-5" />
+              Balancing technical development with business analysis.
+            </li>
+            <li className="flex items-center">
+              <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
+              Improving user experience through website development.
+            </li>
+            <li className="flex items-center">
+              <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5" />
+              Optimizing database structures for efficiency and scalability.
+            </li>
+            <li className="flex items-center">
+              <CheckCircleIcon className="mr-4 inline-block h-5 w-5" />
+              Implementing automation to streamline business processes.
+            </li>
+            <li className="flex items-center">
+              <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
+              Collaboration across teams to achieve project goals.
+            </li>
+          </ul>
         </section>
 
         {/* Employer Information */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             About BoscoBoys Distributors
+            <BuildingOfficeIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            BoscoBoys Distributors is a family-owned logistics company
-            headquartered in Toronto, Ontario. Established in 1998, the company
-            initially focused on newspaper distribution but has since expanded
-            its services to include freight shipping, warehousing, and supply
-            chain management. BoscoBoys is known for its commitment to
-            innovation and customer satisfaction, and during my time there, I
-            saw firsthand how technology plays a pivotal role in streamlining
-            their operations.
+            BoscoBoys Distributors, founded in 1998, is a family-owned logistics
+            and distribution company headquartered in Toronto, Ontario.
+            Initially established to manage newspaper distribution, the company
+            has since grown into a full-service logistics provider, offering
+            services such as freight shipping, warehousing, and supply chain
+            management.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            The company has made significant strides in integrating new
-            technologies into its logistics processes. From automating route
-            sequences to improving warehouse management through database
-            optimization, BoscoBoys continuously seeks to modernize its services
-            to maintain its competitive edge in the industry.
+            BoscoBoys’ integration of cutting-edge technology, including route
+            optimization and database management, has been essential in
+            maintaining its competitive edge. Their focus on automating
+            logistics processes and optimizing warehouse management leverages
+            computing technologies to streamline operations.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            "Innovation and integrity are at the heart of what we do. Every
+            client, whether a small business or a large corporation, is a
+            stakeholder in our success." – Franklin Hamilton Donbosco, Founder &
+            CEO, BoscoBoys Distributors.
           </p>
         </section>
 
         {/* Job Description */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Job Description
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            My Role at BoscoBoys
+            <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            As a Fullstack Developer & Business Analyst, my role was
-            multifaceted. I was responsible for leading the revamp of the
-            company website using React.js and Node.js, optimizing database
-            structures with PostgreSQL, and automating key business processes
-            like payroll and delivery route optimization. I also worked closely
-            with the business team, using Excel and financial data to provide
-            insights that guided business strategies. This combination of
-            technical and business responsibilities was crucial in helping me
-            grow both as a developer and an analyst.
+            As a Fullstack Developer & Business Analyst Intern, my role combined
+            both technical and business responsibilities. I led the full revamp
+            of the company’s website using React.js and Node.js, from design to
+            development, ensuring both technical robustness and an enhanced user
+            experience.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            I worked closely with the CEO, CFO, and other stakeholders to gather
+            business requirements and feedback from end users. Additionally, I
+            led scrum teams to ensure smooth execution of code production and
+            design, adhering to agile methodologies.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            One of the notable projects was the development of a custom payroll
+            system, automating manual processes, improving accuracy, and
+            reducing overhead. Another key development was the Routeview system
+            for newspaper distributors, which included features such as delivery
+            route sequencing and handling specific customer requests.
           </p>
         </section>
 
         {/* Project Goals & Reflections */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Goals & Reflections
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Setting & Achieving Project Goals
+            <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <ul className="mt-6 list-inside list-disc text-lg leading-relaxed text-text">
             <li>
@@ -136,8 +189,9 @@ const S24WorkTermReport = () => {
 
         {/* Overcoming Challenges & Achievements */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Overcoming Challenges & Achievements
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Conquering Challenges & Celebrating Achievements
+            <TrophyIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             One of the primary challenges I faced was balancing multiple
@@ -152,8 +206,9 @@ const S24WorkTermReport = () => {
 
         {/* Mentorship Lessons */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Mentorship Lessons
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Mentorship: Lessons from Leaders
+            <UserGroupIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             I was fortunate to receive mentorship from Franklin Hamilton
@@ -167,22 +222,38 @@ const S24WorkTermReport = () => {
 
         {/* Feedback from Leadership */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
-            Feedback from Leadership
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Leadership Feedback
+            <ChatBubbleLeftRightIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            According to my final evaluation, I consistently delivered
-            high-quality work and demonstrated a strong initiative. My
-            contributions were recognized by the CEO, Franklin Hamilton
-            Donbosco, who praised my leadership skills and suggested further
-            developing my written communication abilities for future roles.
+            In my final evaluation, Franklin Hamilton Donbosco praised my
+            leadership skills and initiative. His feedback on improving my
+            written communication will help me further refine my professional
+            skills for future roles.
+          </p>
+        </section>
+
+        {/* Conclusion */}
+        <section className="mb-12">
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            Final Reflections & Takeaways
+            <CheckCircleIcon className="ml-2 inline-block h-6 w-6" />
+          </h3>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            My internship at BoscoBoys was an invaluable experience. The
+            projects I worked on not only benefited the company but also helped
+            me grow as a professional. The skills I gained in fullstack
+            development, database management, and business process automation
+            will be crucial in my career development.
           </p>
         </section>
 
         {/* Acknowledgments */}
         <section className="mb-12">
-          <h3 className="mb-6 text-center text-3xl font-semibold text-text">
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Acknowledgments
+            <HeartIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             I would like to thank Franklin Hamilton Donbosco for his mentorship
