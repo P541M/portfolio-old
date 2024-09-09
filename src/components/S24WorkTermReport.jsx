@@ -21,7 +21,7 @@ const S24WorkTermReport = () => {
   };
 
   return (
-    <div className="mt-16 flex justify-center px-4 sm:mb-20 sm:mt-20 sm:px-8 md:mb-24 md:mt-24 md:px-16 lg:mb-28 lg:mt-28 lg:px-20">
+    <div className="mt-16 flex justify-center px-4 sm:mt-20 sm:px-8 md:mt-24 md:px-16 lg:mt-28 lg:px-20">
       <div
         id="s24-work-term-report"
         className="w-full px-6 sm:px-8 md:px-12 lg:px-16"
