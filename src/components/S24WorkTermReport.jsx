@@ -36,7 +36,7 @@ const S24WorkTermReport = () => {
         {/* Introduction */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Connecting Businesses, Bridging Distances - My Summer with BoscoBoys
+            My Summer with BoscoBoys
             <LightBulbIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
@@ -87,7 +87,7 @@ const S24WorkTermReport = () => {
         {/* Employer Information */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            About BoscoBoys Distributors
+            BoscoBoys Distributors: Connecting Businesses, Bridging Distances
             <BuildingOfficeIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
@@ -124,7 +124,7 @@ const S24WorkTermReport = () => {
         {/* Job Description */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            My Role at BoscoBoys
+            Responsibilities, Technologies, and Impact at BoscoBoys
             <BriefcaseIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
@@ -472,7 +472,7 @@ const S24WorkTermReport = () => {
         {/* Conclusion */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Conclusion & Key Takeaways
+            Reflections on Growth and Future Aspirations
             <CheckCircleIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
@@ -514,7 +514,7 @@ const S24WorkTermReport = () => {
         {/* Acknowledgments */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Acknowledgments
+            Gratitude & Mentorship: The People Behind My Growth
             <HeartIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
 
