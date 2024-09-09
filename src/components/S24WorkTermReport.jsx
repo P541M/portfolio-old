@@ -4,6 +4,7 @@ import {
   ClipboardDocumentListIcon,
   CheckCircleIcon,
   UserGroupIcon,
+  LightBulbIcon,
 } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
@@ -54,30 +55,40 @@ const S24WorkTermReport = () => {
             The most valuable lessons I gained from this internship, which I
             will carry into future professional roles, include:
           </p>
-          <ul className="mt-4 space-y-4 text-lg leading-relaxed text-text">
-            <li className="flex items-center">
-              <AcademicCapIcon className="mr-4 inline-block h-5 w-5 text-text" />
-              Cross-functional collaboration with leadership to align business
-              and technical goals.
-            </li>
-            <li className="flex items-center">
-              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
-              Designing customer-focused, scalable web solutions.
-            </li>
-            <li className="flex items-center">
-              <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5 text-text" />
-              Optimizing database performance and streamlining data processes.
-            </li>
-            <li className="flex items-center">
-              <CheckCircleIcon className="mr-4 inline-block h-5 w-5 text-text" />
-              Automating business operations for improved efficiency.
-            </li>
-            <li className="flex items-center">
-              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
-              Enhancing professional communication and project management
-              skills.
-            </li>
-          </ul>
+          <div className="mt-4 grid grid-cols-1 gap-6 rounded-lg bg-bgContrast p-6 text-lg leading-relaxed text-text shadow-md md:grid-cols-2">
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <AcademicCapIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Cross-functional collaboration with leadership to align business
+                and technical goals.
+              </li>
+              <li className="flex items-center">
+                <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Designing customer-focused, scalable web solutions.
+              </li>
+              <li className="flex items-center">
+                <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Optimizing database performance and streamlining data processes.
+              </li>
+            </ul>
+
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <CheckCircleIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Automating business operations for improved efficiency.
+              </li>
+              <li className="flex items-center">
+                <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Enhancing professional communication and project management
+                skills.
+              </li>
+              <li className="flex items-center">
+                <LightBulbIcon className="mr-4 inline-block h-5 w-5 text-text" />
+                Developing innovative solutions for business challenges.
+              </li>
+            </ul>
+          </div>
+
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             In this report, I will reflect on the projects I worked on, the
             skills I developed, and how this internship contributed to my growth
@@ -166,7 +177,7 @@ const S24WorkTermReport = () => {
             a wide range of technologies and tools:
           </p>
 
-          <div className="mt-4 flex flex-col">
+          <div className="mt-4 flex flex-col rounded-lg bg-bgContrast p-6 shadow-md">
             <ul className="mt-2 flex space-x-4">
               <li className="flex items-center">
                 <span className="mr-2 inline-block h-3 w-3 rounded-full bg-green-500"></span>
@@ -183,7 +194,7 @@ const S24WorkTermReport = () => {
             </ul>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="mt-4 grid grid-cols-1 rounded-lg bg-bgContrast p-6 shadow-md sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <div>
               <h4 className="my-2 text-xl font-semibold text-text">
                 Web Development
