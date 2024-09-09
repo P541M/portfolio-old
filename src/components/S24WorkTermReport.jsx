@@ -97,24 +97,60 @@ const S24WorkTermReport = () => {
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
-            and distribution company headquartered in Toronto, Ontario.
-            Initially established to manage newspaper distribution, the company
-            has since grown into a full-service logistics provider, offering
-            services such as freight shipping, warehousing, and supply chain
+            and distribution company headquartered in Toronto, Ontario. The
+            company initially focused on newspaper distribution but has since
+            expanded its offerings to become a full-service logistics provider,
+            including freight shipping, warehousing, and supply chain
             management.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            BoscoBoys’ integration of cutting-edge technology, including route
-            optimization and database management, has been essential in
-            maintaining its competitive edge. Their focus on automating
-            logistics processes and optimizing warehouse management leverages
-            computing technologies to streamline operations.
+            With a commitment to technological innovation, BoscoBoys leverages
+            cutting-edge solutions in route optimization, database management,
+            and automation to improve operational efficiency. The company's IT
+            infrastructure integrates database management systems and advanced
+            algorithms to streamline processes and reduce manual labor, aligning
+            with modern computing science principles.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            BoscoBoys prides itself on a culture of integrity and innovation,
+            driven by a strong leadership team led by Founder & CEO Franklin
+            Hamilton Donbosco. Headquartered in the heart of Toronto, the
+            company has remained dedicated to maintaining a balance between
+            growth and customer-centric values.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             "Innovation and integrity are at the heart of what we do. Every
             client, whether a small business or a large corporation, is a
             stakeholder in our success." – Franklin Hamilton Donbosco, Founder &
             CEO, BoscoBoys Distributors.
+          </p>
+        </section>
+
+        {/* Job Description */}
+        <section className="mb-12">
+          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+            My Role at BoscoBoys
+            <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
+          </h3>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            As a Fullstack Developer & Business Analyst Intern, my role combined
+            both technical and business responsibilities. I led the full revamp
+            of the company’s website using React.js and Node.js, from design to
+            development, ensuring both technical robustness and an enhanced user
+            experience.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            I worked closely with the CEO, CFO, and other stakeholders to gather
+            business requirements and feedback from end users. Additionally, I
+            led scrum teams to ensure smooth execution of code production and
+            design, adhering to agile methodologies.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            One of the notable projects was the development of a custom payroll
+            system, automating manual processes, improving accuracy, and
+            reducing overhead. Another key development was the Routeview system
+            for newspaper distributors, which included features such as delivery
+            route sequencing and handling specific customer requests.
           </p>
         </section>
 
@@ -167,34 +203,6 @@ const S24WorkTermReport = () => {
               impact of automation on business efficiency.
             </p>
           </ul>
-        </section>
-
-        {/* Job Description */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            My Role at BoscoBoys
-            <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
-          </h3>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            As a Fullstack Developer & Business Analyst Intern, my role combined
-            both technical and business responsibilities. I led the full revamp
-            of the company’s website using React.js and Node.js, from design to
-            development, ensuring both technical robustness and an enhanced user
-            experience.
-          </p>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            I worked closely with the CEO, CFO, and other stakeholders to gather
-            business requirements and feedback from end users. Additionally, I
-            led scrum teams to ensure smooth execution of code production and
-            design, adhering to agile methodologies.
-          </p>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            One of the notable projects was the development of a custom payroll
-            system, automating manual processes, improving accuracy, and
-            reducing overhead. Another key development was the Routeview system
-            for newspaper distributors, which included features such as delivery
-            route sequencing and handling specific customer requests.
-          </p>
         </section>
 
         {/* Conclusion */}
