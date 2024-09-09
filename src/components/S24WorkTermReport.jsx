@@ -41,42 +41,61 @@ const S24WorkTermReport = () => {
         {/* Introduction */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Key Insights and Learnings
+            Connecting Businesses, Bridging Distances - My Summer with BoscoBoys
             <LightBulbIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             From May to August 2024, I had the privilege of interning at
-            BoscoBoys Distributors, a dynamic logistics and distribution
-            company. As a Fullstack Developer & Business Analyst, I contributed
-            to several technical and business projects aimed at streamlining
-            operations.
+            BoscoBoys Distributors, a family-owned logistics company based in
+            Toronto. My role as a Fullstack Developer & Business Analyst allowed
+            me to contribute to significant projects, including the revamp of
+            the company's website and the automation of critical business
+            processes.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            My key reflections from this internship, which I will carry into
-            future roles, include:
+            The most valuable lessons I gained from this internship, which I
+            will carry into future professional roles, include:
           </p>
           <ul className="mt-4 space-y-4 text-lg leading-relaxed text-text">
             <li className="flex items-center">
               <AcademicCapIcon className="mr-4 inline-block h-5 w-5" />
-              Balancing technical development with business analysis.
+              Gaining proficiency in cross-functional collaboration, especially
+              working closely with leadership and stakeholders to align business
+              and technical goals.
             </li>
             <li className="flex items-center">
               <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
-              Improving user experience through website development.
+              Developing customer-centered, data-driven web solutions, focusing
+              on user experience while ensuring scalability and efficiency in
+              design.
             </li>
             <li className="flex items-center">
               <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5" />
-              Optimizing database structures for efficiency and scalability.
+              Applying best practices in database management to optimize
+              performance and streamline business processes, allowing for more
+              efficient data handling and reporting.
             </li>
             <li className="flex items-center">
               <CheckCircleIcon className="mr-4 inline-block h-5 w-5" />
-              Implementing automation to streamline business processes.
+              Implementing automation tools for business processes like payroll
+              and route optimization, reducing manual work and improving
+              operational accuracy.
             </li>
             <li className="flex items-center">
               <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
-              Collaboration across teams to achieve project goals.
+              Mastering the nuances of professional communication and project
+              management in an office environment, ensuring timely delivery of
+              projects while coordinating across teams.
             </li>
           </ul>
+
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            In this report, I will reflect on the projects I worked on, the
+            skills I developed, and how this internship contributed to my growth
+            as both a developer and a business analyst. My experience at
+            BoscoBoys has been integral in shaping my future career goals, and I
+            look forward to applying these learnings in future roles.
+          </p>
         </section>
 
         {/* Employer Information */}
