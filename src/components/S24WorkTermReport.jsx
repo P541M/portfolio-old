@@ -234,7 +234,7 @@ const S24WorkTermReport = () => {
                   DynamoDB
                 </li>
                 <li className="mb-2 flex items-center">
-                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-yellow-500"></span>
                   MySQL
                 </li>
                 <li className="mb-2 flex items-center">
