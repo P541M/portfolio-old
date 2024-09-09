@@ -229,7 +229,7 @@ const Content = () => {
   };
 
   return (
-    <div className="fade-up-three px-20">
+    <div className="fade-up-three px-6 sm:px-8 md:px-16 lg:px-20">
       <section aria-labelledby="projects-title" className="projects">
         <h2 id="projects-title" className="sr-only">
           Projects

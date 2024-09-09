@@ -15,8 +15,11 @@ const S24WorkTermReport = () => {
   };
 
   return (
-    <div className="mt-16 flex justify-center px-20">
-      <div id="s24-work-term-report" className="w-full px-16">
+    <div className="mt-8 flex justify-center px-4 sm:mt-12 sm:px-8 md:mt-16 md:px-16 lg:mt-20 lg:px-20">
+      <div
+        id="s24-work-term-report"
+        className="w-full px-6 sm:px-8 md:px-12 lg:px-16"
+      >
         <button
           onClick={handleBack}
           className="mb-8 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
