@@ -59,36 +59,27 @@ const S24WorkTermReport = () => {
           <ul className="mt-4 space-y-4 text-lg leading-relaxed text-text">
             <li className="flex items-center">
               <AcademicCapIcon className="mr-4 inline-block h-5 w-5" />
-              Gaining proficiency in cross-functional collaboration, especially
-              working closely with leadership and stakeholders to align business
+              Cross-functional collaboration with leadership to align business
               and technical goals.
             </li>
             <li className="flex items-center">
               <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
-              Developing customer-centered, data-driven web solutions, focusing
-              on user experience while ensuring scalability and efficiency in
-              design.
+              Designing customer-focused, scalable web solutions.
             </li>
             <li className="flex items-center">
               <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5" />
-              Applying best practices in database management to optimize
-              performance and streamline business processes, allowing for more
-              efficient data handling and reporting.
+              Optimizing database performance and streamlining data processes.
             </li>
             <li className="flex items-center">
               <CheckCircleIcon className="mr-4 inline-block h-5 w-5" />
-              Implementing automation tools for business processes like payroll
-              and route optimization, reducing manual work and improving
-              operational accuracy.
+              Automating business operations for improved efficiency.
             </li>
             <li className="flex items-center">
               <UserGroupIcon className="mr-4 inline-block h-5 w-5" />
-              Mastering the nuances of professional communication and project
-              management in an office environment, ensuring timely delivery of
-              projects while coordinating across teams.
+              Enhancing professional communication and project management
+              skills.
             </li>
           </ul>
-
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             In this report, I will reflect on the projects I worked on, the
             skills I developed, and how this internship contributed to my growth
