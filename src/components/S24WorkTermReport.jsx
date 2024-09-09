@@ -308,55 +308,138 @@ const S24WorkTermReport = () => {
           </div>
         </section>
 
-        {/* Project Goals & Reflections */}
+        {/* Goals */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Setting & Achieving Project Goals
+            Setting & Achieving Goals
             <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
-          <ul className="mt-6 list-inside list-disc text-lg leading-relaxed text-text">
-            <li>
-              <strong>Goal 1:</strong> Revamp the company website to improve
-              user experience and functionality.
-            </li>
-            <p className="ml-6 mt-2">
-              <strong>Reflection:</strong> Leading the website revamp was both
-              exciting and challenging. Initially, I struggled with the complex
-              React framework, but through systematic learning and collaboration
-              with my team, I was able to successfully create a multi-page web
-              application that significantly enhanced user engagement. The
-              website received positive feedback from both users and
-              stakeholders, marking this as one of my key achievements during
-              the internship.
-            </p>
 
-            <li className="mt-6">
-              <strong>Goal 2:</strong> Optimize the company’s database
-              structures for better performance and scalability.
-            </li>
-            <p className="ml-6 mt-2">
-              <strong>Reflection:</strong> Optimizing the company’s database was
-              a technical challenge. I revised query codes, removed redundant
-              elements, and restructured the database to make it more flexible.
-              This optimization not only improved query times but also allowed
-              the company to store and manage data more efficiently. Reflecting
-              on this project, I learned valuable skills in database management
-              that will be useful in future projects.
-            </p>
+          {/* Introduction */}
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            During my internship at BoscoBoys, I set several key goals focused
+            on technical growth, problem-solving, and enhancing business
+            operations. These goals were designed to help me improve my web
+            development skills, optimize data management, automate business
+            processes, and refine my time management and teamwork capabilities.
+          </p>
 
-            <li className="mt-6">
-              <strong>Goal 3:</strong> Automate business processes, including
-              payroll and route optimization.
-            </li>
-            <p className="ml-6 mt-2">
-              <strong>Reflection:</strong> I developed custom programs to
-              automate payroll and optimize delivery routes. This automation
-              saved the company hours of manual work each week and reduced
-              errors in payroll processing. Working on this project allowed me
-              to apply creative problem-solving skills and demonstrated the
-              impact of automation on business efficiency.
+          {/* Goal 1 */}
+          <div className="bg-bgLight mt-8 rounded-lg p-6 shadow-md">
+            <h4 className="text-xl font-semibold">
+              Goal 1: Enhance Website Development Skills
+            </h4>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              I aimed to improve my website development skills by leading the
+              revamp of the company’s website. This involved analyzing the
+              current website, gathering user feedback, and using modern web
+              development technologies to enhance user experience and
+              functionality.
             </p>
-          </ul>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Skills Developed:</strong> Frontend and backend web
+              development, user experience design, problem-solving.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Outcome & Reflection:</strong> I successfully completed
+              the website revamp, receiving positive feedback from users and
+              stakeholders. The complexity of the multi-page web application
+              with modern frameworks posed challenges, but overcoming them
+              significantly improved my project management and problem-solving
+              skills.
+            </p>
+          </div>
+
+          {/* Goal 2 */}
+          <div className="bg-bgLight mt-8 rounded-lg p-6 shadow-md">
+            <h4 className="text-xl font-semibold">
+              Goal 2: Optimize Database Management
+            </h4>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              My goal was to optimize the database structures for improved
+              efficiency. I analyzed existing database systems, identified
+              inefficiencies, and applied best practices in database management
+              to enhance performance.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Skills Developed:</strong> Database management, data
+              optimization, query performance improvement.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Outcome & Reflection:</strong> Successfully optimized the
+              database structure, resulting in reduced query times and improved
+              data management flexibility. While I achieved significant
+              progress, future optimizations may require additional strategies
+              to handle increased data loads.
+            </p>
+          </div>
+
+          {/* Goal 3 */}
+          <div className="bg-bgLight mt-8 rounded-lg p-6 shadow-md">
+            <h4 className="text-xl font-semibold">
+              Goal 3: Automate Business Processes
+            </h4>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              I sought to develop custom automation programs to streamline key
+              business processes, including payroll and route optimization for
+              newspaper distributors.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Skills Developed:</strong> Automation, software
+              development, business analysis.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Outcome & Reflection:</strong> The automation programs
+              successfully streamlined operations, improving payroll efficiency
+              by 87.5%. This experience emphasized the importance of balancing
+              usability with functionality when automating processes.
+            </p>
+          </div>
+
+          {/* Goal 4 */}
+          <div className="bg-bgLight mt-8 rounded-lg p-6 shadow-md">
+            <h4 className="text-xl font-semibold">
+              Goal 4: Improve Team Collaboration & Financial Analysis
+            </h4>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              A non-technical goal I set was to develop better collaboration
+              skills by working with the business team on financial analysis
+              tasks. I learned to analyze financial data and contribute to
+              financial models.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Skills Developed:</strong> Financial analysis, teamwork,
+              collaboration.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Outcome & Reflection:</strong> I completed financial tasks
+              with accuracy and received positive feedback. This experience
+              provided valuable insights into business operations and teamwork,
+              which will be crucial for future roles.
+            </p>
+          </div>
+
+          {/* Goal 5 */}
+          <div className="bg-bgLight mt-8 rounded-lg p-6 shadow-md">
+            <h4 className="text-xl font-semibold">
+              Goal 5: Improve Time Management
+            </h4>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              My final goal was to enhance my time management skills. I used
+              tools like Notion and traditional note-taking to organize and
+              prioritize tasks effectively across multiple projects.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Skills Developed:</strong> Time management, task
+              prioritization, personal organization.
+            </p>
+            <p className="mt-2 text-left text-lg leading-relaxed text-text">
+              <strong>Outcome & Reflection:</strong> While I met deadlines and
+              stayed organized, balancing multiple projects effectively remains
+              a challenge. This goal highlighted the importance of continuous
+              improvement in managing workload efficiently.
+            </p>
+          </div>
         </section>
 
         {/* Conclusion */}
