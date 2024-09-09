@@ -21,19 +21,19 @@ const S24WorkTermReport = () => {
   };
 
   return (
-    <div className="mt-8 flex justify-center px-4 sm:mt-12 sm:px-8 md:mt-16 md:px-16 lg:mt-20 lg:px-20">
+    <div className="mt-16 flex justify-center px-4 sm:mb-20 sm:mt-20 sm:px-8 md:mb-24 md:mt-24 md:px-16 lg:mb-28 lg:mt-28 lg:px-20">
       <div
         id="s24-work-term-report"
         className="w-full px-6 sm:px-8 md:px-12 lg:px-16"
       >
         <button
           onClick={handleBack}
-          className="mb-8 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
+          className="mb-12 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
         >
           ← Back to Portfolio
         </button>
 
-        <h2 className="mb-8 text-left text-4xl font-bold leading-snug text-text">
+        <h2 className="mb-10 text-left text-4xl font-bold leading-snug text-text">
           My Journey as a Fullstack Developer & Business Analyst Intern at
           BoscoBoys
         </h2>
@@ -44,13 +44,13 @@ const S24WorkTermReport = () => {
           impactful solutions that improved the company's operations.
         </p>
         {/* Introduction */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             My Summer with BoscoBoys
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             From May to August 2024, I had the privilege of interning at
@@ -108,13 +108,13 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Employer Information */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             BoscoBoys Distributors: Connecting Businesses, Bridging Distances
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
@@ -148,13 +148,13 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Job Description */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             Responsibilities, Technologies, and Impact at BoscoBoys
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             As a Fullstack Developer & Business Analyst Intern, I was
@@ -335,13 +335,13 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Goals */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             Goals, Challenges, and Achievements
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           <p className="my-4 text-left text-lg leading-relaxed text-text">
             Throughout my internship, I set out to achieve specific goals that
@@ -530,13 +530,13 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Conclusion */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             Reflections on Growth and Future Aspirations
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             My internship at BoscoBoys was not just an opportunity to apply what
@@ -575,13 +575,13 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Acknowledgments */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
+        <section className="mb-16">
+          <h3 className="mb-8 text-left text-3xl font-semibold text-text">
             Gratitude & Mentorship: The People Behind My Growth
           </h3>
 
           {/* Divider */}
-          <div className="my-4 border-t border-gray-300"></div>
+          <div className="my-6 border-t border-gray-300"></div>
 
           {/* Franklin Hamilton Donbosco */}
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
