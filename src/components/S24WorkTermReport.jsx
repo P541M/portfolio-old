@@ -133,25 +133,178 @@ const S24WorkTermReport = () => {
             <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            As a Fullstack Developer & Business Analyst Intern, my role combined
-            both technical and business responsibilities. I led the full revamp
-            of the company’s website using React.js and Node.js, from design to
-            development, ensuring both technical robustness and an enhanced user
+            As a Fullstack Developer & Business Analyst Intern, I was
+            responsible for a diverse range of tasks that required both
+            technical proficiency and business acumen. One of my primary
+            responsibilities was leading the full revamp of the company’s
+            website. This involved managing the project from design to
+            development, ensuring both robustness and an enhanced user
             experience.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            I worked closely with the CEO, CFO, and other stakeholders to gather
-            business requirements and feedback from end users. Additionally, I
-            led scrum teams to ensure smooth execution of code production and
-            design, adhering to agile methodologies.
+            I collaborated closely with the CEO, CFO, CTO, and other key
+            stakeholders to gather business requirements and feedback from end
+            users. This required not only technical skills but also effective
+            communication and project management abilities. I led teams to
+            ensure efficient execution and applied structured methodologies,
+            which helped streamline the development process.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            One of the notable projects was the development of a custom payroll
-            system, automating manual processes, improving accuracy, and
-            reducing overhead. Another key development was the Routeview system
-            for newspaper distributors, which included features such as delivery
-            route sequencing and handling specific customer requests.
+            One of the most interesting aspects of my role was developing a
+            custom payroll system that automated manual processes. This
+            significantly improved accuracy and reduced overhead for the
+            company. Additionally, I developed the Routeview system for
+            newspaper distributors, a unique tool that optimized delivery routes
+            and allowed for customer-specific requests, greatly enhancing
+            operational efficiency and user satisfaction.
           </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            The role required balancing technical development with business
+            analysis. Understanding both the architecture and the business
+            implications of decisions helped me deliver more value to the
+            company and its stakeholders.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            During my internship at BoscoBoys, I gained hands-on experience with
+            a wide range of technologies and tools:
+          </p>
+
+          <div className="mt-4 flex flex-col">
+            <ul className="mt-2 flex space-x-4">
+              <li className="flex items-center">
+                <span className="mr-2 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                Learned on the job
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2 inline-block h-3 w-3 rounded-full bg-yellow-500"></span>
+                Learned in school
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                Learned on my own
+              </li>
+            </ul>
+          </div>
+
+          <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+              <h4 className="text-xl font-semibold">Web Development</h4>
+              <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  React.js
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  Svelte
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Node.js
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  PHP
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Tailwind CSS
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  HTML5
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  CSS3
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-semibold">Database & Cloud</h4>
+              <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  MongoDB
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  DynamoDB
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  MySQL
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  AWS
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Vercel
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  WampServer
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-semibold">Programming Languages</h4>
+              <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  JavaScript
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  TypeScript
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-semibold">
+                Version Control & Project Management
+              </h4>
+              <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Git
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-yellow-500"></span>
+                  Trello
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
+                  Jira
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-semibold">
+                Collaboration & Productivity
+              </h4>
+              <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Notion
+                </li>
+                <li className="mb-2 flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Microsoft Word, Excel, Access
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+                  Google Docs, Sheets
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Project Goals & Reflections */}
