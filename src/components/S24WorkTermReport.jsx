@@ -311,6 +311,15 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Goals, Challenges, and Achievements
           </h3>
+          <p className="my-4 text-left text-lg leading-relaxed text-text">
+            Throughout my internship, I set out to achieve specific goals that
+            would push me to grow both technically and professionally. Each goal
+            presented its own set of challenges, ultimately leading to
+            significant achievements that helped shape my overall experience.
+            You can expand each goal below to read more deeply about the
+            challenges I faced, the skills I developed, and the outcomes
+            achieved.
+          </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Goal 1 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
@@ -318,7 +327,7 @@ const S24WorkTermReport = () => {
                 className="cursor-pointer text-xl font-semibold text-text"
                 onClick={() => setGoal1Open(!goal1Open)}
               >
-                Enhance Website Development Skills
+                1. Lead Complete Website Revamp for UX and Performance
               </h4>
               {goal1Open && (
                 <div className="mt-2">
@@ -360,7 +369,7 @@ const S24WorkTermReport = () => {
                 className="cursor-pointer text-xl font-semibold text-text"
                 onClick={() => setGoal2Open(!goal2Open)}
               >
-                Optimize Database Management
+                2. Optimize Database Structure for Faster Performance{" "}
               </h4>
               {goal2Open && (
                 <div className="mt-2">
@@ -396,7 +405,7 @@ const S24WorkTermReport = () => {
                 className="cursor-pointer text-xl font-semibold text-text"
                 onClick={() => setGoal3Open(!goal3Open)}
               >
-                Automate Business Processes
+                3. Automate Payroll and Delivery Routes for Efficiency
               </h4>
               {goal3Open && (
                 <div className="mt-2">
@@ -432,7 +441,7 @@ const S24WorkTermReport = () => {
                 className="cursor-pointer text-xl font-semibold text-text"
                 onClick={() => setGoal4Open(!goal4Open)}
               >
-                Improve Team Collaboration & Financial Analysis
+                4. Improve Team Collaboration and Financial Insights
               </h4>
               {goal4Open && (
                 <div className="mt-2">
@@ -462,7 +471,7 @@ const S24WorkTermReport = () => {
                 className="cursor-pointer text-xl font-semibold text-text"
                 onClick={() => setGoal5Open(!goal5Open)}
               >
-                Improve Time Management
+                5. Enhance Time Management Skills Across Multiple Projects
               </h4>
               {goal5Open && (
                 <div className="mt-2">
