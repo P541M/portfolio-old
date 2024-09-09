@@ -108,34 +108,6 @@ const S24WorkTermReport = () => {
           </p>
         </section>
 
-        {/* Job Description */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            My Role at BoscoBoys
-            <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
-          </h3>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            As a Fullstack Developer & Business Analyst Intern, my role combined
-            both technical and business responsibilities. I led the full revamp
-            of the company’s website using React.js and Node.js, from design to
-            development, ensuring both technical robustness and an enhanced user
-            experience.
-          </p>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            I worked closely with the CEO, CFO, and other stakeholders to gather
-            business requirements and feedback from end users. Additionally, I
-            led scrum teams to ensure smooth execution of code production and
-            design, adhering to agile methodologies.
-          </p>
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            One of the notable projects was the development of a custom payroll
-            system, automating manual processes, improving accuracy, and
-            reducing overhead. Another key development was the Routeview system
-            for newspaper distributors, which included features such as delivery
-            route sequencing and handling specific customer requests.
-          </p>
-        </section>
-
         {/* Project Goals & Reflections */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
@@ -187,50 +159,31 @@ const S24WorkTermReport = () => {
           </ul>
         </section>
 
-        {/* Overcoming Challenges & Achievements */}
+        {/* Job Description */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Conquering Challenges & Celebrating Achievements
-            <TrophyIcon className="ml-2 inline-block h-6 w-6" />
+            My Role at BoscoBoys
+            <BriefcaseIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            One of the primary challenges I faced was balancing multiple
-            projects while meeting tight deadlines. Using agile methodologies, I
-            was able to manage my time effectively and complete tasks on
-            schedule. Another challenge was implementing complex solutions like
-            the automation programs without compromising on ease of use. In
-            overcoming these obstacles, I honed my problem-solving abilities and
-            gained confidence in my technical and project management skills.
+            As a Fullstack Developer & Business Analyst Intern, my role combined
+            both technical and business responsibilities. I led the full revamp
+            of the company’s website using React.js and Node.js, from design to
+            development, ensuring both technical robustness and an enhanced user
+            experience.
           </p>
-        </section>
-
-        {/* Mentorship Lessons */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Mentorship: Lessons from Leaders
-            <UserGroupIcon className="ml-2 inline-block h-6 w-6" />
-          </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            I was fortunate to receive mentorship from Franklin Hamilton
-            Donbosco, the CEO of BoscoBoys, who guided me on leadership and
-            project management. His advice on balancing technical skills with
-            interpersonal relationships proved invaluable. Additionally, working
-            closely with my team gave me a deeper understanding of how
-            collaboration drives success in business projects.
+            I worked closely with the CEO, CFO, and other stakeholders to gather
+            business requirements and feedback from end users. Additionally, I
+            led scrum teams to ensure smooth execution of code production and
+            design, adhering to agile methodologies.
           </p>
-        </section>
-
-        {/* Feedback from Leadership */}
-        <section className="mb-12">
-          <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Leadership Feedback
-            <ChatBubbleLeftRightIcon className="ml-2 inline-block h-6 w-6" />
-          </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            In my final evaluation, Franklin Hamilton Donbosco praised my
-            leadership skills and initiative. His feedback on improving my
-            written communication will help me further refine my professional
-            skills for future roles.
+            One of the notable projects was the development of a custom payroll
+            system, automating manual processes, improving accuracy, and
+            reducing overhead. Another key development was the Routeview system
+            for newspaper distributors, which included features such as delivery
+            route sequencing and handling specific customer requests.
           </p>
         </section>
 
