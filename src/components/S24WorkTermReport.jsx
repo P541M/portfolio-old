@@ -33,16 +33,25 @@ const S24WorkTermReport = () => {
           ← Back to Portfolio
         </button>
 
-        <h2 className="mb-12 text-left text-4xl font-bold leading-snug text-text">
+        <h2 className="mb-8 text-left text-4xl font-bold leading-snug text-text">
           My Journey as a Fullstack Developer & Business Analyst Intern at
           BoscoBoys
         </h2>
-
+        <p className="mb-6 text-left text-base leading-relaxed text-text">
+          This report highlights my experiences as a Fullstack Developer &
+          Business Analyst Intern at BoscoBoys. Through various projects, I
+          gained valuable insights, developed new skills, and contributed to
+          impactful solutions that improved the company's operations.
+        </p>
         {/* Introduction */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             My Summer with BoscoBoys
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             From May to August 2024, I had the privilege of interning at
             BoscoBoys Distributors, a family-owned logistics company based in
@@ -103,6 +112,10 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             BoscoBoys Distributors: Connecting Businesses, Bridging Distances
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
             and distribution company headquartered in Toronto, Ontario. The
@@ -139,6 +152,10 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Responsibilities, Technologies, and Impact at BoscoBoys
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             As a Fullstack Developer & Business Analyst Intern, I was
             responsible for a diverse range of tasks that required both
@@ -322,6 +339,10 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Goals, Challenges, and Achievements
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           <p className="my-4 text-left text-lg leading-relaxed text-text">
             Throughout my internship, I set out to achieve specific goals that
             would push me to grow both technically and professionally. Each goal
@@ -513,6 +534,10 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Reflections on Growth and Future Aspirations
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             My internship at BoscoBoys was not just an opportunity to apply what
             I had learned—it was an environment that challenged me to grow,
@@ -554,6 +579,10 @@ const S24WorkTermReport = () => {
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Gratitude & Mentorship: The People Behind My Growth
           </h3>
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-300"></div>
+
           {/* Franklin Hamilton Donbosco */}
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             I would like to extend my heartfelt gratitude to Franklin Hamilton
