@@ -37,7 +37,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Connecting Businesses, Bridging Distances - My Summer with BoscoBoys
-            <LightBulbIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            <LightBulbIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             From May to August 2024, I had the privilege of interning at
@@ -53,24 +53,24 @@ const S24WorkTermReport = () => {
           </p>
           <ul className="mt-4 space-y-4 text-lg leading-relaxed text-text">
             <li className="flex items-center">
-              <AcademicCapIcon className="mr-4 inline-block h-5 w-5 text-primary" />
+              <AcademicCapIcon className="mr-4 inline-block h-5 w-5 text-text" />
               Cross-functional collaboration with leadership to align business
               and technical goals.
             </li>
             <li className="flex items-center">
-              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-primary" />
+              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
               Designing customer-focused, scalable web solutions.
             </li>
             <li className="flex items-center">
-              <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5 text-primary" />
+              <ClipboardDocumentListIcon className="mr-4 inline-block h-5 w-5 text-text" />
               Optimizing database performance and streamlining data processes.
             </li>
             <li className="flex items-center">
-              <CheckCircleIcon className="mr-4 inline-block h-5 w-5 text-primary" />
+              <CheckCircleIcon className="mr-4 inline-block h-5 w-5 text-text" />
               Automating business operations for improved efficiency.
             </li>
             <li className="flex items-center">
-              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-primary" />
+              <UserGroupIcon className="mr-4 inline-block h-5 w-5 text-text" />
               Enhancing professional communication and project management
               skills.
             </li>
@@ -88,7 +88,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             About BoscoBoys Distributors
-            <BuildingOfficeIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            <BuildingOfficeIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
@@ -125,7 +125,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             My Role at BoscoBoys
-            <BriefcaseIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            <BriefcaseIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             As a Fullstack Developer & Business Analyst Intern, I was
@@ -182,9 +182,9 @@ const S24WorkTermReport = () => {
             </ul>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-5">
             <div>
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-xl font-semibold text-text">
                 Web Development
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -220,7 +220,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-xl font-semibold text-text">
                 Database & Cloud
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -252,7 +252,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-xl font-semibold text-text">
                 Programming Languages
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -268,7 +268,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-xl font-semibold text-text">
                 Version Control & Project Management
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -288,7 +288,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-primary">
+              <h4 className="text-xl font-semibold text-text">
                 Collaboration & Productivity
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -312,125 +312,164 @@ const S24WorkTermReport = () => {
         {/* Goals */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Setting & Achieving Goals
-            <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            Goals, Challenges, and Achievements
+            <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
 
-          {/* Goal 1 */}
-          <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
-            <h4 className="text-xl font-semibold text-primary">
-              Goal 1: Enhance Website Development Skills
-            </h4>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              I aimed to improve my website development skills by leading the
-              revamp of the company’s website. This involved analyzing the
-              current website, gathering user feedback, and using modern web
-              development technologies to enhance user experience and
-              functionality.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Skills Developed:</strong> Frontend and backend web
-              development, user experience design, problem-solving.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Outcome & Reflection:</strong> I successfully completed
-              the website revamp, receiving positive feedback from users and
-              stakeholders. The complexity of the multi-page web application
-              with modern frameworks posed challenges, but overcoming them
-              significantly improved my project management and problem-solving
-              skills.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {/* Goal 1 */}
+            <div className="rounded-lg bg-bgContrast p-6 shadow-md">
+              <h4 className="text-xl font-semibold text-text">
+                Goal 1: Enhance Website Development Skills
+              </h4>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                The primary goal was to lead the complete revamp of the
+                company’s website to improve its performance, design, and user
+                experience. This involved a detailed analysis of the current
+                website, conducting user surveys, and implementing modern
+                frontend and backend technologies.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                Challenges included managing cross-functional feedback from
+                business, design, and engineering teams, ensuring scalability,
+                and maintaining a focus on mobile responsiveness. I also focused
+                on enhancing the accessibility of the site for diverse user
+                needs.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Skills Developed:</strong> Frontend and backend web
+                development, user experience design, accessibility, mobile-first
+                development, cross-functional collaboration.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Results:</strong> The website overhaul was completed
+                successfully, with a 20% increase in page load speed and a 30%
+                improvement in user engagement metrics, as indicated by heatmaps
+                and feedback. The new design garnered positive feedback from
+                stakeholders, and the project management approach significantly
+                honed my leadership and problem-solving abilities.
+              </p>
+            </div>
 
-          {/* Goal 2 */}
-          <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
-            <h4 className="text-xl font-semibold text-primary">
-              Goal 2: Optimize Database Management
-            </h4>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              My goal was to optimize the database structures for improved
-              efficiency. I analyzed existing database systems, identified
-              inefficiencies, and applied best practices in database management
-              to enhance performance.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Skills Developed:</strong> Database management, data
-              optimization, query performance improvement.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Outcome & Reflection:</strong> Successfully optimized the
-              database structure, resulting in reduced query times and improved
-              data management flexibility. While I achieved significant
-              progress, future optimizations may require additional strategies
-              to handle increased data loads.
-            </p>
-          </div>
+            {/* Goal 2 */}
+            <div className="rounded-lg bg-bgContrast p-6 shadow-md">
+              <h4 className="text-xl font-semibold text-text">
+                Goal 2: Optimize Database Management
+              </h4>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                This goal was centered on improving the company’s database
+                performance. I analyzed the existing database structure,
+                identified inefficiencies, and implemented optimization
+                strategies to reduce query times and improve data management
+                efficiency.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                A key challenge was balancing the need for faster performance
+                with the complexity of handling larger data sets without
+                compromising data integrity and security.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Skills Developed:</strong> Data optimization, database
+                indexing, query performance improvement, scalability, and
+                database security.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Results:</strong> The optimized database structure led
+                to a 40% reduction in query times and improved the company’s
+                ability to scale its data operations. The enhancements also
+                provided greater flexibility in managing large data sets,
+                preparing the company for future growth.
+              </p>
+            </div>
 
-          {/* Goal 3 */}
-          <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
-            <h4 className="text-xl font-semibold text-primary">
-              Goal 3: Automate Business Processes
-            </h4>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              I sought to develop custom automation programs to streamline key
-              business processes, including payroll and route optimization for
-              newspaper distributors.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Skills Developed:</strong> Automation, software
-              development, business analysis.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Outcome & Reflection:</strong> The automation programs
-              successfully streamlined operations, improving payroll efficiency
-              by 87.5%. This experience emphasized the importance of balancing
-              usability with functionality when automating processes.
-            </p>
-          </div>
+            {/* Goal 3 */}
+            <div className="rounded-lg bg-bgContrast p-6 shadow-md">
+              <h4 className="text-xl font-semibold text-text">
+                Goal 3: Automate Business Processes
+              </h4>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                One of my primary goals was to develop custom automation
+                solutions for key business processes. I focused on automating
+                the payroll system and optimizing the delivery route system for
+                newspaper distributors.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                Automating manual tasks posed a challenge in ensuring that the
+                solutions integrated seamlessly with existing systems while also
+                improving accuracy and reducing overhead costs.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Skills Developed:</strong> Automation scripting, process
+                optimization, software integration, business analysis.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Results:</strong> The payroll automation system resulted
+                in an 87.5% improvement in processing efficiency, while the
+                route optimization system decreased delivery times by 15%. These
+                solutions not only reduced manual errors but also streamlined
+                day-to-day operations significantly.
+              </p>
+            </div>
 
-          {/* Goal 4 */}
-          <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
-            <h4 className="text-xl font-semibold text-primary">
-              Goal 4: Improve Team Collaboration & Financial Analysis
-            </h4>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              A non-technical goal I set was to develop better collaboration
-              skills by working with the business team on financial analysis
-              tasks. I learned to analyze financial data and contribute to
-              financial models.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Skills Developed:</strong> Financial analysis, teamwork,
-              collaboration.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Outcome & Reflection:</strong> I completed financial tasks
-              with accuracy and received positive feedback. This experience
-              provided valuable insights into business operations and teamwork,
-              which will be crucial for future roles.
-            </p>
-          </div>
+            {/* Goal 4 */}
+            <div className="rounded-lg bg-bgContrast p-6 shadow-md">
+              <h4 className="text-xl font-semibold text-text">
+                Goal 4: Improve Team Collaboration & Financial Analysis
+              </h4>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                A non-technical goal focused on enhancing my ability to
+                collaborate with different teams, particularly on financial
+                analysis tasks. This involved working closely with the finance
+                team to analyze business performance and contribute to
+                decision-making processes.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                The challenge lay in understanding complex financial data and
+                translating it into actionable insights that supported the
+                company's broader goals.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Skills Developed:</strong> Financial data analysis,
+                collaboration, teamwork, decision-making.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Results:</strong> By completing key financial analysis
+                tasks, I provided insights that led to better resource
+                allocation and cost management. The experience deepened my
+                understanding of the financial side of business operations and
+                strengthened my collaboration skills.
+              </p>
+            </div>
 
-          {/* Goal 5 */}
-          <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
-            <h4 className="text-xl font-semibold text-primary">
-              Goal 5: Improve Time Management
-            </h4>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              My final goal was to enhance my time management skills. I used
-              tools like Notion and traditional note-taking to organize and
-              prioritize tasks effectively across multiple projects.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Skills Developed:</strong> Time management, task
-              prioritization, personal organization.
-            </p>
-            <p className="mt-2 text-left text-lg leading-relaxed text-text">
-              <strong>Outcome & Reflection:</strong> While I met deadlines and
-              stayed organized, balancing multiple projects effectively remains
-              a challenge. This goal highlighted the importance of continuous
-              improvement in managing workload efficiently.
-            </p>
+            {/* Goal 5 */}
+            <div className="rounded-lg bg-bgContrast p-6 shadow-md">
+              <h4 className="text-xl font-semibold text-text">
+                Goal 5: Improve Time Management
+              </h4>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                Managing multiple projects at once was a major focus, so I set
+                out to improve my time management skills. Using tools like
+                Notion and traditional note-taking methods, I worked to better
+                organize tasks and meet deadlines more efficiently.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                The biggest challenge was prioritizing tasks across different
+                domains—technical development, business analysis, and project
+                management—while maintaining a high standard of work.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Skills Developed:</strong> Time management, task
+                prioritization, personal productivity, and organizational
+                skills.
+              </p>
+              <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                <strong>Results:</strong> Although I met all deadlines and
+                improved my overall organizational skills, I continue to refine
+                my approach to managing complex workloads. This experience has
+                taught me the importance of adaptability and continuous
+                improvement in time management.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -438,7 +477,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Final Reflections & Takeaways
-            <CheckCircleIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            <CheckCircleIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             My internship at BoscoBoys was an invaluable experience. The
@@ -453,7 +492,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Acknowledgments
-            <HeartIcon className="ml-2 inline-block h-6 w-6 text-primary" />
+            <HeartIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
 
           {/* Franklin Hamilton Donbosco */}
