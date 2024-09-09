@@ -380,12 +380,61 @@ const S24WorkTermReport = () => {
             Acknowledgments
             <HeartIcon className="ml-2 inline-block h-6 w-6" />
           </h3>
+
+          {/* Franklin Hamilton Donbosco */}
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            I would like to thank Franklin Hamilton Donbosco for his mentorship
-            and the entire BoscoBoys team for their support throughout my
-            internship. I am also grateful to the University of Guelph Co-op
-            team for providing me with the opportunity to participate in such an
-            enriching work term experience.
+            I would like to extend my heartfelt gratitude to Franklin Hamilton
+            Donbosco, Founder and CEO of BoscoBoys Distributors, for giving me
+            the opportunity to prove myself and for being an exceptional mentor
+            throughout my internship. He consistently demonstrated remarkable
+            leadership qualities—balancing vision, empathy, and
+            decisiveness—that made him a leader I greatly admired. His
+            unwavering support, guidance, and encouragement not only helped me
+            grow as a professional but also fostered a sense of confidence in my
+            own abilities. Over time, he became someone I deeply looked up to,
+            setting a high standard of leadership and excellence that I will
+            carry with me into my future career.
+          </p>
+
+          {/* Infenta Hamilton */}
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            I am deeply thankful to Infenta Hamilton, CFO, for her unwavering
+            support, guidance, and warmth throughout my time at BoscoBoys. Not
+            only did she offer invaluable insights into business operations and
+            strategy, but she also fostered a comforting and welcoming
+            environment, truly embodying a nurturing presence within the
+            company. Her support made a significant impact on both my
+            professional and personal growth, making it a pleasure to work with
+            her.
+          </p>
+
+          {/* Ragul Ponniah */}
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            A special thanks to Ragul Ponniah, CTO, for consistently challenging
+            me to push the boundaries of my technical abilities. His deep
+            technical expertise and encouragement to take on complex tasks
+            helped me develop new skills and grow as a software engineer.
+            Ragul’s mentorship and drive for innovation were instrumental in
+            shaping my understanding of the field and expanding my
+            problem-solving abilities.
+          </p>
+
+          {/* Colleagues */}
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            I would also like to acknowledge my colleagues Lovepreet, Pratham,
+            and Yukta for being fantastic teammates. Their positivity,
+            collaboration, and camaraderie made the workplace enjoyable and
+            productive, fostering a truly supportive work environment that I
+            looked forward to every day.
+          </p>
+
+          {/* Entire BoscoBoys Team */}
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            Lastly, to the entire BoscoBoys team, your collective dedication,
+            professionalism, and support made this experience truly
+            unforgettable. The lessons I learned from many of you have had a
+            profound impact on my growth, both professionally and personally,
+            and will undoubtedly shape my future career.
           </p>
         </section>
       </div>
