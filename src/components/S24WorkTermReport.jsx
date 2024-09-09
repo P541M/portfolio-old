@@ -1,13 +1,9 @@
 import React from "react";
 import {
   AcademicCapIcon,
-  BriefcaseIcon,
   ClipboardDocumentListIcon,
   CheckCircleIcon,
-  BuildingOfficeIcon,
-  LightBulbIcon,
   UserGroupIcon,
-  HeartIcon,
 } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +33,6 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             My Summer with BoscoBoys
-            <LightBulbIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             From May to August 2024, I had the privilege of interning at
@@ -88,7 +83,6 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             BoscoBoys Distributors: Connecting Businesses, Bridging Distances
-            <BuildingOfficeIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             BoscoBoys Distributors, founded in 1998, is a family-owned logistics
@@ -125,7 +119,6 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Responsibilities, Technologies, and Impact at BoscoBoys
-            <BriefcaseIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             As a Fullstack Developer & Business Analyst Intern, I was
@@ -309,9 +302,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Goals, Challenges, and Achievements
-            <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
-
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Goal 1 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
@@ -473,7 +464,6 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Reflections on Growth and Future Aspirations
-            <CheckCircleIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             My internship at BoscoBoys was not just an opportunity to apply what
@@ -515,9 +505,7 @@ const S24WorkTermReport = () => {
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
             Gratitude & Mentorship: The People Behind My Growth
-            <HeartIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
-
           {/* Franklin Hamilton Donbosco */}
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
             I would like to extend my heartfelt gratitude to Franklin Hamilton
