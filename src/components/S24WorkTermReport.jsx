@@ -153,9 +153,10 @@ const S24WorkTermReport = () => {
             One of the most interesting aspects of my role was developing a
             custom payroll system that automated manual processes. This
             significantly improved accuracy and reduced overhead for the
-            company. Additionally, I developed the Routeview system for
-            newspaper distributors, a unique tool that optimized delivery routes
-            and allowed for customer-specific requests, greatly enhancing
+            company, increasing payroll processing efficiency by 87.5%.
+            Additionally, I developed the Routeview system for newspaper
+            distributors, a unique tool that optimized delivery routes and
+            allowed for customer-specific requests, greatly enhancing
             operational efficiency and user satisfaction.
           </p>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
