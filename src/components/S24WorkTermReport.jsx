@@ -356,10 +356,11 @@ const S24WorkTermReport = () => {
             {/* Goal 1 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
               <h4
-                className="cursor-pointer text-xl font-semibold text-text"
+                className="flex cursor-pointer justify-between text-xl font-semibold text-text"
                 onClick={() => setGoal1Open(!goal1Open)}
               >
                 1. Lead Complete Website Revamp for UX and Performance
+                <span>{goal1Open ? "–" : "+"}</span>
               </h4>
               {goal1Open && (
                 <div className="mt-2">
@@ -398,10 +399,11 @@ const S24WorkTermReport = () => {
             {/* Goal 2 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
               <h4
-                className="cursor-pointer text-xl font-semibold text-text"
+                className="flex cursor-pointer justify-between text-xl font-semibold text-text"
                 onClick={() => setGoal2Open(!goal2Open)}
               >
                 2. Optimize Database Structure for Faster Performance{" "}
+                <span>{goal2Open ? "–" : "+"}</span>
               </h4>
               {goal2Open && (
                 <div className="mt-2">
@@ -434,10 +436,11 @@ const S24WorkTermReport = () => {
             {/* Goal 3 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
               <h4
-                className="cursor-pointer text-xl font-semibold text-text"
+                className="flex cursor-pointer justify-between text-xl font-semibold text-text"
                 onClick={() => setGoal3Open(!goal3Open)}
               >
                 3. Automate Payroll and Delivery Routes for Efficiency
+                <span>{goal3Open ? "–" : "+"}</span>
               </h4>
               {goal3Open && (
                 <div className="mt-2">
@@ -470,10 +473,11 @@ const S24WorkTermReport = () => {
             {/* Goal 4 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
               <h4
-                className="cursor-pointer text-xl font-semibold text-text"
+                className="flex cursor-pointer justify-between text-xl font-semibold text-text"
                 onClick={() => setGoal4Open(!goal4Open)}
               >
                 4. Improve Team Collaboration and Financial Insights
+                <span>{goal4Open ? "–" : "+"}</span>
               </h4>
               {goal4Open && (
                 <div className="mt-2">
@@ -500,10 +504,11 @@ const S24WorkTermReport = () => {
             {/* Goal 5 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
               <h4
-                className="cursor-pointer text-xl font-semibold text-text"
+                className="flex cursor-pointer justify-between text-xl font-semibold text-text"
                 onClick={() => setGoal5Open(!goal5Open)}
               >
                 5. Enhance Time Management Skills Across Multiple Projects
+                <span>{goal5Open ? "–" : "+"}</span>
               </h4>
               {goal5Open && (
                 <div className="mt-2">
