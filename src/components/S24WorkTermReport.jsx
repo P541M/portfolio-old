@@ -178,9 +178,9 @@ const S24WorkTermReport = () => {
             </ul>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-5">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <div>
-              <h4 className="text-xl font-semibold text-text">
+              <h4 className="my-2 text-xl font-semibold text-text">
                 Web Development
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -216,7 +216,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-text">
+              <h4 className="my-2 text-xl font-semibold text-text">
                 Database & Cloud
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -244,7 +244,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-text">
+              <h4 className="my-2 text-xl font-semibold text-text">
                 Programming Languages
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -260,7 +260,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-text">
+              <h4 className="my-2 text-xl font-semibold text-text">
                 Version Control & Project Management
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
@@ -280,7 +280,7 @@ const S24WorkTermReport = () => {
             </div>
 
             <div>
-              <h4 className="text-xl font-semibold text-text">
+              <h4 className="my-2 text-xl font-semibold text-text">
                 Collaboration & Productivity
               </h4>
               <ul className="mt-2 list-none text-lg leading-relaxed text-text">
