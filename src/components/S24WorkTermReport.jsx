@@ -23,7 +23,7 @@ const S24WorkTermReport = () => {
       <div id="s24-work-term-report" className="w-full px-16 pt-16">
         <button
           onClick={handleBack}
-          className="mb-8 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-bg"
+          className="mb-8 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
         >
           ← Back to Portfolio
         </button>
@@ -315,15 +315,6 @@ const S24WorkTermReport = () => {
             Setting & Achieving Goals
             <ClipboardDocumentListIcon className="ml-2 inline-block h-6 w-6 text-primary" />
           </h3>
-
-          {/* Introduction */}
-          <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            During my internship at BoscoBoys, I set several key goals focused
-            on technical growth, problem-solving, and enhancing business
-            operations. These goals were designed to help me improve my web
-            development skills, optimize data management, automate business
-            processes, and refine my time management and teamwork capabilities.
-          </p>
 
           {/* Goal 1 */}
           <div className="mt-8 rounded-lg bg-bgContrast p-6 shadow-md">
