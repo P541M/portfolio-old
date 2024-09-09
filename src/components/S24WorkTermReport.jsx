@@ -230,15 +230,11 @@ const S24WorkTermReport = () => {
                 </li>
                 <li className="mb-2 flex items-center">
                   <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
-                  DynamoDB
+                  AWS DynamoDB
                 </li>
                 <li className="mb-2 flex items-center">
                   <span className="mr-3 inline-block h-3 w-3 rounded-full bg-yellow-500"></span>
                   MySQL
-                </li>
-                <li className="mb-2 flex items-center">
-                  <span className="mr-3 inline-block h-3 w-3 rounded-full bg-green-500"></span>
-                  AWS
                 </li>
                 <li className="mb-2 flex items-center">
                   <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
@@ -476,15 +472,42 @@ const S24WorkTermReport = () => {
         {/* Conclusion */}
         <section className="mb-12">
           <h3 className="mb-6 text-left text-3xl font-semibold text-text">
-            Final Reflections & Takeaways
+            Conclusion & Key Takeaways
             <CheckCircleIcon className="ml-2 inline-block h-6 w-6 text-text" />
           </h3>
           <p className="mt-4 text-left text-lg leading-relaxed text-text">
-            My internship at BoscoBoys was an invaluable experience. The
-            projects I worked on not only benefited the company but also helped
-            me grow as a professional. The skills I gained in fullstack
-            development, database management, and business process automation
-            will be crucial in my career development.
+            My internship at BoscoBoys was not just an opportunity to apply what
+            I had learned—it was an environment that challenged me to grow,
+            innovate, and contribute in meaningful ways. Through projects like
+            revamping the website and automating key business processes, I made
+            tangible improvements that enhanced the company's operational
+            efficiency. These accomplishments helped me develop a deeper
+            understanding of how technology can drive business success.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            One of the most valuable aspects of this experience was the blend of
+            technical development and business analysis. I strengthened my
+            ability to balance coding with strategic thinking, ensuring that
+            every technical solution aligned with business goals. Whether
+            optimizing databases, improving payroll systems, or enhancing
+            customer-facing interfaces, I consistently aimed to deliver
+            solutions that would have lasting value for the company.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            The skills I honed in fullstack development, database management,
+            and process automation have not only boosted my confidence as a
+            developer but have also prepared me for future roles that require a
+            strong balance of technical and business acumen. This experience has
+            shaped my professional identity, reinforcing my passion for creating
+            impactful, user-centered technology solutions.
+          </p>
+          <p className="mt-4 text-left text-lg leading-relaxed text-text">
+            As I move forward, I am excited to build on these learnings,
+            applying both the technical expertise and collaborative skills I
+            developed at BoscoBoys to future challenges. This internship has
+            laid a solid foundation for my career, and I look forward to
+            contributing to future projects with the same level of enthusiasm
+            and dedication.
           </p>
         </section>
 
