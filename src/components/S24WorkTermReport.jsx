@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AcademicCapIcon,
   ClipboardDocumentListIcon,
@@ -9,6 +9,11 @@ import { useNavigate } from "react-router-dom";
 
 const S24WorkTermReport = () => {
   const navigate = useNavigate();
+  const [goal1Open, setGoal1Open] = useState(false);
+  const [goal2Open, setGoal2Open] = useState(false);
+  const [goal3Open, setGoal3Open] = useState(false);
+  const [goal4Open, setGoal4Open] = useState(false);
+  const [goal5Open, setGoal5Open] = useState(false);
 
   const handleBack = () => {
     navigate(-1);
@@ -309,156 +314,176 @@ const S24WorkTermReport = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Goal 1 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
-              <h4 className="text-xl font-semibold text-text">
-                Goal 1: Enhance Website Development Skills
+              <h4
+                className="cursor-pointer text-xl font-semibold text-text"
+                onClick={() => setGoal1Open(!goal1Open)}
+              >
+                Enhance Website Development Skills
               </h4>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                The primary goal was to lead the complete revamp of the
-                company’s website to improve its performance, design, and user
-                experience. This involved a detailed analysis of the current
-                website, conducting user surveys, and implementing modern
-                frontend and backend technologies.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                Challenges included managing cross-functional feedback from
-                business, design, and engineering teams, ensuring scalability,
-                and maintaining a focus on mobile responsiveness. I also focused
-                on enhancing the accessibility of the site for diverse user
-                needs.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Skills Developed:</strong> Frontend and backend web
-                development, user experience design, accessibility, mobile-first
-                development, cross-functional collaboration.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Results:</strong> The website overhaul was completed
-                successfully, with a 20% increase in page load speed and a 30%
-                improvement in user engagement metrics, as indicated by heatmaps
-                and feedback. The new design garnered positive feedback from
-                stakeholders, and the project management approach significantly
-                honed my leadership and problem-solving abilities.
-              </p>
+              {goal1Open && (
+                <div className="mt-2">
+                  <p className="text-left text-lg leading-relaxed text-text">
+                    The primary goal was to lead the complete revamp of the
+                    company’s website to improve its performance, design, and
+                    user experience. This involved a detailed analysis of the
+                    current website, conducting user surveys, and implementing
+                    modern frontend and backend technologies.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    Challenges included managing cross-functional feedback from
+                    business, design, and engineering teams, ensuring
+                    scalability, and maintaining a focus on mobile
+                    responsiveness. I also focused on enhancing the
+                    accessibility of the site for diverse user needs.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Skills Developed:</strong> Frontend and backend web
+                    development, user experience design, accessibility,
+                    mobile-first development, cross-functional collaboration.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Results:</strong> The website overhaul was completed
+                    successfully, with a 20% increase in page load speed and a
+                    30% improvement in user engagement metrics, as indicated by
+                    heatmaps and feedback. The new design garnered positive
+                    feedback from stakeholders, and the project management
+                    approach significantly honed my leadership and
+                    problem-solving abilities.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Goal 2 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
-              <h4 className="text-xl font-semibold text-text">
-                Goal 2: Optimize Database Management
+              <h4
+                className="cursor-pointer text-xl font-semibold text-text"
+                onClick={() => setGoal2Open(!goal2Open)}
+              >
+                Optimize Database Management
               </h4>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                This goal was centered on improving the company’s database
-                performance. I analyzed the existing database structure,
-                identified inefficiencies, and implemented optimization
-                strategies to reduce query times and improve data management
-                efficiency.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                A key challenge was balancing the need for faster performance
-                with the complexity of handling larger data sets without
-                compromising data integrity and security.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Skills Developed:</strong> Data optimization, database
-                indexing, query performance improvement, scalability, and
-                database security.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Results:</strong> The optimized database structure led
-                to a 40% reduction in query times and improved the company’s
-                ability to scale its data operations. The enhancements also
-                provided greater flexibility in managing large data sets,
-                preparing the company for future growth.
-              </p>
+              {goal2Open && (
+                <div className="mt-2">
+                  <p className="text-left text-lg leading-relaxed text-text">
+                    This goal was centered on improving the company’s database
+                    performance. I analyzed the existing database structure,
+                    identified inefficiencies, and implemented optimization
+                    strategies to reduce query times and improve data management
+                    efficiency.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    A key challenge was balancing the need for faster
+                    performance with the complexity of handling larger data sets
+                    without compromising data integrity and security.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Skills Developed:</strong> Data optimization,
+                    database indexing, query performance improvement,
+                    scalability, and database security.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Results:</strong> The optimized database structure
+                    led to a 40% reduction in query times and improved the
+                    company’s ability to scale its data operations.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Goal 3 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
-              <h4 className="text-xl font-semibold text-text">
-                Goal 3: Automate Business Processes
+              <h4
+                className="cursor-pointer text-xl font-semibold text-text"
+                onClick={() => setGoal3Open(!goal3Open)}
+              >
+                Automate Business Processes
               </h4>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                One of my primary goals was to develop custom automation
-                solutions for key business processes. I focused on automating
-                the payroll system and optimizing the delivery route system for
-                newspaper distributors.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                Automating manual tasks posed a challenge in ensuring that the
-                solutions integrated seamlessly with existing systems while also
-                improving accuracy and reducing overhead costs.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Skills Developed:</strong> Automation scripting, process
-                optimization, software integration, business analysis.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Results:</strong> The payroll automation system resulted
-                in an 87.5% improvement in processing efficiency, while the
-                route optimization system decreased delivery times by 15%. These
-                solutions not only reduced manual errors but also streamlined
-                day-to-day operations significantly.
-              </p>
+              {goal3Open && (
+                <div className="mt-2">
+                  <p className="text-left text-lg leading-relaxed text-text">
+                    One of my primary goals was to develop custom automation
+                    solutions for key business processes. I focused on
+                    automating the payroll system and optimizing the delivery
+                    route system for newspaper distributors.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    Automating manual tasks posed a challenge in ensuring that
+                    the solutions integrated seamlessly with existing systems
+                    while also improving accuracy and reducing overhead costs.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Skills Developed:</strong> Automation scripting,
+                    process optimization, software integration, business
+                    analysis.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Results:</strong> The payroll automation system
+                    resulted in an 87.5% improvement in processing efficiency,
+                    while the route optimization system decreased delivery times
+                    by 15%.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Goal 4 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
-              <h4 className="text-xl font-semibold text-text">
-                Goal 4: Improve Team Collaboration & Financial Analysis
+              <h4
+                className="cursor-pointer text-xl font-semibold text-text"
+                onClick={() => setGoal4Open(!goal4Open)}
+              >
+                Improve Team Collaboration & Financial Analysis
               </h4>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                A non-technical goal focused on enhancing my ability to
-                collaborate with different teams, particularly on financial
-                analysis tasks. This involved working closely with the finance
-                team to analyze business performance and contribute to
-                decision-making processes.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                The challenge lay in understanding complex financial data and
-                translating it into actionable insights that supported the
-                company's broader goals.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Skills Developed:</strong> Financial data analysis,
-                collaboration, teamwork, decision-making.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Results:</strong> By completing key financial analysis
-                tasks, I provided insights that led to better resource
-                allocation and cost management. The experience deepened my
-                understanding of the financial side of business operations and
-                strengthened my collaboration skills.
-              </p>
+              {goal4Open && (
+                <div className="mt-2">
+                  <p className="text-left text-lg leading-relaxed text-text">
+                    A non-technical goal focused on enhancing my ability to
+                    collaborate with different teams, particularly on financial
+                    analysis tasks. This involved working closely with the
+                    finance team to analyze business performance and contribute
+                    to decision-making processes.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Skills Developed:</strong> Financial data analysis,
+                    collaboration, teamwork, decision-making.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Results:</strong> By completing key financial
+                    analysis tasks, I provided insights that led to better
+                    resource allocation and cost management.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Goal 5 */}
             <div className="rounded-lg bg-bgContrast p-6 shadow-md">
-              <h4 className="text-xl font-semibold text-text">
-                Goal 5: Improve Time Management
+              <h4
+                className="cursor-pointer text-xl font-semibold text-text"
+                onClick={() => setGoal5Open(!goal5Open)}
+              >
+                Improve Time Management
               </h4>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                Managing multiple projects at once was a major focus, so I set
-                out to improve my time management skills. Using tools like
-                Notion and traditional note-taking methods, I worked to better
-                organize tasks and meet deadlines more efficiently.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                The biggest challenge was prioritizing tasks across different
-                domains—technical development, business analysis, and project
-                management—while maintaining a high standard of work.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Skills Developed:</strong> Time management, task
-                prioritization, personal productivity, and organizational
-                skills.
-              </p>
-              <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                <strong>Results:</strong> Although I met all deadlines and
-                improved my overall organizational skills, I continue to refine
-                my approach to managing complex workloads. This experience has
-                taught me the importance of adaptability and continuous
-                improvement in time management.
-              </p>
+              {goal5Open && (
+                <div className="mt-2">
+                  <p className="text-left text-lg leading-relaxed text-text">
+                    Managing multiple projects at once was a major focus, so I
+                    set out to improve my time management skills. Using tools
+                    like Notion and traditional note-taking methods, I worked to
+                    better organize tasks and meet deadlines more efficiently.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Skills Developed:</strong> Time management, task
+                    prioritization, personal productivity, and organizational
+                    skills.
+                  </p>
+                  <p className="mt-2 text-left text-lg leading-relaxed text-text">
+                    <strong>Results:</strong> Although I met all deadlines and
+                    improved my overall organizational skills, I continue to
+                    refine my approach to managing complex workloads.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
