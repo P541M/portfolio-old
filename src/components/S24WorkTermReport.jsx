@@ -43,9 +43,10 @@ const S24WorkTermReport = () => {
         </h2>
         <p className="fade-up-two mb-6 text-left text-base leading-relaxed text-text">
           This report highlights my experiences as a Fullstack Developer &
-          Business Analyst Intern at BoscoBoys. Through various projects, I
-          gained valuable insights, developed new skills, and contributed to
-          impactful solutions that improved the company's operations.
+          Business Analyst Intern at BoscoBoys Distributors. Through various
+          projects, I gained valuable insights, developed new skills, and
+          contributed to impactful solutions that improved the company's
+          operations.
         </p>
         {/* Introduction */}
         <section className="mb-16">
@@ -176,7 +177,7 @@ const S24WorkTermReport = () => {
             "Innovation and integrity are at the heart of what we do. Every
             client, whether a small business or a large corporation, is a
             stakeholder in our success." – Franklin Hamilton Donbosco, Founder &
-            CEO, BoscoBoys Distributors.
+            CEO.
           </p>
         </section>
 
@@ -237,6 +238,7 @@ const S24WorkTermReport = () => {
                 </div>
                 <p className="mt-4 text-center text-sm text-text">
                   The newly revamped website for BoscoBoys Distributors!
+                  (Deployment soon!)
                 </p>
               </div>
 
@@ -251,7 +253,7 @@ const S24WorkTermReport = () => {
                 </div>
                 <p className="mt-4 text-center text-sm text-text">
                   Custom payroll webapp made to streamline the payroll system
-                  for newspaper distribution sector.
+                  for newspaper distribution sector!
                 </p>
               </div>
             </div>
@@ -486,12 +488,18 @@ const S24WorkTermReport = () => {
                     performance. I analyzed the existing database structure,
                     identified inefficiencies, and implemented optimization
                     strategies to reduce query times and improve data management
-                    efficiency.
+                    efficiency. Additionally, we migrated the database to a more
+                    scalable solution, which required adjusting all functions
+                    responsible for fetching data to ensure seamless integration
+                    and support for future growth.
                   </p>
                   <p className="mt-2 text-left text-lg leading-relaxed text-text">
-                    A key challenge was balancing the need for faster
-                    performance with the complexity of handling larger data sets
-                    without compromising data integrity and security.
+                    A major challenge was understanding the old database, as
+                    limited documentation made this process more difficult.
+                    Additionally, balancing the need for faster performance with
+                    the complexity of managing larger data sets, while
+                    maintaining data integrity and security, added further
+                    complexity.
                   </p>
                   <p className="mt-2 text-left text-lg leading-relaxed text-text">
                     <strong>Skills Developed:</strong> Data optimization,
