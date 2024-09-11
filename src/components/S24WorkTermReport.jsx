@@ -574,7 +574,10 @@ const S24WorkTermReport = () => {
                     collaborate with different teams, particularly on financial
                     analysis tasks. This involved working closely with the
                     finance team to analyze business performance and contribute
-                    to decision-making processes.
+                    to decision-making processes. Additionally, I aimed to
+                    ensure that all teams were effectively communicating their
+                    concerns and passing on messages clearly, fostering
+                    transparency across the entire team.
                   </p>
                   <p className="mt-2 text-left text-lg leading-relaxed text-text">
                     <strong>Skills Developed:</strong> Financial data analysis,
