@@ -7,6 +7,10 @@ import {
   LightBulbIcon,
 } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
+import image1 from "../assets/s24/me.jpeg";
+import image2 from "../assets/s24/work.jpeg";
+import image3 from "../assets/s24/disperse.PNG";
+import image4 from "../assets/s24/bosco.PNG";
 
 const S24WorkTermReport = () => {
   const navigate = useNavigate();
@@ -107,6 +111,35 @@ const S24WorkTermReport = () => {
           </p>
         </section>
 
+        {/* Images Section */}
+        <section className="fade-up mb-16">
+          <div className="mx-auto flex max-w-4xl justify-between gap-10">
+            {/* Image 1 */}
+            <div className="flex flex-col items-center">
+              <img
+                src={image1}
+                alt="A snapshot of the development process"
+                className="h-80 w-80 rounded-lg border-4 border-bgContrast object-cover shadow-md"
+              />
+              <p className="mt-4 text-center text-sm text-text">
+                Me in front of the headquarters office!
+              </p>
+            </div>
+
+            {/* Image 2 */}
+            <div className="flex flex-col items-center">
+              <img
+                src={image2}
+                alt="Team collaboration during the project"
+                className="h-80 w-80 rounded-lg border-4 border-bgContrast object-cover shadow-md"
+              />
+              <p className="mt-4 text-center text-sm text-text">
+                My workspace while working on responsive design!
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Employer Information */}
         <section className="mb-16">
           <h3 className="fade-up-two mb-8 text-left text-3xl font-semibold text-text">
@@ -183,6 +216,47 @@ const S24WorkTermReport = () => {
             allowed for customer-specific requests, greatly enhancing
             operational efficiency and user satisfaction.
           </p>
+
+          {/* Web Apps Images Section */}
+          <section className="fade-up my-10">
+            <div className="mx-auto flex max-w-6xl justify-between gap-10">
+              {/* Web App 1 */}
+              <div className="flex flex-col items-center">
+                <div className="aspect-w-16 aspect-h-9 w-full">
+                  <a
+                    href="https://www.boscoboys.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={image4}
+                      alt="Web App 1 Interface"
+                      className="h-full w-full rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                    />
+                  </a>
+                </div>
+                <p className="mt-4 text-center text-sm text-text">
+                  The newly revamped website for BoscoBoys Distributors!
+                </p>
+              </div>
+
+              {/* Web App 2 */}
+              <div className="flex flex-col items-center">
+                <div className="aspect-w-16 aspect-h-9 w-full">
+                  <img
+                    src={image3}
+                    alt="Web App 2 Interface"
+                    className="h-full w-full rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm text-text">
+                  Custom payroll webapp made to streamline the payroll system
+                  for newspaper distribution sector.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <p className="fade-up-three mt-4 text-left text-lg leading-relaxed text-text">
             The role required balancing technical development with business
             analysis. Understanding both the architecture and the business
