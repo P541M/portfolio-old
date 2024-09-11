@@ -120,7 +120,7 @@ const S24WorkTermReport = () => {
               <img
                 src={image1}
                 alt="A snapshot of the development process"
-                className="h-80 w-80 rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                className="h-80 w-80 rounded-lg border-8 border-bgContrast object-cover shadow-md"
               />
               <p className="mt-4 text-center text-sm text-text">
                 Me in front of the headquarters office!
@@ -132,7 +132,7 @@ const S24WorkTermReport = () => {
               <img
                 src={image2}
                 alt="Team collaboration during the project"
-                className="h-80 w-80 rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                className="h-80 w-80 rounded-lg border-8 border-bgContrast object-cover shadow-md"
               />
               <p className="mt-4 text-center text-sm text-text">
                 My workspace while working on responsive design!
@@ -232,7 +232,7 @@ const S24WorkTermReport = () => {
                     <img
                       src={image4}
                       alt="Web App 1 Interface"
-                      className="h-full w-full rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                      className="h-full w-full rounded-lg border-8 border-bgContrast object-cover shadow-md"
                     />
                   </a>
                 </div>
@@ -248,7 +248,7 @@ const S24WorkTermReport = () => {
                   <img
                     src={image3}
                     alt="Web App 2 Interface"
-                    className="h-full w-full rounded-lg border-4 border-bgContrast object-cover shadow-md"
+                    className="h-full w-full rounded-lg border-8 border-bgContrast object-cover shadow-md"
                   />
                 </div>
                 <p className="mt-4 text-center text-sm text-text">
