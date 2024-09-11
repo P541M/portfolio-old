@@ -527,15 +527,21 @@ const S24WorkTermReport = () => {
               {goal3Open && (
                 <div className="mt-2">
                   <p className="text-left text-lg leading-relaxed text-text">
-                    One of my primary goals was to develop custom automation
-                    solutions for key business processes. I focused on
-                    automating the payroll system and optimizing the delivery
-                    route system for newspaper distributors.
+                    Early on, I noticed significant improvements could be made
+                    to the payroll system, which was highly manual and
+                    inefficient. I saw an opportunity to automate much of the
+                    process, and it quickly became a personal goal to ensure a
+                    new, automated payroll system was implemented. Additionally,
+                    I focused on optimizing the delivery route system for
+                    newspaper distributors to further streamline operations.
                   </p>
                   <p className="mt-2 text-left text-lg leading-relaxed text-text">
                     Automating manual tasks posed a challenge in ensuring that
                     the solutions integrated seamlessly with existing systems
                     while also improving accuracy and reducing overhead costs.
+                    The biggest challenge, however, was understanding and
+                    gathering the requirements needed to develop better
+                    solutions that truly addressed the company's needs.
                   </p>
                   <p className="mt-2 text-left text-lg leading-relaxed text-text">
                     <strong>Skills Developed:</strong> Automation scripting,
