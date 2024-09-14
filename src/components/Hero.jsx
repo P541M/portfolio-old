@@ -17,8 +17,9 @@ const Hero = () => {
           className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
         >
           Eleazar is a dedicated software engineering student based in the
-          Greater Toronto Area. Specializing in fullstack development, he
-          creates engaging and effective digital experiences. Currently, he is a
+          Greater Toronto Area. Specializing in full-stack development, project
+          management, and artificial intelligence (AI), he creates engaging,
+          effective, and intelligent digital experiences. Currently, he is a
           Website Redesign Coordinator at the{" "}
           <a
             href="https://www.uoguelph.ca/arts"
