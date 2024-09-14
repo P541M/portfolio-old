@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -20,7 +20,7 @@ const Layout = () => {
       <main id="main-content">
         <Routes>
           <Route
-            path="/portfolio"
+            path="/"
             element={
               <>
                 <Hero />
@@ -39,6 +39,8 @@ const Layout = () => {
 function App() {
   return (
     <Router>
+      {" "}
+      {/* Wrap the app in HashRouter */}
       <Layout />
     </Router>
   );
