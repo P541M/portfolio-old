@@ -10,6 +10,7 @@ import Hero from "./components/Hero.jsx";
 import Content from "./components/Content.jsx";
 import Footer from "./components/Footer.jsx";
 import S24WorkTermReport from "./components/S24WorkTermReport";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Layout = () => {
   const location = useLocation();
@@ -39,8 +40,7 @@ const Layout = () => {
 function App() {
   return (
     <Router>
-      {" "}
-      {/* Wrap the app in HashRouter */}
+      <ScrollToTop />
       <Layout />
     </Router>
   );
