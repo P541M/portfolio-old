@@ -113,7 +113,7 @@ const S24WorkTermReport = () => {
         </section>
 
         {/* Images Section */}
-        <section className="fade-up mb-16">
+        <section className="fade-up-four mb-16">
           <div className="mx-auto flex max-w-4xl justify-between gap-10">
             {/* Image 1 */}
             <div className="flex flex-col items-center">
@@ -219,7 +219,7 @@ const S24WorkTermReport = () => {
           </p>
 
           {/* Web Apps Images Section */}
-          <section className="fade-up my-10">
+          <section className="fade-up-four my-10">
             <div className="mx-auto flex max-w-6xl justify-between gap-10">
               {/* Web App 1 */}
               <div className="flex flex-col items-center">
