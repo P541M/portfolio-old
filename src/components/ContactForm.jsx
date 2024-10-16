@@ -71,7 +71,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       aria-modal="true"
       role="dialog"
     >
-      <div className="fade-up relative w-full max-w-md rounded-md bg-bg p-10 shadow-md">
+      <div className="fade-up relative w-full max-w-sm rounded-md bg-bg p-6 shadow-md sm:max-w-md sm:p-10 md:max-w-lg lg:max-w-xl xl:max-w-2xl">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
@@ -82,19 +82,19 @@ const ContactForm = ({ isOpen, onClose }) => {
         <div className="mb-4 flex items-center">
           <h2
             id="contact-form-title"
-            className="text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+            className="text-lg font-semibold sm:text-xl md:text-2xl"
           >
             Get In Touch
           </h2>
         </div>
-        <p className="mb-4 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+        <p className="mb-4 text-sm sm:text-base md:text-lg">
           Have a project in mind? Have a general inquiry? Let's talk.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col">
-          <div className="mb-4 flex flex-col">
+          <div className="mb-4">
             <label
               htmlFor="name"
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
+              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
             >
               Name
             </label>
@@ -105,14 +105,14 @@ const ContactForm = ({ isOpen, onClose }) => {
               placeholder="Full Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-md border bg-bgContrast px-3 py-2"
+              className="w-full rounded-md border px-3 py-2"
               required
             />
           </div>
-          <div className="mb-4 flex flex-col">
+          <div className="mb-4">
             <label
               htmlFor="email"
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
+              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
             >
               Email
             </label>
@@ -123,14 +123,14 @@ const ContactForm = ({ isOpen, onClose }) => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border bg-bgContrast px-3 py-2"
+              className="w-full rounded-md border px-3 py-2"
               required
             />
           </div>
-          <div className="mb-4 flex flex-col">
+          <div className="mb-4">
             <label
               htmlFor="message"
-              className="my-2 block text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg"
+              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
             >
               Message
             </label>
@@ -140,7 +140,7 @@ const ContactForm = ({ isOpen, onClose }) => {
               placeholder="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full rounded-md border bg-bgContrast px-3 py-2"
+              className="w-full rounded-md border px-3 py-2"
               rows="4"
               required
             ></textarea>
@@ -148,7 +148,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div className="mt-4 flex justify-center">
             <button
               type="submit"
-              className="rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
+              className="w-full rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg sm:w-auto"
             >
               Submit
             </button>
