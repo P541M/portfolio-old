@@ -248,10 +248,10 @@ const Content = () => {
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`rounded-full px-5 py-2 ${
+              className={`rounded-full px-5 py-2 transition duration-500 ease-in-out ${
                 filter === status
                   ? "bg-primary text-white"
-                  : "bg-bgContrast text-gray-600"
+                  : "bg-bgContrast text-gray-600 hover:bg-primary hover:text-bg"
               }`}
             >
               {status}
