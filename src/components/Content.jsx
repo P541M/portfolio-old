@@ -237,7 +237,7 @@ const Content = () => {
           Projects
         </h2>
 
-        <div className="mb-8 flex space-x-4">
+        <div className="mb-6 flex space-x-4">
           {[
             "All",
             "Deployed",
@@ -248,7 +248,7 @@ const Content = () => {
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`rounded-full border border-gray-300 px-4 py-2 transition-all ${
+              className={`rounded-full px-5 py-2 ${
                 filter === status
                   ? "bg-primary text-white"
                   : "bg-bgContrast text-gray-600"
@@ -263,11 +263,11 @@ const Content = () => {
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project, index) => (
               <a
-                key={index}
+                key={`${filter}-${index}`}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group cursor-pointer rounded-md bg-bgContrast p-16"
+                className="fade-up group cursor-pointer rounded-md bg-bgContrast p-16"
                 aria-labelledby={`project-title-${index}`}
                 aria-describedby={`project-description-${index}`}
               >
