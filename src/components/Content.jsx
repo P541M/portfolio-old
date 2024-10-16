@@ -67,9 +67,9 @@ const projects = [
     image: pimg8,
   },
   {
-    title: "CRYPTo EL1Te",
-    description: "Showcasing the top cryptos.",
-    state: "In Testing",
+    title: "V/\\ULT",
+    description: "Showcasing the top crypto.",
+    state: "Deployed",
     link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
   },
