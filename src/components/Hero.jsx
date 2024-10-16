@@ -16,13 +16,12 @@ const Hero = () => {
       <div>
         <p
           id="hero-title"
-          className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+          className="fade-up-two mt-16 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
         >
-          Eleazar is a dedicated software engineering student based in the
-          Greater Toronto Area. Specializing in full-stack development, project
-          management, and artificial intelligence (AI), he creates engaging,
-          effective, and intelligent digital experiences. Currently, he is a
-          Website Redesign Coordinator at the{" "}
+          Eleazar is a software engineering student based in the Greater Toronto
+          Area, specializing in full-stack development and project management.
+          He creates engaging and effective digital experiences and is currently
+          the Website Redesign Coordinator at the{" "}
           <a
             href="https://www.uoguelph.ca/arts"
             target="_blank"
