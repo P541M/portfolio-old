@@ -1,9 +1,11 @@
 import React from "react";
-import resumePDF from "../assets/Resume.pdf";
 
 const Hero = () => {
   const handleOpenResume = () => {
-    window.open(resumePDF, "_blank");
+    window.open(
+      "https://docs.google.com/document/d/1kBwruy6PqMBp8PzX9IyazyiDdFTzdeTg/edit?usp=sharing&ouid=100426459370719602883&rtpof=true&sd=true",
+      "_blank",
+    );
   };
 
   return (
