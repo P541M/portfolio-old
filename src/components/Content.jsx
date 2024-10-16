@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChartBarIcon,
   CodeBracketIcon,
@@ -51,7 +51,6 @@ const projects = [
     link: "https://github.com/P541M/fresh-start",
     image: pimg,
   },
-
   {
     title: "Savory Sips",
     description: "Your personal sommelier.",
@@ -206,6 +205,7 @@ const experiences = [
 
 const Content = () => {
   const navigate = useNavigate();
+  const [filter, setFilter] = useState("All");
 
   const navigateToReport = () => {
     navigate("/s24-work-term-report");
@@ -219,8 +219,6 @@ const Content = () => {
         return "bg-orange-500";
       case "In Development":
         return "bg-yellow-500";
-      case "Temporarily Paused":
-        return "bg-red-500";
       case "Paused Development":
         return "bg-blue-500";
       default:
@@ -228,53 +226,86 @@ const Content = () => {
     }
   };
 
+  const filteredProjects = projects.filter((project) =>
+    filter === "All" ? true : project.state === filter,
+  );
+
   return (
     <div className="fade-up-three px-6 sm:px-8 md:px-16 lg:px-20">
       <section aria-labelledby="projects-title" className="projects">
         <h2 id="projects-title" className="sr-only">
           Projects
         </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group cursor-pointer rounded-md bg-bgContrast p-16"
-              aria-labelledby={`project-title-${index}`}
-              aria-describedby={`project-description-${index}`}
+
+        <div className="mb-8 flex space-x-4">
+          {[
+            "All",
+            "Deployed",
+            "In Testing",
+            "In Development",
+            "Paused Development",
+          ].map((status) => (
+            <button
+              key={status}
+              onClick={() => setFilter(status)}
+              className={`rounded-full border border-gray-300 px-4 py-2 transition-all ${
+                filter === status
+                  ? "bg-primary text-white"
+                  : "bg-bgContrast text-gray-600"
+              }`}
             >
-              <div className="relative mb-8 w-full pb-[56.25%]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="fade-up-two absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-102"
-                />
-              </div>
-              <div className="fade-up-three text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
-                <p id={`project-title-${index}`} className="font-semibold">
-                  {project.title}
-                </p>
-                <p
-                  id={`project-description-${index}`}
-                  className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg"
-                >
-                  {project.description}
-                </p>
-                <div className="flex items-center">
-                  <span
-                    className={`mr-2 h-1.5 w-1.5 rounded-full sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5 ${getStatusColor(
-                      project.state,
-                    )}`}
-                  ></span>
-                  <p className="text-sm italic sm:text-base md:text-base lg:text-lg xl:text-lg">
-                    {project.state}
-                  </p>
-                </div>
-              </div>
-            </a>
+              {status}
+            </button>
           ))}
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer rounded-md bg-bgContrast p-16"
+                aria-labelledby={`project-title-${index}`}
+                aria-describedby={`project-description-${index}`}
+              >
+                <div className="relative mb-8 w-full pb-[56.25%]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="fade-up-two absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-102"
+                  />
+                </div>
+                <div className="fade-up-three text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+                  <p id={`project-title-${index}`} className="font-semibold">
+                    {project.title}
+                  </p>
+                  <p
+                    id={`project-description-${index}`}
+                    className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg"
+                  >
+                    {project.description}
+                  </p>
+                  <div className="flex items-center">
+                    <span
+                      className={`mr-2 h-1.5 w-1.5 rounded-full sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3 xl:h-2.5 xl:w-2.5 ${getStatusColor(
+                        project.state,
+                      )}`}
+                    ></span>
+                    <p className="text-sm italic sm:text-base md:text-base lg:text-lg xl:text-lg">
+                      {project.state}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))
+          ) : (
+            <div className="col-span-full text-center text-lg text-gray-600">
+              Nothing to show here
+            </div>
+          )}
         </div>
       </section>
 
