@@ -237,7 +237,7 @@ const Content = () => {
           Projects
         </h2>
 
-        <div className="mb-6 flex space-x-4">
+        <div className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:justify-start">
           {[
             "All",
             "Deployed",
@@ -248,7 +248,7 @@ const Content = () => {
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`rounded-full px-5 py-2 transition duration-500 ease-in-out ${
+              className={`rounded-full px-3 py-1 text-sm transition duration-500 ease-in-out sm:px-5 sm:py-2 sm:text-base ${
                 filter === status
                   ? "bg-primary text-white"
                   : "bg-bgContrast text-gray-600 hover:bg-primary hover:text-bg"
