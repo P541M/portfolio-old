@@ -237,7 +237,7 @@ const Content = () => {
           Projects
         </h2>
 
-        <div className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:justify-start">
+        <div className="fade-up-four mb-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:justify-start">
           {[
             "All",
             "Deployed",
