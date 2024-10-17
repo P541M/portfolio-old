@@ -312,6 +312,7 @@ const Content = () => {
       <div className="mx-20 my-20 border-t border-gray-300"></div>
 
       <section
+        id="experience-section"
         aria-labelledby="experiences-title"
         className="experiences my-20"
       >

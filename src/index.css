@@ -84,3 +84,22 @@ body {
     transform: translateY(0);
   }
 }
+
+#experience-section {
+  /* Default for mobile sizes */
+  scroll-margin-top: 60px; /* Default height of the navbar for mobile screens */
+}
+
+@media (min-width: 640px) {
+  /* Small screens (sm) and above */
+  #experience-section {
+    scroll-margin-top: 70px; /* Height of the navbar at sm breakpoint */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Medium screens (md) and above */
+  #experience-section {
+    scroll-margin-top: 75px; /* Height of the navbar at md breakpoint */
+  }
+}

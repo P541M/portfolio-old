@@ -17,6 +17,11 @@ const Navbar = () => {
     window.location.href = "https://p541m.github.io/portfolio/";
   };
 
+  const handleScrollToCareer = () => {
+    const careerSection = document.getElementById("experience-section");
+    careerSection.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav>
       <div
@@ -37,6 +42,11 @@ const Navbar = () => {
           </div>
 
           <ul className="flex items-center text-sm font-semibold sm:text-base md:text-lg lg:text-xl">
+            <li className="nav-link mx-3 my-2 transition-colors duration-500 ease-in-out hover:text-primary sm:mx-5">
+              <button onClick={handleScrollToCareer} aria-label="Career">
+                Career
+              </button>
+            </li>
             <li className="nav-link mx-3 my-2 transition-colors duration-500 ease-in-out hover:text-primary sm:mx-5">
               <button onClick={handleOpenContactForm} aria-label="Contact">
                 Contact
