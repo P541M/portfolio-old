@@ -16,7 +16,7 @@ const Hero = () => {
       <div>
         <p
           id="hero-title"
-          className="fade-up-two mt-16 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+          className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
         >
           Eleazar is a software engineering student based in the Greater Toronto
           Area, specializing in full-stack development and project management.

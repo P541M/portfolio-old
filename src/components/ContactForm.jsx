@@ -84,7 +84,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             id="contact-form-title"
             className="text-lg font-semibold sm:text-xl md:text-2xl"
           >
-            Get In Touch
+            Contact
           </h2>
         </div>
         <p className="mb-4 text-sm sm:text-base md:text-lg">
