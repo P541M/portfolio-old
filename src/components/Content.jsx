@@ -61,7 +61,7 @@ const projects = [
   {
     title: "Verbatim",
     description: "Collection of quotes.",
-    state: "In Testing",
+    state: "Paused Development",
     link: "https://verbatim-frontend.vercel.app/",
     image: pimg8,
   },
