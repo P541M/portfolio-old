@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import Footer from "./components/Footer.jsx";
 import S24WorkTermReport from "./components/S24WorkTermReport";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
@@ -47,7 +46,6 @@ function Layout() {
           <Route path="/s24-work-term-report" element={<S24WorkTermReport />} />
         </Routes>
       </main>
-      <Footer />
     </>
   );
 }

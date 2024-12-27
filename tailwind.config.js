@@ -7,7 +7,7 @@ module.exports = {
         text: "#000000", // Text color
         bg: "#FFFFFF", // Background color
         primary: "#ADADAD", // Main color
-        bgContrast: "#E6E6E6", // Darker contrast background
+        bgContrast: "#F2F2F2", // Darker contrast background
       },
       spacing: {
         "safe-top": "env(safe-area-inset-top)",

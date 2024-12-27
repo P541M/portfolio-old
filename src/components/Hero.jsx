@@ -18,7 +18,7 @@ export default function Hero() {
         id="hero-title"
         className="text-3xl font-bold text-primary sm:text-4xl md:text-5xl lg:text-6xl"
       >
-        Psalm Eleazar Videna
+        PSALM ELEAZAR
       </h1>
 
       <p className="mt-3 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -33,10 +33,8 @@ export default function Hero() {
 
       <p className="mt-4 max-w-[800px] text-sm text-text sm:text-base md:text-lg lg:text-xl">
         Currently contributing as a{" "}
-        <span className="font-bold text-primary">
-          Website Redesign Coordinator
-        </span>{" "}
-        at the{" "}
+        <span className="font-bold text-primary">Website Project Lead</span> at
+        the{" "}
         <a
           href="https://www.uoguelph.ca/arts"
           target="_blank"
@@ -51,7 +49,7 @@ export default function Hero() {
 
       <button
         onClick={handleOpenResume}
-        className="mt-8 rounded-full bg-primary px-6 py-3 text-bg transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+        className="mt-8 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
         aria-label="Open Resume"
       >
         View Resume

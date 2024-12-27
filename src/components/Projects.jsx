@@ -124,7 +124,7 @@ export default function Projects() {
     <section
       id="projects-section"
       aria-labelledby="projects-title"
-      className="projects px-6 py-10 text-text sm:px-8 md:px-16 lg:px-20"
+      className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
       <h2
         id="projects-title"
@@ -188,7 +188,7 @@ export default function Projects() {
                           {project.technologies.map((tech, idx) => (
                             <li
                               key={idx}
-                              className="rounded-full bg-primary px-2 py-1 text-xs text-bg"
+                              className="rounded-md bg-primary px-2 py-1 text-sm text-bg"
                             >
                               {tech}
                             </li>

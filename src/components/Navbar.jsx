@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faHome} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Home
             </span>
           </li>
@@ -62,7 +62,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faBriefcase} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Timeline
             </span>
           </li>
@@ -74,10 +74,14 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faProjectDiagram} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Projects
             </span>
           </li>
+
+          {/* Vertical Divider */}
+          <div className="mx-4 h-8 w-px bg-text"></div>
+
           <li className="group relative mx-4">
             <button
               onClick={handleOpenContactForm}
@@ -86,7 +90,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Contact
             </span>
           </li>
