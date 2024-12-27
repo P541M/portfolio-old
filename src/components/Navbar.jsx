@@ -4,6 +4,7 @@ import {
   faBriefcase,
   faEnvelope,
   faHome,
+  faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
 
@@ -26,6 +27,11 @@ const Navbar = () => {
   const handleScrollToHero = () => {
     const heroSection = document.getElementById("hero-section");
     heroSection.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToProjects = () => {
+    const projectsSection = document.getElementById("projects-section");
+    projectsSection.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -58,6 +64,18 @@ const Navbar = () => {
             </button>
             <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Career
+            </span>
+          </li>
+          <li className="group relative mx-4">
+            <button
+              onClick={handleScrollToProjects}
+              aria-label="Projects"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+            >
+              <FontAwesomeIcon icon={faProjectDiagram} />
+            </button>
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+              Projects
             </span>
           </li>
           <li className="group relative mx-4">

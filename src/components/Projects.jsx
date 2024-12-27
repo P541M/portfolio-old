@@ -107,7 +107,7 @@ export default function Projects() {
       case "Paused Development":
         return "bg-blue-500";
       case "Discontinued":
-        return "bg-red-500";
+        return "bg-gray-500";
       default:
         return "bg-gray-500";
     }
@@ -122,22 +122,23 @@ export default function Projects() {
 
   return (
     <section
+      id="projects-section"
       aria-labelledby="projects-title"
-      className="projects mt-10 px-4 sm:px-8 md:px-16 lg:px-20"
+      className="projects px-6 py-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
-      {/* Visible Header */}
-      <h2 id="projects-title" className="mb-8 text-center text-3xl font-bold">
+      <h2
+        id="projects-title"
+        className="mb-8 text-center text-3xl font-bold text-primary"
+      >
         Projects
       </h2>
 
-      {/* Container for all projects */}
-      <div>
+      <div className="">
         {projects.map((project, index) => (
           <div key={project.title}>
-            {/* Button: Project Title */}
             <button
               onClick={() => handleToggleProject(index)}
-              className="flex w-full items-center justify-between py-3 text-left text-lg font-semibold transition hover:underline"
+              className="flex w-full items-center justify-between py-3 text-left text-lg font-semibold transition hover:text-primary focus:outline-none"
             >
               <span>{project.title}</span>
               <span
@@ -149,14 +150,19 @@ export default function Projects() {
               </span>
             </button>
 
-            {/* Expanded Details (if open) */}
-            {expandedProjects[index] && (
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                expandedProjects[index]
+                  ? "max-h-screen translate-y-0 opacity-100"
+                  : "max-h-0 translate-y-4 opacity-0"
+              }`}
+            >
               <div className="pb-4">
                 <div className="mt-2 flex flex-col md:flex-row md:items-start md:space-x-8">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="mb-4 h-auto w-full md:mb-0 md:w-1/2"
+                    className="mb-4 h-auto w-full rounded-md shadow-md md:mb-0 md:w-1/2"
                   />
                   <div className="md:w-1/2">
                     <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
@@ -173,10 +179,11 @@ export default function Projects() {
                       </p>
                     </div>
 
-                    {/* Technologies List */}
                     {project.technologies?.length > 0 && (
                       <div className="mt-2">
-                        <h4 className="font-semibold">Technologies Used:</h4>
+                        <h4 className="font-semibold text-primary">
+                          Technologies Used:
+                        </h4>
                         <ul className="flex flex-wrap gap-2 pt-1">
                           {project.technologies.map((tech, idx) => (
                             <li
@@ -190,13 +197,12 @@ export default function Projects() {
                       </div>
                     )}
 
-                    {/* Visit Link */}
                     <div className="mt-4">
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-secondary text-primary underline transition"
+                        className="text-text underline transition-all hover:text-primary"
                       >
                         Visit Project
                       </a>
@@ -204,11 +210,10 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Divider (not shown after the very last project) */}
             {index < projects.length - 1 && (
-              <hr className="my-4 border-gray-300" />
+              <hr className="my-4 border-bgContrast" />
             )}
           </div>
         ))}
