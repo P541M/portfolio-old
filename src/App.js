@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -7,12 +7,26 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import Content from "./components/Content.jsx";
 import Footer from "./components/Footer.jsx";
 import S24WorkTermReport from "./components/S24WorkTermReport";
-import ScrollToTop from "./components/ScrollToTop";
+import Projects from "./components/Projects";
+import Experiences from "./components/Experiences";
 
-const Layout = () => {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return null;
+}
+
+function Layout() {
   const location = useLocation();
 
   return (
@@ -25,7 +39,8 @@ const Layout = () => {
             element={
               <>
                 <Hero />
-                <Content />
+                <Projects />
+                <Experiences />
               </>
             }
           />
@@ -35,7 +50,7 @@ const Layout = () => {
       <Footer />
     </>
   );
-};
+}
 
 function App() {
   return (

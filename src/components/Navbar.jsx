@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
 
-const Taskbar = () => {
+const Navbar = () => {
   const [isContactFormOpen, setContactFormOpen] = useState(false);
 
   const handleOpenContactForm = () => {
@@ -30,22 +30,21 @@ const Taskbar = () => {
 
   return (
     <div>
-      {/* Taskbar */}
       <div
         className="fixed bottom-[5%] left-1/2 z-50 flex -translate-x-1/2 items-center justify-center rounded-2xl bg-bgContrast px-4 py-3 shadow-lg backdrop-blur-md"
         style={{ width: "fit-content" }}
-        aria-label="Taskbar"
+        aria-label="Navbar"
       >
         <ul className="flex items-center justify-center">
           <li className="group relative mx-4">
             <button
               onClick={handleScrollToHero}
               aria-label="Home"
-              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faHome} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Home
             </span>
           </li>
@@ -53,11 +52,11 @@ const Taskbar = () => {
             <button
               onClick={handleScrollToCareer}
               aria-label="Career"
-              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faBriefcase} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Career
             </span>
           </li>
@@ -65,18 +64,17 @@ const Taskbar = () => {
             <button
               onClick={handleOpenContactForm}
               aria-label="Contact"
-              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Contact
             </span>
           </li>
         </ul>
       </div>
 
-      {/* Contact Form */}
       <ContactForm
         isOpen={isContactFormOpen}
         onClose={handleCloseContactForm}
@@ -85,4 +83,4 @@ const Taskbar = () => {
   );
 };
 
-export default Taskbar;
+export default Navbar;

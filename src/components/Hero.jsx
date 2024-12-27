@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = () => {
+export default function Hero() {
   const handleOpenResume = () => {
     window.open(
       "https://docs.google.com/document/d/1kBwruy6PqMBp8PzX9IyazyiDdFTzdeTg/edit?usp=sharing&ouid=100426459370719602883&rtpof=true&sd=true",
@@ -11,53 +11,51 @@ const Hero = () => {
   return (
     <section
       id="hero-section"
-      className="flex min-h-screen items-center justify-center px-20 text-center text-text"
+      className="flex min-h-screen flex-col items-center justify-center bg-bg px-6 text-center text-text transition-all sm:px-8 md:px-16 lg:px-20"
       aria-labelledby="hero-title"
     >
-      <div>
-        <h1
-          id="hero-title"
-          className="text-3xl font-bold text-primary sm:text-4xl md:text-5xl lg:text-6xl"
-        >
-          Psalm Eleazar Videna
-        </h1>
-        <p className="mt-4 max-w-[800px] text-lg sm:text-xl md:text-2xl lg:text-3xl">
-          <span className="font-semibold text-text">
-            Software Engineering Student
-          </span>{" "}
-          specializing in{" "}
-          <span className="font-bold text-primary">full-stack development</span>{" "}
-          and <span className="font-bold text-primary">project management</span>
-          .
-        </p>
-        <p className="mt-4 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
-          Creating engaging and effective digital experiences in the{" "}
-          <span className="italic">Greater Toronto Area</span>. Currently the{" "}
-          <span className="font-bold text-primary">
-            Website Redesign Coordinator
-          </span>{" "}
-          at the{" "}
-          <a
-            href="https://www.uoguelph.ca/arts"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-secondary italic underline"
-          >
-            College of Arts, University of Guelph
-          </a>
-          .
-        </p>
+      <h1
+        id="hero-title"
+        className="text-3xl font-bold text-primary sm:text-4xl md:text-5xl lg:text-6xl"
+      >
+        Psalm Eleazar Videna
+      </h1>
 
-        <button
-          onClick={handleOpenResume}
-          className="hover:bg-secondary mt-10 rounded-full bg-primary px-6 py-3 text-bg transition-transform duration-500 ease-in-out hover:scale-105"
-          aria-label="Open Resume"
+      <p className="mt-3 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
+        Toronto-based{" "}
+        <span className="font-semibold text-text">
+          Software Engineering Student
+        </span>{" "}
+        with a passion for{" "}
+        <span className="font-bold text-primary">full-stack development</span>{" "}
+        and <span className="font-bold text-primary">project management</span>.
+      </p>
+
+      <p className="mt-4 max-w-[800px] text-sm text-text sm:text-base md:text-lg lg:text-xl">
+        Currently contributing as a{" "}
+        <span className="font-bold text-primary">
+          Website Redesign Coordinator
+        </span>{" "}
+        at the{" "}
+        <a
+          href="https://www.uoguelph.ca/arts"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="italic underline transition-all hover:text-primary"
         >
-          View Resume
-        </button>
-      </div>
+          College of Arts, University of Guelph
+        </a>{" "}
+        and open to opportunities that challenge me to build engaging digital
+        experiences.
+      </p>
+
+      <button
+        onClick={handleOpenResume}
+        className="mt-8 rounded-full bg-primary px-6 py-3 text-bg transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+        aria-label="Open Resume"
+      >
+        View Resume
+      </button>
     </section>
   );
-};
-
-export default Hero;
+}
