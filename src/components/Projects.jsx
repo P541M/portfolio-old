@@ -138,7 +138,7 @@ export default function Projects() {
           <div key={project.title}>
             <button
               onClick={() => handleToggleProject(index)}
-              className="flex w-full items-center justify-between py-3 text-left text-lg font-semibold transition hover:text-primary focus:outline-none"
+              className="flex w-full items-center justify-between py-2 text-left text-lg font-semibold transition hover:text-primary focus:outline-none"
             >
               <span>{project.title}</span>
               <span

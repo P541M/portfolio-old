@@ -131,7 +131,7 @@ export default function Timeline() {
     <section
       id="timeline-section"
       aria-labelledby="timeline-title"
-      className="px-6 py-10 sm:px-8 md:px-16 lg:px-20"
+      className="projects px-6 py-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
       <h2
         id="timeline-title"
@@ -140,54 +140,49 @@ export default function Timeline() {
         Timeline
       </h2>
 
-      <div className="relative">
-        {/* Horizontal Line */}
-        <div className="absolute left-0 right-0 top-1/2 h-1 -translate-y-1/2 transform bg-primary"></div>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {timeline.map((timeline, index) => (
+          <article
+            key={index}
+            className="rounded-lg bg-bgContrast p-6 shadow-md"
+          >
+            <header>
+              <h3 className="mb-4 text-xl font-semibold text-text">
+                {timeline.company}
+              </h3>
+            </header>
 
-        {/* Timeline Items */}
-        <div
-          className="relative flex space-x-6 overflow-x-auto px-4 py-6 sm:space-x-8 md:space-x-12"
-          style={{ scrollbarWidth: "thin", scrollBehavior: "smooth" }}
-        >
-          {timeline.map((entry, index) => (
-            <div
-              key={index}
-              className="relative min-w-[300px] max-w-[350px] flex-shrink-0 rounded-lg bg-bgContrast p-6 shadow-md"
-            >
-              <div className="mb-4 flex items-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
-                  {React.createElement(entry.roles[0].icon, {
-                    className: "h-6 w-6",
+            {timeline.roles.map((role, idx) => (
+              <div key={idx} className="mb-6">
+                <div className="mb-2 flex items-center">
+                  {React.createElement(role.icon, {
+                    className: "mr-2 h-6 w-6 text-primary",
                     "aria-hidden": true,
                   })}
-                </div>
-                <h3 className="ml-4 text-lg font-semibold text-text">
-                  {entry.company}
-                </h3>
-              </div>
-              {entry.roles.map((role, idx) => (
-                <div key={idx} className="mb-4">
-                  <h4 className="text-lg font-medium text-primary">
+                  <h4 className="text-lg font-medium text-text">
                     {role.title}
                   </h4>
-                  <span className="block text-sm italic text-gray-600">
-                    {role.duration}
-                  </span>
-                  <p className="text-sm text-gray-700">{role.description}</p>
                 </div>
-              ))}
-              {entry.company === "BoscoBoys Distributors" && (
+                <span className="mb-2 block text-sm italic text-text">
+                  {role.duration}
+                </span>
+                <p className="text-sm text-text">{role.description}</p>
+              </div>
+            ))}
+
+            {timeline.company === "BoscoBoys Distributors" && (
+              <div className="mt-4">
                 <button
                   onClick={navigateToReport}
-                  className="mt-4 rounded-full bg-primary px-6 py-2 text-bg transition-transform duration-300 hover:scale-105 hover:bg-bgContrast"
+                  className="rounded-full bg-primary px-6 py-3 text-bg transition-transform duration-300 hover:scale-105 hover:bg-bgContrast"
                   aria-label="View Work Term Report"
                 >
                   View Work Term Report
                 </button>
-              )}
-            </div>
-          ))}
-        </div>
+              </div>
+            )}
+          </article>
+        ))}
       </div>
     </section>
   );

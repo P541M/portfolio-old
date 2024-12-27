@@ -39,8 +39,8 @@ function Layout() {
             element={
               <>
                 <Hero />
-                <Projects />
                 <Timeline />
+                <Projects />
               </>
             }
           />
