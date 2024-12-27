@@ -275,7 +275,7 @@ const Content = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="fade-up-two absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-102"
+                    className="fade-up-two absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="fade-up-three text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">

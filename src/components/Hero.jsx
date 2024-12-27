@@ -10,23 +10,38 @@ const Hero = () => {
 
   return (
     <section
-      className="fade-up-two flex h-[550px] items-center justify-center px-20 text-center text-text"
+      id="hero-section"
+      className="fade-up-two flex min-h-screen items-center justify-center px-20 text-center text-text"
       aria-labelledby="hero-title"
     >
       <div>
-        <p
+        <h1
           id="hero-title"
-          className="fade-up-two mt-10 max-w-[800px] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl"
+          className="fade-up-two text-3xl font-bold text-primary sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          Eleazar is a software engineering student based in the Greater Toronto
-          Area, specializing in full-stack development and project management.
-          He creates engaging and effective digital experiences and is currently
-          the Website Redesign Coordinator at the{" "}
+          Psalm Eleazar Videna
+        </h1>
+        <p className="fade-up-two mt-4 max-w-[800px] text-lg sm:text-xl md:text-2xl lg:text-3xl">
+          <span className="font-semibold text-text">
+            Software Engineering Student
+          </span>{" "}
+          specializing in{" "}
+          <span className="font-bold text-primary">full-stack development</span>{" "}
+          and <span className="font-bold text-primary">project management</span>
+          .
+        </p>
+        <p className="fade-up-two mt-4 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
+          Creating engaging and effective digital experiences in the{" "}
+          <span className="italic">Greater Toronto Area</span>. Currently the{" "}
+          <span className="font-bold text-primary">
+            Website Redesign Coordinator
+          </span>{" "}
+          at the{" "}
           <a
             href="https://www.uoguelph.ca/arts"
             target="_blank"
             rel="noopener noreferrer"
-            className="italic hover:underline"
+            className="hover:text-secondary italic underline"
           >
             College of Arts, University of Guelph
           </a>
@@ -35,10 +50,10 @@ const Hero = () => {
 
         <button
           onClick={handleOpenResume}
-          className="fade-up-three mt-10 rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg"
+          className="fade-up-three hover:bg-secondary mt-10 rounded-full bg-primary px-6 py-3 text-bg transition-transform duration-500 ease-in-out hover:scale-105"
           aria-label="Open Resume"
         >
-          Resume
+          View Resume
         </button>
       </div>
     </section>

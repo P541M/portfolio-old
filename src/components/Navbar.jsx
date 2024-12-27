@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBriefcase,
+  faEnvelope,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
 
-const Navbar = () => {
+const Taskbar = () => {
   const [isContactFormOpen, setContactFormOpen] = useState(false);
 
   const handleOpenContactForm = () => {
@@ -13,55 +18,71 @@ const Navbar = () => {
     setContactFormOpen(false);
   };
 
-  const handleLogoClick = () => {
-    window.location.href = "https://p541m.github.io/portfolio/";
-  };
-
   const handleScrollToCareer = () => {
     const careerSection = document.getElementById("experience-section");
     careerSection.scrollIntoView({ behavior: "smooth" });
   };
 
-  return (
-    <nav>
-      <div
-        className="fade-up fixed left-0 right-0 top-0 z-50 h-[60px] backdrop-blur-lg sm:h-[70px] md:h-[75px]"
-        aria-label="Main Navigation"
-      >
-        <div className="mx-auto flex h-full max-w-[1250px] items-center justify-between px-6 text-text sm:px-10 md:px-16">
-          <div
-            onClick={handleLogoClick}
-            className="logo-container nav-link flex cursor-pointer flex-col items-start lg:items-center"
-            aria-label="Homepage"
-          >
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 xl:h-10 xl:w-10"
-            />
-          </div>
+  const handleScrollToHero = () => {
+    const heroSection = document.getElementById("hero-section");
+    heroSection.scrollIntoView({ behavior: "smooth" });
+  };
 
-          <ul className="flex items-center text-sm font-semibold sm:text-base md:text-lg lg:text-xl">
-            <li className="nav-link mx-3 my-2 transition-colors duration-500 ease-in-out hover:text-primary sm:mx-5">
-              <button onClick={handleScrollToCareer} aria-label="Career">
-                Career
-              </button>
-            </li>
-            <li className="nav-link mx-3 my-2 transition-colors duration-500 ease-in-out hover:text-primary sm:mx-5">
-              <button onClick={handleOpenContactForm} aria-label="Contact">
-                Contact
-              </button>
-            </li>
-          </ul>
-        </div>
+  return (
+    <div>
+      {/* Taskbar */}
+      <div
+        className="fixed bottom-[5%] left-1/2 z-50 flex -translate-x-1/2 items-center justify-center rounded-2xl bg-bgContrast px-4 py-3 shadow-lg backdrop-blur-md"
+        style={{ width: "fit-content" }}
+        aria-label="Taskbar"
+      >
+        <ul className="flex items-center justify-center">
+          <li className="group relative mx-4">
+            <button
+              onClick={handleScrollToHero}
+              aria-label="Home"
+              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+            >
+              <FontAwesomeIcon icon={faHome} />
+            </button>
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+              Home
+            </span>
+          </li>
+          <li className="group relative mx-4">
+            <button
+              onClick={handleScrollToCareer}
+              aria-label="Career"
+              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+            >
+              <FontAwesomeIcon icon={faBriefcase} />
+            </button>
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+              Career
+            </span>
+          </li>
+          <li className="group relative mx-4">
+            <button
+              onClick={handleOpenContactForm}
+              aria-label="Contact"
+              className="transform text-2xl text-text transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+            </button>
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-xs text-bg opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+              Contact
+            </span>
+          </li>
+        </ul>
       </div>
 
+      {/* Contact Form */}
       <ContactForm
         isOpen={isContactFormOpen}
         onClose={handleCloseContactForm}
       />
-    </nav>
+    </div>
   );
 };
 
-export default Navbar;
+export default Taskbar;
