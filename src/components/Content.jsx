@@ -112,7 +112,7 @@ const experiences = [
     company: "BoscoBoys Distributors",
     roles: [
       {
-        title: "Fullstack Developer Intern",
+        title: "Full Stack Developer Intern",
         icon: ComputerDesktopIcon,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
@@ -181,7 +181,7 @@ const experiences = [
         duration: "Jan 2022 - May 2022",
       },
       {
-        title: "Frontend Developer Intern",
+        title: "Front End Developer Intern",
         icon: CodeBracketIcon,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
