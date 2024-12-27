@@ -61,10 +61,6 @@ body {
   animation: fadeOutBackground 0.5s ease-in-out;
 }
 
-#timeline-section {
-  scroll-margin-top: 60px;
-}
-
 @media (min-width: 640px) {
   #timeline-section {
     scroll-margin-top: 70px;
