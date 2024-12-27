@@ -1,9 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Importing fonts */
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 
 ::-webkit-scrollbar {
   width: 7px;
@@ -23,7 +22,6 @@
   background-color: #f2f2f2;
 }
 
-/* Base styles */
 body {
   @apply bg-bg;
   font-family: "Karla", sans-serif;
@@ -31,18 +29,6 @@ body {
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
-}
-
-/* Keyframe animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @keyframes fadeInBackground {
@@ -67,23 +53,6 @@ body {
   }
 }
 
-/* Applying animations */
-.fade-up {
-  animation: fadeUp 1s ease-in-out;
-}
-
-.fade-up-two {
-  animation: fadeUp 1.5s ease-in-out;
-}
-
-.fade-up-three {
-  animation: fadeUp 2s ease-in-out;
-}
-
-.fade-up-four {
-  animation: fadeUp 2.5s ease-in-out;
-}
-
 .fade-in-background {
   animation: fadeInBackground 0.5s ease-in-out;
 }
@@ -104,20 +73,17 @@ body {
 }
 
 #experience-section {
-  /* Default for mobile sizes */
-  scroll-margin-top: 60px; /* Default height of the navbar for mobile screens */
+  scroll-margin-top: 60px;
 }
 
 @media (min-width: 640px) {
-  /* Small screens (sm) and above */
   #experience-section {
-    scroll-margin-top: 70px; /* Height of the navbar at sm breakpoint */
+    scroll-margin-top: 70px;
   }
 }
 
 @media (min-width: 768px) {
-  /* Medium screens (md) and above */
   #experience-section {
-    scroll-margin-top: 75px; /* Height of the navbar at md breakpoint */
+    scroll-margin-top: 75px;
   }
 }

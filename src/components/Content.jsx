@@ -231,13 +231,13 @@ const Content = () => {
   );
 
   return (
-    <div className="fade-up-three px-6 sm:px-8 md:px-16 lg:px-20">
+    <div className="px-6 sm:px-8 md:px-16 lg:px-20">
       <section aria-labelledby="projects-title" className="projects">
         <h2 id="projects-title" className="sr-only">
           Projects
         </h2>
 
-        <div className="fade-up-four mb-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:justify-start">
+        <div className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:justify-start">
           {[
             "All",
             "Deployed",
@@ -267,7 +267,7 @@ const Content = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="fade-up group cursor-pointer rounded-md bg-bgContrast p-16"
+                className="group cursor-pointer rounded-md bg-bgContrast p-16"
                 aria-labelledby={`project-title-${index}`}
                 aria-describedby={`project-description-${index}`}
               >
@@ -275,10 +275,10 @@ const Content = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="fade-up-two absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-105"
+                    className="absolute left-0 top-0 h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="fade-up-three text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+                <div className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl">
                   <p id={`project-title-${index}`} className="font-semibold">
                     {project.title}
                   </p>
@@ -322,13 +322,13 @@ const Content = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {experiences.map((experience, index) => (
             <div key={index} className="rounded-md bg-bgContrast p-16">
-              <h3 className="fade-up mb-4 text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
+              <h3 className="mb-4 text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
                 {experience.company}
               </h3>
 
               {experience.roles.map((role, idx) => (
                 <div key={idx} className="mb-4">
-                  <div className="fade-up-two flex items-center">
+                  <div className="flex items-center">
                     {React.createElement(role.icon, {
                       className: "mr-2 h-5 w-5",
                     })}
@@ -336,17 +336,17 @@ const Content = () => {
                       {role.title}
                     </h4>
                   </div>
-                  <span className="fade-up-two mb-2 block text-xs italic text-text sm:text-sm md:text-sm lg:text-base xl:text-base">
+                  <span className="mb-2 block text-xs italic text-text sm:text-sm md:text-sm lg:text-base xl:text-base">
                     {role.duration}
                   </span>
-                  <p className="fade-up-three text-xs sm:text-sm md:text-sm lg:text-base xl:text-base">
+                  <p className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base">
                     {role.description}
                   </p>
                 </div>
               ))}
 
               {experience.company === "BoscoBoys Distributors" && (
-                <div className="fade-up-four mt-8 flex">
+                <div className="mt-8 flex">
                   <button
                     onClick={navigateToReport}
                     className="rounded-lg border border-primary bg-bgContrast px-6 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bg"

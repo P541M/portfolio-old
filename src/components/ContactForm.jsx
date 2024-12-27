@@ -71,7 +71,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       aria-modal="true"
       role="dialog"
     >
-      <div className="fade-up relative w-full max-w-sm rounded-md bg-bg p-6 shadow-md sm:max-w-md sm:p-10 md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+      <div className="relative w-full max-w-sm rounded-md bg-bg p-6 shadow-md sm:max-w-md sm:p-10 md:max-w-lg lg:max-w-xl xl:max-w-2xl">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
