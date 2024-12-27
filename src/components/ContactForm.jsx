@@ -19,9 +19,9 @@ const ContactForm = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       setShowForm(true);
-      setFadeClass("fade-in-background");
+      setFadeClass("fade-in");
     } else {
-      setFadeClass("fade-out-background");
+      setFadeClass("fade-out");
       setTimeout(() => setShowForm(false), 500);
     }
   }, [isOpen]);
