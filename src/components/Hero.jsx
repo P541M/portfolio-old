@@ -22,11 +22,8 @@ export default function Hero() {
       </h1>
 
       <p className="mt-3 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
-        Toronto-based{" "}
-        <span className="font-semibold text-text">
-          Software Engineering Student
-        </span>{" "}
-        with a passion for{" "}
+        Software Engineering Student
+        <span className="font-semibold text-text"></span> with a passion for{" "}
         <span className="font-bold text-primary">full-stack development</span>{" "}
         and <span className="font-bold text-primary">project management</span>.
       </p>
@@ -41,7 +38,7 @@ export default function Hero() {
           rel="noopener noreferrer"
           className="italic underline transition-all hover:text-primary"
         >
-          College of Arts, University of Guelph
+          University of Guelph, College of Arts
         </a>{" "}
         and open to opportunities that challenge me to build engaging digital
         experiences.

@@ -15,21 +15,21 @@ import {
 
 const timeline = [
   {
-    company: "College of Arts, University of Guelph",
+    company: "University of Guelph, College of Arts",
     roles: [
       {
         title: "Website Project Lead",
         icon: CogIcon,
         description:
           "Led the redesign and migration of the College of Arts websites, overseeing content updates, accessibility, and stakeholder coordination.",
-        duration: "January 2025 - April 2025",
+        duration: "Jan 2025 - Apr 2025",
       },
       {
         title: "Website Redesign Coordinator",
         icon: GlobeAltIcon,
         description:
           "Assisted with the College of Arts website redesign, managing content updates and platform migration while ensuring accessibility.",
-        duration: "September 2024 - December 2024",
+        duration: "Sep 2024 - Dec 2024",
       },
     ],
   },
@@ -41,14 +41,14 @@ const timeline = [
         icon: ComputerDesktopIcon,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
-        duration: "May 2024 - August 2024",
+        duration: "May 2024 - Aug 2024",
       },
       {
         title: "Business Analyst Intern",
         icon: ChartBarIcon,
         description:
           "Analyzed and optimized business workflows to increase operational efficiency and reduce costs.",
-        duration: "May 2024 - August 2024",
+        duration: "May 2024 - Aug 2024",
       },
     ],
   },
@@ -60,7 +60,7 @@ const timeline = [
         icon: UserGroupIcon,
         description:
           "Founded and led a platform connecting creative professionals with clients, addressing freelancing challenges in the creative industry.",
-        duration: "June 2021 - August 2023",
+        duration: "Jun 2021 - Aug 2023",
       },
     ],
   },
@@ -72,14 +72,14 @@ const timeline = [
         icon: FilmIcon,
         description:
           "Collaborated with leading creators, contributing to content that garnered over 20+ million views across various platforms.",
-        duration: "January 2017 - January 2023",
+        duration: "Jan 2017 - Jan 2023",
       },
       {
         title: "Graphic Designer",
         icon: PencilIcon,
         description:
           "Utilized creativity and technical skills to design compelling visual content for diverse projects.",
-        duration: "January 2016 - August 2020",
+        duration: "Jan 2016 - Aug 2020",
       },
     ],
   },
@@ -91,7 +91,7 @@ const timeline = [
         icon: MicrophoneIcon,
         description:
           "Edited all podcast audio and assisted in the publishing process, ensuring high-quality sound production and timely releases.",
-        duration: "January 2022 - May 2022",
+        duration: "Jan 2022 - May 2022",
       },
     ],
   },
@@ -103,14 +103,14 @@ const timeline = [
         icon: FilmIcon,
         description:
           "Edited numerous interviews with leading individuals in the environmental field, ensuring high-quality production and compelling storytelling.",
-        duration: "January 2022 - May 2022",
+        duration: "Jan 2022 - May 2022",
       },
       {
         title: "Front End Developer Intern",
         icon: CodeBracketIcon,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
-        duration: "January 2022 - May 2022",
+        duration: "Jan 2022 - May 2022",
       },
     ],
   },
@@ -122,7 +122,7 @@ const timeline = [
         icon: BuildingStorefrontIcon,
         description:
           "Worked in a fast-paced environment, providing efficient and friendly service to customers.",
-        duration: "June 2019 - August 2019",
+        duration: "Jun 2019 - Aug 2019",
       },
     ],
   },
@@ -139,7 +139,7 @@ export default function Timeline() {
       <h2 className="mb-8 text-center text-3xl font-bold text-primary">
         Timeline
       </h2>
-      <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
         {timeline.map(({ company, roles }, index) => (
           <article
             key={index}

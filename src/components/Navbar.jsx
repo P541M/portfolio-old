@@ -46,7 +46,7 @@ const Navbar = () => {
             <button
               onClick={handleScrollToHero}
               aria-label="Home"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faHome} />
             </button>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <button
               onClick={handleScrollToTimeline}
               aria-label="Timeline"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faBriefcase} />
             </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
             <button
               onClick={handleScrollToProjects}
               aria-label="Projects"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faProjectDiagram} />
             </button>
@@ -86,7 +86,7 @@ const Navbar = () => {
             <button
               onClick={handleOpenContactForm}
               aria-label="Contact"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-primary"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </button>
