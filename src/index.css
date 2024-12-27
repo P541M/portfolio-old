@@ -61,29 +61,18 @@ body {
   animation: fadeOutBackground 0.5s ease-in-out;
 }
 
-@keyframes fadeInDropdown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#experience-section {
+#timeline-section {
   scroll-margin-top: 60px;
 }
 
 @media (min-width: 640px) {
-  #experience-section {
+  #timeline-section {
     scroll-margin-top: 70px;
   }
 }
 
 @media (min-width: 768px) {
-  #experience-section {
+  #timeline-section {
     scroll-margin-top: 75px;
   }
 }

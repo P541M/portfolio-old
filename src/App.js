@@ -10,7 +10,7 @@ import Hero from "./components/Hero.jsx";
 import Footer from "./components/Footer.jsx";
 import S24WorkTermReport from "./components/S24WorkTermReport";
 import Projects from "./components/Projects";
-import Experiences from "./components/Experiences";
+import Timeline from "./components/Timeline";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -40,7 +40,7 @@ function Layout() {
               <>
                 <Hero />
                 <Projects />
-                <Experiences />
+                <Timeline />
               </>
             }
           />

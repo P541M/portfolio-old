@@ -12,7 +12,7 @@ import {
   GlobeAltIcon,
 } from "@heroicons/react/24/solid";
 
-const experiences = [
+const timeline = [
   {
     company: "College of Arts, University of Guelph",
     roles: [
@@ -120,7 +120,7 @@ const experiences = [
   },
 ];
 
-export default function Experiences() {
+export default function Timeline() {
   const navigate = useNavigate();
 
   const navigateToReport = () => {
@@ -129,51 +129,59 @@ export default function Experiences() {
 
   return (
     <section
-      id="experience-section"
-      aria-labelledby="experiences-title"
-      className="experiences my-20"
+      id="timeline-section"
+      aria-labelledby="timeline-title"
+      className="timeline px-6 py-10 sm:px-8 md:px-16 lg:px-20"
     >
-      <h2 id="experiences-title" className="sr-only">
-        Experiences
+      <h2
+        id="timeline-title"
+        className="mb-12 text-center text-3xl font-bold text-primary"
+      >
+        Timeline
       </h2>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {experiences.map((experience, index) => (
-          <div key={index} className="rounded-md bg-bgContrast p-16">
-            <h3 className="mb-4 text-base font-semibold sm:text-lg md:text-lg lg:text-xl xl:text-xl">
-              {experience.company}
-            </h3>
+        {timeline.map((timeline, index) => (
+          <article
+            key={index}
+            className="rounded-lg bg-bgContrast p-6 shadow-md transition-transform duration-300 hover:scale-105"
+          >
+            <header>
+              <h3 className="mb-4 text-xl font-semibold text-text">
+                {timeline.company}
+              </h3>
+            </header>
 
-            {experience.roles.map((role, idx) => (
-              <div key={idx} className="mb-4">
-                <div className="flex items-center">
+            {timeline.roles.map((role, idx) => (
+              <div key={idx} className="mb-6">
+                <div className="mb-2 flex items-center">
                   {React.createElement(role.icon, {
-                    className: "mr-2 h-5 w-5",
+                    className: "mr-2 h-6 w-6 text-primary",
+                    "aria-hidden": true,
                   })}
-                  <h4 className="text-sm font-medium sm:text-base md:text-base lg:text-lg xl:text-lg">
+                  <h4 className="text-lg font-medium text-text">
                     {role.title}
                   </h4>
                 </div>
-                <span className="mb-2 block text-xs italic text-text sm:text-sm md:text-sm lg:text-base xl:text-base">
+                <span className="mb-2 block text-sm italic text-text">
                   {role.duration}
                 </span>
-                <p className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base">
-                  {role.description}
-                </p>
+                <p className="text-sm text-text">{role.description}</p>
               </div>
             ))}
 
-            {experience.company === "BoscoBoys Distributors" && (
-              <div className="mt-8 flex">
+            {timeline.company === "BoscoBoys Distributors" && (
+              <div className="mt-4">
                 <button
                   onClick={navigateToReport}
-                  className="rounded-lg border border-primary bg-bgContrast px-6 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bg"
+                  className="rounded-full bg-primary px-6 py-3 text-bg transition-transform duration-300 hover:scale-105 hover:bg-bgContrast"
+                  aria-label="View Work Term Report"
                 >
                   View Work Term Report
                 </button>
               </div>
             )}
-          </div>
+          </article>
         ))}
       </div>
     </section>
