@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+// App.js
+import React from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -14,13 +15,9 @@ import Timeline from "./components/Timeline";
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return null;
 }
@@ -30,9 +27,11 @@ function Layout() {
 
   return (
     <>
-      {location.pathname !== "/s24-work-term-report" && <Navbar />}
-      <main id="main-content">
-        <Routes>
+      {location.pathname !== "/s24-work-term-report" && (
+        <Navbar className="fade-in-two" />
+      )}
+      <div key={location.pathname} className="fade-in">
+        <Routes location={location}>
           <Route
             path="/"
             element={
@@ -45,7 +44,7 @@ function Layout() {
           />
           <Route path="/s24-work-term-report" element={<S24WorkTermReport />} />
         </Routes>
-      </main>
+      </div>
     </>
   );
 }

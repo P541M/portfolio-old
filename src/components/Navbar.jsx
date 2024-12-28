@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
 
-const Navbar = () => {
+const Navbar = ({ className }) => {
   const [isContactFormOpen, setContactFormOpen] = useState(false);
 
   const handleOpenContactForm = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className="fixed bottom-[5%] left-1/2 z-50 flex -translate-x-1/2 items-center justify-center rounded-2xl bg-bgContrast/50 px-4 py-3 shadow-lg backdrop-blur-sm"
+        className={`fixed bottom-[5%] left-1/2 z-50 flex -translate-x-1/2 items-center justify-center rounded-2xl bg-bgContrast/50 px-4 py-3 shadow-lg backdrop-blur-sm ${className}`}
         style={{ width: "fit-content" }}
         aria-label="Navbar"
       >
