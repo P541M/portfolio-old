@@ -74,7 +74,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       <div className="relative w-full max-w-sm rounded-md bg-bg p-6 shadow-md sm:max-w-md sm:p-10 md:max-w-lg lg:max-w-xl xl:max-w-2xl">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+          className="absolute right-4 top-4 text-text transition-all duration-300 hover:text-primary"
           aria-label="Close contact form"
         >
           <XMarkIcon className="h-5 w-5" />
@@ -148,7 +148,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div className="mt-4 flex justify-center">
             <button
               type="submit"
-              className="w-full rounded-md bg-bgContrast px-4 py-2 text-text transition duration-500 ease-in-out hover:bg-primary hover:text-bg sm:w-auto"
+              className="mt-8 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
             >
               Submit
             </button>

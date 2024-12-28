@@ -32,7 +32,7 @@ const S24WorkTermReport = () => {
       >
         <button
           onClick={handleBack}
-          className="mb-12 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
+          className="mb-12 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition-all duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
         >
           ← Back to Portfolio
         </button>

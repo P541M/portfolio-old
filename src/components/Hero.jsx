@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       id="hero-section"
-      className="flex min-h-screen flex-col items-center justify-center bg-bg px-6 text-center text-text transition-all sm:px-8 md:px-16 lg:px-20"
+      className="flex min-h-screen flex-col items-center justify-center bg-bg px-6 text-center text-text transition-all duration-300 sm:px-8 md:px-16 lg:px-20"
       aria-labelledby="hero-title"
     >
       <h1
@@ -36,7 +36,7 @@ export default function Hero() {
           href="https://www.uoguelph.ca/arts"
           target="_blank"
           rel="noopener noreferrer"
-          className="italic underline transition-all hover:text-primary"
+          className="italic underline transition-all duration-300 hover:text-primary"
         >
           University of Guelph, College of Arts
         </a>{" "}
