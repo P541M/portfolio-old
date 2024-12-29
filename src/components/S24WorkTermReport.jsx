@@ -70,19 +70,21 @@ const S24WorkTermReport = () => {
       id="s24-work-term-report"
       className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
-      <button
-        onClick={handleBack}
-        className="mb-12 inline-flex items-center rounded-md bg-bgContrast px-5 py-3 text-sm text-text transition-all duration-300 ease-in-out hover:bg-primary hover:text-bgContrast"
-      >
-        ← Back to Portfolio
-      </button>
+      <div className="mb-8">
+        <button
+          onClick={handleBack}
+          className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+        >
+          ← Back to Portfolio
+        </button>
+      </div>
 
       <h1 className="mb-10 text-left text-4xl font-bold leading-snug text-text">
         My Journey as a Fullstack Developer & Business Analyst Intern at
         BoscoBoys
       </h1>
 
-      <p className="mb-6 text-left text-base leading-relaxed text-text">
+      <p className="mt-4 text-left text-lg leading-relaxed text-text">
         This report highlights my experiences as a Fullstack Developer &
         Business Analyst Intern at BoscoBoys Distributors. Through various
         projects, I gained valuable insights, developed new skills, and
@@ -91,9 +93,10 @@ const S24WorkTermReport = () => {
       </p>
       {/* Introduction */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           My Summer with BoscoBoys
         </h2>
+        <hr className="mb-4 border-bgContrast" />
 
         <p className="mt-4 text-left text-lg leading-relaxed text-text">
           From May to August 2024, I had the privilege of interning at BoscoBoys
@@ -151,13 +154,13 @@ const S24WorkTermReport = () => {
 
       {/* Images Section */}
       <section className="mb-20">
-        <div className="mx-auto flex max-w-4xl justify-between gap-10">
+        <div className="mx-auto flex max-w-3xl justify-between gap-10">
           {/* Image 1 */}
           <div className="flex flex-col items-center">
             <img
               src={image1}
               alt="A snapshot of the development process"
-              className="h-80 w-80 rounded-lg border-8 border-bgContrast object-cover shadow-md"
+              className="h-80 w-80 rounded-md object-cover shadow-md"
             />
             <p className="mt-4 text-center text-sm text-text">
               Me in front of the headquarters office!
@@ -169,7 +172,7 @@ const S24WorkTermReport = () => {
             <img
               src={image2}
               alt="Team collaboration during the project"
-              className="h-80 w-80 rounded-lg border-8 border-bgContrast object-cover shadow-md"
+              className="h-80 w-80 rounded-md object-cover shadow-md"
             />
             <p className="mt-4 text-center text-sm text-text">
               My workspace while working on responsive design!
@@ -180,9 +183,11 @@ const S24WorkTermReport = () => {
 
       {/* Employer Information */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           BoscoBoys Distributors: Connecting Businesses, Bridging Distances
         </h2>
+
+        <hr className="mb-4 border-bgContrast" />
 
         <p className="mt-2 text-left text-lg leading-relaxed text-text">
           BoscoBoys Distributors, founded in 1998, is a family-owned logistics
@@ -216,9 +221,10 @@ const S24WorkTermReport = () => {
 
       {/* Job Description */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Responsibilities, Technologies, and Impact at BoscoBoys
         </h2>
+        <hr className="mb-4 border-bgContrast" />
 
         <p className="mt-4 text-left text-lg leading-relaxed text-text">
           As a Fullstack Developer & Business Analyst Intern, I was responsible
@@ -248,7 +254,7 @@ const S24WorkTermReport = () => {
 
         {/* Web Apps Images Section */}
         <section className="my-10">
-          <div className="mx-auto flex max-w-6xl justify-between gap-10">
+          <div className="flex justify-between gap-10">
             {/* Web App 1 */}
             <div className="flex flex-col items-center">
               <div className="aspect-w-16 aspect-h-9 w-full">
@@ -260,11 +266,11 @@ const S24WorkTermReport = () => {
                   <img
                     src={image4}
                     alt="Web App 1 Interface"
-                    className="h-full w-full rounded-lg border-8 border-bgContrast object-cover shadow-md"
+                    className="h-full w-full rounded-md object-cover shadow-md"
                   />
                 </a>
               </div>
-              <p className="mt-4 text-center text-sm text-text">
+              <p className="mt-4 text-center text-base text-text">
                 The newly revamped website for BoscoBoys Distributors!
                 (Deployment soon!)
               </p>
@@ -276,10 +282,10 @@ const S24WorkTermReport = () => {
                 <img
                   src={image3}
                   alt="Web App 2 Interface"
-                  className="h-full w-full rounded-lg border-8 border-bgContrast object-cover shadow-md"
+                  className="h-full w-full rounded-md object-cover shadow-md"
                 />
               </div>
-              <p className="mt-4 text-center text-sm text-text">
+              <p className="mt-4 text-center text-base text-text">
                 Custom payroll webapp made to streamline the payroll system for
                 newspaper distribution sector!
               </p>
@@ -291,11 +297,8 @@ const S24WorkTermReport = () => {
           The role required balancing technical development with business
           analysis. Understanding both the architecture and the business
           implications of decisions helped me deliver more value to the company
-          and its stakeholders.
-        </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
-          During my internship at BoscoBoys, I gained hands-on experience with a
-          wide range of technologies and tools:
+          and its stakeholders. During my internship at BoscoBoys, I gained
+          hands-on experience with a wide range of technologies and tools:
         </p>
 
         <div className="mt-4 flex flex-col rounded-lg bg-bgContrast p-6 shadow-md">
@@ -440,9 +443,10 @@ const S24WorkTermReport = () => {
 
       {/* Goals */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Goals, Challenges, and Achievements
         </h2>
+        <hr className="mb-4 border-bgContrast" />
 
         <p className="my-4 text-left text-lg leading-relaxed text-text">
           Throughout my internship, I set out to achieve specific goals that
@@ -523,9 +527,10 @@ const S24WorkTermReport = () => {
 
       {/* Conclusion */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Reflections on Growth and Future Aspirations
         </h2>
+        <hr className="mb-4 border-bgContrast" />
 
         <p className="mt-4 text-left text-lg leading-relaxed text-text">
           My internship at BoscoBoys was not just an opportunity to apply what I
@@ -564,9 +569,10 @@ const S24WorkTermReport = () => {
 
       {/* Acknowledgments */}
       <section className="mb-20">
-        <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Gratitude & Mentorship: The People Behind My Growth
         </h2>
+        <hr className="mb-4 border-bgContrast" />
 
         {/* Franklin Hamilton Donbosco */}
         <p className="mt-4 text-left text-lg leading-relaxed text-text">

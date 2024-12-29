@@ -309,10 +309,11 @@ export default function Projects() {
     >
       <h2
         id="projects-title"
-        className="mb-8 text-center text-3xl font-bold text-primary"
+        className="mb-4 text-center text-3xl font-bold text-primary"
       >
         Projects
       </h2>
+      <hr className="mb-4 border-bgContrast" />
 
       <div>
         {sortedProjects.map((project, index) => (

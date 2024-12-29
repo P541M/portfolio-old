@@ -136,9 +136,10 @@ export default function Timeline() {
       id="timeline-section"
       className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
-      <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+      <h2 className="mb-4 text-center text-3xl font-bold text-primary">
         Timeline
       </h2>
+      <hr className="mb-4 border-bgContrast" />
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {timeline.map(({ company, roles }, index) => (
           <article
