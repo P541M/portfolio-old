@@ -81,7 +81,7 @@ const projects = [
     description:
       "The Password Generator is a robust application designed to help users create secure passwords effortlessly. As the main developer, I handled both frontend and backend development using Angular and Node.js. A key feature of the app allows users to generate strong passwords and have them sent directly to their email via Nodemailer. Completed in one month, this project enhanced my skills in integrating email sending technologies and full stack development. Although the project is now discontinued, future enhancements would focus on securing the backend API to ensure user data protection and prevent unauthorized access.",
     state: "Discontinued",
-    link: "https://github.com/P541M/password-generator-frontend",
+    link: "https://github.com/P541M/password-generator",
     image: pimg10,
     technologies: [
       "Angular",
@@ -100,7 +100,7 @@ const projects = [
     description:
       "Verbatim is a quote collection platform designed to showcase inspirational quotes from influential individuals in my life. As the main developer, I built both the frontend and backend using React, Node.js, and Express.js, integrating MongoDB for efficient data management. The application allows users to view and like their favorite quotes, as well as submit new ones for display. Developed within a week, Verbatim sharpened my skills in data handling and backend framework utilization. Although the project is discontinued, future enhancements would focus on refining the UI and improving the overall aesthetic to provide a more engaging user experience.",
     state: "Discontinued",
-    link: "https://verbatim-frontend.vercel.app/",
+    link: "https://github.com/P541M/verbatim",
     image: pimg8,
     technologies: [
       "React",
@@ -230,7 +230,7 @@ const projects = [
     description:
       "Metric x Imperial is my inaugural project, designed as a simple conversion tool to translate measurements between metric and imperial units. As the sole developer, I crafted the frontend using HTML, CSS, and JavaScript, overcoming initial challenges by leveraging documentation and ChatGPT assistance. Completed in one week, this project was shared on LinkedIn, garnering constructive feedback and significantly enhancing my frontend development skills. Future enhancements involve expanding the range of measurements available, overhauling the user interface, and potentially migrating the project to React for improved functionality and scalability.",
     state: "Deployed",
-    link: "https://p541m.github.io/Metric-Imperial-Converter/",
+    link: "https://p541m.github.io/metric-imperial-converter/",
     image: pimg3,
     technologies: ["HTML", "CSS", "JavaScript"],
     date: "2023-06",
