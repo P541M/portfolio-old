@@ -16,27 +16,25 @@ export default function Hero() {
     >
       <h1
         id="hero-title"
-        className="text-3xl font-bold text-primary sm:text-4xl md:text-5xl lg:text-6xl"
+        className="text-3xl font-bold text-text sm:text-4xl md:text-5xl lg:text-6xl"
       >
         PSALM ELEAZAR
       </h1>
 
       <p className="mt-3 max-w-[800px] text-base sm:text-lg md:text-xl lg:text-2xl">
-        Software Engineering Student
-        <span className="font-semibold text-text"></span> with a passion for{" "}
-        <span className="font-bold text-primary">full-stack development</span>{" "}
-        and <span className="font-bold text-primary">project management</span>.
+        Software Engineering Student with a passion for{" "}
+        <span className="text-primary">full-stack development</span> and{" "}
+        <span className="text-primary">project management</span>.
       </p>
 
       <p className="mt-4 max-w-[800px] text-sm text-text sm:text-base md:text-lg lg:text-xl">
         Currently contributing as a{" "}
-        <span className="font-bold text-primary">Website Project Lead</span> at
-        the{" "}
+        <span className="text-primary">Website Project Lead</span> at the{" "}
         <a
           href="https://www.uoguelph.ca/arts"
           target="_blank"
           rel="noopener noreferrer"
-          className="italic underline transition-all duration-300 hover:text-primary"
+          className="underline transition-all duration-300 hover:text-primary"
         >
           University of Guelph, College of Arts
         </a>{" "}

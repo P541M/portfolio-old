@@ -22,7 +22,7 @@ const timeline = [
         icon: CogIcon,
         description:
           "Led the redesign and migration of the College of Arts websites, overseeing content updates, accessibility, and stakeholder coordination.",
-        duration: "Jan 2025 - Apr 2025",
+        duration: "Jan 2025 - Present",
       },
       {
         title: "Website Redesign Coordinator",
