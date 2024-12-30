@@ -159,7 +159,7 @@ export default function Timeline() {
             ))}
             {company === "BoscoBoys Distributors" && (
               <button
-                onClick={() => navigate("/s24-work-term-report")}
+                onClick={() => navigate("/boscoboys-distributors-wtr")}
                 className="mt-2 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
               >
                 View Work Term Report

@@ -355,14 +355,14 @@ export default function Projects() {
                     className="mb-4 h-auto w-full rounded-md shadow-md md:mb-0 md:w-1/2"
                   />
                   <div className="md:w-1/2">
-                    <h4 className="font-semibold text-primary">
+                    <h4 className="text-lg font-semibold text-primary">
                       Project Description:
                     </h4>
                     <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                       {project.description}
                     </p>
 
-                    <h4 className="mt-2 font-semibold text-primary">
+                    <h4 className="mt-2 text-lg font-semibold text-primary">
                       Project Status:
                     </h4>
                     <div className="mb-2 flex items-center">
@@ -378,7 +378,7 @@ export default function Projects() {
 
                     {project.technologies?.length > 0 && (
                       <div className="mt-2">
-                        <h4 className="font-semibold text-primary">
+                        <h4 className="text-lg font-semibold text-primary">
                           Technologies Used:
                         </h4>
                         <ul className="flex flex-wrap gap-2 pt-1">

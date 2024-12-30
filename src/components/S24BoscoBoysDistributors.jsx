@@ -50,7 +50,7 @@ const goals = [
   },
 ];
 
-const S24WorkTermReport = () => {
+const S24BoscoBoysDistributors = () => {
   const navigate = useNavigate();
   const [expandedGoals, setExpandedGoals] = useState({});
 
@@ -67,15 +67,15 @@ const S24WorkTermReport = () => {
 
   return (
     <div
-      id="s24-work-term-report"
-      className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
+      id="boscoboys-distributors-wtr"
+      className="min-h-screen px-6 pb-20 pt-10 text-text transition-all duration-300 sm:px-8 md:px-16 lg:px-20"
     >
       <div className="mb-8">
         <button
           onClick={handleBack}
           className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
         >
-          ← Back to Portfolio
+          Back to Portfolio
         </button>
       </div>
 
@@ -493,7 +493,7 @@ const S24WorkTermReport = () => {
                 }`}
               >
                 <div className="pb-4">
-                  <h3 className="font-semibold text-primary">
+                  <h3 className="text-lg font-semibold text-primary">
                     Goal Description:
                   </h3>
                   <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
@@ -502,7 +502,7 @@ const S24WorkTermReport = () => {
 
                   {goal.challenges && (
                     <>
-                      <h3 className="mt-2 font-semibold text-primary">
+                      <h3 className="mt-2 text-lg font-semibold text-primary">
                         Goal Challenges:
                       </h3>
                       <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
@@ -511,13 +511,15 @@ const S24WorkTermReport = () => {
                     </>
                   )}
 
-                  <h3 className="mt-2 font-semibold text-primary">
+                  <h3 className="mt-2 text-lg font-semibold text-primary">
                     Skills Developed:
                   </h3>
                   <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                     {goal.skills}
                   </p>
-                  <h3 className="mt-2 font-semibold text-primary">Results:</h3>
+                  <h3 className="mt-2 text-lg font-semibold text-primary">
+                    Results:
+                  </h3>
                   <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                     {goal.results}
                   </p>
@@ -639,4 +641,4 @@ const S24WorkTermReport = () => {
   );
 };
 
-export default S24WorkTermReport;
+export default S24BoscoBoysDistributors;

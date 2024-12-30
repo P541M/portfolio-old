@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import S24WorkTermReport from "./components/S24WorkTermReport";
+import S24BoscoBoysDistributors from "./components/S24BoscoBoysDistributors";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
 
@@ -27,7 +27,7 @@ function Layout() {
 
   return (
     <>
-      {location.pathname !== "/s24-work-term-report" && (
+      {location.pathname !== "/boscoboys-distributors-wtr" && (
         <Navbar className="fade-in-two" />
       )}
       <div key={location.pathname} className="fade-in">
@@ -42,7 +42,10 @@ function Layout() {
               </>
             }
           />
-          <Route path="/s24-work-term-report" element={<S24WorkTermReport />} />
+          <Route
+            path="/boscoboys-distributors-wtr"
+            element={<S24BoscoBoysDistributors />}
+          />
         </Routes>
       </div>
     </>
