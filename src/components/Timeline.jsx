@@ -144,27 +144,43 @@ export default function Timeline() {
         {timeline.map(({ company, roles }, index) => (
           <article
             key={index}
-            className="rounded-lg bg-bgContrast p-6 shadow-md"
+            className="flex flex-col justify-between rounded-lg bg-bgContrast p-6 shadow-md"
           >
-            <h3 className="mb-4 text-xl font-semibold">{company}</h3>
-            {roles.map(({ title, icon: Icon, description, duration }, idx) => (
-              <div key={idx} className="mb-6">
-                <div className="mb-2 flex items-center">
-                  <Icon className="mr-2 h-6 w-6 text-primary" />
-                  <h4 className="text-lg font-medium">{title}</h4>
-                </div>
-                <p className="mb-1 text-base italic">{duration}</p>
-                <p className="text-base">{description}</p>
-              </div>
-            ))}
-            {company === "BoscoBoys Distributors" && (
-              <button
-                onClick={() => navigate("/boscoboys-distributors-wtr")}
-                className="mt-2 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-              >
-                View Work Term Report
-              </button>
-            )}
+            <div>
+              <h3 className="mb-4 text-xl font-semibold">{company}</h3>
+              {roles.map(
+                ({ title, icon: Icon, description, duration }, idx) => (
+                  <div key={idx} className="mb-6">
+                    <div className="mb-2 flex items-center">
+                      <Icon className="mr-2 h-6 w-6 text-primary" />
+                      <h4 className="text-lg font-medium">{title}</h4>
+                    </div>
+                    <p className="mb-1 text-base italic">{duration}</p>
+                    <p className="text-base">{description}</p>
+                  </div>
+                ),
+              )}
+            </div>
+            <div className="mt-4">
+              {company === "BoscoBoys Distributors" && (
+                <button
+                  onClick={() => navigate("/boscoboys-distributors-wtr")}
+                  className="rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+                >
+                  View Work Term Report
+                </button>
+              )}
+              {company === "University of Guelph, College of Arts" && (
+                <button
+                  onClick={() =>
+                    navigate("/university-guelph-college-of-arts-wtr")
+                  }
+                  className="mt-2 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+                >
+                  View Work Term Report
+                </button>
+              )}
+            </div>
           </article>
         ))}
       </div>

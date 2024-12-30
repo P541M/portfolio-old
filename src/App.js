@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import {
   HashRouter as Router,
@@ -8,7 +7,8 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import S24BoscoBoysDistributors from "./components/S24BoscoBoysDistributors";
+import S24BoscoBoysDistributors from "./components/reports/S24BoscoBoysDistributors";
+import F24UniversityGuelphCOA from "./components/reports/F24UniversityGuelphCOA";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
 
@@ -27,9 +27,7 @@ function Layout() {
 
   return (
     <>
-      {location.pathname !== "/boscoboys-distributors-wtr" && (
-        <Navbar className="fade-in-two" />
-      )}
+      <Navbar className="fade-in-two" />
       <div key={location.pathname} className="fade-in">
         <Routes location={location}>
           <Route
@@ -46,6 +44,11 @@ function Layout() {
             path="/boscoboys-distributors-wtr"
             element={<S24BoscoBoysDistributors />}
           />
+          <Route
+            path="/university-guelph-college-of-arts-wtr"
+            element={<F24UniversityGuelphCOA />}
+          />
+          {/* Add more routes here as needed */}
         </Routes>
       </div>
     </>

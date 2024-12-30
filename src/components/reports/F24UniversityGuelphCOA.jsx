@@ -7,10 +7,10 @@ import {
   LightBulbIcon,
 } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
-import image1 from "../assets/s24/me.jpeg";
-import image2 from "../assets/s24/work.jpeg";
-import image3 from "../assets/s24/disperse.PNG";
-import image4 from "../assets/s24/bosco.PNG";
+import image1 from "../../assets/s24/me.jpeg";
+import image2 from "../../assets/s24/work.jpeg";
+import image3 from "../../assets/s24/disperse.PNG";
+import image4 from "../../assets/s24/bosco.PNG";
 
 const goals = [
   {
@@ -50,7 +50,7 @@ const goals = [
   },
 ];
 
-const S24BoscoBoysDistributors = () => {
+const F24UniversityGuelphCOA = () => {
   const navigate = useNavigate();
   const [expandedGoals, setExpandedGoals] = useState({});
 
@@ -67,7 +67,7 @@ const S24BoscoBoysDistributors = () => {
 
   return (
     <div
-      id="boscoboys-distributors-wtr"
+      id="university-guelph-college-of-arts-wtr"
       className="min-h-screen px-6 pb-20 pt-10 text-text transition-all duration-300 sm:px-8 md:px-16 lg:px-20"
     >
       <div className="mb-8">
@@ -80,8 +80,7 @@ const S24BoscoBoysDistributors = () => {
       </div>
 
       <h1 className="text-center text-4xl font-bold leading-snug text-text">
-        My Journey as a Fullstack Developer & Business Analyst Intern at
-        BoscoBoys
+        CONTENT ON THIS PAGE IS INCOMPLETE/NOT CORRECT
       </h1>
 
       <p className="mb-4 mt-3 text-left text-lg text-text">
@@ -327,7 +326,7 @@ const S24BoscoBoysDistributors = () => {
 
         <div className="mb-4 grid grid-cols-1 rounded-md bg-bgContrast p-6 shadow-md sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           <div>
-            <h3 className="mb-4 text-xl font-semibold text-text">
+            <h3 className="my-4 text-xl font-semibold text-text">
               Website Development
             </h3>
             <ul className="mt-2 list-none text-lg text-text">
@@ -362,8 +361,8 @@ const S24BoscoBoysDistributors = () => {
             </ul>
           </div>
 
-          <div className=" ">
-            <h3 className="mb-4 text-xl font-semibold text-text">
+          <div>
+            <h3 className="my-4 text-xl font-semibold text-text">
               Database & Cloud
             </h3>
             <ul className="mt-2 list-none text-lg text-text">
@@ -390,8 +389,8 @@ const S24BoscoBoysDistributors = () => {
             </ul>
           </div>
 
-          <div className=" ">
-            <h3 className="mb-4 text-xl font-semibold text-text">
+          <div>
+            <h3 className="my-4 text-xl font-semibold text-text">
               Programming Languages
             </h3>
             <ul className="mt-2 list-none text-lg text-text">
@@ -406,9 +405,9 @@ const S24BoscoBoysDistributors = () => {
             </ul>
           </div>
 
-          <div className=" ">
-            <h3 className="mb-4 text-xl font-semibold text-text">
-              Version Control/Project Management
+          <div>
+            <h3 className="my-4 text-xl font-semibold text-text">
+              Version Control & Project Management
             </h3>
             <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
@@ -426,8 +425,8 @@ const S24BoscoBoysDistributors = () => {
             </ul>
           </div>
 
-          <div className=" ">
-            <h3 className="mb-4 text-xl font-semibold text-text">
+          <div>
+            <h3 className="my-4 text-xl font-semibold text-text">
               Collaboration & Productivity
             </h3>
             <ul className="mt-2 list-none text-lg text-text">
@@ -641,4 +640,4 @@ const S24BoscoBoysDistributors = () => {
   );
 };
 
-export default S24BoscoBoysDistributors;
+export default F24UniversityGuelphCOA;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBriefcase,
@@ -7,9 +7,12 @@ import {
   faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = ({ className }) => {
   const [isContactFormOpen, setContactFormOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleOpenContactForm = () => {
     setContactFormOpen(true);
@@ -19,20 +22,25 @@ const Navbar = ({ className }) => {
     setContactFormOpen(false);
   };
 
-  const handleScrollToTimeline = () => {
-    const timelineSection = document.getElementById("timeline-section");
-    timelineSection.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      if (location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: sectionId } });
+      }
+    }
   };
 
-  const handleScrollToHero = () => {
-    const heroSection = document.getElementById("hero-section");
-    heroSection.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToProjects = () => {
-    const projectsSection = document.getElementById("projects-section");
-    projectsSection.scrollIntoView({ behavior: "smooth" });
-  };
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
     <div>
@@ -44,7 +52,7 @@ const Navbar = ({ className }) => {
         <ul className="flex items-center justify-center">
           <li className="group relative mx-4">
             <button
-              onClick={handleScrollToHero}
+              onClick={() => scrollToSection("hero-section")}
               aria-label="Home"
               className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
@@ -56,7 +64,7 @@ const Navbar = ({ className }) => {
           </li>
           <li className="group relative mx-4">
             <button
-              onClick={handleScrollToTimeline}
+              onClick={() => scrollToSection("timeline-section")}
               aria-label="Timeline"
               className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
@@ -68,7 +76,7 @@ const Navbar = ({ className }) => {
           </li>
           <li className="group relative mx-4">
             <button
-              onClick={handleScrollToProjects}
+              onClick={() => scrollToSection("projects-section")}
               aria-label="Projects"
               className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
             >
