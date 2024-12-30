@@ -37,14 +37,14 @@ const goals = [
   {
     title: "Improve Team Collaboration and Financial Insights",
     description: `A non-technical goal focused on enhancing my ability to collaborate with different teams, particularly on financial analysis tasks. This involved working closely with the finance team to analyze business performance and contribute to decision-making processes. Additionally, I aimed to ensure that all teams were effectively communicating their concerns and passing on messages clearly, fostering transparency across the entire team.`,
-    challenges: null, // No additional challenges mentioned
+    challenges: null,
     skills: `Financial data analysis, collaboration, teamwork, decision-making.`,
     results: `By completing key financial analysis tasks, I provided insights that led to better resource allocation and cost management.`,
   },
   {
     title: "Enhance Time Management Skills Across Multiple Projects",
     description: `Managing multiple projects at once was a major focus, so I set out to improve my time management skills. Using tools like Notion and traditional note-taking methods, I worked to better organize tasks and meet deadlines more efficiently.`,
-    challenges: null, // No additional challenges mentioned
+    challenges: null,
     skills: `Time management, task prioritization, personal productivity, and organizational skills.`,
     results: `Although I met all deadlines and improved my overall organizational skills, I continue to refine my approach to managing complex workloads.`,
   },
@@ -79,12 +79,12 @@ const S24WorkTermReport = () => {
         </button>
       </div>
 
-      <h1 className="mb-10 text-left text-4xl font-bold leading-snug text-text">
+      <h1 className="text-center text-4xl font-bold leading-snug text-text">
         My Journey as a Fullstack Developer & Business Analyst Intern at
         BoscoBoys
       </h1>
 
-      <p className="mt-4 text-left text-lg leading-relaxed text-text">
+      <p className="mb-4 mt-3 text-left text-lg text-text">
         This report highlights my experiences as a Fullstack Developer &
         Business Analyst Intern at BoscoBoys Distributors. Through various
         projects, I gained valuable insights, developed new skills, and
@@ -98,18 +98,18 @@ const S24WorkTermReport = () => {
         </h2>
         <hr className="mb-4 border-bgContrast" />
 
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg">
           From May to August 2024, I had the privilege of interning at BoscoBoys
           Distributors, a family-owned logistics company based in Toronto. My
           role as a Fullstack Developer & Business Analyst allowed me to
           contribute to significant projects, including the revamp of the
           company's website and the automation of critical business processes.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           The most valuable lessons I gained from this internship, which I will
           carry into future professional roles, include:
         </p>
-        <div className="mt-4 grid grid-cols-1 gap-6 rounded-lg bg-bgContrast p-6 text-lg leading-relaxed text-text shadow-md md:grid-cols-2">
+        <div className="mb-6 grid grid-cols-1 gap-6 rounded-md bg-bgContrast p-6 text-lg text-text shadow-md md:grid-cols-2">
           <ul className="space-y-4">
             <li className="flex items-center">
               <AcademicCapIcon className="mr-4 inline-block h-5 w-5 text-text" />
@@ -143,7 +143,7 @@ const S24WorkTermReport = () => {
           </ul>
         </div>
 
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="text-left text-lg text-text">
           In this report, I will reflect on the projects I worked on, the skills
           I developed, and how this internship contributed to my growth as both
           a developer and a business analyst. My experience at BoscoBoys has
@@ -162,8 +162,9 @@ const S24WorkTermReport = () => {
               alt="A snapshot of the development process"
               className="h-80 w-80 rounded-md object-cover shadow-md"
             />
-            <p className="mt-4 text-center text-sm text-text">
-              Me in front of the headquarters office!
+            <p className="mt-4 text-center text-base text-text">
+              Me in front of the headquarters on my last day at BoscoBoys
+              Distributors.
             </p>
           </div>
 
@@ -174,8 +175,9 @@ const S24WorkTermReport = () => {
               alt="Team collaboration during the project"
               className="h-80 w-80 rounded-md object-cover shadow-md"
             />
-            <p className="mt-4 text-center text-sm text-text">
-              My workspace while working on responsive design!
+            <p className="mt-4 text-center text-base text-text">
+              My workspace while working on responsive design for the newly
+              revamped website.
             </p>
           </div>
         </div>
@@ -189,14 +191,14 @@ const S24WorkTermReport = () => {
 
         <hr className="mb-4 border-bgContrast" />
 
-        <p className="mt-2 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           BoscoBoys Distributors, founded in 1998, is a family-owned logistics
           and distribution company headquartered in Toronto, Ontario. The
           company initially focused on newspaper distribution but has since
           expanded its offerings to become a full-service logistics provider,
           including freight shipping, warehousing, and supply chain management.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           With a commitment to technological innovation, BoscoBoys leverages
           cutting-edge solutions in route optimization, database management, and
           automation to improve operational efficiency. The company's IT
@@ -204,14 +206,14 @@ const S24WorkTermReport = () => {
           algorithms to streamline processes and reduce manual labor, aligning
           with modern computing science principles.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           BoscoBoys prides itself on a culture of integrity and innovation,
           driven by a strong leadership team led by Founder & CEO Franklin
           Hamilton Donbosco. Headquartered in the heart of Toronto, the company
           has remained dedicated to maintaining a balance between growth and
           customer-centric values.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           "Innovation and integrity are at the heart of what we do. Every
           client, whether a small business or a large corporation, is a
           stakeholder in our success." – Franklin Hamilton Donbosco, Founder &
@@ -226,7 +228,7 @@ const S24WorkTermReport = () => {
         </h2>
         <hr className="mb-4 border-bgContrast" />
 
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           As a Fullstack Developer & Business Analyst Intern, I was responsible
           for a diverse range of tasks that required both technical proficiency
           and business acumen. One of my primary responsibilities was leading
@@ -234,7 +236,7 @@ const S24WorkTermReport = () => {
           project from design to development, ensuring both robustness and an
           enhanced user experience.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           I collaborated closely with the CEO, CFO, CTO, and other key
           stakeholders to gather business requirements and feedback from end
           users. This required not only technical skills but also effective
@@ -242,7 +244,7 @@ const S24WorkTermReport = () => {
           efficient execution and applied structured methodologies, which helped
           streamline the development process.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           One of the most interesting aspects of my role was developing a custom
           payroll system that automated manual processes. This significantly
           improved accuracy and reduced overhead for the company, increasing
@@ -253,8 +255,8 @@ const S24WorkTermReport = () => {
         </p>
 
         {/* Web Apps Images Section */}
-        <section className="my-10">
-          <div className="flex justify-between gap-10">
+        <section className="my-6">
+          <div className="flex justify-between gap-14 px-5">
             {/* Web App 1 */}
             <div className="flex flex-col items-center">
               <div className="aspect-w-16 aspect-h-9 w-full">
@@ -266,34 +268,39 @@ const S24WorkTermReport = () => {
                   <img
                     src={image4}
                     alt="Web App 1 Interface"
-                    className="h-full w-full rounded-md object-cover shadow-md"
+                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
                   />
                 </a>
               </div>
-              <p className="mt-4 text-center text-base text-text">
+              <p className="mt-8 text-center text-base text-text">
                 The newly revamped website for BoscoBoys Distributors!
-                (Deployment soon!)
+                (Currently in testing; deployment soon.)
               </p>
             </div>
 
             {/* Web App 2 */}
             <div className="flex flex-col items-center">
               <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={image3}
-                  alt="Web App 2 Interface"
-                  className="h-full w-full rounded-md object-cover shadow-md"
-                />
+                <a
+                  href="https://bbd-disperse.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={image3}
+                    alt="Web App 1 Interface"
+                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
+                  />
+                </a>
               </div>
-              <p className="mt-4 text-center text-base text-text">
-                Custom payroll webapp made to streamline the payroll system for
-                newspaper distribution sector!
+              <p className="mt-8 text-center text-base text-text">
+                Disperse, a custom payroll app for newspaper distribution.
               </p>
             </div>
           </div>
         </section>
 
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           The role required balancing technical development with business
           analysis. Understanding both the architecture and the business
           implications of decisions helped me deliver more value to the company
@@ -301,8 +308,8 @@ const S24WorkTermReport = () => {
           hands-on experience with a wide range of technologies and tools:
         </p>
 
-        <div className="mt-4 flex flex-col rounded-lg bg-bgContrast p-6 shadow-md">
-          <ul className="mt-2 flex space-x-4">
+        <div className="mb-4 flex flex-col rounded-md bg-bgContrast p-6 text-lg shadow-md">
+          <ul className="flex space-x-6">
             <li className="flex items-center">
               <span className="mr-2 inline-block h-3 w-3 rounded-full bg-green-500"></span>
               Learned on the job
@@ -318,12 +325,12 @@ const S24WorkTermReport = () => {
           </ul>
         </div>
 
-        <div className="mt-4 grid grid-cols-1 rounded-lg bg-bgContrast p-6 shadow-md sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          <div className=" ">
-            <h3 className="my-2 text-xl font-semibold text-text">
-              Web Development
+        <div className="mb-4 grid grid-cols-1 rounded-md bg-bgContrast p-6 shadow-md sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div>
+            <h3 className="mb-4 text-xl font-semibold text-text">
+              Website Development
             </h3>
-            <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+            <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
                 <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
                 React.js
@@ -356,10 +363,10 @@ const S24WorkTermReport = () => {
           </div>
 
           <div className=" ">
-            <h3 className="my-2 text-xl font-semibold text-text">
+            <h3 className="mb-4 text-xl font-semibold text-text">
               Database & Cloud
             </h3>
-            <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+            <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
                 <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
                 MongoDB
@@ -384,10 +391,10 @@ const S24WorkTermReport = () => {
           </div>
 
           <div className=" ">
-            <h3 className="my-2 text-xl font-semibold text-text">
+            <h3 className="mb-4 text-xl font-semibold text-text">
               Programming Languages
             </h3>
-            <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+            <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
                 <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
                 JavaScript
@@ -400,10 +407,10 @@ const S24WorkTermReport = () => {
           </div>
 
           <div className=" ">
-            <h3 className="my-2 text-xl font-semibold text-text">
-              Version Control & Project Management
+            <h3 className="mb-4 text-xl font-semibold text-text">
+              Version Control/Project Management
             </h3>
-            <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+            <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
                 <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
                 Git
@@ -420,10 +427,10 @@ const S24WorkTermReport = () => {
           </div>
 
           <div className=" ">
-            <h3 className="my-2 text-xl font-semibold text-text">
+            <h3 className="mb-4 text-xl font-semibold text-text">
               Collaboration & Productivity
             </h3>
-            <ul className="mt-2 list-none text-lg leading-relaxed text-text">
+            <ul className="mt-2 list-none text-lg text-text">
               <li className="mb-2 flex items-center">
                 <span className="mr-3 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
                 Notion
@@ -448,7 +455,7 @@ const S24WorkTermReport = () => {
         </h2>
         <hr className="mb-4 border-bgContrast" />
 
-        <p className="my-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           Throughout my internship, I set out to achieve specific goals that
           would push me to grow both technically and professionally. Each goal
           presented its own set of challenges, ultimately leading to significant
@@ -532,7 +539,7 @@ const S24WorkTermReport = () => {
         </h2>
         <hr className="mb-4 border-bgContrast" />
 
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           My internship at BoscoBoys was not just an opportunity to apply what I
           had learned—it was an environment that challenged me to grow,
           innovate, and contribute in meaningful ways. Through projects like
@@ -541,7 +548,7 @@ const S24WorkTermReport = () => {
           efficiency. These accomplishments helped me develop a deeper
           understanding of how technology can drive business success.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           One of the most valuable aspects of this experience was the blend of
           technical development and business analysis. I strengthened my ability
           to balance coding with strategic thinking, ensuring that every
@@ -550,7 +557,7 @@ const S24WorkTermReport = () => {
           interfaces, I consistently aimed to deliver solutions that would have
           lasting value for the company.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           The skills I honed in fullstack development, database management, and
           process automation have not only boosted my confidence as a developer
           but have also prepared me for future roles that require a strong
@@ -558,7 +565,7 @@ const S24WorkTermReport = () => {
           my professional identity, reinforcing my passion for creating
           impactful, user-centered technology solutions.
         </p>
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           As I move forward, I am excited to build on these learnings, applying
           both the technical expertise and collaborative skills I developed at
           BoscoBoys to future challenges. This internship has laid a solid
@@ -575,7 +582,7 @@ const S24WorkTermReport = () => {
         <hr className="mb-4 border-bgContrast" />
 
         {/* Franklin Hamilton Donbosco */}
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           I would like to extend my heartfelt gratitude to Franklin Hamilton
           Donbosco, Founder and CEO of BoscoBoys Distributors, for giving me the
           opportunity to prove myself and for being an exceptional mentor
@@ -590,7 +597,7 @@ const S24WorkTermReport = () => {
         </p>
 
         {/* Infenta Hamilton */}
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           I am deeply thankful to Infenta Hamilton, CFO, for her unwavering
           support, guidance, and warmth throughout my time at BoscoBoys. Not
           only did she offer invaluable insights into business operations and
@@ -601,7 +608,7 @@ const S24WorkTermReport = () => {
         </p>
 
         {/* Ragul Ponniah */}
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           A special thanks to Ragul Ponniah, CTO, for consistently challenging
           me to push the boundaries of my technical abilities. His deep
           technical expertise and encouragement to take on complex tasks helped
@@ -611,7 +618,7 @@ const S24WorkTermReport = () => {
         </p>
 
         {/* Colleagues */}
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           I would also like to acknowledge my colleagues Lovepreet, Pratham, and
           Yukta for being fantastic teammates. Their positivity, collaboration,
           and camaraderie made the workplace enjoyable and productive, fostering
@@ -620,7 +627,7 @@ const S24WorkTermReport = () => {
         </p>
 
         {/* Entire BoscoBoys Team */}
-        <p className="mt-4 text-left text-lg leading-relaxed text-text">
+        <p className="mb-4 text-left text-lg text-text">
           Lastly, to the entire BoscoBoys team, your collective dedication,
           professionalism, and support made this experience truly unforgettable.
           The lessons I learned from many of you have had a profound impact on
