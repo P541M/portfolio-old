@@ -1,60 +1,94 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Example placeholders (remove if not using)
-import image1 from "../../assets/s24/disperse.PNG";
-import image2 from "../../assets/s24/bosco.PNG";
-
-// Replace these with your new images or remove them if not needed
 import image3 from "../../assets/f24/d7Improv.png";
 import image4 from "../../assets/f24/d9Hist.png";
-
-/* ----------------------------------------------------------------------------
-   GOALS ARRAY
-   Here, we map each "Learning Goal" from your new content into the same
-   expandable/collapsible structure used previously. Adjust as you see fit.
----------------------------------------------------------------------------- */
 
 const goals = [
   {
     title:
       "Build personal confidence and become more outgoing by pushing beyond my comfort zone in group settings.",
-    description: `I aimed to build my confidence in group settings by speaking up more often and initiating conversations. This involved contributing ideas in team meetings, scheduling one-on-one discussions with colleagues, and attending social or networking events to expand my comfort zone.`,
-    challenges: `Early on, I tended to overthink before speaking, which caused me to rush my points. Slowing down and focusing on clarity was a key challenge as I balanced nerves with the desire to contribute meaningfully.`,
-    skills: `Communication, Networking, Public Speaking, Confidence`,
-    results: `Over time, I received positive feedback from my manager and colleagues. I now feel more at ease sparking conversations and leading discussions with greater clarity and composure.`,
+    description: `The main objective was to build personal confidence and become more outgoing by consistently pushing beyond my comfort zone in group settings. I aimed to speak up in every meeting—even just to ask questions—initiate conversations with colleagues, and participate in networking opportunities or social events.`,
+    challenges: [
+      "Overthinking before speaking up, leading to fast or unclear speech.",
+      "Balancing the desire to be concise with the need to provide meaningful input.",
+      "Stepping out of my comfort zone in larger group interactions.",
+    ],
+    skills: [
+      "Oral communication",
+      "Self-confidence in group settings",
+      "Networking and interpersonal rapport",
+      "Public speaking poise",
+    ],
+    results: `By challenging myself to share my expertise in website redesign meetings, I transitioned from overthinking to delivering clearer, concise input. I scheduled one-on-one conversations, fostered relationships beyond the office, and encouraged coworkers to share their insights. My manager commended me for my clarity and professionalism. I discovered I’m naturally adept at “breaking the ice,” which boosted my confidence in both professional and personal communication.`,
   },
   {
     title:
       "Enhance conflict resolution and negotiation skills to improve group harmony and project outcomes.",
-    description: `Navigating differing opinions effectively was essential in my role as a Website Redesign Coordinator. I studied conflict-resolution strategies, practiced empathetic listening, and sought inclusive solutions whenever disagreements arose, especially in web design decisions.`,
-    challenges: `Balancing multiple viewpoints during the redesign process often required patience, tact, and the ability to mediate between creative ideas and practical constraints.`,
-    skills: `Conflict Resolution, Empathetic Listening, Mediation, Collaborative Problem-Solving`,
-    results: `By focusing on shared goals and clear communication, I helped transform conflicts into productive discussions. Team morale improved, and project timelines stayed on track.`,
+    description: `I set out to improve my ability to handle conflict and negotiate solutions that would benefit all parties involved, ultimately boosting team harmony and project outcomes.`,
+    challenges: [
+      "Maintaining an open mind amidst conflicting viewpoints on project designs.",
+      "Ensuring that all opinions are heard and integrated into final decisions.",
+      "Keeping discussions constructive under tight deadlines and varied stakeholder expectations.",
+    ],
+    skills: [
+      "Conflict resolution and mediation",
+      "Negotiation and finding common ground",
+      "Empathy and active listening",
+      "Ethical reasoning and fair decision-making",
+    ],
+    results: `I practiced conflict-resolution strategies by focusing on shared goals, mediating disagreements, and synthesizing diverse inputs into a cohesive approach. This led to mutually beneficial outcomes and increased overall team satisfaction. Emphasizing clear communication and collaboration helped avoid misunderstandings and strengthened trust. Going forward, I plan to keep refining these conflict-resolution techniques.`,
   },
   {
     title:
       "Strengthen interpersonal skills to foster stronger, more authentic relationships in the workplace.",
-    description: `Fostering authentic relationships in a diverse workplace was a priority. I organized informal gatherings, encouraged open dialogue, and learned about colleagues’ backgrounds to foster a more inclusive, supportive environment.`,
-    challenges: `Moving past surface-level small talk and genuinely understanding different cultural perspectives required intentional effort and willingness to listen deeply.`,
-    skills: `Intercultural Competence, Empathy, Active Listening, Team Bonding`,
-    results: `As trust grew among team members, collaboration became smoother and our collective creativity flourished. We established a more welcoming environment that celebrated each person’s uniqueness.`,
+    description: `My objective was to foster stronger, more authentic workplace relationships by focusing on empathy, active listening, and open communication—especially in a diverse, cross-cultural environment.`,
+    challenges: [
+      "Connecting with colleagues on a personal level rather than sticking to small talk.",
+      "Understanding and embracing different cultural perspectives.",
+      "Organizing informal meetups and promoting a comfortable social environment.",
+    ],
+    skills: [
+      "Empathy and active listening",
+      "Inclusive communication and cultural awareness",
+      "Team bonding and collaboration",
+      "Building trust through transparent dialogue",
+    ],
+    results: `I made a point of asking respectful questions and learning about my colleagues beyond their work roles. This authentic approach helped create a more relaxed, inclusive atmosphere. By proposing team-bonding activities and encouraging open discussions, I saw a noticeable improvement in trust and collaboration. Recognizing each person’s uniqueness has enriched our workplace dynamic, and I intend to carry these inclusive practices forward.`,
   },
   {
     title:
       "Develop stronger time management skills to effectively balance the multiple responsibilities of maintaining both external and internal websites.",
-    description: `Balancing external website migrations with new internal SharePoint sites demanded thorough organization. I used tools like MS Teams and Trello to assign tasks, track progress, and break large projects into manageable steps.`,
-    challenges: `Adapting timelines and reprioritizing under tight deadlines occasionally resulted in juggling multiple tasks at once, testing both focus and flexibility.`,
-    skills: `Time Management, Task Prioritization, Iterative Planning, MS Teams, Trello`,
-    results: `Frequent check-ins and a systematic approach prevented overwhelm and ensured we delivered critical pages on schedule. The iterative process also reduced stress and boosted overall team productivity.`,
+    description: `The goal was to develop robust time-management skills to effectively balance the demands of both internal and external website projects without becoming overwhelmed.`,
+    challenges: [
+      "Managing multiple projects simultaneously.",
+      "Setting realistic deadlines and adapting to changing stakeholder needs.",
+      "Breaking large, complex projects into manageable tasks.",
+    ],
+    skills: [
+      "Project and task organization using tools like MS Teams and SharePoint",
+      "Setting priorities and deadlines",
+      "Scheduling and iterative planning",
+      "Stress reduction through systematic task allocation",
+    ],
+    results: `I utilized Google and Microsoft productivity tools to manage my tasks, breaking large assignments into smaller portions aligned with each team member’s strengths. Regularly revisiting deadlines and prioritizing pressing tasks helped avoid last-minute rushing. This systematic approach improved my organizational abilities and equipped me to juggle multiple responsibilities while supporting my teammates effectively.`,
   },
   {
     title:
       "Develop leadership skills by taking initiative in organizing and managing small projects related to the website redesign.",
-    description: `My final objective was to enhance my leadership skills by volunteering for mini-projects tied to the website redesign. I focused on delegation, mentorship, and maintaining clear communication channels with the team.`,
-    challenges: `Coordinating with various stakeholders, each with unique priorities and workflows, required patience and careful oversight. Handling unexpected hurdles—like technical glitches—demanded quick thinking and collaboration.`,
-    skills: `Leadership, Delegation, Mentorship, Stakeholder Engagement`,
-    results: `By playing to each team member’s strengths, we consistently met our milestones. Team feedback indicated an improvement in morale and cohesion, affirming the value of empathetic leadership.`,
+    description: `I aimed to enhance my leadership abilities by organizing and managing small projects tied to a major website redesign, focusing on team delegation and guiding the group toward shared goals.`,
+    challenges: [
+      "Stepping up to coordinate tasks and oversee project timelines.",
+      "Ensuring clear communication and direction for diverse team members.",
+      "Navigating unexpected issues and managing stakeholder expectations.",
+    ],
+    skills: [
+      "Leadership and project management",
+      "Delegation and mentorship",
+      "Decision-making and problem-solving",
+      "Team motivation and collaborative goal-setting",
+    ],
+    results: `I volunteered to lead various website redesign initiatives, leveraging each member’s strengths and maintaining open communication channels. When challenges arose, I collaborated with stakeholders and my manager to identify swift solutions. By focusing on meeting milestones and quality deliverables, the projects concluded successfully. Going forward, I plan to refine my leadership by staying patient, respecting individual differences, and maintaining a supportive environment that helps the team thrive.`,
   },
 ];
 
@@ -89,54 +123,26 @@ const F24UoGCollegeOfArts = () => {
       </div>
 
       {/* Main Title */}
-      <h1 className="text-center text-4xl font-bold leading-snug text-text">
-        A Canvas of Opportunity: Fall 2024 at the College of Arts
-      </h1>
-
-      <p className="mb-4 mt-3 text-left text-lg text-text">
-        From September to December 2024, I had the privilege of working at the
-        University of Guelph, College of Arts, for my second co-op work term as
-        a Website Redesign Coordinator. In this role, I got to dive into the ins
-        and outs of website development—from content migration and page redesign
-        to user experience improvements—while also gaining a firsthand look at
-        how projects flow within a large academic institution. Throughout this
-        report, I’ll share the highlights of my experience, focusing on the
-        importance of collaboration in driving successful digital
-        transformations, as well as the professional and personal growth that
-        came with it. I hope you enjoy reading about my time in this supportive
-        environment, and I’d love to leave you with a little food for thought on
-        the value of embracing new challenges in a post-secondary setting.
-      </p>
-
-      {/* Images Section (Optional) */}
       <section className="mb-20">
-        <div className="mx-auto flex max-w-3xl justify-between gap-10">
-          {/* Image 1 */}
-          <div className="flex flex-col items-center">
-            <img
-              src={image1}
-              alt="Snapshot of the University of Guelph campus"
-              className="h-80 w-80 rounded-md object-cover shadow-md"
-            />
-            <p className="mt-4 text-center text-base text-text">
-              A glimpse of campus life at the University of Guelph’s College of
-              Arts.
-            </p>
-          </div>
+        <h1 className="text-center text-4xl font-bold leading-snug text-text">
+          A Canvas of Opportunity: Fall 2024 at the College of Arts
+        </h1>
 
-          {/* Image 2 */}
-          <div className="flex flex-col items-center">
-            <img
-              src={image2}
-              alt="Workspace or environment in the College of Arts"
-              className="h-80 w-80 rounded-md object-cover shadow-md"
-            />
-            <p className="mt-4 text-center text-base text-text">
-              My workspace in the Mackinnon Building, home to the College of
-              Arts.
-            </p>
-          </div>
-        </div>
+        <p className="mb-4 mt-3 text-left text-lg text-text">
+          From September to December 2024, I had the privilege of working at the
+          University of Guelph, College of Arts, for my second co-op work term
+          as a Website Redesign Coordinator. In this role, I got to dive into
+          the ins and outs of website development—from content migration and
+          page redesign to user experience improvements—while also gaining a
+          firsthand look at how projects flow within a large academic
+          institution. Throughout this report, I’ll share the highlights of my
+          experience, focusing on the importance of collaboration in driving
+          successful digital transformations, as well as the professional and
+          personal growth that came with it. I hope you enjoy reading about my
+          time in this supportive environment, and I’d love to leave you with a
+          little food for thought on the value of embracing new challenges in a
+          post-secondary setting.
+        </p>
       </section>
 
       {/* 2. Information about the Employer */}
@@ -236,23 +242,41 @@ const F24UoGCollegeOfArts = () => {
                     {goal.description}
                   </p>
 
+                  {/* Challenges */}
                   {goal.challenges && (
                     <>
                       <h3 className="mt-2 text-lg font-semibold text-primary">
                         Challenges:
                       </h3>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
-                        {goal.challenges}
-                      </p>
+                      {Array.isArray(goal.challenges) ? (
+                        <ul className="list-disc pl-6 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                          {goal.challenges.map((challenge, cIndex) => (
+                            <li key={cIndex}>{challenge}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                          {goal.challenges}
+                        </p>
+                      )}
                     </>
                   )}
 
+                  {/* Skills */}
                   <h3 className="mt-2 text-lg font-semibold text-primary">
                     Skills Developed:
                   </h3>
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
-                    {goal.skills}
-                  </p>
+                  {Array.isArray(goal.skills) ? (
+                    <ul className="list-disc pl-6 text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                      {goal.skills.map((skill, sIndex) => (
+                        <li key={sIndex}>{skill}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                      {goal.skills}
+                    </p>
+                  )}
 
                   <h3 className="mt-2 text-lg font-semibold text-primary">
                     Results:
@@ -290,9 +314,9 @@ const F24UoGCollegeOfArts = () => {
           and even dipped my toes into a few marketing and recruitment
           initiatives along the way.
         </p>
-        <p className="mb-4 text-left text-lg text-text">
+        <h3 className="mb-4 text-center text-2xl font-bold text-text">
           Main Systems: Drupal 7, Drupal 9 (Content Hub), & SharePoint
-        </p>
+        </h3>
         <p className="mb-4 text-left text-lg text-text">
           Drupal 7 As the University’s former content management system, Drupal
           7 hosts around 11,000 College of Arts pages. Faculty and staff can
@@ -316,50 +340,83 @@ const F24UoGCollegeOfArts = () => {
           configure its templates, branding, and navigation so departments can
           easily post and update their own content.
         </p>
-        <p className="mb-4 text-left text-lg text-text">project 1 content</p>
-        <p className="mb-4 text-left text-lg text-text">project 2 content</p>
+        <p className="mb-4 text-left text-lg text-text">
+          While I tackled numerous projects throughout my term, two in
+          particular showcase the scope and impact of my work are the following!
+        </p>
+        <p className="mb-4 text-left text-lg text-text">
+          Revamping the PhD Improvisation Page (Drupal 7)
+        </p>
+        <p className="mb-4 text-left text-lg text-text">
+          The original PhD Improvisation page was primarily composed of plain
+          text and basic headers, making it less engaging for visitors. I led
+          the project to give this page a complete facelift by incorporating the
+          University’s branding guidelines—introducing a consistent color
+          scheme, updated visuals, and clearer navigation elements. This
+          transformation not only made the page more visually appealing but also
+          enhanced its user-friendliness. Collaborating closely with faculty
+          members, I ensured that all program details were current and that the
+          page adhered to accessibility standards, resulting in a more engaging
+          and informative experience for prospective and current students.
+        </p>
+        <p className="mb-4 text-left text-lg text-text">
+          Graduate Pages Migration (Drupal 7 to Drupal 9)
+        </p>
+        <p className="mb-4 text-left text-lg text-text">
+          Working alongside a large and dedicated team, I played a key role in
+          migrating graduate program content from Drupal 7 to Drupal 9 (Content
+          Hub). The existing content was largely composed of dense paragraphs,
+          which could be overwhelming for graduate students seeking information.
+          My responsibilities included updating and refining this content to
+          make it more accessible and user-friendly. This involved reorganizing
+          information, enhancing readability, and ensuring that the new Drupal 9
+          platform supported a more intuitive navigation experience. During my
+          co-op term, I finalized a significant portion of the content, and I’ll
+          continue to refine and support the launch of these pages during my
+          part-time term in Winter 2025.
+        </p>
         {/* Optional Placeholder Images/Links for demonstration */}
         <section className="my-6">
-          <div className="flex justify-between gap-14 px-5">
-            <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-between gap-14 px-5 lg:flex-row">
+            {/* Project 1: Revamping the PhD Improvisation Page */}
+            <div className="mb-8 flex flex-col items-center lg:mb-0">
               <div className="aspect-w-16 aspect-h-9 w-full">
-                {/* Example link or remove if not needed */}
                 <a
-                  href="https://uoguelph.ca/arts"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={image4}
-                    alt="Placeholder for the new College of Arts website"
-                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
-                  />
-                </a>
-              </div>
-              <p className="mt-8 text-center text-base text-text">
-                Placeholder for a screenshot of the redesigned external College
-                of Arts website.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                {/* Example link or remove if not needed */}
-                <a
-                  href="https://www.uoguelph.ca"
+                  href="https://www.uoguelph.ca/arts/improv/phd"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
                     src={image3}
-                    alt="Placeholder for internal SharePoint site"
+                    alt="Screenshot of the redesigned PhD Improvisation page on Drupal 7"
                     className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
                   />
                 </a>
               </div>
               <p className="mt-8 text-center text-base text-text">
-                Placeholder for a screenshot of the internal SharePoint site for
-                faculty and students.
+                Revamped the PhD Improvisation page by incorporating branding
+                elements and enhancing visual appeal.
+              </p>
+            </div>
+
+            {/* Project 2: Migrating Graduate Pages from Drupal 7 to Drupal 9 */}
+            <div className="flex flex-col items-center">
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <a
+                  href="https://preview-ugconthub.netlify.app/phd-history/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={image4}
+                    alt="Screenshot of the migrated Graduate Pages on Drupal 9 Content Hub"
+                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
+                  />
+                </a>
+              </div>
+              <p className="mt-8 text-center text-base text-text">
+                Migrated and refined History PhD page to Drupal 9, enhancing
+                user experience for prospective students.
               </p>
             </div>
           </div>
