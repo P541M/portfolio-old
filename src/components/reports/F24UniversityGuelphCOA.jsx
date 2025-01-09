@@ -204,39 +204,56 @@ const F24UoGCollegeOfArts = () => {
         </h2>
         <hr className="border-divContrast mb-4" />
 
-        <p className="mb-4 text-left text-lg text-text">
-          Our Marketing and Communications team sits in the Dean’s Office at the
-          College of Arts, University of Guelph, and serves as a support hub for
-          everything from marketing and communications to recruitment and web
-          services—reaching a wide range of stakeholders such as students,
-          staff, faculty, donors, and alumni. Within this team, there are three
-          key service areas: Marketing and Communications, the Web Team, and
-          Recruitment and Retention. Since my role focuses on the website, I
-          belong to the Web Team!
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Marketing and Communications handles strategic planning for the
-          College, organizes university- and college-wide events, creates
-          newsletters and story pieces, manages social and digital media, and
-          ensures we follow the right branding guidelines.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Recruitment and Retention looks after recruitment materials and
-          events, coordinates volunteer outreach, handles room bookings and
-          logistics, manages merchandise, and leads the Ambassador Team.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Web Services is in charge of planning and developing website and
-          intranet structures, improving user experience, and supporting our
-          Drupal and SharePoint systems. We also produce strategic web content
-          for future, current, and graduate students, making sure everyone stays
-          informed and engaged.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          All together, our sub-teams collaborate to keep the College of Arts
-          thriving—whether we’re welcoming new students, sharing stories and
-          events, or fine-tuning the online experience.
-        </p>
+        {/* Responsive Layout for Image and Text */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
+          {/* Image Section */}
+          <div className="lg:w-1/3">
+            <img
+              src={image1}
+              className="mb-4 h-auto w-full rounded-md shadow-md"
+            />
+            <p className="mt-2 text-center text-sm text-text">
+              Group picture of the marketing & communications team!
+            </p>
+          </div>
+
+          {/* Text Section */}
+          <div className="text-lg text-text lg:w-2/3">
+            <p className="mb-4">
+              Our Marketing and Communications team sits in the Dean’s Office at
+              the College of Arts, University of Guelph, and serves as a support
+              hub for everything from marketing and communications to
+              recruitment and web services—reaching a wide range of stakeholders
+              such as students, staff, faculty, donors, and alumni. Within this
+              team, there are three key service areas: Marketing and
+              Communications, the Web Team, and Recruitment and Retention. Since
+              my role focuses on the website, I belong to the Web Team!
+            </p>
+            <p className="mb-4">
+              Marketing and Communications handles strategic planning for the
+              College, organizes university- and college-wide events, creates
+              newsletters and story pieces, manages social and digital media,
+              and ensures we follow the right branding guidelines.
+            </p>
+            <p className="mb-4">
+              Recruitment and Retention looks after recruitment materials and
+              events, coordinates volunteer outreach, handles room bookings and
+              logistics, manages merchandise, and leads the Ambassador Team.
+            </p>
+            <p className="mb-4">
+              Web Services is in charge of planning and developing website and
+              intranet structures, improving user experience, and supporting our
+              Drupal and SharePoint systems. We also produce strategic web
+              content for future, current, and graduate students, making sure
+              everyone stays informed and engaged.
+            </p>
+            <p className="mb-4">
+              All together, our sub-teams collaborate to keep the College of
+              Arts thriving—whether we’re welcoming new students, sharing
+              stories and events, or fine-tuning the online experience.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* 3. Goals */}
@@ -485,10 +502,10 @@ const F24UoGCollegeOfArts = () => {
         </p>
       </section>
 
-      {/* 5. Acknowledgments */}
+      {/* 5. Conclusions */}
       <section className="mb-20">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
-          A Gallery of Gratitude: Acknowledgments
+          Closing the Canvas: Lessons in Growth and Gratitude
         </h2>
         <hr className="border-divContrast mb-4" />
         <p className="mb-4 text-left text-lg text-text">
@@ -503,34 +520,62 @@ const F24UoGCollegeOfArts = () => {
           abilities but also enriched my perspective on how a well-designed
           digital environment can positively impact a community.
         </p>
-        <h3 className="mb-4 mt-8 text-center text-2xl font-bold text-text">
-          Special Thanks
-        </h3>
-        <p className="mb-4 text-left text-lg text-text">
-          I would like to extend my heartfelt gratitude to my manager, Rachel
-          Ruston, for her exceptional mentorship. Her supportive leadership
-          style made it possible for me to learn and grow with confidence. I
-          also owe a big thank-you to Kate Tschirhart, whose warm and caring
-          nature contributed greatly to the positive atmosphere in our
-          workspace.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          My close collaborators, the Websters—particularly Lyna Tran and
-          Muhammad Uzair—deserve special mention. They took me under their wing,
-          shared valuable insights, and helped me transition smoothly into my
-          role. The rest of the team, including Callie Gibson, Ella Holt,
-          Rasneet Kaur, and Hannah Andrea Rosario, was equally supportive and
-          passionate, contributing tirelessly to the College’s website success.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          I am thankful for everyone in the College of Arts, whose collective
-          efforts made my co-op term both enriching and enjoyable. From personal
-          growth to professional achievements, this experience has reshaped my
-          understanding of teamwork and has motivated me to stay engaged with
-          the College in future projects. I’m excited to return in the Winter
-          2025 term, carry forward the lessons I’ve learned, and maintain the
-          long-lasting relationships I’ve established.
-        </p>
+      </section>
+
+      {/* 6. Acknowledgments */}
+      <section className="mb-20">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary">
+          A Gallery of Gratitude: Acknowledgments
+        </h2>
+        <hr className="border-divContrast mb-4" />
+
+        <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
+          {/* Image Section */}
+          <div className="lg:w-1/3">
+            <img
+              src={image2}
+              alt="Group picture of the Websters!"
+              className="mb-4 h-auto w-full rounded-md shadow-md"
+            />
+            <p className="mt-2 text-center text-sm text-text">
+              Group picture of the Websters!
+            </p>
+          </div>
+
+          {/* Text Section */}
+          <div className="text-lg text-text lg:w-2/3">
+            <p className="mb-4">
+              I would like to extend my heartfelt gratitude to my manager,
+              Rachel Ruston, for her exceptional mentorship and unwavering
+              support. Her supportive leadership style made it possible for me
+              to learn, grow with confidence, and take on new challenges. I also
+              owe a big thank-you to Kate Tschirhart, whose warm and caring
+              nature contributed greatly to the positive, collaborative
+              atmosphere in our workspace.
+            </p>
+            <p className="mb-4">
+              My close collaborators, the Websters—particularly Lyna Tran and
+              Muhammad Uzair—deserve special mention. They took me under their
+              wing, shared valuable insights, and helped me transition smoothly
+              and confidently into my role. Beyond work, they became some of my
+              closest friends, offering constant support and encouragement
+              throughout my journey. The rest of the team, including Callie
+              Gibson, Ella Holt, Rasneet Kaur, and Hannah Andrea Rosario, was
+              equally supportive, enthusiastic, and passionate, contributing
+              tirelessly to the College’s website success.
+            </p>
+            <p className="mb-4">
+              I am thankful for everyone in the College of Arts, whose
+              collective efforts made my co-op term both enriching and
+              enjoyable. From personal growth to professional achievements, this
+              experience has reshaped my understanding of teamwork, strengthened
+              my confidence, and motivated me to stay engaged with the College
+              in future projects. I’m excited to return in the Winter 2025 term,
+              carry forward the valuable lessons I’ve learned, and continue to
+              foster the long-lasting relationships I’ve established.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
