@@ -96,7 +96,7 @@ const S24BoscoBoysDistributors = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           My Summer with BoscoBoys
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg">
           From May to August 2024, I had the privilege of interning at BoscoBoys
@@ -189,7 +189,7 @@ const S24BoscoBoysDistributors = () => {
           BoscoBoys Distributors: Connecting Businesses, Bridging Distances
         </h2>
 
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           BoscoBoys Distributors, founded in 1998, is a family-owned logistics
@@ -226,7 +226,7 @@ const S24BoscoBoysDistributors = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Responsibilities, Technologies, and Impact at BoscoBoys
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           As a Fullstack Developer & Business Analyst Intern, I was responsible
@@ -453,7 +453,7 @@ const S24BoscoBoysDistributors = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Goals, Challenges, and Achievements
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           Throughout my internship, I set out to achieve specific goals that
@@ -527,7 +527,7 @@ const S24BoscoBoysDistributors = () => {
               </div>
               {/* Divider between goals */}
               {index < goals.length - 1 && (
-                <hr className="my-4 border-bgContrast" />
+                <hr className="border-divContrast my-4" />
               )}
             </div>
           ))}
@@ -539,7 +539,7 @@ const S24BoscoBoysDistributors = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Reflections on Growth and Future Aspirations
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           My internship at BoscoBoys was not just an opportunity to apply what I
@@ -581,7 +581,7 @@ const S24BoscoBoysDistributors = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Gratitude & Mentorship: The People Behind My Growth
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         {/* Franklin Hamilton Donbosco */}
         <p className="mb-4 text-left text-lg text-text">

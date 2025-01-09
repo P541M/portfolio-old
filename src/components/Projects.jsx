@@ -313,7 +313,7 @@ export default function Projects() {
       >
         Projects
       </h2>
-      <hr className="mb-4 border-bgContrast" />
+      <hr className="mb-4 border-divContrast" />
 
       <div>
         {sortedProjects.map((project, index) => (
@@ -411,7 +411,7 @@ export default function Projects() {
             </div>
 
             {index < sortedProjects.length - 1 && (
-              <hr className="my-4 border-bgContrast" />
+              <hr className="my-4 border-divContrast" />
             )}
           </div>
         ))}

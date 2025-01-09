@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import image1 from "../../assets/f24/grouppic.jpg";
+import image2 from "../../assets/f24/websters.jpg";
 import image3 from "../../assets/f24/d7Improv.png";
 import image4 from "../../assets/f24/d9Hist.png";
 
@@ -177,14 +179,30 @@ const F24UoGCollegeOfArts = () => {
           little food for thought on the value of embracing new challenges in a
           post-secondary setting.
         </p>
+        {/* <section>
+          <div className="flex w-full flex-col items-center justify-between">
+            <div className="flex w-full justify-center">
+              <img
+                src={image1}
+                alt="Web App 1 Interface"
+                className="mx-auto h-full w-full rounded-md object-cover shadow-md lg:w-1/2"
+              />
+            </div>
+
+            <p className="mt-8 text-center text-base text-text">
+              The whole College of Arts Marketing and Communications team
+              enjoyed an end-of-year team social!
+            </p>
+          </div>
+        </section> */}
       </section>
 
       {/* 2. Information about the Employer */}
-      <section className="mb-20">
+      <section className="my-20">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Behind the Scenes: Exploring the College of Arts
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           Our Marketing and Communications team sits in the Dean’s Office at the
@@ -226,7 +244,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Palette of Progress: Goals and Growth
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           During my work term at the University of Guelph, College of Arts, I
@@ -323,7 +341,7 @@ const F24UoGCollegeOfArts = () => {
 
               {/* Divider between goals */}
               {index < goals.length - 1 && (
-                <hr className="my-4 border-bgContrast" />
+                <hr className="border-divContrast my-4" />
               )}
             </div>
           ))}
@@ -335,29 +353,27 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Crafting a Digital Experience: My Role in the Redesign
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
 
         <p className="mb-4 text-left text-lg text-text">
           Over the last four months, I’ve been diving deep into web migration,
           accessibility, and user experience design as the Website Redesign
-          Coordinator for the College of Arts. My goal has been to figure out
-          the “why” behind each decision—making sure our web pages aren’t just
-          user-friendly, but also meaningful for the audiences we serve. In a
-          project of this scale, I’ve sharpened my project management skills,
-          learned how to collaborate with clients across different departments,
-          and even dipped my toes into a few marketing and recruitment
-          initiatives along the way.
+          Coordinator for the College of Arts. To ensure our web pages are not
+          only user-friendly but also impactful for the audiences we serve, I
+          leverage a variety of specialized platforms. And here are the three
+          main platforms I tinker with! In a project of this scale, I’ve
+          sharpened my project management skills, learned how to collaborate
+          with clients across different departments, and even dipped my toes
+          into a few marketing and recruitment initiatives along the way.
         </p>
         <h3 className="mb-4 mt-8 text-center text-2xl font-bold text-text">
           Drupal 7, Drupal 9 (Content Hub), & SharePoint
         </h3>
         <p className="mb-4 text-left text-lg text-text">
           <strong>Drupal 7:</strong> As the University’s former content
-          management system, Drupal 7 hosts around 11,000 College of Arts pages.
-          Faculty and staff can create and edit content, while our web team
-          (including me!) has Site Manager access to oversee the entire
-          platform. This setup has allowed me to flex my skills in HTML/CSS,
-          visual design, and brand consistency.
+          management system, Drupal 7 hosts close to 11,000 College of Arts
+          pages. Faculty and staff can create and edit content, while our web
+          team has site manager access to oversee the entire platform.
         </p>
         <p className="mb-4 text-left text-lg text-text">
           <strong>Drupal 9 / Content Hub:</strong> The University is moving
@@ -454,7 +470,7 @@ const F24UoGCollegeOfArts = () => {
 
               {/* Corrected Divider Condition */}
               {index < workTermProjects.length - 1 && (
-                <hr className="my-4 border-bgContrast" />
+                <hr className="border-divContrast my-4" />
               )}
             </div>
           ))}
@@ -474,7 +490,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Gallery of Gratitude: Acknowledgments
         </h2>
-        <hr className="mb-4 border-bgContrast" />
+        <hr className="border-divContrast mb-4" />
         <p className="mb-4 text-left text-lg text-text">
           Reflecting on these four months, I’m struck by just how much I’ve
           learned—and how much I’ve grown—through this Website Redesign

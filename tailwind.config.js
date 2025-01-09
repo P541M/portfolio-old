@@ -8,6 +8,7 @@ module.exports = {
         bg: "#FFFFFF", // Background color
         primary: "#ADADAD", // Main color
         bgContrast: "#F2F2F2", // Darker contrast background
+        divContrast: "#C2C2C2", // Darker contrast background
       },
       spacing: {
         "safe-top": "env(safe-area-inset-top)",
