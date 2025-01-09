@@ -92,9 +92,36 @@ const goals = [
   },
 ];
 
+const workTermProjects = [
+  {
+    title: "Revamping the PhD improvisation page (Drupal 7)",
+    description:
+      "The original PhD Improvisation page was primarily composed of plain text and basic headers, making it less engaging for visitors. I led the project to give this page a complete facelift by incorporating the University’s branding guidelines—introducing a consistent color scheme, updated visuals, and clearer navigation elements. This transformation not only made the page more visually appealing but also enhanced its user-friendliness. Collaborating closely with faculty members, I ensured that all program details were current and that the page adhered to accessibility standards, resulting in a more engaging and informative experience for prospective and current students.",
+    link: "https://www.uoguelph.ca/arts/improv/phd",
+    image: image3,
+    altText: "Screenshot of the redesigned PhD Improvisation page on Drupal 7",
+    caption:
+      "Revamped the PhD Improvisation page by incorporating branding elements and enhancing visual appeal.",
+    showVisitButton: true,
+  },
+  {
+    title: "Graduate pages migration (Drupal 7 to Drupal 9)",
+    description:
+      "Working alongside a large and dedicated team, I played a key role in migrating graduate program content from Drupal 7 to Drupal 9 (Content Hub). The existing content was largely composed of dense paragraphs, which could be overwhelming for graduate students seeking information. My responsibilities included updating and refining this content to make it more accessible and user-friendly. This involved reorganizing information, enhancing readability, and ensuring that the new Drupal 9 platform supported a more intuitive navigation experience. During my co-op term, I finalized a significant portion of the content, and I’ll continue to refine and support the launch of these pages during my part-time term in Winter 2025.",
+    link: "https://preview-ugconthub.netlify.app/phd-history/",
+    image: image4,
+    altText:
+      "Screenshot of the migrated Graduate Pages on Drupal 9 Content Hub",
+    caption:
+      "Migrated and refined Graduate Pages to Drupal 9, enhancing user experience for prospective students.",
+    showVisitButton: false,
+  },
+];
+
 const F24UoGCollegeOfArts = () => {
   const navigate = useNavigate();
   const [expandedGoals, setExpandedGoals] = useState({});
+  const [expandedProjects, setExpandedProjects] = useState({});
 
   const handleBack = () => {
     navigate(-1);
@@ -102,6 +129,13 @@ const F24UoGCollegeOfArts = () => {
 
   const handleToggleGoal = (index) => {
     setExpandedGoals((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const handleToggleProject = (index) => {
+    setExpandedProjects((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
@@ -314,113 +348,118 @@ const F24UoGCollegeOfArts = () => {
           and even dipped my toes into a few marketing and recruitment
           initiatives along the way.
         </p>
-        <h3 className="mb-4 text-center text-2xl font-bold text-text">
-          Main Systems: Drupal 7, Drupal 9 (Content Hub), & SharePoint
+        <h3 className="mb-4 mt-8 text-center text-2xl font-bold text-text">
+          Drupal 7, Drupal 9 (Content Hub), & SharePoint
         </h3>
         <p className="mb-4 text-left text-lg text-text">
-          Drupal 7 As the University’s former content management system, Drupal
-          7 hosts around 11,000 College of Arts pages. Faculty and staff can
-          create and edit content, while our web team (including me!) has Site
-          Manager access to oversee the entire platform. This setup has allowed
-          me to flex my skills in HTML/CSS, visual design, and brand
-          consistency.
+          <strong>Drupal 7:</strong> As the University’s former content
+          management system, Drupal 7 hosts around 11,000 College of Arts pages.
+          Faculty and staff can create and edit content, while our web team
+          (including me!) has Site Manager access to oversee the entire
+          platform. This setup has allowed me to flex my skills in HTML/CSS,
+          visual design, and brand consistency.
         </p>
         <p className="mb-4 text-left text-lg text-text">
-          Drupal 9 / Content Hub The University is moving toward a more modern,
-          user-friendly design with Drupal 9. My job has been to plan site
-          structure and navigation, develop page layouts and wireframes, and
-          make sure everything fits within accessibility and branding
-          guidelines. This newer system has less coding involved but requires
-          careful organization to ensure a smooth transition from Drupal 7.
+          <strong>Drupal 9 / Content Hub:</strong> The University is moving
+          toward a more modern, user-friendly design with Drupal 9. My job has
+          been to plan site structure and navigation, develop page layouts and
+          wireframes, and make sure everything fits within accessibility and
+          branding guidelines. This newer system has less coding involved but
+          requires careful organization to ensure a smooth transition from
+          Drupal 7.
         </p>
         <p className="mb-4 text-left text-lg text-text">
-          SharePoint SharePoint is being rolled out as an internal intranet for
-          faculty, staff, and students, offering a straightforward platform to
-          share internal communications and resources. I’ve been helping
-          configure its templates, branding, and navigation so departments can
-          easily post and update their own content.
+          <strong>SharePoint:</strong> SharePoint is being rolled out as an
+          internal intranet for faculty, staff, and students, offering a
+          straightforward platform to share internal communications and
+          resources. I’ve been helping configure its templates, branding, and
+          navigation so departments can easily post and update their own
+          content.
         </p>
+        <h3 className="mb-4 mt-8 text-center text-2xl font-bold text-text">
+          Two of the Many Projects I Tackled!
+        </h3>
         <p className="mb-4 text-left text-lg text-text">
           While I tackled numerous projects throughout my term, two in
-          particular showcase the scope and impact of my work are the following!
+          particular showcase the scope and impact of my work. These standout
+          projects not only highlight my technical skills in website development
+          and content management but also demonstrate my ability to collaborate
+          effectively within a team, leading to significant enhancements for the
+          College of Arts' online presence.
         </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Revamping the PhD Improvisation Page (Drupal 7)
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          The original PhD Improvisation page was primarily composed of plain
-          text and basic headers, making it less engaging for visitors. I led
-          the project to give this page a complete facelift by incorporating the
-          University’s branding guidelines—introducing a consistent color
-          scheme, updated visuals, and clearer navigation elements. This
-          transformation not only made the page more visually appealing but also
-          enhanced its user-friendliness. Collaborating closely with faculty
-          members, I ensured that all program details were current and that the
-          page adhered to accessibility standards, resulting in a more engaging
-          and informative experience for prospective and current students.
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Graduate Pages Migration (Drupal 7 to Drupal 9)
-        </p>
-        <p className="mb-4 text-left text-lg text-text">
-          Working alongside a large and dedicated team, I played a key role in
-          migrating graduate program content from Drupal 7 to Drupal 9 (Content
-          Hub). The existing content was largely composed of dense paragraphs,
-          which could be overwhelming for graduate students seeking information.
-          My responsibilities included updating and refining this content to
-          make it more accessible and user-friendly. This involved reorganizing
-          information, enhancing readability, and ensuring that the new Drupal 9
-          platform supported a more intuitive navigation experience. During my
-          co-op term, I finalized a significant portion of the content, and I’ll
-          continue to refine and support the launch of these pages during my
-          part-time term in Winter 2025.
-        </p>
-        {/* Optional Placeholder Images/Links for demonstration */}
-        <section className="my-6">
-          <div className="flex flex-col justify-between gap-14 px-5 lg:flex-row">
-            {/* Project 1: Revamping the PhD Improvisation Page */}
-            <div className="mb-8 flex flex-col items-center lg:mb-0">
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <a
-                  href="https://www.uoguelph.ca/arts/improv/phd"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={image3}
-                    alt="Screenshot of the redesigned PhD Improvisation page on Drupal 7"
-                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
-                  />
-                </a>
-              </div>
-              <p className="mt-8 text-center text-base text-text">
-                Revamped the PhD Improvisation page by incorporating branding
-                elements and enhancing visual appeal.
-              </p>
-            </div>
 
-            {/* Project 2: Migrating Graduate Pages from Drupal 7 to Drupal 9 */}
-            <div className="flex flex-col items-center">
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <a
-                  href="https://preview-ugconthub.netlify.app/phd-history/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={image4}
-                    alt="Screenshot of the migrated Graduate Pages on Drupal 9 Content Hub"
-                    className="h-full w-full rounded-md object-cover shadow-md transition-all duration-300 hover:scale-105"
-                  />
-                </a>
+        {/* Featured Projects with Dropdown */}
+        <section className="mb-6">
+          {workTermProjects.map((project, index) => (
+            <div key={index}>
+              <button
+                onClick={() => handleToggleProject(index)}
+                className="flex w-full items-center justify-between py-2 text-left text-lg font-semibold transition-all duration-300 hover:text-primary"
+                aria-expanded={expandedProjects[index]}
+                aria-controls={`project-details-${index}`}
+              >
+                <span>{project.title}</span>
+                <div className="flex items-center">
+                  <span
+                    className={`transform transition-all duration-300 ${
+                      expandedProjects[index] ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </div>
+              </button>
+
+              <div
+                id={`project-details-${index}`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  expandedProjects[index]
+                    ? "max-h-screen translate-y-0 opacity-100"
+                    : "max-h-0 translate-y-4 opacity-0"
+                }`}
+              >
+                <div className="pb-4">
+                  <div className="mt-2 flex flex-col md:flex-row md:items-start md:space-x-8">
+                    <img
+                      src={project.image}
+                      alt={project.altText}
+                      className="mb-4 h-auto w-full rounded-md shadow-md md:mb-0 md:w-1/2"
+                    />
+                    <div className="md:w-1/2">
+                      <h4 className="text-lg font-semibold text-primary">
+                        Project Description:
+                      </h4>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
+                        {project.description}
+                      </p>
+
+                      <div className="mt-8">
+                        {/* Conditionally render the "Visit Project" button */}
+                        {project.showVisitButton && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+                            aria-label={`Visit Project: ${project.title}`}
+                          >
+                            Visit Project
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="mt-8 text-center text-base text-text">
-                Migrated and refined History PhD page to Drupal 9, enhancing
-                user experience for prospective students.
-              </p>
+
+              {/* Corrected Divider Condition */}
+              {index < workTermProjects.length - 1 && (
+                <hr className="my-4 border-bgContrast" />
+              )}
             </div>
-          </div>
+          ))}
         </section>
+
         <p className="mb-4 text-left text-lg text-text">
           Overall, this role has given me the chance to blend tech-savvy tasks
           with creative thinking—whether I’m coding in Drupal, mapping out user
@@ -436,7 +475,6 @@ const F24UoGCollegeOfArts = () => {
           A Gallery of Gratitude: Acknowledgments
         </h2>
         <hr className="mb-4 border-bgContrast" />
-
         <p className="mb-4 text-left text-lg text-text">
           Reflecting on these four months, I’m struck by just how much I’ve
           learned—and how much I’ve grown—through this Website Redesign
@@ -449,6 +487,9 @@ const F24UoGCollegeOfArts = () => {
           abilities but also enriched my perspective on how a well-designed
           digital environment can positively impact a community.
         </p>
+        <h3 className="mb-4 mt-8 text-center text-2xl font-bold text-text">
+          Special Thanks
+        </h3>
         <p className="mb-4 text-left text-lg text-text">
           I would like to extend my heartfelt gratitude to my manager, Rachel
           Ruston, for her exceptional mentorship. Her supportive leadership
