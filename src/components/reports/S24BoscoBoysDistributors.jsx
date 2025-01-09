@@ -92,7 +92,7 @@ const S24BoscoBoysDistributors = () => {
         operations.
       </p>
       {/* Introduction */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           My Summer with BoscoBoys
         </h2>
@@ -153,7 +153,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Images Section */}
-      <section className="mb-20">
+      <section className="mb-14">
         <div className="mx-auto flex max-w-3xl justify-between gap-10">
           {/* Image 1 */}
           <div className="flex flex-col items-center">
@@ -184,7 +184,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Employer Information */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           BoscoBoys Distributors: Connecting Businesses, Bridging Distances
         </h2>
@@ -222,7 +222,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Job Description */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Responsibilities, Technologies, and Impact at BoscoBoys
         </h2>
@@ -449,7 +449,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Goals */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Goals, Challenges, and Achievements
         </h2>
@@ -535,7 +535,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Conclusion */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Reflections on Growth and Future Aspirations
         </h2>
@@ -577,7 +577,7 @@ const S24BoscoBoysDistributors = () => {
       </section>
 
       {/* Acknowledgments */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Gratitude & Mentorship: The People Behind My Growth
         </h2>

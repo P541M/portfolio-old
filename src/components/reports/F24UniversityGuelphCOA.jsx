@@ -159,7 +159,7 @@ const F24UoGCollegeOfArts = () => {
       </div>
 
       {/* Main Title */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h1 className="text-center text-4xl font-bold leading-snug text-text">
           A Canvas of Opportunity: Fall 2024 at the College of Arts
         </h1>
@@ -179,26 +179,10 @@ const F24UoGCollegeOfArts = () => {
           little food for thought on the value of embracing new challenges in a
           post-secondary setting.
         </p>
-        {/* <section>
-          <div className="flex w-full flex-col items-center justify-between">
-            <div className="flex w-full justify-center">
-              <img
-                src={image1}
-                alt="Web App 1 Interface"
-                className="mx-auto h-full w-full rounded-md object-cover shadow-md lg:w-1/2"
-              />
-            </div>
-
-            <p className="mt-8 text-center text-base text-text">
-              The whole College of Arts Marketing and Communications team
-              enjoyed an end-of-year team social!
-            </p>
-          </div>
-        </section> */}
       </section>
 
       {/* 2. Information about the Employer */}
-      <section className="my-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Behind the Scenes: Exploring the College of Arts
         </h2>
@@ -210,9 +194,9 @@ const F24UoGCollegeOfArts = () => {
           <div className="lg:w-1/3">
             <img
               src={image1}
-              className="mb-4 h-auto w-full rounded-md shadow-md"
+              className="mt-4 h-auto w-full rounded-md shadow-md"
             />
-            <p className="mt-2 text-center text-sm text-text">
+            <p className="my-4 text-center text-base text-text">
               Group picture of the marketing & communications team!
             </p>
           </div>
@@ -257,7 +241,7 @@ const F24UoGCollegeOfArts = () => {
       </section>
 
       {/* 3. Goals */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Palette of Progress: Goals and Growth
         </h2>
@@ -366,7 +350,7 @@ const F24UoGCollegeOfArts = () => {
       </section>
 
       {/* 4. Job Description */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Crafting a Digital Experience: My Role in the Redesign
         </h2>
@@ -503,7 +487,7 @@ const F24UoGCollegeOfArts = () => {
       </section>
 
       {/* 5. Conclusions */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Closing the Canvas: Lessons in Growth and Gratitude
         </h2>
@@ -523,7 +507,7 @@ const F24UoGCollegeOfArts = () => {
       </section>
 
       {/* 6. Acknowledgments */}
-      <section className="mb-20">
+      <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Gallery of Gratitude: Acknowledgments
         </h2>
@@ -537,7 +521,7 @@ const F24UoGCollegeOfArts = () => {
               alt="Group picture of the Websters!"
               className="mb-4 h-auto w-full rounded-md shadow-md"
             />
-            <p className="mt-2 text-center text-sm text-text">
+            <p className="my-4 text-center text-base text-text">
               Group picture of the Websters!
             </p>
           </div>
