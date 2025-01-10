@@ -126,7 +126,7 @@ const F24UoGCollegeOfArts = () => {
   const [expandedProjects, setExpandedProjects] = useState({});
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   const handleToggleGoal = (index) => {
@@ -186,7 +186,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Behind the Scenes: Exploring the College of Arts
         </h2>
-        <hr className="border-divContrast mb-4" />
+        <hr className="mb-4 border-divContrast" />
 
         {/* Responsive Layout for Image and Text */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
@@ -245,7 +245,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Palette of Progress: Goals and Growth
         </h2>
-        <hr className="border-divContrast mb-4" />
+        <hr className="mb-4 border-divContrast" />
 
         <p className="mb-4 text-left text-lg text-text">
           During my work term at the University of Guelph, College of Arts, I
@@ -342,7 +342,7 @@ const F24UoGCollegeOfArts = () => {
 
               {/* Divider between goals */}
               {index < goals.length - 1 && (
-                <hr className="border-divContrast my-4" />
+                <hr className="my-4 border-divContrast" />
               )}
             </div>
           ))}
@@ -354,7 +354,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Crafting a Digital Experience: My Role in the Redesign
         </h2>
-        <hr className="border-divContrast mb-4" />
+        <hr className="mb-4 border-divContrast" />
 
         <p className="mb-4 text-left text-lg text-text">
           Over the last four months, I’ve been diving deep into web migration,
@@ -471,7 +471,7 @@ const F24UoGCollegeOfArts = () => {
 
               {/* Corrected Divider Condition */}
               {index < workTermProjects.length - 1 && (
-                <hr className="border-divContrast my-4" />
+                <hr className="my-4 border-divContrast" />
               )}
             </div>
           ))}
@@ -491,7 +491,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Closing the Canvas: Lessons in Growth and Gratitude
         </h2>
-        <hr className="border-divContrast mb-4" />
+        <hr className="mb-4 border-divContrast" />
         <p className="mb-4 text-left text-lg text-text">
           Reflecting on these four months, I’m struck by just how much I’ve
           learned—and how much I’ve grown—through this Website Redesign
@@ -511,7 +511,7 @@ const F24UoGCollegeOfArts = () => {
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Gallery of Gratitude: Acknowledgments
         </h2>
-        <hr className="border-divContrast mb-4" />
+        <hr className="mb-4 border-divContrast" />
 
         <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
           {/* Image Section */}
