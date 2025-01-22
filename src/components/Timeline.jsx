@@ -18,7 +18,7 @@ const timeline = [
     company: "University of Guelph, College of Arts",
     roles: [
       {
-        title: "Website Project Lead",
+        title: "Web Developer",
         icon: CogIcon,
         description:
           "Led the redesign and migration of the College of Arts websites, overseeing content updates, accessibility, and stakeholder coordination.",
