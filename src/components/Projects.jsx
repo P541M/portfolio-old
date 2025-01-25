@@ -174,7 +174,7 @@ const projects = [
     title: "Personal Portfolio V2",
     description:
       "Personal Portfolio V2 is a minimalist redesign of my original portfolio, aimed at creating a clean and streamlined online presence. As the main frontend developer, I utilized React, JavaScript, HTML, and CSS to achieve a simple yet effective design within a single day. This project allowed me to explore minimalist design principles, focusing on essential elements to enhance user experience without unnecessary complexity. Although discontinued, future improvements would involve experimenting with different color palettes and further refining the design to better align with minimalist aesthetics, ensuring a visually appealing and user-friendly portfolio.",
-    state: "Discontinued",
+    state: "Deployed",
     link: "https://p541m.github.io/personal-website/",
     image: pimg5,
     technologies: [
