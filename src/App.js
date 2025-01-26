@@ -11,6 +11,7 @@ import S24BoscoBoysDistributors from "./components/reports/S24BoscoBoysDistribut
 import F24UniversityGuelphCOA from "./components/reports/F24UniversityGuelphCOA";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
+import Volunteer from "./components/Volunteer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ function Layout() {
                 <Hero />
                 <Timeline />
                 <Projects />
+                <Volunteer />
               </>
             }
           />

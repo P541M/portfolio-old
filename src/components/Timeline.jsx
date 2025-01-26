@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import {
   ChartBarIcon,
   CodeBracketIcon,
-  MicrophoneIcon,
   ComputerDesktopIcon,
   BuildingStorefrontIcon,
   UserGroupIcon,
@@ -84,18 +83,6 @@ const timeline = [
     ],
   },
   {
-    company: "Im a Mortal",
-    roles: [
-      {
-        title: "Podcast Sound Engineer Intern",
-        icon: MicrophoneIcon,
-        description:
-          "Edited all podcast audio and assisted in the publishing process, ensuring high-quality sound production and timely releases.",
-        duration: "Jan 2022 - May 2022",
-      },
-    ],
-  },
-  {
     company: "Seeds of Diversity Canada",
     roles: [
       {
@@ -139,7 +126,7 @@ export default function Timeline() {
       <h2 className="mb-4 text-center text-3xl font-bold text-primary">
         Timeline
       </h2>
-      <hr className="border-divContrast mb-4" />
+      <hr className="mb-4 border-divContrast" />
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {timeline.map(({ company, roles }, index) => (
           <article

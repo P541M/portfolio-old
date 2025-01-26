@@ -5,6 +5,7 @@ import {
   faEnvelope,
   faHome,
   faProjectDiagram,
+  faHandsHelping,
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -84,6 +85,18 @@ const Navbar = ({ className }) => {
             </button>
             <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
               Projects
+            </span>
+          </li>
+          <li className="group relative mx-4">
+            <button
+              onClick={() => scrollToSection("volunteer-section")}
+              aria-label="Volunteer"
+              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
+            >
+              <FontAwesomeIcon icon={faHandsHelping} />
+            </button>
+            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
+              Volunteer
             </span>
           </li>
 
