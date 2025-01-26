@@ -36,7 +36,7 @@ const timeline = [
     company: "BoscoBoys Distributors",
     roles: [
       {
-        title: "Full Stack Developer Intern",
+        title: "Software Engineer Intern",
         icon: ComputerDesktopIcon,
         description:
           "Directed the overhaul of the company website and optimized database operations for improved efficiency.",
@@ -93,7 +93,7 @@ const timeline = [
         duration: "Jan 2022 - May 2022",
       },
       {
-        title: "Front End Developer Intern",
+        title: "Software Engineer Intern",
         icon: CodeBracketIcon,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
