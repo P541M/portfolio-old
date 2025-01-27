@@ -1,19 +1,36 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  ChartBarIcon,
   CodeBracketIcon,
+  Cog6ToothIcon,
   MicrophoneIcon,
-  ComputerDesktopIcon,
-  BuildingStorefrontIcon,
-  UserGroupIcon,
-  PencilIcon,
-  FilmIcon,
-  GlobeAltIcon,
-  CogIcon,
 } from "@heroicons/react/24/solid";
 
 const volunteer = [
+  {
+    company: "Google Developer Student Club | UofG",
+    roles: [
+      {
+        title: "Hackathon Volunteer",
+        icon: CodeBracketIcon,
+        description:
+          "Managed registration for 250+ participants, coordinated event logistics, and promoted hackathons through social media to ensure smooth operations.",
+        duration: "May 2024",
+      },
+    ],
+  },
+  {
+    company: "e-NABLE",
+    roles: [
+      {
+        title: "Volunteer Prosthetic Assembler",
+        icon: Cog6ToothIcon,
+        description:
+          "Collaborated with a team of 3-4 to assemble 3D printed prosthetic arms and legs, utilized various materials for texture enhancements, and developed foundational 3D printing skills.",
+        duration: "Sep 2021 - Jun 2022",
+      },
+    ],
+  },
   {
     company: "Im a Mortal",
     roles: [
