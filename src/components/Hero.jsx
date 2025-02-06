@@ -29,7 +29,7 @@ export default function Hero() {
 
       <p className="mt-4 max-w-[800px] text-sm text-text sm:text-base md:text-lg lg:text-xl">
         Currently contributing as a{" "}
-        <span className="text-primary">Website Project Lead</span> at the{" "}
+        <span className="text-primary">Web Developer</span> at the{" "}
         <a
           href="https://www.uoguelph.ca/arts"
           target="_blank"
