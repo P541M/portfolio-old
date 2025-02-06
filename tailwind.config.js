@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         text: "#000000", // Text color
         bg: "#FFFFFF", // Background color
-        primary: "#ADADAD", // Main color
+        primary: "#6781b1", // Main color
         bgContrast: "#F2F2F2", // Darker contrast background
         divContrast: "#C2C2C2", // Darker contrast background
       },
