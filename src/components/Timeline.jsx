@@ -93,7 +93,7 @@ const timeline = [
         duration: "Jan 2022 - May 2022",
       },
       {
-        title: "Software Engineer Intern",
+        title: "Software Developer Intern",
         icon: CodeBracketIcon,
         description:
           "Assisted in the redesign of the company website, enhancing its usability and visual appeal.",
