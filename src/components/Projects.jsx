@@ -241,7 +241,7 @@ const projects = [
     description:
       "Extractify is a streamlined code extraction tool I developed to simplify preparing code for AI analysis. As the lead developer, I built this full-stack application using Next.js and React with Firebase for data persistence, integrating GitHub OAuth for secure repository access. The application enables users to extract properly formatted code from GitHub repositories or process local files entirely within the browser, ensuring privacy and security. Key features include repository history management with starring capabilities, branch-specific extraction, and a responsive design for all devices. This project strengthened my skills in OAuth implementation, Firebase database management, and client-side file processing while providing a practical solution for developers working with AI tools.",
     state: "Deployed",
-    link: "https://extractify-peach.vercel.app/",
+    link: "https://www.extractifycode.com/",
     image: pimg13,
     technologies: [
       "React",
