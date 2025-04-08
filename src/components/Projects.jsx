@@ -394,7 +394,7 @@ export default function Projects() {
               placeholder="Search projects..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 pl-10 focus:outline-none focus:ring-1"
+              className="w-full rounded-lg border border-divider bg-white px-4 py-2 pl-10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -416,7 +416,7 @@ export default function Projects() {
             <select
               value={filterStatus}
               onChange={handleStatusFilterChange}
-              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 focus:outline-none focus:ring-1"
+              className="w-full rounded-lg border border-divider bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             >
               <option value="">All Status</option>
               <option value="Deployed">Deployed</option>
@@ -490,7 +490,7 @@ export default function Projects() {
           </button>
         ))}
         {allTechnologies.length > 15 && (
-          <span className="bg-secondary inline-flex items-center rounded-full px-3 py-1 text-sm">
+          <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-sm">
             +{allTechnologies.length - 15} more
           </span>
         )}
@@ -524,7 +524,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                 </div>
-                <div className="text-text/70 mb-3 flex items-center text-sm">
+                <div className="mb-3 flex items-center text-sm text-text/70">
                   <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
                   <span>{formatDate(project.date)}</span>
                 </div>
@@ -537,13 +537,13 @@ export default function Projects() {
                       {project.technologies.slice(0, 3).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-secondary rounded-full px-2 py-0.5 text-xs"
+                          className="rounded-full bg-secondary px-2 py-0.5 text-xs"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="bg-secondary rounded-full px-2 py-0.5 text-xs">
+                        <span className="rounded-full bg-secondary px-2 py-0.5 text-xs">
                           +{project.technologies.length - 3}
                         </span>
                       )}
@@ -555,7 +555,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-primary hover:bg-primary/90 flex-1 rounded-lg py-2 text-center text-xs font-medium text-white transition-all"
+                    className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all hover:bg-primary/90"
                   >
                     <FontAwesomeIcon
                       icon={project.github ? faGithub : faExternalLinkAlt}
@@ -565,7 +565,7 @@ export default function Projects() {
                   </a>
                   <button
                     onClick={() => handleShowModal(project)}
-                    className="border-divider hover:bg-secondary rounded-lg border bg-white px-3 py-2 text-xs font-medium transition-all"
+                    className="rounded-lg border border-divider bg-white px-3 py-2 text-xs font-medium transition-all hover:bg-secondary"
                   >
                     Details
                   </button>
@@ -599,7 +599,7 @@ export default function Projects() {
               <div className="flex flex-1 flex-col p-4">
                 <div className="mb-2 flex items-center justify-between">
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <span className="text-text/70 text-sm">
+                  <span className="text-sm text-text/70">
                     {formatDate(project.date)}
                   </span>
                 </div>
@@ -612,13 +612,13 @@ export default function Projects() {
                       {project.technologies.slice(0, 6).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-secondary rounded-full px-2 py-0.5 text-xs"
+                          className="rounded-full bg-secondary px-2 py-0.5 text-xs"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 6 && (
-                        <span className="bg-secondary rounded-full px-2 py-0.5 text-xs">
+                        <span className="rounded-full bg-secondary px-2 py-0.5 text-xs">
                           +{project.technologies.length - 6}
                         </span>
                       )}
@@ -630,7 +630,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-primary hover:bg-primary/90 rounded-lg px-4 py-2 text-center text-xs font-medium text-white transition-all"
+                    className="rounded-lg bg-primary px-4 py-2 text-center text-xs font-medium text-white transition-all hover:bg-primary/90"
                   >
                     <FontAwesomeIcon
                       icon={project.github ? faGithub : faExternalLinkAlt}
@@ -640,7 +640,7 @@ export default function Projects() {
                   </a>
                   <button
                     onClick={() => handleShowModal(project)}
-                    className="border-divider hover:bg-secondary rounded-lg border bg-white px-4 py-2 text-xs font-medium transition-all"
+                    className="rounded-lg border border-divider bg-white px-4 py-2 text-xs font-medium transition-all hover:bg-secondary"
                   >
                     Details
                   </button>
@@ -674,7 +674,7 @@ export default function Projects() {
       {/* Project Details Modal */}
       {modalProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50 p-4"
           onClick={handleCloseModal}
         >
           <div
@@ -702,32 +702,29 @@ export default function Projects() {
                 </svg>
               </button>
             </div>
-
-            <div className="mb-4">
+            <div className="mb-4 flex justify-center">
               <img
                 src={modalProject.image}
                 alt={modalProject.title}
-                className="h-64 w-full rounded-lg object-cover"
+                className="w-full rounded-lg object-contain"
+                style={{ maxHeight: "500px" }}
               />
             </div>
-
             <div className="mb-4 flex items-center space-x-4">
               <span
                 className={`inline-block rounded-full px-3 py-1 text-sm font-semibold ${getStatusColor(modalProject.state)}`}
               >
                 {modalProject.state}
               </span>
-              <span className="text-text/70 flex items-center text-sm">
+              <span className="flex items-center text-sm text-text/70">
                 <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
                 {formatDate(modalProject.date)}
               </span>
             </div>
-
             <div className="mb-6">
               <h4 className="mb-2 text-lg font-semibold">Description</h4>
-              <p className="text-text/80 text-sm">{modalProject.description}</p>
+              <p className="text-sm text-text/80">{modalProject.description}</p>
             </div>
-
             {modalProject.technologies && (
               <div className="mb-6">
                 <h4 className="mb-2 text-lg font-semibold">
@@ -737,7 +734,7 @@ export default function Projects() {
                   {modalProject.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="bg-secondary rounded-full px-3 py-1 text-sm"
+                      className="rounded-full bg-secondary px-3 py-1 text-sm"
                     >
                       {tech}
                     </span>
@@ -745,13 +742,12 @@ export default function Projects() {
                 </div>
               </div>
             )}
-
             <div className="flex justify-end">
               <a
                 href={modalProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary hover:bg-primary/90 rounded-lg px-6 py-2 text-center font-medium text-white transition-all"
+                className="rounded-lg bg-primary px-6 py-2 text-center font-medium text-white transition-all hover:bg-primary/90"
               >
                 <FontAwesomeIcon
                   icon={modalProject.github ? faGithub : faExternalLinkAlt}
