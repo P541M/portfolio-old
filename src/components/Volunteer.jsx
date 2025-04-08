@@ -49,57 +49,73 @@ export default function Volunteer() {
   const navigate = useNavigate();
 
   return (
-    <section
-      id="volunteer-section"
-      className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
-    >
-      <h2 className="mb-4 text-center text-3xl font-bold text-primary">
-        Volunteer
-      </h2>
-      <hr className="mb-4 border-divContrast" />
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <section id="volunteer-section" className="section-container min-h-screen">
+      <h2 className="section-title">Volunteer Experience</h2>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {volunteer.map(({ company, roles }, index) => (
           <article
             key={index}
-            className="flex flex-col justify-between rounded-lg bg-bgContrast p-6 shadow-md"
+            className="card flex h-full flex-col p-6 hover:shadow-md"
           >
-            <div>
-              <h3 className="mb-4 text-xl font-semibold">{company}</h3>
+            <h3 className="text-primary mb-4 text-xl font-bold">{company}</h3>
+            <div className="flex-grow">
               {roles.map(
                 ({ title, icon: Icon, description, duration }, idx) => (
                   <div key={idx} className="mb-6">
                     <div className="mb-2 flex items-center">
-                      <Icon className="mr-2 h-6 w-6 text-primary" />
-                      <h4 className="text-lg font-medium">{title}</h4>
+                      <div className="bg-primary/10 mr-3 flex h-8 w-8 items-center justify-center rounded-full">
+                        <Icon className="text-primary h-4 w-4" />
+                      </div>
+                      <h4 className="font-medium">{title}</h4>
                     </div>
-                    <p className="mb-1 text-base italic">{duration}</p>
-                    <p className="text-base">{description}</p>
+                    <p className="text-text/70 mb-1 text-sm italic">
+                      {duration}
+                    </p>
+                    <p className="text-text/80 text-sm">{description}</p>
                   </div>
                 ),
               )}
             </div>
-            <div className="mt-4">
-              {company === "BoscoBoys Distributors" && (
-                <button
-                  onClick={() => navigate("/boscoboys-distributors-wtr")}
-                  className="rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-                >
-                  View Work Term Report
-                </button>
-              )}
-              {company === "University of Guelph, College of Arts" && (
-                <button
-                  onClick={() =>
-                    navigate("/university-guelph-college-of-arts-wtr")
-                  }
-                  className="mt-2 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-                >
-                  View Work Term Report
-                </button>
-              )}
-            </div>
           </article>
         ))}
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <a
+          href="mailto:videna.psalmeleazar@gmail.com"
+          className="bg-primary/10 text-primary hover:bg-primary group inline-flex items-center rounded-lg px-5 py-2.5 transition-all duration-300 hover:text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="mr-2 h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+          Interested in volunteering together? Contact me!
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
       </div>
     </section>
   );

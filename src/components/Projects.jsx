@@ -1,4 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faChrome } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCalendarAlt,
+  faExternalLinkAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import pimg from "../assets/pimg.PNG";
 import pimg2 from "../assets/pimg2.PNG";
 import pimg3 from "../assets/pimg3.PNG";
@@ -35,6 +41,7 @@ const projects = [
       "ESLint",
     ],
     date: "2024-08",
+    github: false,
   },
   {
     title: "BoscoBoys Distributors",
@@ -56,6 +63,7 @@ const projects = [
       "Jest",
     ],
     date: "2024-06",
+    github: false,
   },
   {
     title: "Waffles Or Pancakes?!",
@@ -76,6 +84,7 @@ const projects = [
       "Jest",
     ],
     date: "2024-07",
+    github: false,
   },
   {
     title: "Password Generator",
@@ -95,6 +104,7 @@ const projects = [
       "ESLint",
     ],
     date: "2024-08",
+    github: true,
   },
   {
     title: "Verbatim",
@@ -114,6 +124,7 @@ const projects = [
       "Prettier",
     ],
     date: "2024-07",
+    github: true,
   },
   {
     title: "Echo",
@@ -132,11 +143,12 @@ const projects = [
       "Prettier",
     ],
     date: "2024-05",
+    github: true,
   },
   {
     title: "V/\\ULT",
     description:
-      "V/\\ULT is a cryptocurrency tracker designed to display information about the top six cryptocurrencies. As the main developer, I built both the frontend and backend using React, JavaScript, and Node.js, integrating various APIs to fetch real-time crypto data. The application features an about section and showcases yearly price changes, providing users with insightful financial information. Developed over two months, V/ULT enhanced my proficiency in API integration and full stack development. Future enhancements will focus on improving the visual appeal and polishing the user interface to offer a more engaging and informative experience.",
+      "V/\\ULT is a cryptocurrency tracker designed to display information about the top six cryptocurrencies. As the main developer, I built both the frontend and backend using React, JavaScript, and Node.js, integrating various APIs to fetch real-time crypto data. The application features an about section and showcases yearly price changes, providing users with insightful financial information. Developed over two months, V/\\ULT enhanced my proficiency in API integration and full stack development. Future enhancements will focus on improving the visual appeal and polishing the user interface to offer a more engaging and informative experience.",
     state: "Deployed",
     link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
@@ -152,6 +164,7 @@ const projects = [
       "Prettier",
     ],
     date: "2024-07",
+    github: false,
   },
   {
     title: "Personal Portfolio V1",
@@ -170,6 +183,7 @@ const projects = [
       "ESLint",
     ],
     date: "2024-05",
+    github: false,
   },
   {
     title: "Personal Portfolio V2",
@@ -189,6 +203,7 @@ const projects = [
       "ESLint",
     ],
     date: "2024-06",
+    github: false,
   },
   {
     title: "Evoria",
@@ -208,6 +223,7 @@ const projects = [
       "ESLint",
     ],
     date: "2024-11",
+    github: false,
   },
   {
     title: "Savory Sips",
@@ -225,6 +241,7 @@ const projects = [
       "gh-pages",
     ],
     date: "2024-05",
+    github: false,
   },
   {
     title: "Metric x Imperial",
@@ -235,6 +252,7 @@ const projects = [
     image: pimg3,
     technologies: ["HTML", "CSS", "JavaScript"],
     date: "2023-06",
+    github: false,
   },
   {
     title: "Extractify",
@@ -257,45 +275,74 @@ const projects = [
       "CSS",
     ],
     date: "2025-03",
+    github: false,
   },
 ];
 
 export default function Projects() {
-  const [expandedProjects, setExpandedProjects] = useState({});
+  const [expandedProject, setExpandedProject] = useState(null);
+  const [isGridView, setIsGridView] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterTech, setFilterTech] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("");
+  const [modalProject, setModalProject] = useState(null);
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "Deployed":
-        return "bg-green-500";
-      case "In Testing":
-        return "bg-orange-500";
-      case "In Development":
-        return "bg-yellow-500";
-      case "Paused Development":
-        return "bg-blue-500";
-      case "Discontinued":
-        return "bg-gray-500";
-      default:
-        return "bg-gray-500";
+  // Sort projects by date (newest first)
+  const sortedProjects = [...projects].sort((a, b) => {
+    const [yearA, monthA] = a.date.split("-").map(Number);
+    const [yearB, monthB] = b.date.split("-").map(Number);
+    if (yearA !== yearB) {
+      return yearB - yearA;
     }
+    return monthB - monthA;
+  });
+
+  // Get all unique technologies for filter
+  const allTechnologies = [
+    ...new Set(projects.flatMap((project) => project.technologies)),
+  ].sort();
+
+  // Filter projects based on search term, tech filter, and status
+  const filteredProjects = sortedProjects.filter((project) => {
+    const matchesSearch =
+      searchTerm === "" ||
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTech =
+      filterTech.length === 0 ||
+      filterTech.every((tech) => project.technologies.includes(tech));
+    const matchesStatus = filterStatus === "" || project.state === filterStatus;
+    return matchesSearch && matchesTech && matchesStatus;
+  });
+
+  const handleShowModal = (project) => {
+    setModalProject(project);
   };
 
-  const handleToggleProject = (index) => {
-    setExpandedProjects((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+  const handleCloseModal = () => {
+    setModalProject(null);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleTechFilterChange = (tech) => {
+    setFilterTech((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech],
+    );
+  };
+
+  const handleStatusFilterChange = (e) => {
+    setFilterStatus(e.target.value);
   };
 
   const formatDate = (dateStr) => {
-    if (!dateStr) return "No Date Provided";
-
+    if (!dateStr) return "No Date";
     const [year, month] = dateStr.split("-").map(Number);
-
     if (isNaN(year) || isNaN(month) || month < 1 || month > 12 || year < 1000) {
       return "Invalid Date";
     }
-
     const monthNames = [
       "January",
       "February",
@@ -310,135 +357,412 @@ export default function Projects() {
       "November",
       "December",
     ];
-
     return `${monthNames[month - 1]} ${year}`;
   };
 
-  const sortedProjects = [...projects].sort((a, b) => {
-    const [yearA, monthA] = a.date.split("-").map(Number);
-    const [yearB, monthB] = b.date.split("-").map(Number);
-
-    if (yearA !== yearB) {
-      return yearB - yearA;
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Deployed":
+        return "bg-accent text-white";
+      case "In Testing":
+        return "bg-yellow-500 text-white";
+      case "In Development":
+        return "bg-blue-500 text-white";
+      case "Discontinued":
+        return "bg-gray-500 text-white";
+      default:
+        return "bg-gray-200 text-gray-700";
     }
-    return monthB - monthA;
-  });
+  };
 
   return (
     <section
       id="projects-section"
+      className="section-container min-h-screen"
       aria-labelledby="projects-title"
-      className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
     >
-      <h2
-        id="projects-title"
-        className="mb-4 text-center text-3xl font-bold text-primary"
-      >
+      <h2 id="projects-title" className="section-title">
         Projects
       </h2>
-      <hr className="mb-4 border-divContrast" />
-
-      <div>
-        {sortedProjects.map((project, index) => (
-          <div key={project.title}>
-            <button
-              onClick={() => handleToggleProject(index)}
-              className="flex w-full items-center justify-between py-2 text-left text-lg font-semibold transition-all duration-300 hover:text-primary"
-              aria-expanded={expandedProjects[index]}
-              aria-controls={`project-details-${index}`}
+      {/* Filter and View Options */}
+      <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-1 flex-col gap-4 md:flex-row md:items-center">
+          {/* Search */}
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 pl-10 focus:outline-none focus:ring-1"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span>{project.title}</span>
-              <div className="flex items-center">
-                <span className="text-md mr-2 text-primary">
-                  {formatDate(project.date)}
-                </span>
-                <span
-                  className={`transform transition-all duration-300 ${
-                    expandedProjects[index] ? "rotate-180" : "rotate-0"
-                  }`}
-                >
-                  ▼
-                </span>
-              </div>
-            </button>
-
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          {/* Status Filter */}
+          <div className="w-full md:w-40">
+            <select
+              value={filterStatus}
+              onChange={handleStatusFilterChange}
+              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 focus:outline-none focus:ring-1"
+            >
+              <option value="">All Status</option>
+              <option value="Deployed">Deployed</option>
+              <option value="In Testing">In Testing</option>
+              <option value="In Development">In Development</option>
+              <option value="Discontinued">Discontinued</option>
+            </select>
+          </div>
+        </div>
+        {/* View Toggle */}
+        <div className="flex items-center justify-end space-x-2">
+          <button
+            onClick={() => setIsGridView(true)}
+            className={`rounded-lg p-2 ${
+              isGridView ? "bg-primary text-white" : "bg-secondary text-text"
+            }`}
+            aria-label="Grid View"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={() => setIsGridView(false)}
+            className={`rounded-lg p-2 ${
+              !isGridView ? "bg-primary text-white" : "bg-secondary text-text"
+            }`}
+            aria-label="List View"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {/* Technology Filters */}
+      <div className="mb-6 flex flex-wrap gap-2">
+        {allTechnologies.slice(0, 15).map((tech, index) => (
+          <button
+            key={index}
+            onClick={() => handleTechFilterChange(tech)}
+            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+              filterTech.includes(tech)
+                ? "bg-primary text-white"
+                : "bg-secondary text-text hover:bg-secondary/80"
+            }`}
+          >
+            {tech}
+          </button>
+        ))}
+        {allTechnologies.length > 15 && (
+          <span className="bg-secondary inline-flex items-center rounded-full px-3 py-1 text-sm">
+            +{allTechnologies.length - 15} more
+          </span>
+        )}
+      </div>
+      {/* Projects Display */}
+      {isGridView ? (
+        // Grid View
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project, index) => (
             <div
-              id={`project-details-${index}`}
-              className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                expandedProjects[index]
-                  ? "max-h-screen translate-y-0 opacity-100"
-                  : "max-h-0 translate-y-4 opacity-0"
-              }`}
+              key={index}
+              className="card group flex h-full flex-col overflow-hidden"
             >
-              <div className="pb-4">
-                <div className="mt-2 flex flex-col md:flex-row md:items-start md:space-x-8">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="mb-4 h-auto w-full rounded-md shadow-md md:mb-0 md:w-1/2"
-                  />
-                  <div className="md:w-1/2">
-                    <h4 className="text-lg font-semibold text-primary">
-                      Project Description:
-                    </h4>
-                    <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
-                      {project.description}
-                    </p>
-
-                    <h4 className="mt-2 text-lg font-semibold text-primary">
-                      Project Status:
-                    </h4>
-                    <div className="mb-2 flex items-center">
-                      <span
-                        className={`mr-2 h-2 w-2 rounded-full ${getStatusColor(
-                          project.state,
-                        )}`}
-                      ></span>
-                      <p className="text-sm italic sm:text-base md:text-base lg:text-lg xl:text-lg">
-                        {project.state}
-                      </p>
-                    </div>
-
-                    {project.technologies?.length > 0 && (
-                      <div className="mt-2">
-                        <h4 className="text-lg font-semibold text-primary">
-                          Technologies Used:
-                        </h4>
-                        <ul className="flex flex-wrap gap-2 pt-1">
-                          {project.technologies.map((tech, idx) => (
-                            <li
-                              key={idx}
-                              className="rounded-md bg-primary px-2 py-1 text-base text-bg"
-                            >
-                              {tech}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    <div className="mt-8">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-                        aria-label={`Visit Project: ${project.title}`}
-                      >
-                        Visit Project
-                      </a>
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute right-3 top-3">
+                  <span
+                    className={`inline-block rounded-full px-2 py-1 text-xs font-semibold ${getStatusColor(project.state)}`}
+                  >
+                    {project.state}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col p-4">
+                <div className="mb-2 flex items-center justify-between">
+                  <h3 className="line-clamp-1 text-lg font-bold">
+                    {project.title}
+                  </h3>
+                </div>
+                <div className="text-text/70 mb-3 flex items-center text-sm">
+                  <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
+                  <span>{formatDate(project.date)}</span>
+                </div>
+                <p className="mb-4 line-clamp-3 flex-grow text-sm">
+                  {project.description}
+                </p>
+                {project.technologies && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 3).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-secondary rounded-full px-2 py-0.5 text-xs"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="bg-secondary rounded-full px-2 py-0.5 text-xs">
+                          +{project.technologies.length - 3}
+                        </span>
+                      )}
                     </div>
                   </div>
+                )}
+                <div className="mt-auto flex space-x-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary hover:bg-primary/90 flex-1 rounded-lg py-2 text-center text-xs font-medium text-white transition-all"
+                  >
+                    <FontAwesomeIcon
+                      icon={project.github ? faGithub : faExternalLinkAlt}
+                      className="mr-1"
+                    />
+                    {project.github ? "View Code" : "Visit Project"}
+                  </a>
+                  <button
+                    onClick={() => handleShowModal(project)}
+                    className="border-divider hover:bg-secondary rounded-lg border bg-white px-3 py-2 text-xs font-medium transition-all"
+                  >
+                    Details
+                  </button>
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+      ) : (
+        // List View
+        <div className="space-y-4">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="card group flex flex-col overflow-hidden md:flex-row"
+            >
+              <div className="relative h-48 overflow-hidden md:h-auto md:w-1/3">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-full"
+                />
+                <div className="absolute right-3 top-3">
+                  <span
+                    className={`inline-block rounded-full px-2 py-1 text-xs font-semibold ${getStatusColor(project.state)}`}
+                  >
+                    {project.state}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col p-4">
+                <div className="mb-2 flex items-center justify-between">
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <span className="text-text/70 text-sm">
+                    {formatDate(project.date)}
+                  </span>
+                </div>
+                <p className="mb-4 line-clamp-2 text-sm">
+                  {project.description}
+                </p>
+                {project.technologies && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 6).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-secondary rounded-full px-2 py-0.5 text-xs"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 6 && (
+                        <span className="bg-secondary rounded-full px-2 py-0.5 text-xs">
+                          +{project.technologies.length - 6}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
+                <div className="mt-auto flex space-x-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary hover:bg-primary/90 rounded-lg px-4 py-2 text-center text-xs font-medium text-white transition-all"
+                  >
+                    <FontAwesomeIcon
+                      icon={project.github ? faGithub : faExternalLinkAlt}
+                      className="mr-1"
+                    />
+                    {project.github ? "View Code" : "Visit Project"}
+                  </a>
+                  <button
+                    onClick={() => handleShowModal(project)}
+                    className="border-divider hover:bg-secondary rounded-lg border bg-white px-4 py-2 text-xs font-medium transition-all"
+                  >
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {filteredProjects.length === 0 && (
+        <div className="mt-12 flex flex-col items-center justify-center text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="mb-4 h-12 w-12 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <h3 className="mb-2 text-lg font-medium">No projects found</h3>
+          <p className="text-gray-500">Try adjusting your search or filters</p>
+        </div>
+      )}
 
-            {index < sortedProjects.length - 1 && (
-              <hr className="my-4 border-divContrast" />
+      {/* Project Details Modal */}
+      {modalProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white p-6 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-2xl font-bold">{modalProject.title}</h3>
+              <button
+                onClick={handleCloseModal}
+                className="rounded-full p-2 hover:bg-gray-100"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div className="mb-4">
+              <img
+                src={modalProject.image}
+                alt={modalProject.title}
+                className="h-64 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <div className="mb-4 flex items-center space-x-4">
+              <span
+                className={`inline-block rounded-full px-3 py-1 text-sm font-semibold ${getStatusColor(modalProject.state)}`}
+              >
+                {modalProject.state}
+              </span>
+              <span className="text-text/70 flex items-center text-sm">
+                <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
+                {formatDate(modalProject.date)}
+              </span>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="mb-2 text-lg font-semibold">Description</h4>
+              <p className="text-text/80 text-sm">{modalProject.description}</p>
+            </div>
+
+            {modalProject.technologies && (
+              <div className="mb-6">
+                <h4 className="mb-2 text-lg font-semibold">
+                  Technologies Used
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {modalProject.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-secondary rounded-full px-3 py-1 text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             )}
+
+            <div className="flex justify-end">
+              <a
+                href={modalProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary hover:bg-primary/90 rounded-lg px-6 py-2 text-center font-medium text-white transition-all"
+              >
+                <FontAwesomeIcon
+                  icon={modalProject.github ? faGithub : faExternalLinkAlt}
+                  className="mr-2"
+                />
+                {modalProject.github ? "View Code on GitHub" : "Visit Project"}
+              </a>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -31,6 +31,8 @@ const timeline = [
         duration: "Sep 2024 - Dec 2024",
       },
     ],
+    hasWorkTermReport: true,
+    reportPath: "/university-guelph-college-of-arts-wtr",
   },
   {
     company: "BoscoBoys Distributors",
@@ -50,6 +52,8 @@ const timeline = [
         duration: "May 2024 - Aug 2024",
       },
     ],
+    hasWorkTermReport: true,
+    reportPath: "/boscoboys-distributors-wtr",
   },
   {
     company: "MediaMatchup",
@@ -62,6 +66,7 @@ const timeline = [
         duration: "Jun 2021 - Aug 2023",
       },
     ],
+    hasWorkTermReport: false,
   },
   {
     company: "Videna Visuals",
@@ -81,6 +86,7 @@ const timeline = [
         duration: "Jan 2016 - Aug 2020",
       },
     ],
+    hasWorkTermReport: false,
   },
   {
     company: "Seeds of Diversity Canada",
@@ -100,6 +106,7 @@ const timeline = [
         duration: "Jan 2022 - May 2022",
       },
     ],
+    hasWorkTermReport: false,
   },
   {
     company: "Hero Certified Burgers",
@@ -112,6 +119,7 @@ const timeline = [
         duration: "Jun 2019 - Aug 2019",
       },
     ],
+    hasWorkTermReport: false,
   },
 ];
 
@@ -119,57 +127,61 @@ export default function Timeline() {
   const navigate = useNavigate();
 
   return (
-    <section
-      id="timeline-section"
-      className="min-h-screen px-6 pb-20 pt-10 text-text sm:px-8 md:px-16 lg:px-20"
-    >
-      <h2 className="mb-4 text-center text-3xl font-bold text-primary">
-        Timeline
-      </h2>
-      <hr className="mb-4 border-divContrast" />
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {timeline.map(({ company, roles }, index) => (
-          <article
-            key={index}
-            className="flex flex-col justify-between rounded-lg bg-bgContrast p-6 shadow-md"
-          >
-            <div>
-              <h3 className="mb-4 text-xl font-semibold">{company}</h3>
-              {roles.map(
-                ({ title, icon: Icon, description, duration }, idx) => (
-                  <div key={idx} className="mb-6">
-                    <div className="mb-2 flex items-center">
-                      <Icon className="mr-2 h-6 w-6 text-primary" />
-                      <h4 className="text-lg font-medium">{title}</h4>
+    <section id="timeline-section" className="section-container min-h-screen">
+      <h2 className="section-title">Professional Timeline</h2>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {timeline.map(
+          ({ company, roles, hasWorkTermReport, reportPath }, index) => (
+            <article
+              key={index}
+              className="card group flex h-full flex-col overflow-hidden p-6"
+            >
+              <h3 className="text-primary mb-4 text-xl font-bold">{company}</h3>
+              <div className="flex-grow">
+                {roles.map(
+                  ({ title, icon: Icon, description, duration }, idx) => (
+                    <div key={idx} className="mb-6">
+                      <div className="mb-2 flex items-center">
+                        <Icon className="text-primary mr-2 h-5 w-5" />
+                        <h4 className="font-medium">{title}</h4>
+                      </div>
+                      <p className="text-text/70 mb-1 text-sm italic">
+                        {duration}
+                      </p>
+                      <p className="text-text/80 text-sm">{description}</p>
                     </div>
-                    <p className="mb-1 text-base italic">{duration}</p>
-                    <p className="text-base">{description}</p>
-                  </div>
-                ),
+                  ),
+                )}
+              </div>
+
+              {hasWorkTermReport && (
+                <div className="border-divider mt-4 border-t pt-4">
+                  <button
+                    onClick={() => navigate(reportPath)}
+                    className="bg-primary/10 text-primary hover:bg-primary/20 flex w-full items-center justify-center rounded-lg px-4 py-2.5 font-medium transition-all duration-300"
+                  >
+                    View Work Term Report
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
               )}
-            </div>
-            <div className="mt-4">
-              {company === "BoscoBoys Distributors" && (
-                <button
-                  onClick={() => navigate("/boscoboys-distributors-wtr")}
-                  className="rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-                >
-                  View Work Term Report
-                </button>
-              )}
-              {company === "University of Guelph, College of Arts" && (
-                <button
-                  onClick={() =>
-                    navigate("/university-guelph-college-of-arts-wtr")
-                  }
-                  className="mt-2 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-                >
-                  View Work Term Report
-                </button>
-              )}
-            </div>
-          </article>
-        ))}
+            </article>
+          ),
+        )}
       </div>
     </section>
   );

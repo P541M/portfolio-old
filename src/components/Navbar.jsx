@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBriefcase,
-  faEnvelope,
   faHome,
-  faProjectDiagram,
+  faBriefcase,
+  faLaptopCode,
   faHandsHelping,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import ContactForm from "./ContactForm";
-import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = ({ className }) => {
   const [isContactFormOpen, setContactFormOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero-section");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleOpenContactForm = () => {
     setContactFormOpen(true);
+    setIsMobileMenuOpen(false);
   };
 
   const handleCloseContactForm = () => {
@@ -24,9 +28,11 @@ const Navbar = ({ className }) => {
   };
 
   const scrollToSection = (sectionId) => {
+    setIsMobileMenuOpen(false);
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
     } else {
       if (location.pathname !== "/") {
         navigate("/", { state: { scrollTo: sectionId } });
@@ -34,95 +40,165 @@ const Navbar = ({ className }) => {
     }
   };
 
+  // Handle section highlighting based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "hero-section",
+        "timeline-section",
+        "projects-section",
+        "volunteer-section",
+      ];
+      const scrollPosition = window.scrollY + 300;
+
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Handle navigation from other pages
   useEffect(() => {
     if (location.state && location.state.scrollTo) {
       const section = document.getElementById(location.state.scrollTo);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(location.state.scrollTo);
       }
     }
   }, [location]);
 
+  // Navigation links configuration
+  const navLinks = [
+    { id: "hero-section", icon: faHome, label: "Home" },
+    { id: "timeline-section", icon: faBriefcase, label: "Timeline" },
+    { id: "projects-section", icon: faLaptopCode, label: "Projects" },
+    { id: "volunteer-section", icon: faHandsHelping, label: "Volunteer" },
+  ];
+
   return (
-    <div>
-      <div
-        className={`fixed bottom-[5%] left-1/2 z-50 flex -translate-x-1/2 items-center justify-center rounded-2xl bg-bgContrast/50 px-4 py-3 shadow-lg backdrop-blur-sm ${className}`}
-        style={{ width: "fit-content" }}
-        aria-label="Navbar"
+    <>
+      {/* Desktop Navigation */}
+      <nav
+        className={`fixed bottom-8 left-1/2 z-50 hidden -translate-x-1/2 transform rounded-full bg-white px-8 py-4 shadow-lg md:flex ${className}`}
+        aria-label="Main Navigation"
       >
-        <ul className="flex items-center justify-center">
-          <li className="group relative mx-4">
-            <button
-              onClick={() => scrollToSection("hero-section")}
-              aria-label="Home"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
-            >
-              <FontAwesomeIcon icon={faHome} />
-            </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
-              Home
-            </span>
-          </li>
-          <li className="group relative mx-4">
-            <button
-              onClick={() => scrollToSection("timeline-section")}
-              aria-label="Timeline"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
-            >
-              <FontAwesomeIcon icon={faBriefcase} />
-            </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
-              Timeline
-            </span>
-          </li>
-          <li className="group relative mx-4">
-            <button
-              onClick={() => scrollToSection("projects-section")}
-              aria-label="Projects"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
-            >
-              <FontAwesomeIcon icon={faProjectDiagram} />
-            </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
-              Projects
-            </span>
-          </li>
-          <li className="group relative mx-4">
-            <button
-              onClick={() => scrollToSection("volunteer-section")}
-              aria-label="Volunteer"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
-            >
-              <FontAwesomeIcon icon={faHandsHelping} />
-            </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
-              Volunteer
-            </span>
-          </li>
+        <ul className="flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <li key={link.id} className="relative">
+              <button
+                onClick={() => scrollToSection(link.id)}
+                aria-label={link.label}
+                className={`flex flex-col items-center transition-all duration-300 ${
+                  activeSection === link.id
+                    ? "text-primary"
+                    : "text-text hover:text-primary"
+                }`}
+              >
+                <FontAwesomeIcon icon={link.icon} className="text-xl" />
+                <span className="mt-1 text-xs font-medium">{link.label}</span>
+                {activeSection === link.id && (
+                  <span className="bg-primary absolute -bottom-2 left-1/2 h-1 w-6 -translate-x-1/2 transform rounded-full"></span>
+                )}
+              </button>
+            </li>
+          ))}
 
-          {/* Vertical Divider */}
-          <div className="mx-4 h-8 w-px bg-text"></div>
+          <li className="bg-divider mx-1 h-8 w-px"></li>
 
-          <li className="group relative mx-4">
+          <li className="relative">
             <button
               onClick={handleOpenContactForm}
               aria-label="Contact"
-              className="transform text-2xl text-text transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:text-primary"
+              className="text-text hover:text-primary flex flex-col items-center transition-all duration-300"
             >
-              <FontAwesomeIcon icon={faEnvelope} />
+              <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
+              <span className="mt-1 text-xs font-medium">Contact</span>
             </button>
-            <span className="absolute bottom-14 left-1/2 -translate-x-1/2 rounded bg-primary px-3 py-1 text-sm text-bg opacity-0 transition-all duration-300 group-hover:translate-y-[-6px] group-hover:opacity-100">
-              Contact
-            </span>
           </li>
         </ul>
+      </nav>
+
+      {/* Mobile Navigation */}
+      <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transform md:hidden">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="bg-primary flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-6 w-6 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-45" : ""}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isMobileMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {isMobileMenuOpen && (
+          <div className="absolute bottom-16 left-1/2 w-64 -translate-x-1/2 transform rounded-xl bg-white p-4 shadow-lg">
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className={`flex w-full items-center rounded-lg px-4 py-2 transition-colors ${
+                      activeSection === link.id
+                        ? "bg-primary text-primary bg-opacity-10"
+                        : "hover:bg-secondary"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={link.icon} className="mr-3" />
+                    <span>{link.label}</span>
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={handleOpenContactForm}
+                  className="hover:bg-secondary flex w-full items-center rounded-lg px-4 py-2 transition-colors"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} className="mr-3" />
+                  <span>Contact</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
 
       <ContactForm
         isOpen={isContactFormOpen}
         onClose={handleCloseContactForm}
       />
-    </div>
+    </>
   );
 };
 

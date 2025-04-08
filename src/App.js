@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -16,7 +16,7 @@ import Volunteer from "./components/Volunteer";
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -25,11 +25,13 @@ function ScrollToTop() {
 
 function Layout() {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
-    <>
+    <div className="bg-bg min-h-screen">
       <Navbar className="fade-in-two" />
-      <div key={location.pathname} className="fade-in">
+
+      <main key={location.pathname} className="fade-in pb-24">
         <Routes location={location}>
           <Route
             path="/"
@@ -50,10 +52,20 @@ function Layout() {
             path="/university-guelph-college-of-arts-wtr"
             element={<F24UniversityGuelphCOA />}
           />
-          {/* Add more routes here as needed */}
         </Routes>
-      </div>
-    </>
+      </main>
+
+      {isHomePage && (
+        <footer className="text-text/60 py-8 text-center">
+          <div className="container mx-auto">
+            <p>
+              © {new Date().getFullYear()} Psalm Eleazar. All rights reserved.
+            </p>
+            <p className="mt-2 text-sm">Built with React and Tailwind CSS</p>
+          </div>
+        </footer>
+      )}
+    </div>
   );
 }
 

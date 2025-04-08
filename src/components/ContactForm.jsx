@@ -29,7 +29,6 @@ const ContactForm = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus("Processing...");
-
     try {
       const response = await fetch(
         "https://portfolio-backend-drab-one.vercel.app/send-email",
@@ -45,7 +44,6 @@ const ContactForm = ({ isOpen, onClose }) => {
           }),
         },
       );
-
       if (response.status === 200) {
         setFormStatus("Message sent! I'll be in touch with you soon!");
         setName("");
@@ -66,35 +64,40 @@ const ContactForm = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm ${fadeClass}`}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 backdrop-blur-sm ${fadeClass}`}
       aria-labelledby="contact-form-title"
       aria-modal="true"
       role="dialog"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
-      <div className="relative w-full max-w-sm rounded-md bg-bg p-6 shadow-md sm:max-w-md sm:p-10 md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+      <div className="relative mx-4 w-full max-w-md rounded-lg bg-white p-6 shadow-xl sm:p-8">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-text transition-all duration-300 hover:text-primary"
+          className="absolute right-4 top-4 rounded-full p-1 text-gray-500 transition-all duration-300 hover:bg-gray-100"
           aria-label="Close contact form"
         >
           <XMarkIcon className="h-5 w-5" />
         </button>
-        <div className="mb-4 flex items-center">
+
+        <div className="mb-6 text-center">
           <h2
             id="contact-form-title"
-            className="text-lg font-semibold sm:text-xl md:text-2xl"
+            className="font-heading text-primary mb-2 text-2xl font-bold"
           >
-            Contact
+            Get In Touch
           </h2>
+          <p className="text-text/70">
+            Have a project in mind or just want to say hello? Let's talk.
+          </p>
         </div>
-        <p className="mb-4 text-sm sm:text-base md:text-lg">
-          Have a project in mind? Have a general inquiry? Let's talk.
-        </p>
-        <form onSubmit={handleSubmit} className="flex flex-col">
-          <div className="mb-4">
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
             <label
               htmlFor="name"
-              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
+              className="text-text mb-1 block text-sm font-medium"
             >
               Name
             </label>
@@ -102,17 +105,18 @@ const ContactForm = ({ isOpen, onClose }) => {
               type="text"
               name="name"
               id="name"
-              placeholder="Full Name"
+              placeholder="Your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-md border px-3 py-2"
+              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 focus:outline-none focus:ring-1"
               required
             />
           </div>
-          <div className="mb-4">
+
+          <div>
             <label
               htmlFor="email"
-              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
+              className="text-text mb-1 block text-sm font-medium"
             >
               Email
             </label>
@@ -120,95 +124,94 @@ const ContactForm = ({ isOpen, onClose }) => {
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="your.email@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border px-3 py-2"
+              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 focus:outline-none focus:ring-1"
               required
             />
           </div>
-          <div className="mb-4">
+
+          <div>
             <label
               htmlFor="message"
-              className="my-2 block text-sm font-medium sm:text-base md:text-lg"
+              className="text-text mb-1 block text-sm font-medium"
             >
               Message
             </label>
             <textarea
               name="message"
               id="message"
-              placeholder="Message"
+              placeholder="Your message here..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full rounded-md border px-3 py-2"
+              className="border-divider focus:border-primary focus:ring-primary w-full rounded-lg border bg-white px-4 py-2 focus:outline-none focus:ring-1"
               rows="4"
               required
             ></textarea>
           </div>
-          <div className="mt-4 flex justify-center">
-            <button
-              type="submit"
-              className="mt-8 rounded-full bg-primary px-6 py-3 text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
-            >
-              Submit
-            </button>
-          </div>
+
+          <button
+            type="submit"
+            className="bg-primary hover:bg-primary/90 w-full rounded-lg px-6 py-2.5 text-center font-medium text-white shadow-sm transition-all duration-300"
+          >
+            Send Message
+          </button>
         </form>
+
         {formStatus && (
           <div
             className={`mt-4 text-center text-sm ${
               formStatus === "Processing..."
-                ? "text-yellow-500"
-                : "text-green-500"
+                ? "text-yellow-600"
+                : formStatus.includes("error") || formStatus.includes("Failed")
+                  ? "text-red-600"
+                  : "text-accent"
             }`}
           >
             {formStatus}
           </div>
         )}
-        <div className="mt-10 flex justify-center space-x-4">
+
+        <div className="mt-6 flex justify-center space-x-4">
           <a
             href="https://www.linkedin.com/in/pevidena/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
           >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
-            />
+            <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
           </a>
+
           <a
             href="https://github.com/P541M"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
           >
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
-            />
+            <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
           </a>
+
           <a
             href="https://twitter.com/psalmeleazar"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
+            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
           >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
-            />
+            <FontAwesomeIcon icon={faTwitter} className="h-5 w-5" />
           </a>
+
           <a
             href="mailto:videna.psalmeleazar@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
+            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
           >
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="h-6 w-6 text-primary duration-500 ease-in-out hover:text-bgContrast"
-            />
+            <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
           </a>
         </div>
       </div>
