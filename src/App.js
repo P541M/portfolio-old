@@ -15,23 +15,29 @@ import Volunteer from "./components/Volunteer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 }
 
 function Layout() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isWorkTermReport =
+    location.pathname.includes("-wtr") ||
+    location.pathname.includes("boscoboys-distributors") ||
+    location.pathname.includes("university-guelph");
 
   return (
-    <div className="bg-bg min-h-screen">
+    <div className="min-h-screen bg-bg">
       <Navbar className="fade-in-two" />
 
-      <main key={location.pathname} className="fade-in pb-24">
+      {/* Add space for the navbar on work term report pages */}
+      <main
+        key={location.pathname}
+        className={`fade-in pb-24 ${isWorkTermReport ? "pt-20" : ""}`}
+      >
         <Routes location={location}>
           <Route
             path="/"
@@ -56,7 +62,7 @@ function Layout() {
       </main>
 
       {isHomePage && (
-        <footer className="text-text/60 py-8 text-center">
+        <footer className="py-8 text-center text-text/60">
           <div className="container mx-auto">
             <p>
               © {new Date().getFullYear()} Psalm Eleazar. All rights reserved.

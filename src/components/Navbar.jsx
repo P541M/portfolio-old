@@ -19,9 +19,14 @@ const Navbar = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Check if current route is a work term report page
+  const isWorkTermReport =
+    location.pathname.includes("-wtr") ||
+    location.pathname.includes("boscoboys-distributors") ||
+    location.pathname.includes("university-guelph");
 
   const handleOpenContactForm = () => {
     setContactFormOpen(true);
@@ -49,10 +54,8 @@ const Navbar = ({ className }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
       // Determine if page is scrolled (for styling)
       setIsScrolled(scrollY > 20);
-
       // Handle navbar visibility based on scroll direction
       if (scrollY > lastScrollY) {
         // Scrolling down - hide navbar
@@ -61,37 +64,38 @@ const Navbar = ({ className }) => {
         // Scrolling up - show navbar
         setIsNavbarVisible(true);
       }
-
       // Update last scroll position
       setLastScrollY(scrollY);
 
-      // Handle section highlighting based on scroll position
-      const sections = [
-        "hero-section",
-        "timeline-section",
-        "projects-section",
-        "volunteer-section",
-      ];
-
-      const scrollPosition = scrollY + 300;
-
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionBottom = sectionTop + section.offsetHeight;
-
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            setActiveSection(sectionId);
-            break;
+      // Only handle section highlighting on homepage
+      if (location.pathname === "/") {
+        // Handle section highlighting based on scroll position
+        const sections = [
+          "hero-section",
+          "timeline-section",
+          "projects-section",
+          "volunteer-section",
+        ];
+        const scrollPosition = scrollY + 300;
+        for (const sectionId of sections) {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionBottom
+            ) {
+              setActiveSection(sectionId);
+              break;
+            }
           }
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, location.pathname]);
 
   // Handle navigation from other pages
   useEffect(() => {
@@ -137,29 +141,46 @@ const Navbar = ({ className }) => {
               PSALM ELEAZAR
             </a>
           </div>
-
           {/* Desktop Navigation Links */}
           <div className="hidden items-center space-x-8 md:flex">
-            {navLinks.map((link) => (
+            {/* Show navigation links only on homepage */}
+            {!isWorkTermReport &&
+              navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  aria-label={link.label}
+                  className={`group relative px-2 py-1 ${
+                    activeSection === link.id
+                      ? "text-primary"
+                      : "text-text hover:text-primary"
+                  }`}
+                >
+                  <span className="flex items-center font-medium">
+                    <FontAwesomeIcon
+                      icon={link.icon}
+                      className="mr-2 text-sm"
+                    />
+                    {link.label}
+                  </span>
+                  {activeSection === link.id && (
+                    <span className="absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-primary"></span>
+                  )}
+                </button>
+              ))}
+            {/* On work term report pages, show a back button instead */}
+            {isWorkTermReport && (
               <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                aria-label={link.label}
-                className={`group relative px-2 py-1 ${
-                  activeSection === link.id
-                    ? "text-primary"
-                    : "text-text hover:text-primary"
-                }`}
+                onClick={() => navigate("/")}
+                aria-label="Back to Home"
+                className="group relative px-2 py-1 text-text hover:text-primary"
               >
                 <span className="flex items-center font-medium">
-                  <FontAwesomeIcon icon={link.icon} className="mr-2 text-sm" />
-                  {link.label}
+                  <FontAwesomeIcon icon={faHome} className="mr-2 text-sm" />
+                  Back to Home
                 </span>
-                {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-primary"></span>
-                )}
               </button>
-            ))}
+            )}
             <button
               onClick={handleOpenContactForm}
               aria-label="Contact"
@@ -169,7 +190,6 @@ const Navbar = ({ className }) => {
               Contact
             </button>
           </div>
-
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -183,7 +203,6 @@ const Navbar = ({ className }) => {
           </button>
         </div>
       </nav>
-
       {/* Mobile Navigation Menu - Slide down panel */}
       <div
         className={`fixed left-0 right-0 top-0 z-40 origin-top transform bg-white shadow-lg transition-transform duration-300 md:hidden ${
@@ -193,21 +212,34 @@ const Navbar = ({ className }) => {
       >
         <div className="container mx-auto px-6 py-4">
           <ul className="space-y-3">
-            {navLinks.map((link) => (
-              <li key={link.id}>
+            {/* Show navigation links only on homepage for mobile menu too */}
+            {!isWorkTermReport ? (
+              navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className={`flex w-full items-center rounded-lg px-4 py-3 transition-colors ${
+                      activeSection === link.id
+                        ? "bg-primary/10 text-primary"
+                        : "hover:bg-secondary"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={link.icon} className="mr-3" />
+                    <span className="font-medium">{link.label}</span>
+                  </button>
+                </li>
+              ))
+            ) : (
+              <li>
                 <button
-                  onClick={() => scrollToSection(link.id)}
-                  className={`flex w-full items-center rounded-lg px-4 py-3 transition-colors ${
-                    activeSection === link.id
-                      ? "bg-primary/10 text-primary"
-                      : "hover:bg-secondary"
-                  }`}
+                  onClick={() => navigate("/")}
+                  className="flex w-full items-center rounded-lg px-4 py-3 transition-colors hover:bg-secondary"
                 >
-                  <FontAwesomeIcon icon={link.icon} className="mr-3" />
-                  <span className="font-medium">{link.label}</span>
+                  <FontAwesomeIcon icon={faHome} className="mr-3" />
+                  <span className="font-medium">Back to Home</span>
                 </button>
               </li>
-            ))}
+            )}
             <li>
               <button
                 onClick={handleOpenContactForm}
@@ -220,7 +252,6 @@ const Navbar = ({ className }) => {
           </ul>
         </div>
       </div>
-
       {/* Contact Form */}
       <ContactForm
         isOpen={isContactFormOpen}

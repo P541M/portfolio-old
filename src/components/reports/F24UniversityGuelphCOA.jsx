@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import image1 from "../../assets/f24/grouppic.jpg";
 import image2 from "../../assets/f24/websters.jpg";
 import image3 from "../../assets/f24/d7Improv.png";
@@ -22,7 +21,7 @@ const goals = [
       "Networking and interpersonal rapport",
       "Public speaking poise",
     ],
-    results: `By challenging myself to share my expertise in website redesign meetings, I transitioned from overthinking to delivering clearer, concise input. I scheduled one-on-one conversations, fostered relationships beyond the office, and encouraged coworkers to share their insights. My manager commended me for my clarity and professionalism. I discovered I’m naturally adept at “breaking the ice,” which boosted my confidence in both professional and personal communication.`,
+    results: `By challenging myself to share my expertise in website redesign meetings, I transitioned from overthinking to delivering clearer, concise input. I scheduled one-on-one conversations, fostered relationships beyond the office, and encouraged coworkers to share their insights. My manager commended me for my clarity and professionalism. I discovered I'm naturally adept at "breaking the ice," which boosted my confidence in both professional and personal communication.`,
   },
   {
     title:
@@ -56,7 +55,7 @@ const goals = [
       "Team bonding and collaboration",
       "Building trust through transparent dialogue",
     ],
-    results: `I made a point of asking respectful questions and learning about my colleagues beyond their work roles. This authentic approach helped create a more relaxed, inclusive atmosphere. By proposing team-bonding activities and encouraging open discussions, I saw a noticeable improvement in trust and collaboration. Recognizing each person’s uniqueness has enriched our workplace dynamic, and I intend to carry these inclusive practices forward.`,
+    results: `I made a point of asking respectful questions and learning about my colleagues beyond their work roles. This authentic approach helped create a more relaxed, inclusive atmosphere. By proposing team-bonding activities and encouraging open discussions, I saw a noticeable improvement in trust and collaboration. Recognizing each person's uniqueness has enriched our workplace dynamic, and I intend to carry these inclusive practices forward.`,
   },
   {
     title:
@@ -73,7 +72,7 @@ const goals = [
       "Scheduling and iterative planning",
       "Stress reduction through systematic task allocation",
     ],
-    results: `I utilized Google and Microsoft productivity tools to manage my tasks, breaking large assignments into smaller portions aligned with each team member’s strengths. Regularly revisiting deadlines and prioritizing pressing tasks helped avoid last-minute rushing. This systematic approach improved my organizational abilities and equipped me to juggle multiple responsibilities while supporting my teammates effectively.`,
+    results: `I utilized Google and Microsoft productivity tools to manage my tasks, breaking large assignments into smaller portions aligned with each team member's strengths. Regularly revisiting deadlines and prioritizing pressing tasks helped avoid last-minute rushing. This systematic approach improved my organizational abilities and equipped me to juggle multiple responsibilities while supporting my teammates effectively.`,
   },
   {
     title:
@@ -90,7 +89,7 @@ const goals = [
       "Decision-making and problem-solving",
       "Team motivation and collaborative goal-setting",
     ],
-    results: `I volunteered to lead various website redesign initiatives, leveraging each member’s strengths and maintaining open communication channels. When challenges arose, I collaborated with stakeholders and my manager to identify swift solutions. By focusing on meeting milestones and quality deliverables, the projects concluded successfully. Going forward, I plan to refine my leadership by staying patient, respecting individual differences, and maintaining a supportive environment that helps the team thrive.`,
+    results: `I volunteered to lead various website redesign initiatives, leveraging each member's strengths and maintaining open communication channels. When challenges arose, I collaborated with stakeholders and my manager to identify swift solutions. By focusing on meeting milestones and quality deliverables, the projects concluded successfully. Going forward, I plan to refine my leadership by staying patient, respecting individual differences, and maintaining a supportive environment that helps the team thrive.`,
   },
 ];
 
@@ -98,7 +97,7 @@ const workTermProjects = [
   {
     title: "Revamping the PhD improvisation page (Drupal 7)",
     description:
-      "The original PhD Improvisation page was primarily composed of plain text and basic headers, making it less engaging for visitors. I led the project to give this page a complete facelift by incorporating the University’s branding guidelines—introducing a consistent color scheme, updated visuals, and clearer navigation elements. This transformation not only made the page more visually appealing but also enhanced its user-friendliness. Collaborating closely with faculty members, I ensured that all program details were current and that the page adhered to accessibility standards, resulting in a more engaging and informative experience for prospective and current students.",
+      "The original PhD Improvisation page was primarily composed of plain text and basic headers, making it less engaging for visitors. I led the project to give this page a complete facelift by incorporating the University's branding guidelines—introducing a consistent color scheme, updated visuals, and clearer navigation elements. This transformation not only made the page more visually appealing but also enhanced its user-friendliness. Collaborating closely with faculty members, I ensured that all program details were current and that the page adhered to accessibility standards, resulting in a more engaging and informative experience for prospective and current students.",
     link: "https://www.uoguelph.ca/arts/improv/phd",
     image: image3,
     altText: "Screenshot of the redesigned PhD Improvisation page on Drupal 7",
@@ -109,7 +108,7 @@ const workTermProjects = [
   {
     title: "Graduate pages migration (Drupal 7 to Drupal 9)",
     description:
-      "Working alongside a large and dedicated team, I played a key role in migrating graduate program content from Drupal 7 to Drupal 9 (Content Hub). The existing content was largely composed of dense paragraphs, which could be overwhelming for graduate students seeking information. My responsibilities included updating and refining this content to make it more accessible and user-friendly. This involved reorganizing information, enhancing readability, and ensuring that the new Drupal 9 platform supported a more intuitive navigation experience. During my co-op term, I finalized a significant portion of the content, and I’ll continue to refine and support the launch of these pages during my part-time term in Winter 2025.",
+      "Working alongside a large and dedicated team, I played a key role in migrating graduate program content from Drupal 7 to Drupal 9 (Content Hub). The existing content was largely composed of dense paragraphs, which could be overwhelming for graduate students seeking information. My responsibilities included updating and refining this content to make it more accessible and user-friendly. This involved reorganizing information, enhancing readability, and ensuring that the new Drupal 9 platform supported a more intuitive navigation experience. During my co-op term, I finalized a significant portion of the content, and I'll continue to refine and support the launch of these pages during my part-time term in Winter 2025.",
     link: "https://preview-ugconthub.netlify.app/phd-history/",
     image: image4,
     altText:
@@ -146,24 +145,22 @@ const F24UoGCollegeOfArts = () => {
   return (
     <div
       id="f24-uofg-college-of-arts-wtr"
-      className="min-h-screen px-6 pb-20 pt-10 text-text transition-all duration-300 sm:px-8 md:px-16 lg:px-20"
+      className="min-h-screen px-6 pb-20 pt-24 text-text transition-all duration-300 sm:px-8 md:px-16 lg:px-20"
     >
       {/* Back Button */}
       <div className="mb-8">
         <button
           onClick={handleBack}
-          className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+          className="hover:bg-bgContrast inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105"
         >
           Back to Portfolio
         </button>
       </div>
-
       {/* Main Title */}
       <section className="mb-14">
         <h1 className="text-center text-4xl font-bold leading-snug text-text">
           A Canvas of Opportunity: Fall 2024 at the College of Arts
         </h1>
-
         <p className="mb-4 mt-3 text-left text-lg text-text">
           From September to December 2024, I had the privilege of working at the
           University of Guelph, College of Arts, for my second co-op work term
@@ -171,23 +168,21 @@ const F24UoGCollegeOfArts = () => {
           the ins and outs of website development—from content migration and
           page redesign to user experience improvements—while also gaining a
           firsthand look at how projects flow within a large academic
-          institution. Throughout this report, I’ll share the highlights of my
+          institution. Throughout this report, I'll share the highlights of my
           experience, focusing on the importance of collaboration in driving
           successful digital transformations, as well as the professional and
           personal growth that came with it. I hope you enjoy reading about my
-          time in this supportive environment, and I’d love to leave you with a
+          time in this supportive environment, and I'd love to leave you with a
           little food for thought on the value of embracing new challenges in a
           post-secondary setting.
         </p>
       </section>
-
       {/* 2. Information about the Employer */}
       <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Behind the Scenes: Exploring the College of Arts
         </h2>
-        <hr className="mb-4 border-divContrast" />
-
+        <hr className="border-divContrast mb-4" />
         {/* Responsive Layout for Image and Text */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
           {/* Image Section */}
@@ -200,11 +195,10 @@ const F24UoGCollegeOfArts = () => {
               Group picture of the marketing & communications team!
             </p>
           </div>
-
           {/* Text Section */}
           <div className="text-lg text-text lg:w-2/3">
             <p className="mb-4">
-              Our Marketing and Communications team sits in the Dean’s Office at
+              Our Marketing and Communications team sits in the Dean's Office at
               the College of Arts, University of Guelph, and serves as a support
               hub for everything from marketing and communications to
               recruitment and web services—reaching a wide range of stakeholders
@@ -233,20 +227,18 @@ const F24UoGCollegeOfArts = () => {
             </p>
             <p className="mb-4">
               All together, our sub-teams collaborate to keep the College of
-              Arts thriving—whether we’re welcoming new students, sharing
+              Arts thriving—whether we're welcoming new students, sharing
               stories and events, or fine-tuning the online experience.
             </p>
           </div>
         </div>
       </section>
-
       {/* 3. Goals */}
       <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Palette of Progress: Goals and Growth
         </h2>
-        <hr className="mb-4 border-divContrast" />
-
+        <hr className="border-divContrast mb-4" />
         <p className="mb-4 text-left text-lg text-text">
           During my work term at the University of Guelph, College of Arts, I
           set five key learning goals to enhance both my professional and
@@ -256,7 +248,6 @@ const F24UoGCollegeOfArts = () => {
           challenges I encountered, the skills I refined, and the outcomes I
           achieved!
         </p>
-
         {/* Expandable Goals */}
         <div>
           {goals.map((goal, index) => (
@@ -278,7 +269,6 @@ const F24UoGCollegeOfArts = () => {
                   </span>
                 </div>
               </button>
-
               <div
                 id={`goal-details-${index}`}
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -294,7 +284,6 @@ const F24UoGCollegeOfArts = () => {
                   <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                     {goal.description}
                   </p>
-
                   {/* Challenges */}
                   {goal.challenges && (
                     <>
@@ -314,7 +303,6 @@ const F24UoGCollegeOfArts = () => {
                       )}
                     </>
                   )}
-
                   {/* Skills */}
                   <h3 className="mt-2 text-lg font-semibold text-primary">
                     Skills Developed:
@@ -330,7 +318,6 @@ const F24UoGCollegeOfArts = () => {
                       {goal.skills}
                     </p>
                   )}
-
                   <h3 className="mt-2 text-lg font-semibold text-primary">
                     Results:
                   </h3>
@@ -339,30 +326,27 @@ const F24UoGCollegeOfArts = () => {
                   </p>
                 </div>
               </div>
-
               {/* Divider between goals */}
               {index < goals.length - 1 && (
-                <hr className="my-4 border-divContrast" />
+                <hr className="border-divContrast my-4" />
               )}
             </div>
           ))}
         </div>
       </section>
-
       {/* 4. Job Description */}
       <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Crafting a Digital Experience: My Role in the Redesign
         </h2>
-        <hr className="mb-4 border-divContrast" />
-
+        <hr className="border-divContrast mb-4" />
         <p className="mb-4 text-left text-lg text-text">
-          Over the last four months, I’ve been diving deep into web migration,
+          Over the last four months, I've been diving deep into web migration,
           accessibility, and user experience design as the Website Redesign
           Coordinator for the College of Arts. To ensure our web pages are not
           only user-friendly but also impactful for the audiences we serve, I
           leverage a variety of specialized platforms. And here are the three
-          main platforms I tinker with! In a project of this scale, I’ve
+          main platforms I tinker with! In a project of this scale, I've
           sharpened my project management skills, learned how to collaborate
           with clients across different departments, and even dipped my toes
           into a few marketing and recruitment initiatives along the way.
@@ -371,7 +355,7 @@ const F24UoGCollegeOfArts = () => {
           Drupal 7, Drupal 9 (Content Hub), & SharePoint
         </h3>
         <p className="mb-4 text-left text-lg text-text">
-          <strong>Drupal 7:</strong> As the University’s former content
+          <strong>Drupal 7:</strong> As the University's former content
           management system, Drupal 7 hosts close to 11,000 College of Arts
           pages. Faculty and staff can create and edit content, while our web
           team has site manager access to oversee the entire platform.
@@ -389,7 +373,7 @@ const F24UoGCollegeOfArts = () => {
           <strong>SharePoint:</strong> SharePoint is being rolled out as an
           internal intranet for faculty, staff, and students, offering a
           straightforward platform to share internal communications and
-          resources. I’ve been helping configure its templates, branding, and
+          resources. I've been helping configure its templates, branding, and
           navigation so departments can easily post and update their own
           content.
         </p>
@@ -404,7 +388,6 @@ const F24UoGCollegeOfArts = () => {
           effectively within a team, leading to significant enhancements for the
           College of Arts' online presence.
         </p>
-
         {/* Featured Projects with Dropdown */}
         <section className="mb-6">
           {workTermProjects.map((project, index) => (
@@ -426,7 +409,6 @@ const F24UoGCollegeOfArts = () => {
                   </span>
                 </div>
               </button>
-
               <div
                 id={`project-details-${index}`}
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -449,7 +431,6 @@ const F24UoGCollegeOfArts = () => {
                       <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">
                         {project.description}
                       </p>
-
                       <div className="mt-8">
                         {/* Conditionally render the "Visit Project" button */}
                         {project.showVisitButton && (
@@ -457,7 +438,7 @@ const F24UoGCollegeOfArts = () => {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105 hover:bg-bgContrast"
+                            className="hover:bg-bgContrast inline-block rounded-full bg-primary px-6 py-3 text-center text-bg shadow-md transition-all duration-300 hover:scale-105"
                             aria-label={`Visit Project: ${project.title}`}
                           >
                             Visit Project
@@ -468,33 +449,30 @@ const F24UoGCollegeOfArts = () => {
                   </div>
                 </div>
               </div>
-
               {/* Corrected Divider Condition */}
               {index < workTermProjects.length - 1 && (
-                <hr className="my-4 border-divContrast" />
+                <hr className="border-divContrast my-4" />
               )}
             </div>
           ))}
         </section>
-
         <p className="mb-4 text-left text-lg text-text">
           Overall, this role has given me the chance to blend tech-savvy tasks
-          with creative thinking—whether I’m coding in Drupal, mapping out user
-          flows, or helping a department bring their vision online. It’s been a
+          with creative thinking—whether I'm coding in Drupal, mapping out user
+          flows, or helping a department bring their vision online. It's been a
           rewarding experience to shape both public-facing and internal
           platforms that truly serve the College of Arts community.
         </p>
       </section>
-
       {/* 5. Conclusions */}
       <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           Closing the Canvas: Lessons in Growth and Gratitude
         </h2>
-        <hr className="mb-4 border-divContrast" />
+        <hr className="border-divContrast mb-4" />
         <p className="mb-4 text-left text-lg text-text">
-          Reflecting on these four months, I’m struck by just how much I’ve
-          learned—and how much I’ve grown—through this Website Redesign
+          Reflecting on these four months, I'm struck by just how much I've
+          learned—and how much I've grown—through this Website Redesign
           Coordinator role. From tackling accessibility standards to refining
           user journeys and juggling multiple projects, every challenge pushed
           me to become more resourceful and communicative. I also discovered the
@@ -505,14 +483,12 @@ const F24UoGCollegeOfArts = () => {
           digital environment can positively impact a community.
         </p>
       </section>
-
       {/* 6. Acknowledgments */}
       <section className="mb-14">
         <h2 className="mb-4 text-center text-3xl font-bold text-primary">
           A Gallery of Gratitude: Acknowledgments
         </h2>
-        <hr className="mb-4 border-divContrast" />
-
+        <hr className="border-divContrast mb-4" />
         <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
           {/* Image Section */}
           <div className="lg:w-1/3">
@@ -525,7 +501,6 @@ const F24UoGCollegeOfArts = () => {
               Group picture of the Websters!
             </p>
           </div>
-
           {/* Text Section */}
           <div className="text-lg text-text lg:w-2/3">
             <p className="mb-4">
@@ -546,7 +521,7 @@ const F24UoGCollegeOfArts = () => {
               throughout my journey. The rest of the team, including Callie
               Gibson, Ella Holt, Rasneet Kaur, and Hannah Andrea Rosario, was
               equally supportive, enthusiastic, and passionate, contributing
-              tirelessly to the College’s website success.
+              tirelessly to the College's website success.
             </p>
             <p className="mb-4">
               I am thankful for everyone in the College of Arts, whose
@@ -554,9 +529,9 @@ const F24UoGCollegeOfArts = () => {
               enjoyable. From personal growth to professional achievements, this
               experience has reshaped my understanding of teamwork, strengthened
               my confidence, and motivated me to stay engaged with the College
-              in future projects. I’m excited to return in the Winter 2025 term,
-              carry forward the valuable lessons I’ve learned, and continue to
-              foster the long-lasting relationships I’ve established.
+              in future projects. I'm excited to return in the Winter 2025 term,
+              carry forward the valuable lessons I've learned, and continue to
+              foster the long-lasting relationships I've established.
             </p>
           </div>
         </div>
