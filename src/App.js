@@ -67,7 +67,6 @@ function Layout() {
             <p>
               © {new Date().getFullYear()} Psalm Eleazar. All rights reserved.
             </p>
-            <p className="mt-2 text-sm">Built with React and Tailwind CSS</p>
           </div>
         </footer>
       )}
