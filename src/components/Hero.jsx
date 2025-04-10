@@ -21,108 +21,104 @@ export default function Hero() {
   return (
     <section
       id="hero-section"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center sm:px-8 md:px-16 lg:px-20"
+      className="flex min-h-screen flex-col"
       aria-labelledby="hero-title"
     >
-      <div className="animate-fade-in mx-auto max-w-4xl">
-        <h1
-          id="hero-title"
-          className="font-heading text-text text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-          <span className="text-primary">PSALM</span> ELEAZAR
-        </h1>
+      <div className="grid h-full w-full grid-cols-1 md:grid-cols-2">
+        {/* Left Section - Colorful Background */}
+        <div className="flex flex-col items-center justify-center bg-primary/5 px-6 py-16 md:h-screen md:items-end md:py-0">
+          <div className="max-w-md md:mr-8 md:text-right">
+            <h1
+              id="hero-title"
+              className="mb-4 font-heading text-4xl font-bold tracking-tight text-text sm:text-5xl md:text-6xl"
+            >
+              <span className="text-primary">PSALM</span> ELEAZAR
+            </h1>
 
-        <p className="text-text/80 mx-auto mt-6 max-w-2xl text-lg sm:text-xl md:text-2xl">
-          Software Engineering Student with a passion for{" "}
-          <span className="text-primary font-medium">
-            full-stack development
-          </span>{" "}
-          and{" "}
-          <span className="text-primary font-medium">project management</span>.
-        </p>
+            <p className="mb-8 text-lg text-text/80 sm:text-xl">
+              Software Engineering Student with a passion for{" "}
+              <span className="font-medium text-primary">
+                full-stack development
+              </span>{" "}
+              and{" "}
+              <span className="font-medium text-primary">
+                project management
+              </span>
+              .
+            </p>
 
-        <p className="text-text/70 mx-auto mt-4 max-w-2xl text-base sm:text-lg">
-          Currently contributing as a{" "}
-          <span className="text-primary font-medium">Web Developer</span> at the{" "}
-          <a
-            href="https://www.uoguelph.ca/arts"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary underline transition-all duration-300"
-          >
-            University of Guelph, College of Arts
-          </a>{" "}
-          and open to opportunities that challenge me to build engaging digital
-          experiences.
-        </p>
-
-        <div className="mt-8 flex items-center justify-center space-x-6">
-          <a
-            href="https://www.linkedin.com/in/pevidena/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
-          >
-            <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
-          </a>
-          <a
-            href="https://github.com/P541M"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
-          >
-            <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
-          </a>
-          <a
-            href="mailto:videna.psalmeleazar@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Email"
-            className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:text-white"
-          >
-            <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
-          </a>
+            <div className="mb-6 flex justify-center space-x-4 md:justify-end">
+              <a
+                href="https://www.linkedin.com/in/pevidena/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
+              </a>
+              <a
+                href="https://github.com/P541M"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+              >
+                <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:videna.psalmeleazar@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <button
-            onClick={handleOpenResume}
-            className="btn-primary group w-full sm:w-auto"
-          >
-            <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-            View Resume
-            <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </button>
+        {/* Right Section - Content */}
+        <div className="flex flex-col items-center justify-center px-6 py-16 md:h-screen md:items-start md:py-0">
+          <div className="max-w-md md:ml-8">
+            <p className="mb-6 text-lg text-text/70">
+              Currently contributing as a{" "}
+              <span className="font-medium text-primary">Web Developer</span> at
+              the{" "}
+              <a
+                href="https://www.uoguelph.ca/arts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b-2 border-primary transition-colors duration-300 hover:text-primary"
+              >
+                University of Guelph, College of Arts
+              </a>{" "}
+              and open to opportunities that challenge me to build engaging
+              digital experiences.
+            </p>
 
-          <button
-            onClick={handleOpenContactForm}
-            className="btn-secondary w-full sm:w-auto"
-          >
-            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            Contact Me
-          </button>
+            <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <button
+                onClick={handleOpenResume}
+                className="group flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-primary/90"
+              >
+                <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
+                View Resume
+                <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </button>
+              <button
+                onClick={handleOpenContactForm}
+                className="flex items-center justify-center rounded-lg bg-secondary px-6 py-3 font-medium text-text transition-all duration-300 hover:bg-secondary/80"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                Contact Me
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-primary h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
       </div>
     </section>
   );
