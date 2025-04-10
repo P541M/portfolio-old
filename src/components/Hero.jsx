@@ -26,7 +26,7 @@ export default function Hero() {
     >
       <div className="grid h-full w-full grid-cols-1 md:grid-cols-2">
         {/* Left Section - Colorful Background */}
-        <div className="flex flex-col items-center justify-center bg-primary/5 px-6 py-16 md:h-screen md:items-end md:py-0">
+        <div className="flex flex-col items-center justify-center px-6 py-16 md:h-screen md:items-end md:py-0">
           <div className="max-w-md md:mr-8 md:text-right">
             <h1
               id="hero-title"
