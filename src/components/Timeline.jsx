@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import {
   ChartBarIcon,
   CodeBracketIcon,
@@ -46,7 +45,7 @@ const timeline = [
       },
     ],
     hasWorkTermReport: true,
-    reportPath: "/university-guelph-college-of-arts-wtr",
+    reportPath: "https://p541m.github.io/f24-university-guelph-coa/",
   },
   {
     company: "BoscoBoys Distributors",
@@ -67,7 +66,7 @@ const timeline = [
       },
     ],
     hasWorkTermReport: true,
-    reportPath: "/boscoboys-distributors-wtr",
+    reportPath: "https://p541m.github.io/s24-bosco-boys-distributors/",
   },
   {
     company: "MediaMatchup",
@@ -138,12 +137,9 @@ const timeline = [
 ];
 
 export default function Timeline() {
-  const navigate = useNavigate();
-
   return (
     <section id="timeline-section" className="section-container min-h-screen">
       <h2 className="section-title">Professional Timeline</h2>
-
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {timeline.map(
           ({ company, roles, hasWorkTermReport, reportPath }, index) => (
@@ -168,11 +164,11 @@ export default function Timeline() {
                   ),
                 )}
               </div>
-
               {hasWorkTermReport && (
                 <div className="mt-4 border-t border-divider pt-4">
-                  <button
-                    onClick={() => navigate(reportPath)}
+                  <a
+                    href={reportPath}
+                    rel="noopener noreferrer"
                     className="flex w-full items-center justify-center rounded-lg bg-primary/10 px-4 py-2.5 font-medium text-primary transition-all duration-300 hover:bg-primary/20"
                   >
                     View Work Term Report
@@ -190,7 +186,7 @@ export default function Timeline() {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
-                  </button>
+                  </a>
                 </div>
               )}
             </article>
