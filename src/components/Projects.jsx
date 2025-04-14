@@ -166,8 +166,8 @@ const projects = [
     title: "V/\\ULT",
     description:
       "V/\\ULT is a cryptocurrency tracker designed to display information about the top six cryptocurrencies. As the main developer, I built both the frontend and backend using React, JavaScript, and Node.js, integrating various APIs to fetch real-time crypto data. The application features an about section and showcases yearly price changes, providing users with insightful financial information. Developed over two months, V/\\ULT enhanced my proficiency in API integration and full stack development. Future enhancements will focus on improving the visual appeal and polishing the user interface to offer a more engaging and informative experience.",
-    state: "Deployed",
-    link: "https://p541m.github.io/crypto-tracker/",
+    state: "Discontinued",
+    link: "https://github.com/P541M/crypto-tracker",
     image: pimg7,
     technologies: [
       "React",
