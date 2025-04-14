@@ -8,6 +8,7 @@ import {
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects";
+import ProjectDetail from "./components/ProjectDetail"; 
 import Timeline from "./components/Timeline";
 import Volunteer from "./components/Volunteer";
 
@@ -39,6 +40,7 @@ function Layout() {
               </>
             }
           />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
         </Routes>
       </main>
       {isHomePage && (
