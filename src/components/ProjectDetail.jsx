@@ -304,7 +304,7 @@ const projects = [
     description:
       "Kivo is an academic task management system designed to help students organize coursework, track assignments, and manage deadlines efficiently. As the lead developer, I created this full-stack application using Next.js, React, TypeScript, and Firebase for the backend. The application features automatic extraction of assignment details from uploaded course outlines using PDF parsing, semester management with intuitive organization of courses and assessments, calendar integration with exportable ICS files, and comprehensive deadline tracking with visual indicators for upcoming and overdue tasks. I implemented a robust authentication system with both email/password and Google authentication options, designed a clean, responsive UI with Tailwind CSS, and created a scalable Firebase architecture for secure data storage. This project significantly enhanced my skills in Next.js API routes, Firebase integration, PDF parsing, and building complex user interfaces with state management.",
     state: "In Development",
-    link: "https://kivo-academic.vercel.app/",
+    link: null,
     image: pimg14, // You'll need to add this image to your assets
     technologies: [
       "React",
@@ -462,19 +462,21 @@ const ProjectDetail = () => {
             </div>
 
             {/* Visit project */}
-            <div className="mb-8 flex justify-center">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90"
-              >
-                <FontAwesomeIcon
-                  icon={project.github ? faGithub : faExternalLinkAlt}
-                />
-                {project.github ? "View Code on GitHub" : "Visit Project"}
-              </a>
-            </div>
+            {project.link && (
+              <div className="mb-8 flex justify-center">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90"
+                >
+                  <FontAwesomeIcon
+                    icon={project.github ? faGithub : faExternalLinkAlt}
+                  />
+                  {project.github ? "View Code on GitHub" : "Visit Project"}
+                </a>
+              </div>
+            )}
           </div>
         </div>
 

@@ -307,7 +307,7 @@ const projects = [
     description:
       "Kivo is an academic task management system designed to help students organize coursework, track assignments, and manage deadlines efficiently. As the lead developer, I created this full-stack application using Next.js, React, TypeScript, and Firebase for the backend. The application features automatic extraction of assignment details from uploaded course outlines using PDF parsing, semester management with intuitive organization of courses and assessments, calendar integration with exportable ICS files, and comprehensive deadline tracking with visual indicators for upcoming and overdue tasks. I implemented a robust authentication system with both email/password and Google authentication options, designed a clean, responsive UI with Tailwind CSS, and created a scalable Firebase architecture for secure data storage. This project significantly enhanced my skills in Next.js API routes, Firebase integration, PDF parsing, and building complex user interfaces with state management.",
     state: "In Development",
-    link: "https://kivo-academic.vercel.app/",
+    link: null,
     image: pimg14, // You'll need to add this image to your assets
     technologies: [
       "React",
@@ -461,7 +461,6 @@ const ProjectsComponent = () => {
           </span>
         </div>
       </div>
-
       {/* Content */}
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-2">
@@ -473,11 +472,9 @@ const ProjectsComponent = () => {
             <span>{formatDate(project.date)}</span>
           </div>
         </div>
-
         <p className="mb-3 line-clamp-2 text-sm text-text/70">
           {project.description}
         </p>
-
         {/* Tech tags */}
         <div className="mb-4 mt-auto">
           <div className="flex flex-wrap gap-1">
@@ -496,24 +493,25 @@ const ProjectsComponent = () => {
             )}
           </div>
         </div>
-
         {/* Actions */}
         <div className="flex gap-2">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all hover:bg-primary/90"
-          >
-            <FontAwesomeIcon
-              icon={project.github ? faGithub : faExternalLinkAlt}
-              className="mr-1"
-            />
-            {project.github ? "View Code" : "Visit Project"}
-          </a>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all hover:bg-primary/90"
+            >
+              <FontAwesomeIcon
+                icon={project.github ? faGithub : faExternalLinkAlt}
+                className="mr-1"
+              />
+              {project.github ? "View Code" : "Visit Project"}
+            </a>
+          )}
           <Link
             to={`/project/${project.id}`}
-            className="rounded-lg border border-divider bg-white px-3 py-2 text-xs font-medium transition-all hover:bg-secondary/30"
+            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider bg-white px-3 py-2 text-center text-xs font-medium transition-all hover:bg-secondary/30`}
           >
             <FontAwesomeIcon icon={faInfoCircle} className="mr-1" />
             Details
