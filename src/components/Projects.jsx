@@ -9,6 +9,8 @@ import {
   faTags,
   faFilter,
   faInfoCircle,
+  faChevronDown,
+  faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Import all project images
@@ -303,6 +305,7 @@ const projects = [
 const ProjectsComponent = () => {
   // State management
   const [searchTerm, setSearchTerm] = useState("");
+  const [showAllTechnologies, setShowAllTechnologies] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
     status: "",
     tech: [],
@@ -576,23 +579,44 @@ const ProjectsComponent = () => {
               <FontAwesomeIcon icon={faTags} className="ml-2 text-text/40" />
             </div>
             <div className="flex flex-wrap gap-2">
-              {allTechnologies.slice(0, 20).map((tech) => (
+              {allTechnologies
+                .slice(0, showAllTechnologies ? allTechnologies.length : 20)
+                .map((tech) => (
+                  <button
+                    key={tech}
+                    onClick={() => toggleTechFilter(tech)}
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                      activeFilters.tech.includes(tech)
+                        ? "bg-primary text-white"
+                        : "bg-secondary/50 text-text hover:bg-secondary"
+                    }`}
+                  >
+                    {tech}
+                  </button>
+                ))}
+              {!showAllTechnologies && allTechnologies.length > 20 && (
                 <button
-                  key={tech}
-                  onClick={() => toggleTechFilter(tech)}
-                  className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                    activeFilters.tech.includes(tech)
-                      ? "bg-primary text-white"
-                      : "bg-secondary/50 text-text hover:bg-secondary"
-                  }`}
+                  onClick={() => setShowAllTechnologies(true)}
+                  className="flex items-center rounded-full bg-secondary/30 px-3 py-1 text-xs text-text/70 hover:bg-secondary/50"
                 >
-                  {tech}
-                </button>
-              ))}
-              {allTechnologies.length > 20 && (
-                <span className="rounded-full bg-secondary/30 px-3 py-1 text-xs text-text/70">
                   +{allTechnologies.length - 20} more
-                </span>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="ml-1 h-3 w-3"
+                  />
+                </button>
+              )}
+              {showAllTechnologies && allTechnologies.length > 20 && (
+                <button
+                  onClick={() => setShowAllTechnologies(false)}
+                  className="flex items-center rounded-full bg-secondary/30 px-3 py-1 text-xs text-text/70 hover:bg-secondary/50"
+                >
+                  Show less
+                  <FontAwesomeIcon
+                    icon={faChevronUp}
+                    className="ml-1 h-3 w-3"
+                  />
+                </button>
               )}
             </div>
           </div>
