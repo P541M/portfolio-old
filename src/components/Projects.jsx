@@ -27,6 +27,7 @@ import pimg10 from "../assets/pimg10.PNG";
 import pimg11 from "../assets/pimg11.PNG";
 import pimg12 from "../assets/pimg12.PNG";
 import pimg13 from "../assets/pimg13.PNG";
+import pimg14 from "../assets/pimg14.PNG";
 
 // Project data
 const projects = [
@@ -167,7 +168,7 @@ const projects = [
     description:
       "V/\\ULT is a cryptocurrency tracker designed to display information about the top six cryptocurrencies. As the main developer, I built both the frontend and backend using React, JavaScript, and Node.js, integrating various APIs to fetch real-time crypto data. The application features an about section and showcases yearly price changes, providing users with insightful financial information. Developed over two months, V/\\ULT enhanced my proficiency in API integration and full stack development. Future enhancements will focus on improving the visual appeal and polishing the user interface to offer a more engaging and informative experience.",
     state: "Discontinued",
-    link: "https://github.com/P541M/crypto-tracker",
+    link: "https://p541m.github.io/crypto-tracker/",
     image: pimg7,
     technologies: [
       "React",
@@ -298,6 +299,29 @@ const projects = [
       "CSS",
     ],
     date: "2025-03",
+    github: false,
+  },
+  {
+    id: "kivo",
+    title: "Kivo",
+    description:
+      "Kivo is an academic task management system designed to help students organize coursework, track assignments, and manage deadlines efficiently. As the lead developer, I created this full-stack application using Next.js, React, TypeScript, and Firebase for the backend. The application features automatic extraction of assignment details from uploaded course outlines using PDF parsing, semester management with intuitive organization of courses and assessments, calendar integration with exportable ICS files, and comprehensive deadline tracking with visual indicators for upcoming and overdue tasks. I implemented a robust authentication system with both email/password and Google authentication options, designed a clean, responsive UI with Tailwind CSS, and created a scalable Firebase architecture for secure data storage. This project significantly enhanced my skills in Next.js API routes, Firebase integration, PDF parsing, and building complex user interfaces with state management.",
+    state: "In Development",
+    link: "https://kivo-academic.vercel.app/",
+    image: pimg14, // You'll need to add this image to your assets
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "Firestore",
+      "Firebase Auth",
+      "Firebase Storage",
+      "Tailwind CSS",
+      "PDF Parsing",
+      "ICS Generation",
+    ],
+    date: "2025-02",
     github: false,
   },
 ];
