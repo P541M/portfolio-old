@@ -13,8 +13,8 @@ module.exports = {
         card: "#FFFFFF",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Syne", "sans-serif"],
+        sans: ["Albert Sans", "sans-serif"],
+        heading: ["Albert Sans", "sans-serif"],
       },
       spacing: {
         "safe-top": "env(safe-area-inset-top)",
