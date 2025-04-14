@@ -10,9 +10,23 @@ import {
   FilmIcon,
   GlobeAltIcon,
   CogIcon,
+  ServerIcon,
 } from "@heroicons/react/24/solid";
 
 const timeline = [
+  {
+    company: "Bank of Montreal (BMO)",
+    roles: [
+      {
+        title: "Technology Research Analyst",
+        icon: ServerIcon,
+        description:
+          "Translated business requirements into technical specifications and developed software solutions while evaluating new technologies for business applications.",
+        duration: "May 2025 - Present",
+      },
+    ],
+    hasWorkTermReport: false,
+  },
   {
     company: "University of Guelph, College of Arts",
     roles: [
@@ -21,7 +35,7 @@ const timeline = [
         icon: CogIcon,
         description:
           "Led the redesign and migration of the College of Arts websites, overseeing content updates, accessibility, and stakeholder coordination.",
-        duration: "Jan 2025 - Present",
+        duration: "Jan 2025 - Apr 2025",
       },
       {
         title: "Website Redesign Coordinator",
@@ -137,29 +151,29 @@ export default function Timeline() {
               key={index}
               className="card group flex h-full flex-col overflow-hidden p-6"
             >
-              <h3 className="text-primary mb-4 text-xl font-bold">{company}</h3>
+              <h3 className="mb-4 text-xl font-bold text-primary">{company}</h3>
               <div className="flex-grow">
                 {roles.map(
                   ({ title, icon: Icon, description, duration }, idx) => (
                     <div key={idx} className="mb-6">
                       <div className="mb-2 flex items-center">
-                        <Icon className="text-primary mr-2 h-5 w-5" />
+                        <Icon className="mr-2 h-5 w-5 text-primary" />
                         <h4 className="font-medium">{title}</h4>
                       </div>
-                      <p className="text-text/70 mb-1 text-sm italic">
+                      <p className="mb-1 text-sm italic text-text/70">
                         {duration}
                       </p>
-                      <p className="text-text/80 text-sm">{description}</p>
+                      <p className="text-sm text-text/80">{description}</p>
                     </div>
                   ),
                 )}
               </div>
 
               {hasWorkTermReport && (
-                <div className="border-divider mt-4 border-t pt-4">
+                <div className="mt-4 border-t border-divider pt-4">
                   <button
                     onClick={() => navigate(reportPath)}
-                    className="bg-primary/10 text-primary hover:bg-primary/20 flex w-full items-center justify-center rounded-lg px-4 py-2.5 font-medium transition-all duration-300"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 px-4 py-2.5 font-medium text-primary transition-all duration-300 hover:bg-primary/20"
                   >
                     View Work Term Report
                     <svg
