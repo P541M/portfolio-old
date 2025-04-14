@@ -174,7 +174,7 @@ const Navbar = ({ className }) => {
   const navbarClasses = `
     fixed left-0 right-0 top-0 z-50 
     ${className || ""} 
-    ${navbarState.isScrolled ? "bg-white/95 py-2 shadow-md backdrop-blur-sm" : "bg-transparent py-4"} 
+    bg-white/95 py-2 shadow-sm backdrop-blur-sm
     ${navbarState.isVisible ? "translate-y-0" : "-translate-y-full"}
     transition-all duration-300 will-change-transform
   `.trim();
