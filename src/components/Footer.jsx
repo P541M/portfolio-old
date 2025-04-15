@@ -19,24 +19,32 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-divider bg-white">
-      {/* Condensed Footer Content */}
-      <div className="mx-auto max-w-screen-md px-4 py-10 sm:px-6">
-        <div className="grid gap-8 sm:grid-cols-2">
-          {/* Left Column */}
+      {/* Main Footer Content */}
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Left Column - About */}
           <div>
             <Link
               to="/"
-              className="mb-4 inline-block font-heading text-xl font-bold text-primary"
+              className="mb-3 inline-block font-heading text-xl font-bold text-primary"
             >
               PSALM ELEAZAR
             </Link>
-            <p className="mb-4 text-sm text-text/70">
+            <p className="mb-4 text-sm leading-relaxed text-text/80">
               Technology Research Analyst at BMO with a passion for full-stack
               development and project management.
             </p>
-            <div className="space-y-1 text-sm text-text/60">
+          </div>
+
+          {/* Middle Column - Contact Info */}
+          <div>
+            <h3 className="mb-4 font-medium text-text">Contact</h3>
+            <div className="space-y-2 text-sm text-text/70">
               <p className="flex items-center">
-                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="mr-3 text-primary"
+                />
                 <a
                   href="mailto:videna.psalmeleazar@gmail.com"
                   className="transition-colors duration-300 hover:text-primary"
@@ -45,13 +53,16 @@ const Footer = () => {
                 </a>
               </p>
               <p className="flex items-center">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="mr-3 text-primary"
+                />
                 Toronto, Canada
               </p>
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column - Social Links */}
           <div>
             <h3 className="mb-4 font-medium text-text">Connect</h3>
             <div className="flex flex-wrap gap-3">
@@ -83,7 +94,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
                 >
                   <FontAwesomeIcon icon={icon} className="h-4 w-4" />
                 </a>
@@ -93,9 +104,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-divider/40">
-        <div className="mx-auto flex max-w-screen-md flex-col items-center justify-between px-4 py-4 sm:flex-row sm:px-6">
+      {/* Bottom Bar with Copyright and Back to Top */}
+      <div className="border-t border-divider/40 bg-secondary/10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between px-6 py-4 sm:flex-row">
           <p className="mb-3 text-sm text-text/60 sm:mb-0">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
@@ -107,9 +118,9 @@ const Footer = () => {
                 navigate("/");
               }
             }}
-            className="flex items-center text-sm text-text/70 transition-colors duration-300 hover:text-primary"
+            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
           >
-            <span className="mr-2">Back to top</span>
+            <span>Back to top</span>
             <FontAwesomeIcon icon={faArrowUp} />
           </button>
         </div>
