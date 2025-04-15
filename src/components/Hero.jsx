@@ -1,7 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faGithub,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero() {
   const handleOpenResume = () => {
@@ -121,6 +125,18 @@ export default function Hero() {
                 >
                   <FontAwesomeIcon
                     icon={faGithub}
+                    className="h-4 w-4 md:h-5 md:w-5"
+                  />
+                </a>
+                <a
+                  href="https://twitter.com/psalmeleazar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white md:h-10 md:w-10"
+                >
+                  <FontAwesomeIcon
+                    icon={faTwitter}
                     className="h-4 w-4 md:h-5 md:w-5"
                   />
                 </a>

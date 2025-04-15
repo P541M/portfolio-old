@@ -12,6 +12,7 @@ import {
   faLaptopCode,
   faHandsHelping,
   faArrowUp,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -29,26 +30,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-divider bg-white py-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <footer className="border-t border-divider bg-white">
+      {/* Main footer content */}
+      <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-10">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Logo and description */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="col-span-1 lg:col-span-2">
             <Link
               to="/"
-              className="mb-3 font-heading text-xl font-bold text-primary"
+              className="mb-4 inline-block font-heading text-xl font-bold text-primary"
             >
               PSALM ELEAZAR
             </Link>
-            <p className="text-center text-sm text-text/70 md:text-left">
+            <p className="mb-5 max-w-md text-sm text-text/70">
               Technology Research Analyst at BMO with a passion for Full-stack
               Development and Project Management.
             </p>
+
+            {/* Contact Info */}
+            <div className="text-sm text-text/60">
+              <p className="mb-2 flex items-center">
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                <a
+                  href="mailto:videna.psalmeleazar@gmail.com"
+                  className="transition-colors duration-300 hover:text-primary"
+                >
+                  videna.psalmeleazar@gmail.com
+                </a>
+              </p>
+              <p className="flex items-center">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                Toronto, Canada
+              </p>
+            </div>
           </div>
 
-          {/* Column 2: Navigation links */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="mb-3 font-medium text-text">Quick Links</h3>
+          {/* Column 2: Quick Links */}
+          <div>
+            <h3 className="mb-4 font-medium text-text">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
@@ -73,16 +92,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Social links */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="mb-3 font-medium text-text">Connect</h3>
-            <div className="mb-4 flex space-x-3">
+          {/* Column 3: Social Media */}
+          <div>
+            <h3 className="mb-4 font-medium text-text">Connect</h3>
+            <div className="mb-4 flex flex-wrap gap-3">
               <a
                 href="https://www.linkedin.com/in/pevidena/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="h-4 w-4" />
               </a>
@@ -91,7 +110,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
               </a>
@@ -100,7 +119,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 <FontAwesomeIcon icon={faTwitter} className="h-4 w-4" />
               </a>
@@ -109,25 +128,19 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Email"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
               </a>
             </div>
-            <p className="text-sm text-text/60">
-              <a
-                href="mailto:videna.psalmeleazar@gmail.com"
-                className="transition-colors duration-300 hover:text-primary"
-              >
-                videna.psalmeleazar@gmail.com
-              </a>
-            </p>
           </div>
         </div>
+      </div>
 
-        {/* Copyright and Back to top */}
-        <div className="mt-8 flex items-center justify-between border-t border-divider/40 pt-4">
-          <p className="text-sm text-text/60">
+      {/* Copyright bar */}
+      <div className="border-t border-divider/40">
+        <div className="container mx-auto flex flex-col items-center justify-between px-4 py-4 sm:flex-row sm:px-6">
+          <p className="mb-3 text-sm text-text/60 sm:mb-0">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
           <button
@@ -138,10 +151,10 @@ const Footer = () => {
                 navigate("/");
               }
             }}
-            className="flex items-center text-sm text-text/70 hover:text-primary"
+            className="flex items-center text-sm text-text/70 transition-colors duration-300 hover:text-primary"
           >
-            <FontAwesomeIcon icon={faArrowUp} className="mr-1" />
-            Back to top
+            <span className="mr-2">Back to top</span>
+            <FontAwesomeIcon icon={faArrowUp} />
           </button>
         </div>
       </div>
