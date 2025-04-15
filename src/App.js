@@ -23,8 +23,6 @@ function ScrollToTop() {
 
 function Layout() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
-
   return (
     <div className="flex min-h-screen flex-col bg-bg">
       <Navbar className="fade-in-two" />
@@ -35,8 +33,11 @@ function Layout() {
             element={
               <>
                 <Hero />
+                <div className="h-10 w-full bg-bg md:h-12"></div>
                 <Timeline />
+                <div className="h-10 w-full bg-bg md:h-12"></div>
                 <Projects />
+                <div className="h-10 w-full bg-bg md:h-12"></div>
                 <Volunteer />
               </>
             }
