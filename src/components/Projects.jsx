@@ -12,7 +12,6 @@ import {
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
-
 // Import projects data from central store
 import projects, { formatDate, getStatusColor } from "../data/projects";
 
@@ -64,16 +63,13 @@ const ProjectsComponent = () => {
       project.technologies.some((tech) =>
         tech.toLowerCase().includes(searchTerm.toLowerCase()),
       );
-
     // Status filter
     const matchesStatus =
       activeFilters.status === "" || project.state === activeFilters.status;
-
     // Tech filter
     const matchesTech =
       activeFilters.tech.length === 0 ||
       activeFilters.tech.every((tech) => project.technologies.includes(tech));
-
     return matchesSearch && matchesStatus && matchesTech;
   });
 
@@ -98,7 +94,7 @@ const ProjectsComponent = () => {
 
   // Project card component
   const ProjectCard = ({ project }) => (
-    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:shadow-md">
+    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg">
       {/* Image with status badge */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -134,13 +130,13 @@ const ProjectsComponent = () => {
             {project.technologies.slice(0, 3).map((tech, idx) => (
               <span
                 key={idx}
-                className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs"
+                className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs">
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">
                 +{project.technologies.length - 3}
               </span>
             )}
@@ -153,7 +149,7 @@ const ProjectsComponent = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all hover:bg-primary/90"
+              className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all duration-300 hover:bg-primary/90 group-hover:shadow-md"
             >
               <FontAwesomeIcon
                 icon={project.github ? faGithub : faExternalLinkAlt}
@@ -164,7 +160,7 @@ const ProjectsComponent = () => {
           )}
           <Link
             to={`/project/${project.id}`}
-            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider bg-white px-3 py-2 text-center text-xs font-medium transition-all hover:bg-secondary/30`}
+            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider px-3 py-2 text-center text-xs font-medium transition-all duration-300 hover:bg-primary/5 group-hover:shadow-md`}
           >
             <FontAwesomeIcon icon={faInfoCircle} className="mr-1" />
             Details

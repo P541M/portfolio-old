@@ -145,31 +145,50 @@ export default function Timeline() {
           ({ company, roles, hasWorkTermReport, reportPath }, index) => (
             <article
               key={index}
-              className="card group flex h-full flex-col overflow-hidden p-6"
+              className="card group relative flex h-full flex-col overflow-hidden bg-white p-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg"
             >
-              <h3 className="mb-4 text-xl font-bold text-primary">{company}</h3>
-              <div className="flex-grow">
+              {/* Card header with company name */}
+              <div className="relative bg-gradient-to-r from-primary/90 to-primary p-5">
+                <h3 className="font-heading text-xl font-bold text-white">
+                  {company}
+                </h3>
+                <div className="absolute -bottom-3 right-0 h-3 w-full overflow-hidden">
+                  <div className="relative h-full w-full">
+                    <div className="absolute right-6 h-6 w-6 -translate-y-3 rotate-45 transform bg-white"></div>
+                  </div>
+                </div>
+              </div>
+              {/* Card content */}
+              <div className="flex-grow p-5 pt-6">
                 {roles.map(
                   ({ title, icon: Icon, description, duration }, idx) => (
-                    <div key={idx} className="mb-6">
+                    <div key={idx} className="relative mb-6">
                       <div className="mb-2 flex items-center">
-                        <Icon className="mr-2 h-5 w-5 text-primary" />
-                        <h4 className="font-medium">{title}</h4>
+                        <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 shadow-sm">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <h4 className="font-medium text-gray-800">{title}</h4>
                       </div>
-                      <p className="mb-1 text-sm italic text-text/70">
-                        {duration}
-                      </p>
-                      <p className="text-sm text-text/80">{description}</p>
+                      <div className="ml-13 pl-7">
+                        <p className="mb-2 text-sm italic text-primary/80">
+                          {duration}
+                        </p>
+                        <p className="text-sm leading-relaxed text-text/80">
+                          {description}
+                        </p>
+                      </div>
                     </div>
                   ),
                 )}
               </div>
+              {/* Work term report link */}
               {hasWorkTermReport && (
-                <div className="mt-4 border-t border-divider pt-4">
+                <div className="border-t border-divider/60 bg-primary/5 p-4">
                   <a
                     href={reportPath}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 px-4 py-2.5 font-medium text-primary transition-all duration-300 hover:bg-primary/20"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 px-4 py-2.5 font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white group-hover:shadow-md"
                   >
                     View Work Term Report
                     <svg
@@ -189,6 +208,28 @@ export default function Timeline() {
                   </a>
                 </div>
               )}
+              {/* Job type footer */}
+              <div className="border-t border-primary/10 bg-primary/5 p-3">
+                <div className="flex justify-end">
+                  <span className="text-xs italic text-primary/70">
+                    {company === "Bank of Montreal (BMO)"
+                      ? "Internship"
+                      : company === "University of Guelph, College of Arts"
+                        ? "Internship, Contract Part-time"
+                        : company === "BoscoBoys Distributors"
+                          ? "Internship"
+                          : company === "MediaMatchup"
+                            ? "Entrepreneurship"
+                            : company === "Videna Visuals"
+                              ? "Freelance"
+                              : company === "Seeds of Diversity Canada"
+                                ? "Internship"
+                                : company === "Hero Certified Burgers"
+                                  ? "Part-Time"
+                                  : "Professional Experience"}
+                  </span>
+                </div>
+              </div>
             </article>
           ),
         )}
