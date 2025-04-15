@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -43,7 +43,6 @@ const ProjectsComponent = () => {
   });
   const [filtersExpanded, setFiltersExpanded] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
-  const location = useLocation();
 
   // Load filters from sessionStorage on mount
   useEffect(() => {
