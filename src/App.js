@@ -12,7 +12,6 @@ import ProjectDetail from "./components/ProjectDetail";
 import Timeline from "./components/Timeline";
 import Volunteer from "./components/Volunteer";
 import Footer from "./components/Footer";
-import NotFound from "./components/NotFound"; // Import the NotFound component
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,8 +43,6 @@ function Layout() {
             }
           />
           <Route path="/project/:projectId" element={<ProjectDetail />} />
-          {/* Add the 404 route - this will catch any unmatched routes */}
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
