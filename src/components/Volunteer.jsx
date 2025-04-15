@@ -65,7 +65,6 @@ export default function Volunteer() {
                 </div>
               </div>
             </div>
-
             {/* Card content */}
             <div className="flex-grow p-5 pt-6">
               {roles.map(
@@ -79,7 +78,7 @@ export default function Volunteer() {
                       </div>
                       <h4 className="font-medium text-gray-800">{title}</h4>
                     </div>
-                    <div className="ml-15 pl-7">
+                    <div className="ml-14 pl-7">
                       <p className="mb-2 text-sm italic text-primary/80">
                         {duration}
                       </p>
@@ -91,7 +90,6 @@ export default function Volunteer() {
                 ),
               )}
             </div>
-
             {/* Decorative footer element */}
             <div className="border-t border-primary/10 bg-primary/5 p-3">
               <div className="flex justify-end">

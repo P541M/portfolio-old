@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -11,9 +11,27 @@ import {
   faInfoCircle,
   faChevronDown,
   faChevronUp,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 // Import projects data from central store
 import projects, { formatDate, getStatusColor } from "../data/projects";
+
+// Debounce hook for search performance
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+};
 
 const ProjectsComponent = () => {
   // State management
@@ -24,19 +42,34 @@ const ProjectsComponent = () => {
     tech: [],
   });
   const [filtersExpanded, setFiltersExpanded] = useState(false);
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
   const location = useLocation();
 
-  // Reset filters when navigating back to projects from a project detail page
+  // Load filters from sessionStorage on mount
   useEffect(() => {
-    if (location.pathname === "/") {
-      // Optional: only reset if coming from a project page
-      const comingFromProjectPage = location.state?.from === "project";
-      if (comingFromProjectPage) {
-        setSearchTerm("");
-        setActiveFilters({ status: "", tech: [] });
+    // Load saved filters when component mounts
+    const savedFilters = sessionStorage.getItem("projectFilters");
+    if (savedFilters) {
+      try {
+        const parsed = JSON.parse(savedFilters);
+        setSearchTerm(parsed.searchTerm || "");
+        setActiveFilters(parsed.activeFilters || { status: "", tech: [] });
+      } catch (e) {
+        console.error("Error parsing saved filters:", e);
       }
     }
-  }, [location]);
+  }, []);
+
+  // Save filters to sessionStorage when they change
+  useEffect(() => {
+    sessionStorage.setItem(
+      "projectFilters",
+      JSON.stringify({
+        searchTerm,
+        activeFilters,
+      }),
+    );
+  }, [searchTerm, activeFilters]);
 
   // Sort by date (newest first)
   const sortedProjects = [...projects].sort((a, b) => {
@@ -57,19 +90,24 @@ const ProjectsComponent = () => {
   const filteredProjects = sortedProjects.filter((project) => {
     // Search filter
     const matchesSearch =
-      searchTerm === "" ||
-      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      debouncedSearchTerm === "" ||
+      project.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+      project.description
+        .toLowerCase()
+        .includes(debouncedSearchTerm.toLowerCase()) ||
       project.technologies.some((tech) =>
-        tech.toLowerCase().includes(searchTerm.toLowerCase()),
+        tech.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
       );
+
     // Status filter
     const matchesStatus =
       activeFilters.status === "" || project.state === activeFilters.status;
+
     // Tech filter
     const matchesTech =
       activeFilters.tech.length === 0 ||
       activeFilters.tech.every((tech) => project.technologies.includes(tech));
+
     return matchesSearch && matchesStatus && matchesTech;
   });
 
@@ -87,10 +125,11 @@ const ProjectsComponent = () => {
     setActiveFilters((prev) => ({ ...prev, status }));
   };
 
-  const clearFilters = () => {
+  const clearFilters = useCallback(() => {
     setActiveFilters({ status: "", tech: [] });
     setSearchTerm("");
-  };
+    sessionStorage.removeItem("projectFilters");
+  }, []);
 
   // Project card component
   const ProjectCard = ({ project }) => (
@@ -170,25 +209,84 @@ const ProjectsComponent = () => {
     </div>
   );
 
+  // Show active filters when filter section is collapsed
+  const ActiveFiltersBar = () => {
+    if (
+      !filtersExpanded &&
+      (activeFilters.status || activeFilters.tech.length > 0)
+    ) {
+      return (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-sm text-text/70">Active filters:</span>
+
+          {activeFilters.status && (
+            <button
+              onClick={() => setStatusFilter("")}
+              className={`flex items-center rounded-full px-2 py-1 text-xs ${getStatusColor(
+                activeFilters.status,
+              )}`}
+            >
+              {activeFilters.status}
+              <FontAwesomeIcon icon={faXmark} className="ml-1 h-3 w-3" />
+            </button>
+          )}
+
+          {activeFilters.tech.map((tech) => (
+            <button
+              key={tech}
+              onClick={() => toggleTechFilter(tech)}
+              className="flex items-center rounded-full bg-primary px-2 py-1 text-xs text-white"
+            >
+              {tech}
+              <FontAwesomeIcon icon={faXmark} className="ml-1 h-3 w-3" />
+            </button>
+          ))}
+
+          <button
+            onClick={clearFilters}
+            className="ml-2 text-xs text-primary underline hover:text-primary/70"
+          >
+            Clear all
+          </button>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  // Enhanced search input with clear button
+  const SearchInput = () => (
+    <div className="relative flex-1">
+      <input
+        type="text"
+        placeholder="Search projects..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full rounded-lg border border-divider bg-white py-2 pl-10 pr-4 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+      />
+      <FontAwesomeIcon
+        icon={faSearch}
+        className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
+      />
+      {searchTerm && (
+        <button
+          onClick={() => setSearchTerm("")}
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-text/40 hover:bg-secondary/50 hover:text-text/60"
+          aria-label="Clear search"
+        >
+          <FontAwesomeIcon icon={faXmark} className="h-3 w-3" />
+        </button>
+      )}
+    </div>
+  );
+
   // Filter component
   const FiltersSection = () => (
     <div className="mb-6">
       {/* Search and toggles */}
       <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         {/* Search */}
-        <div className="relative flex-1">
-          <input
-            type="text"
-            placeholder="Search projects..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-lg border border-divider bg-white py-2 pl-10 pr-4 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          />
-          <FontAwesomeIcon
-            icon={faSearch}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
-          />
-        </div>
+        <SearchInput />
         {/* Filter toggle */}
         <div className="flex items-center gap-2">
           <button
@@ -213,6 +311,10 @@ const ProjectsComponent = () => {
           )}
         </div>
       </div>
+
+      {/* Active filters bar when filter section is collapsed */}
+      <ActiveFiltersBar />
+
       {/* Expanded filters */}
       {filtersExpanded && (
         <div className="rounded-lg border border-divider bg-white p-4 shadow-sm">

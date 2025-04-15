@@ -169,7 +169,7 @@ export default function Timeline() {
                         </div>
                         <h4 className="font-medium text-gray-800">{title}</h4>
                       </div>
-                      <div className="ml-13 pl-7">
+                      <div className="ml-12 pl-7">
                         <p className="mb-2 text-sm italic text-primary/80">
                           {duration}
                         </p>
