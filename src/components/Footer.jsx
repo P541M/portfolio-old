@@ -5,12 +5,28 @@ import {
   faGithub,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Link, useLocation } from "react-router-dom";
+import {
+  faEnvelope,
+  faHome,
+  faBriefcase,
+  faLaptopCode,
+  faHandsHelping,
+  faArrowUp,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Define quick links with section IDs and icons matching Navbar
+  const quickLinks = [
+    { id: "hero-section", label: "Home", icon: faHome },
+    { id: "timeline-section", label: "Timeline", icon: faBriefcase },
+    { id: "projects-section", label: "Projects", icon: faLaptopCode },
+    { id: "volunteer-section", label: "Volunteer", icon: faHandsHelping },
+  ];
 
   return (
     <footer className="border-t border-divider bg-white py-8">
@@ -34,70 +50,26 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="mb-3 font-medium text-text">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  className="text-sm text-text/70 transition-colors duration-300 hover:text-primary"
-                  onClick={(e) => {
-                    if (window.location.pathname === "/") {
-                      e.preventDefault();
-                      document
-                        .getElementById("hero-section")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-sm text-text/70 transition-colors duration-300 hover:text-primary"
-                  onClick={(e) => {
-                    if (window.location.pathname === "/") {
-                      e.preventDefault();
-                      document
-                        .getElementById("timeline-section")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Timeline
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-sm text-text/70 transition-colors duration-300 hover:text-primary"
-                  onClick={(e) => {
-                    if (window.location.pathname === "/") {
-                      e.preventDefault();
-                      document
-                        .getElementById("projects-section")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-sm text-text/70 transition-colors duration-300 hover:text-primary"
-                  onClick={(e) => {
-                    if (window.location.pathname === "/") {
-                      e.preventDefault();
-                      document
-                        .getElementById("volunteer-section")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Volunteer
-                </Link>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.id}>
+                  <Link
+                    to="/"
+                    state={{ scrollTo: link.id }}
+                    className="flex items-center text-sm text-text/70 transition-colors duration-300 hover:text-primary"
+                    onClick={(e) => {
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        document
+                          .getElementById(link.id)
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    <FontAwesomeIcon icon={link.icon} className="mr-2" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -153,11 +125,24 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 border-t border-divider/40 pt-4 text-center">
+        {/* Copyright and Back to top */}
+        <div className="mt-8 flex items-center justify-between border-t border-divider/40 pt-4">
           <p className="text-sm text-text/60">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
+          <button
+            onClick={() => {
+              if (location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                navigate("/");
+              }
+            }}
+            className="flex items-center text-sm text-text/70 hover:text-primary"
+          >
+            <FontAwesomeIcon icon={faArrowUp} className="mr-1" />
+            Back to top
+          </button>
         </div>
       </div>
     </footer>
