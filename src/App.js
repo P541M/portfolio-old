@@ -8,9 +8,10 @@ import {
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects";
-import ProjectDetail from "./components/ProjectDetail"; 
+import ProjectDetail from "./components/ProjectDetail";
 import Timeline from "./components/Timeline";
 import Volunteer from "./components/Volunteer";
+import Footer from "./components/Footer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,9 +26,9 @@ function Layout() {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="flex min-h-screen flex-col bg-bg">
       <Navbar className="fade-in-two" />
-      <main key={location.pathname} className="fade-in pb-24">
+      <main key={location.pathname} className="fade-in flex-grow pb-0">
         <Routes location={location}>
           <Route
             path="/"
@@ -43,15 +44,7 @@ function Layout() {
           <Route path="/project/:projectId" element={<ProjectDetail />} />
         </Routes>
       </main>
-      {isHomePage && (
-        <footer className="py-8 text-center text-text/60">
-          <div className="container mx-auto">
-            <p>
-              © {new Date().getFullYear()} Psalm Eleazar. All rights reserved.
-            </p>
-          </div>
-        </footer>
-      )}
+      <Footer />
     </div>
   );
 }
