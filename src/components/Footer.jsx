@@ -7,10 +7,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
-  faHome,
-  faBriefcase,
-  faLaptopCode,
-  faHandsHelping,
   faArrowUp,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
@@ -20,14 +16,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
-
-  // Define quick links with section IDs and icons matching Navbar
-  const quickLinks = [
-    { id: "hero-section", label: "Home", icon: faHome },
-    { id: "timeline-section", label: "Timeline", icon: faBriefcase },
-    { id: "projects-section", label: "Projects", icon: faLaptopCode },
-    { id: "volunteer-section", label: "Volunteer", icon: faHandsHelping },
-  ];
 
   return (
     <footer className="border-t border-divider bg-white">
@@ -63,33 +51,6 @@ const Footer = () => {
                 Toronto, Canada
               </p>
             </div>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="mb-4 font-medium text-text">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.id}>
-                  <Link
-                    to="/"
-                    state={{ scrollTo: link.id }}
-                    className="flex items-center text-sm text-text/70 transition-colors duration-300 hover:text-primary"
-                    onClick={(e) => {
-                      if (location.pathname === "/") {
-                        e.preventDefault();
-                        document
-                          .getElementById(link.id)
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
-                  >
-                    <FontAwesomeIcon icon={link.icon} className="mr-2" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Column 3: Social Media */}
