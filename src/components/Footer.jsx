@@ -19,25 +19,23 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-divider bg-white">
-      {/* Main footer content */}
-      <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: Logo and description */}
-          <div className="col-span-1 lg:col-span-2">
+      {/* Condensed Footer Content */}
+      <div className="mx-auto max-w-screen-md px-4 py-10 sm:px-6">
+        <div className="grid gap-8 sm:grid-cols-2">
+          {/* Left Column */}
+          <div>
             <Link
               to="/"
               className="mb-4 inline-block font-heading text-xl font-bold text-primary"
             >
               PSALM ELEAZAR
             </Link>
-            <p className="mb-5 max-w-md text-sm text-text/70">
-              Technology Research Analyst at BMO with a passion for Full-stack
-              Development and Project Management.
+            <p className="mb-4 text-sm text-text/70">
+              Technology Research Analyst at BMO with a passion for full-stack
+              development and project management.
             </p>
-
-            {/* Contact Info */}
-            <div className="text-sm text-text/60">
-              <p className="mb-2 flex items-center">
+            <div className="space-y-1 text-sm text-text/60">
+              <p className="flex items-center">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 <a
                   href="mailto:videna.psalmeleazar@gmail.com"
@@ -53,54 +51,51 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 3: Social Media */}
+          {/* Right Column */}
           <div>
             <h3 className="mb-4 font-medium text-text">Connect</h3>
-            <div className="mb-4 flex flex-wrap gap-3">
-              <a
-                href="https://www.linkedin.com/in/pevidena/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="h-4 w-4" />
-              </a>
-              <a
-                href="https://github.com/P541M"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
-              </a>
-              <a
-                href="https://twitter.com/psalmeleazar"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                <FontAwesomeIcon icon={faTwitter} className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:videna.psalmeleazar@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
-              </a>
+            <div className="flex flex-wrap gap-3">
+              {[
+                {
+                  href: "https://www.linkedin.com/in/pevidena/",
+                  icon: faLinkedin,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://github.com/P541M",
+                  icon: faGithub,
+                  label: "GitHub",
+                },
+                {
+                  href: "https://twitter.com/psalmeleazar",
+                  icon: faTwitter,
+                  label: "Twitter",
+                },
+                {
+                  href: "mailto:videna.psalmeleazar@gmail.com",
+                  icon: faEnvelope,
+                  label: "Email",
+                },
+              ].map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                >
+                  <FontAwesomeIcon icon={icon} className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright bar */}
+      {/* Bottom Bar */}
       <div className="border-t border-divider/40">
-        <div className="container mx-auto flex flex-col items-center justify-between px-4 py-4 sm:flex-row sm:px-6">
+        <div className="mx-auto flex max-w-screen-md flex-col items-center justify-between px-4 py-4 sm:flex-row sm:px-6">
           <p className="mb-3 text-sm text-text/60 sm:mb-0">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
