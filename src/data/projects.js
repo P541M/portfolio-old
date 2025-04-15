@@ -13,6 +13,8 @@ import pimg11 from "../assets/pimg11.PNG";
 import pimg12 from "../assets/pimg12.PNG";
 import pimg13 from "../assets/pimg13.PNG";
 import pimg14 from "../assets/pimg14.PNG";
+import pimg15 from "../assets/pimg15.PNG";
+import pimg16 from "../assets/pimg16.PNG";
 import pendingimg from "../assets/pendingimg.png";
 
 /**
@@ -20,6 +22,50 @@ import pendingimg from "../assets/pendingimg.png";
  * All project information is stored here and imported where needed
  */
 const projects = [
+  {
+    id: "frij-io",
+    title: "frij.io",
+    description:
+      "frij.io is a smart food management platform designed to solve food insecurity challenges and reduce waste. As part of a 4-person team with Emily Chang, Quoc Le, and Megan D'costa, I developed a system that helps users track fridge inventory, collaborate on shared grocery lists, and split expenses. The application leverages Firebase for real-time data management and incorporates AI through the Google Vision API for receipt scanning and Perplexity AI for recipe suggestions based on available ingredients. Key features include inventory tracking with expiration dates, group grocery lists, expense sharing, and intelligent recipe recommendations. This project earned the Best AI Award at Hack Canada, demonstrating our effective use of technology to address real-world problems.",
+    state: "Deployed",
+    link: "https://frijio.vercel.app/",
+    image: pimg16,
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Firebase",
+      "Firestore",
+      "Google Vision API",
+      "Perplexity AI",
+      "Tailwind CSS",
+      "Axios",
+      "React",
+    ],
+    date: "2025-02",
+    github: false,
+  },
+  {
+    id: "convoco",
+    title: "Convoco",
+    description:
+      "Convoco is a real-time debate platform with AI moderation and fact-checking capabilities built during the GenAI Genesis 2025 hackathon. Working collaboratively with Emily Chang, Quoc Le, and Megan D'costa, I helped design and implement this application that enables users to practice structured debates while receiving AI-powered feedback. The platform includes features like timed debate sessions, speech-to-text functionality, and comprehensive AI analysis of arguments, including fact-checking and strength assessment. Users can engage in debates on various topics, receive personalized feedback to improve their argumentation skills, and compete on a leaderboard. Built with Next.js and Firebase, the system incorporates Google's Speech-to-Text API and utilizes Gemini AI for argument analysis, making debate practice accessible and educational for users of all experience levels.",
+    state: "Deployed",
+    link: "https://convoco.vercel.app/debates",
+    image: pimg15,
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Firebase",
+      "Firestore",
+      "Google Speech-to-Text API",
+      "Gemini AI",
+      "Tailwind CSS",
+      "React",
+      "Vercel",
+    ],
+    date: "2025-03",
+    github: false,
+  },
   {
     id: "disperse-boscoboys-distributors",
     title: "Disperse | BoscoBoys Distributors",
