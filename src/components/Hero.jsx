@@ -38,7 +38,6 @@ export default function Hero() {
             </h1>
             <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent md:mt-4"></div>
           </div>
-
           <div className="grid gap-8 md:grid-cols-2 md:gap-16">
             <div className="order-2 flex flex-col justify-center md:order-1">
               <p className="mb-6 text-center text-sm text-text/80 md:mb-8 md:text-left md:text-base">
@@ -58,7 +57,6 @@ export default function Hero() {
                 and open to opportunities that challenge me to build engaging
                 digital experiences.
               </p>
-
               <div className="flex flex-col space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
                 <button
                   onClick={handleOpenResume}
@@ -66,9 +64,20 @@ export default function Hero() {
                 >
                   <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
                   View Resume
-                  <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
                 </button>
                 <button
                   onClick={handleOpenContactForm}
@@ -79,7 +88,6 @@ export default function Hero() {
                 </button>
               </div>
             </div>
-
             <div className="order-1 flex flex-col items-center justify-center md:order-2 md:items-end">
               <div className="mb-4 text-center md:mb-6 md:text-right">
                 <p className="mb-1 text-base font-medium text-text md:mb-2 md:text-lg">
@@ -91,7 +99,6 @@ export default function Hero() {
                   Project Management
                 </p>
               </div>
-
               <div className="mt-3 flex items-center justify-center space-x-4 md:mt-4 md:justify-end md:space-x-5">
                 <a
                   href="https://www.linkedin.com/in/pevidena/"

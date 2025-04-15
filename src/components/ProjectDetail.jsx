@@ -330,7 +330,6 @@ const ProjectDetail = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-
     // If project is not found, navigate back to projects
     if (!project && projectId) {
       navigate("/");
@@ -402,7 +401,6 @@ const ProjectDetail = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
           <span>Back to Home</span>
         </Link>
-
         {/* Project header */}
         <div className="overflow-hidden rounded-xl bg-white shadow-md">
           {/* Project image */}
@@ -430,7 +428,6 @@ const ProjectDetail = () => {
               </h1>
             </div>
           </div>
-
           {/* Project content */}
           <div className="p-6">
             {/* Description */}
@@ -442,7 +439,6 @@ const ProjectDetail = () => {
                 {project.description}
               </p>
             </div>
-
             {/* Technologies */}
             <div className="mb-8">
               <h2 className="mb-4 text-xl font-bold text-text">
@@ -459,7 +455,6 @@ const ProjectDetail = () => {
                 ))}
               </div>
             </div>
-
             {/* Visit project */}
             {project.link && (
               <div className="mb-8 flex justify-center">
@@ -478,7 +473,6 @@ const ProjectDetail = () => {
             )}
           </div>
         </div>
-
         {/* Related projects */}
         {relatedProjects.length > 0 && (
           <div className="mt-12">
@@ -507,7 +501,6 @@ const ProjectDetail = () => {
                       </span>
                     </div>
                   </div>
-
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-4">
                     <h3 className="mb-2 line-clamp-1 text-lg font-bold text-text">
@@ -516,7 +509,6 @@ const ProjectDetail = () => {
                     <p className="mb-3 line-clamp-2 text-sm text-text/70">
                       {relatedProject.description}
                     </p>
-
                     {/* Tech tags */}
                     <div className="mt-auto">
                       <div className="flex flex-wrap gap-1">

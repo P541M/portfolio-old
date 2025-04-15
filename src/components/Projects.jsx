@@ -540,7 +540,6 @@ const ProjectsComponent = () => {
             className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
           />
         </div>
-
         {/* Filter toggle */}
         <div className="flex items-center gap-2">
           <button
@@ -555,7 +554,6 @@ const ProjectsComponent = () => {
               </span>
             )}
           </button>
-
           {(activeFilters.status || activeFilters.tech.length > 0) && (
             <button
               onClick={clearFilters}
@@ -566,7 +564,6 @@ const ProjectsComponent = () => {
           )}
         </div>
       </div>
-
       {/* Expanded filters */}
       {filtersExpanded && (
         <div className="rounded-lg border border-divider bg-white p-4 shadow-sm">
@@ -594,7 +591,6 @@ const ProjectsComponent = () => {
               ))}
             </div>
           </div>
-
           <div>
             <div className="mb-2 flex items-center">
               <h4 className="text-sm font-medium text-text">Technologies</h4>
@@ -685,10 +681,8 @@ const ProjectsComponent = () => {
       <h2 id="projects-title" className="section-title">
         Projects
       </h2>
-
       {/* Filters */}
       <FiltersSection />
-
       {/* Projects grid */}
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

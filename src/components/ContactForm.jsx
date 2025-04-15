@@ -24,13 +24,11 @@ const ContactForm = ({ isOpen, onClose }) => {
       // Open the modal
       document.body.style.overflow = "hidden"; // Prevent scrolling
       setShowForm(true);
-
       // Start with opacity 0, then animate to 1 after a small delay
       setOpacity(0);
       setTimeout(() => {
         setOpacity(1);
       }, 10);
-
       // Focus handling - optional but improves accessibility
       if (modalRef.current) {
         const focusableElements = modalRef.current.querySelectorAll(
@@ -46,17 +44,14 @@ const ContactForm = ({ isOpen, onClose }) => {
       // Close the modal with timing
       // Clear any existing timers
       if (fadeTimer.current) clearTimeout(fadeTimer.current);
-
       // Animate opacity to 0
       setOpacity(0);
-
       // Set a timer to remove the component after transition completes
       fadeTimer.current = setTimeout(() => {
         setShowForm(false);
         document.body.style.overflow = ""; // Re-enable scrolling
       }, 300); // Match your transition duration
     }
-
     // Cleanup function
     return () => {
       if (fadeTimer.current) {
@@ -164,6 +159,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               onChange={(e) => setName(e.target.value)}
               className="w-full rounded-lg border border-divider bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               required
+              minLength="2"
+              maxLength="100"
             />
           </div>
           <div>
@@ -182,6 +179,7 @@ const ContactForm = ({ isOpen, onClose }) => {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-lg border border-divider bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               required
+              maxLength="100"
             />
           </div>
           <div>
@@ -200,6 +198,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               className="w-full rounded-lg border border-divider bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               rows="4"
               required
+              minLength="10"
+              maxLength="1000"
             ></textarea>
           </div>
           <button
@@ -230,7 +230,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             aria-label="LinkedIn"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
           >
-            <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="h-4 w-4 md:h-5 md:w-5"
+            />
           </a>
           <a
             href="https://github.com/P541M"
@@ -239,7 +242,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             aria-label="GitHub"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
           >
-            <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="h-4 w-4 md:h-5 md:w-5"
+            />
           </a>
           <a
             href="https://twitter.com/psalmeleazar"
@@ -248,7 +254,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             aria-label="Twitter"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
           >
-            <FontAwesomeIcon icon={faTwitter} className="h-5 w-5" />
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="h-4 w-4 md:h-5 md:w-5"
+            />
           </a>
           <a
             href="mailto:videna.psalmeleazar@gmail.com"
@@ -257,7 +266,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             aria-label="Email"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
           >
-            <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="h-4 w-4 md:h-5 md:w-5"
+            />
           </a>
         </div>
       </div>
