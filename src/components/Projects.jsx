@@ -5,44 +5,24 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faCalendarAlt,
   faExternalLinkAlt,
-  faSearch,
-  faTags,
-  faFilter,
   faInfoCircle,
   faChevronDown,
   faChevronUp,
   faXmark,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 // Import projects data from central store
 import projects, { formatDate, getStatusColor } from "../data/projects";
 
-// Debounce hook for search performance
-const useDebounce = (value, delay) => {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-};
-
 const ProjectsComponent = () => {
   // State management
-  const [searchTerm, setSearchTerm] = useState("");
-  const [showAllTechnologies, setShowAllTechnologies] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
-    status: "",
-    tech: [],
+    status: [], // Change to array to support multiple selections
   });
   const [filtersExpanded, setFiltersExpanded] = useState(false);
-  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
 
   // Load filters from sessionStorage on mount
   useEffect(() => {
@@ -51,8 +31,7 @@ const ProjectsComponent = () => {
     if (savedFilters) {
       try {
         const parsed = JSON.parse(savedFilters);
-        setSearchTerm(parsed.searchTerm || "");
-        setActiveFilters(parsed.activeFilters || { status: "", tech: [] });
+        setActiveFilters(parsed.activeFilters || { status: [] });
       } catch (e) {
         console.error("Error parsing saved filters:", e);
       }
@@ -64,11 +43,10 @@ const ProjectsComponent = () => {
     sessionStorage.setItem(
       "projectFilters",
       JSON.stringify({
-        searchTerm,
         activeFilters,
       }),
     );
-  }, [searchTerm, activeFilters]);
+  }, [activeFilters]);
 
   // Sort by date (newest first)
   const sortedProjects = [...projects].sort((a, b) => {
@@ -77,58 +55,66 @@ const ProjectsComponent = () => {
     return dateB - dateA;
   });
 
-  // Get all unique technologies and statuses
-  const allTechnologies = [
-    ...new Set(projects.flatMap((project) => project.technologies)),
-  ].sort();
+  // Get all unique statuses
   const allStatuses = [
     ...new Set(projects.map((project) => project.state)),
   ].sort();
 
-  // Filter projects based on search and filters
+  // Filter projects based on filters
   const filteredProjects = sortedProjects.filter((project) => {
-    // Search filter
-    const matchesSearch =
-      debouncedSearchTerm === "" ||
-      project.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-      project.description
-        .toLowerCase()
-        .includes(debouncedSearchTerm.toLowerCase()) ||
-      project.technologies.some((tech) =>
-        tech.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
-      );
-
-    // Status filter
+    // Status filter - match if no statuses selected or if project status is in selected statuses
     const matchesStatus =
-      activeFilters.status === "" || project.state === activeFilters.status;
+      activeFilters.status.length === 0 || activeFilters.status.includes(project.state);
 
-    // Tech filter
-    const matchesTech =
-      activeFilters.tech.length === 0 ||
-      activeFilters.tech.every((tech) => project.technologies.includes(tech));
-
-    return matchesSearch && matchesStatus && matchesTech;
+    return matchesStatus;
   });
 
-  // Filter handling
-  const toggleTechFilter = (tech) => {
-    setActiveFilters((prev) => {
-      const newTech = prev.tech.includes(tech)
-        ? prev.tech.filter((t) => t !== tech)
-        : [...prev.tech, tech];
-      return { ...prev, tech: newTech };
-    });
-  };
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
 
-  const setStatusFilter = (status) => {
-    setActiveFilters((prev) => ({ ...prev, status }));
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilters]);
+
+  // Filter handling
+  const toggleStatusFilter = (status) => {
+    setActiveFilters((prev) => {
+      const newStatus = prev.status.includes(status)
+        ? prev.status.filter((s) => s !== status)
+        : [...prev.status, status];
+      return { ...prev, status: newStatus };
+    });
+    // Reset to first page when filters change
+    setCurrentPage(1);
   };
 
   const clearFilters = useCallback(() => {
-    setActiveFilters({ status: "", tech: [] });
-    setSearchTerm("");
+    setActiveFilters({ status: [] });
     sessionStorage.removeItem("projectFilters");
+    // Reset to first page when filters are cleared
+    setCurrentPage(1);
   }, []);
+
+  // Pagination controls
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   // Project card component
   const ProjectCard = ({ project }) => (
@@ -210,40 +196,27 @@ const ProjectsComponent = () => {
 
   // Show active filters when filter section is collapsed
   const ActiveFiltersBar = () => {
-    if (
-      !filtersExpanded &&
-      (activeFilters.status || activeFilters.tech.length > 0)
-    ) {
+    if (activeFilters.status.length > 0) {
       return (
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span className="text-sm text-text/70">Active filters:</span>
 
-          {activeFilters.status && (
+          {activeFilters.status.map((status) => (
             <button
-              onClick={() => setStatusFilter("")}
+              key={status}
+              onClick={() => toggleStatusFilter(status)}
               className={`flex items-center rounded-full px-2 py-1 text-xs ${getStatusColor(
-                activeFilters.status,
+                status,
               )}`}
             >
-              {activeFilters.status}
-              <FontAwesomeIcon icon={faXmark} className="ml-1 h-3 w-3" />
-            </button>
-          )}
-
-          {activeFilters.tech.map((tech) => (
-            <button
-              key={tech}
-              onClick={() => toggleTechFilter(tech)}
-              className="flex items-center rounded-full bg-primary px-2 py-1 text-xs text-white"
-            >
-              {tech}
+              {status}
               <FontAwesomeIcon icon={faXmark} className="ml-1 h-3 w-3" />
             </button>
           ))}
 
           <button
             onClick={clearFilters}
-            className="ml-2 text-xs text-primary underline hover:text-primary/70"
+            className="ml-auto rounded-full bg-secondary/30 px-2 py-1 text-xs text-text/70 hover:bg-secondary/50"
           >
             Clear all
           </button>
@@ -253,145 +226,138 @@ const ProjectsComponent = () => {
     return null;
   };
 
-  // Enhanced search input with clear button
-  const SearchInput = () => (
-    <div className="relative flex-1">
-      <input
-        type="text"
-        placeholder="Search projects..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full rounded-lg border border-divider bg-white py-2 pl-10 pr-4 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-      />
-      <FontAwesomeIcon
-        icon={faSearch}
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
-      />
-      {searchTerm && (
-        <button
-          onClick={() => setSearchTerm("")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-text/40 hover:bg-secondary/50 hover:text-text/60"
-          aria-label="Clear search"
-        >
-          <FontAwesomeIcon icon={faXmark} className="h-3 w-3" />
-        </button>
-      )}
-    </div>
-  );
-
-  // Filter component
+  // Filters section component
   const FiltersSection = () => (
-    <div className="mb-6">
-      {/* Search and toggles */}
-      <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        {/* Search */}
-        <SearchInput />
-        {/* Filter toggle */}
+    <div className="mb-8">
+      <ActiveFiltersBar />
+      <div className="flex flex-col gap-4 rounded-lg border border-divider bg-white p-4">
+        {/* Status filter */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => setFiltersExpanded(!filtersExpanded)}
-            className="flex items-center gap-1 rounded-lg bg-secondary px-3 py-2 text-sm font-medium text-text transition-all hover:bg-secondary/80"
-          >
-            <FontAwesomeIcon icon={faFilter} className="text-text/70" />
-            Filters
-            {(activeFilters.status || activeFilters.tech.length > 0) && (
-              <span className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-white">
-                {activeFilters.tech.length + (activeFilters.status ? 1 : 0)}
-              </span>
-            )}
-          </button>
-          {(activeFilters.status || activeFilters.tech.length > 0) && (
-            <button
-              onClick={clearFilters}
-              className="rounded-lg border border-divider px-3 py-2 text-sm text-text/70 hover:bg-secondary/30"
-            >
-              Clear
-            </button>
-          )}
+          <span className="text-sm text-text/70">Status:</span>
+          <div className="flex flex-wrap gap-2">
+            {allStatuses.map((status) => (
+              <button
+                key={status}
+                onClick={() => toggleStatusFilter(status)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  activeFilters.status.includes(status)
+                    ? getStatusColor(status)
+                    : "bg-secondary/50 text-text hover:bg-secondary"
+                }`}
+              >
+                {status}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* Active filters bar when filter section is collapsed */}
-      <ActiveFiltersBar />
-
-      {/* Expanded filters */}
-      {filtersExpanded && (
-        <div className="rounded-lg border border-divider bg-white p-4 shadow-sm">
-          <div className="mb-4">
-            <h4 className="mb-2 text-sm font-medium text-text">
-              Project Status
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {allStatuses.map((status) => (
-                <button
-                  key={status}
-                  onClick={() =>
-                    setStatusFilter(
-                      activeFilters.status === status ? "" : status,
-                    )
-                  }
-                  className={`rounded-full px-3 py-1 text-sm transition-colors ${
-                    activeFilters.status === status
-                      ? getStatusColor(status)
-                      : "bg-secondary/50 text-text hover:bg-secondary"
-                  }`}
-                >
-                  {status}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="mb-2 flex items-center">
-              <h4 className="text-sm font-medium text-text">Technologies</h4>
-              <FontAwesomeIcon icon={faTags} className="ml-2 text-text/40" />
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {allTechnologies
-                .slice(0, showAllTechnologies ? allTechnologies.length : 20)
-                .map((tech) => (
-                  <button
-                    key={tech}
-                    onClick={() => toggleTechFilter(tech)}
-                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                      activeFilters.tech.includes(tech)
-                        ? "bg-primary text-white"
-                        : "bg-secondary/50 text-text hover:bg-secondary"
-                    }`}
-                  >
-                    {tech}
-                  </button>
-                ))}
-              {!showAllTechnologies && allTechnologies.length > 20 && (
-                <button
-                  onClick={() => setShowAllTechnologies(true)}
-                  className="flex items-center rounded-full bg-secondary/30 px-3 py-1 text-xs text-text/70 hover:bg-secondary/50"
-                >
-                  +{allTechnologies.length - 20} more
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className="ml-1 h-3 w-3"
-                  />
-                </button>
-              )}
-              {showAllTechnologies && allTechnologies.length > 20 && (
-                <button
-                  onClick={() => setShowAllTechnologies(false)}
-                  className="flex items-center rounded-full bg-secondary/30 px-3 py-1 text-xs text-text/70 hover:bg-secondary/50"
-                >
-                  Show less
-                  <FontAwesomeIcon
-                    icon={faChevronUp}
-                    className="ml-1 h-3 w-3"
-                  />
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
+
+  // Pagination component
+  const Pagination = () => {
+    if (totalPages <= 1) return null;
+    
+    // Generate page numbers to display
+    const getPageNumbers = () => {
+      const pageNumbers = [];
+      const maxVisiblePages = 5;
+      
+      if (totalPages <= maxVisiblePages) {
+        // Show all pages if total is less than max visible
+        for (let i = 1; i <= totalPages; i++) {
+          pageNumbers.push(i);
+        }
+      } else {
+        // Always show first page
+        pageNumbers.push(1);
+        
+        // Calculate start and end of visible pages
+        let startPage = Math.max(2, currentPage - 1);
+        let endPage = Math.min(totalPages - 1, currentPage + 1);
+        
+        // Adjust if we're near the beginning or end
+        if (currentPage <= 2) {
+          endPage = 4;
+        } else if (currentPage >= totalPages - 1) {
+          startPage = totalPages - 3;
+        }
+        
+        // Add ellipsis if needed
+        if (startPage > 2) {
+          pageNumbers.push('...');
+        }
+        
+        // Add middle pages
+        for (let i = startPage; i <= endPage; i++) {
+          pageNumbers.push(i);
+        }
+        
+        // Add ellipsis if needed
+        if (endPage < totalPages - 1) {
+          pageNumbers.push('...');
+        }
+        
+        // Always show last page
+        pageNumbers.push(totalPages);
+      }
+      
+      return pageNumbers;
+    };
+    
+    return (
+      <div className="mt-8 flex items-center justify-center">
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage === 1}
+            className={`flex h-8 w-8 items-center justify-center rounded-full ${
+              currentPage === 1
+                ? "cursor-not-allowed text-text/30"
+                : "text-text hover:bg-secondary/10"
+            }`}
+            aria-label="Previous page"
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          
+          {getPageNumbers().map((pageNumber, index) => (
+            <React.Fragment key={index}>
+              {pageNumber === '...' ? (
+                <span className="px-2 text-text/50">...</span>
+              ) : (
+                <button
+                  onClick={() => goToPage(pageNumber)}
+                  className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                    currentPage === pageNumber
+                      ? "bg-primary text-white"
+                      : "text-text hover:bg-secondary/10"
+                  }`}
+                  aria-label={`Page ${pageNumber}`}
+                  aria-current={currentPage === pageNumber ? "page" : undefined}
+                >
+                  {pageNumber}
+                </button>
+              )}
+            </React.Fragment>
+          ))}
+          
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className={`flex h-8 w-8 items-center justify-center rounded-full ${
+              currentPage === totalPages
+                ? "cursor-not-allowed text-text/30"
+                : "text-text hover:bg-secondary/10"
+            }`}
+            aria-label="Next page"
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      </div>
+    );
+  };
 
   // Empty state
   const EmptyState = () => (
@@ -411,7 +377,7 @@ const ProjectsComponent = () => {
         />
       </svg>
       <h3 className="mb-2 text-lg font-medium text-text">No projects found</h3>
-      <p className="text-text/60">Try adjusting your search or filters</p>
+      <p className="text-text/60">Try adjusting your filters</p>
       <button
         onClick={clearFilters}
         className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
@@ -435,11 +401,15 @@ const ProjectsComponent = () => {
       <FiltersSection />
       {/* Projects grid */}
       {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {currentProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+          {/* Pagination */}
+          <Pagination />
+        </>
       ) : (
         <EmptyState />
       )}
