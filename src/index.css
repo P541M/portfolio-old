@@ -46,7 +46,7 @@ h6 {
   }
   .section-title::after {
     content: "";
-    @apply absolute bottom-0 left-1/2 mt-3 h-1 w-16 -translate-x-1/2 transform bg-primary;
+    @apply absolute bottom-0 left-0 right-0 h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent;
   }
   .card {
     @apply rounded-lg border border-divider bg-card shadow-sm transition-all duration-300 hover:shadow-md;
