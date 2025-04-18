@@ -15,13 +15,36 @@ import pimg13 from "../assets/pimg13.PNG";
 import pimg14 from "../assets/pimg14.PNG";
 import pimg15 from "../assets/pimg15.PNG";
 import pimg16 from "../assets/pimg16.PNG";
-import pendingimg from "../assets/pendingimg.png";
+import pimg17 from "../assets/pimg17.PNG";
 
 /**
  * Central projects data store
  * All project information is stored here and imported where needed
  */
 const projects = [
+  {
+    id: "bloop",
+    title: "Bloop",
+    description:
+      "Bloop is a party game application that enables users to create and participate in party missions. As the main developer, I built both frontend and backend using Next.js, TypeScript, and Supabase for data management. The application features real-time mission creation, participant tracking, and dynamic mission updates. Users can create custom missions, join existing ones, and track their progress in real-time. The project enhanced my skills in real-time data management and user interaction design. Future enhancements include adding more mission types, implementing user profiles, and expanding the social features to create a more engaging party game experience.",
+    state: "In Development",
+    link: null,
+    image: pimg17,
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "React",
+      "Tailwind CSS",
+      "Socket.IO",
+      "JWT",
+      "Axios",
+      "ESLint",
+      "Prettier"
+    ],
+    date: "2025-04",
+    github: false,
+  },
   {
     id: "frij-io",
     title: "frij.io",
