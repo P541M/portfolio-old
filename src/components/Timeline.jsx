@@ -217,7 +217,7 @@ export default function Timeline() {
                       : company === "University of Guelph, College of Arts"
                         ? "Internship, Contract Part-time"
                         : company === "BoscoBoys Distributors"
-                          ? "Internship"
+                          ? "Internship, Dual Position"
                           : company === "MediaMatchup"
                             ? "Entrepreneurship"
                             : company === "Videna Visuals"
