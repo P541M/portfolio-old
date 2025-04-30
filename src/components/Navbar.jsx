@@ -194,8 +194,7 @@ const Navbar = ({ className }) => {
       >
         <div className="container mx-auto flex items-center justify-between px-6">
           <div className="flex items-center">
-            <a
-              href="#"
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("hero-section");
@@ -203,7 +202,7 @@ const Navbar = ({ className }) => {
               className="font-heading text-xl font-bold text-primary"
             >
               PSALM ELEAZAR
-            </a>
+            </button>
           </div>
           <div className="hidden items-center space-x-8 md:flex">
             {navLinks.map((link) => (

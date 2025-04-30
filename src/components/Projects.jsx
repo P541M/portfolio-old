@@ -6,8 +6,6 @@ import {
   faCalendarAlt,
   faExternalLinkAlt,
   faInfoCircle,
-  faChevronDown,
-  faChevronUp,
   faXmark,
   faChevronLeft,
   faChevronRight,
@@ -20,7 +18,6 @@ const ProjectsComponent = () => {
   const [activeFilters, setActiveFilters] = useState({
     status: [], // Change to array to support multiple selections
   });
-  const [filtersExpanded, setFiltersExpanded] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
 
