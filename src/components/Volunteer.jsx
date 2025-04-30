@@ -59,11 +59,7 @@ export default function Volunteer() {
               <h3 className="font-heading text-xl font-bold text-white">
                 {company}
               </h3>
-              <div className="absolute -bottom-3 right-0 h-3 w-full overflow-hidden">
-                <div className="relative h-full w-full">
-                  <div className="absolute right-6 h-6 w-6 -translate-y-3 rotate-45 transform bg-white"></div>
-                </div>
-              </div>
+
             </div>
             {/* Card content */}
             <div className="flex-grow p-5 pt-6">
