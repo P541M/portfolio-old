@@ -21,7 +21,7 @@ const Footer = () => {
     <footer className="border-t border-divider bg-white">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 text-center md:grid-cols-3 md:text-left">
           {/* Left Column - About */}
           <div>
             <Link
@@ -40,7 +40,7 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-medium text-text">Contact</h3>
             <div className="space-y-2 text-sm text-text/70">
-              <p className="flex items-center">
+              <p className="flex items-center justify-center md:justify-start">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="mr-3 text-primary"
@@ -52,7 +52,7 @@ const Footer = () => {
                   videna.psalmeleazar@gmail.com
                 </a>
               </p>
-              <p className="flex items-center">
+              <p className="flex items-center justify-center md:justify-start">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
                   className="mr-3 text-primary"
@@ -65,7 +65,7 @@ const Footer = () => {
           {/* Right Column - Social Links */}
           <div>
             <h3 className="mb-4 font-medium text-text">Connect</h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
               {[
                 {
                   href: "https://www.linkedin.com/in/pevidena/",
@@ -106,8 +106,8 @@ const Footer = () => {
 
       {/* Bottom Bar with Copyright and Back to Top */}
       <div className="border-t border-divider/40 bg-secondary/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between px-6 py-4 sm:flex-row">
-          <p className="mb-3 text-sm text-text/60 sm:mb-0">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-6 py-4 sm:flex-row sm:justify-between">
+          <p className="text-sm text-text/60">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
           <button
