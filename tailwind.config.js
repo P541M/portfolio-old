@@ -7,32 +7,32 @@ module.exports = {
       colors: {
         text: {
           DEFAULT: "#212121",
-          dark: "#E0E0E0",
+          dark: "#F5F5F5"
         },
         bg: {
           DEFAULT: "#FAFAFA",
-          dark: "#121212",
+          dark: "#1A1A1A"
         },
         primary: {
           DEFAULT: "#2E89F7",
-          dark: "#64B5F6",
+          dark: "#4A9EFF"
         },
         secondary: {
           DEFAULT: "#E0E0E0",
-          dark: "#424242",
+          dark: "#2D2D2D"
         },
         accent: {
           DEFAULT: "#2E7D32",
-          dark: "#81C784",
+          dark: "#4CAF50"
         },
         divider: {
           DEFAULT: "#EEEEEE",
-          dark: "#424242",
+          dark: "#333333"
         },
         card: {
           DEFAULT: "#FFFFFF",
-          dark: "#1E1E1E",
-        },
+          dark: "#242424"
+        }
       },
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],
