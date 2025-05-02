@@ -18,7 +18,7 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="border-t border-divider bg-white">
+    <footer className="border-t border-divider dark:border-divider-dark bg-white dark:bg-card-dark">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 text-center md:grid-cols-3 md:text-left">
@@ -26,11 +26,11 @@ const Footer = () => {
           <div>
             <Link
               to="/"
-              className="mb-3 inline-block font-heading text-xl font-bold text-primary"
+              className="mb-3 inline-block font-heading text-xl font-bold text-primary dark:text-primary-dark"
             >
               PSALM ELEAZAR
             </Link>
-            <p className="mb-4 text-sm leading-relaxed text-text/80">
+            <p className="mb-4 text-sm leading-relaxed text-text/80 dark:text-text-dark/80">
               Technology Research Analyst at BMO with a passion for full-stack
               development and project management.
             </p>
@@ -38,16 +38,16 @@ const Footer = () => {
 
           {/* Middle Column - Contact Info */}
           <div>
-            <h3 className="mb-4 font-medium text-text">Contact</h3>
-            <div className="space-y-2 text-sm text-text/70">
+            <h3 className="mb-4 font-medium text-text dark:text-text-dark">Contact</h3>
+            <div className="space-y-2 text-sm text-text/70 dark:text-text-dark/70">
               <p className="flex items-center justify-center md:justify-start">
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  className="mr-3 text-primary"
+                  className="mr-3 text-primary dark:text-primary-dark"
                 />
                 <a
                   href="mailto:videna.psalmeleazar@gmail.com"
-                  className="transition-colors duration-300 hover:text-primary"
+                  className="transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 >
                   videna.psalmeleazar@gmail.com
                 </a>
@@ -55,7 +55,7 @@ const Footer = () => {
               <p className="flex items-center justify-center md:justify-start">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
-                  className="mr-3 text-primary"
+                  className="mr-3 text-primary dark:text-primary-dark"
                 />
                 Toronto, Canada
               </p>
@@ -64,7 +64,7 @@ const Footer = () => {
 
           {/* Right Column - Social Links */}
           <div>
-            <h3 className="mb-4 font-medium text-text">Connect</h3>
+            <h3 className="mb-4 font-medium text-text dark:text-text-dark">Connect</h3>
             <div className="flex flex-wrap justify-center gap-3 md:justify-start">
               {[
                 {
@@ -94,9 +94,9 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
                 >
-                  <FontAwesomeIcon icon={icon} className="h-4 w-4" />
+                  <FontAwesomeIcon icon={icon} className="h-4 w-4 transition-colors duration-300 group-hover:text-white" />
                 </a>
               ))}
             </div>
@@ -105,9 +105,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar with Copyright and Back to Top */}
-      <div className="border-t border-divider/40 bg-secondary/10">
+      <div className="border-t border-divider/40 dark:border-divider-dark/40 bg-secondary/10 dark:bg-secondary-dark/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-6 py-4 sm:flex-row sm:justify-between">
-          <p className="text-sm text-text/60">
+          <p className="text-sm text-text/60 dark:text-text-dark/60">
             © {currentYear} Psalm Eleazar. All rights reserved.
           </p>
           <button
@@ -118,10 +118,10 @@ const Footer = () => {
                 navigate("/");
               }
             }}
-            className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
+            className="group flex items-center gap-2 rounded-full bg-white dark:bg-card-dark px-4 py-2 text-sm text-primary dark:text-primary-dark shadow-sm transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
           >
-            <span>Back to top</span>
-            <FontAwesomeIcon icon={faArrowUp} />
+            <span className="transition-colors duration-300 group-hover:text-white">Back to top</span>
+            <FontAwesomeIcon icon={faArrowUp} className="transition-colors duration-300 group-hover:text-white" />
           </button>
         </div>
       </div>

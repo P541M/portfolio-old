@@ -1,16 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        text: "#212121",
-        bg: "#FAFAFA",
-        primary: "#2E89F7",
-        secondary: "#E0E0E0",
-        accent: "#2E7D32",
-        divider: "#EEEEEE",
-        card: "#FFFFFF",
+        text: {
+          DEFAULT: "#212121",
+          dark: "#E0E0E0"
+        },
+        bg: {
+          DEFAULT: "#FAFAFA",
+          dark: "#121212"
+        },
+        primary: {
+          DEFAULT: "#2E89F7",
+          dark: "#64B5F6"
+        },
+        secondary: {
+          DEFAULT: "#E0E0E0",
+          dark: "#424242"
+        },
+        accent: {
+          DEFAULT: "#2E7D32",
+          dark: "#81C784"
+        },
+        divider: {
+          DEFAULT: "#EEEEEE",
+          dark: "#424242"
+        },
+        card: {
+          DEFAULT: "#FFFFFF",
+          dark: "#1E1E1E"
+        }
       },
       fontFamily: {
         sans: ["Albert Sans", "sans-serif"],

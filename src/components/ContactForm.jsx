@@ -210,7 +210,7 @@ const ContactForm = ({ isOpen, onClose }) => {
     >
       <div
         ref={modalRef}
-        className="relative mx-4 w-full max-w-md rounded-lg bg-white p-6 shadow-xl sm:p-8"
+        className="relative mx-4 w-full max-w-md rounded-lg bg-white dark:bg-card-dark p-6 shadow-xl sm:p-8"
         style={{
           transform: opacity === 1 ? "translateY(0)" : "translateY(10px)",
           transition: "transform 0.3s ease",
@@ -219,7 +219,7 @@ const ContactForm = ({ isOpen, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full p-1 text-gray-500 transition-all duration-300 hover:bg-gray-100"
+          className="absolute right-4 top-4 rounded-full p-1 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label="Close contact form"
         >
           <XMarkIcon className="h-5 w-5" />
@@ -228,11 +228,11 @@ const ContactForm = ({ isOpen, onClose }) => {
         <div className="mb-6 text-center">
           <h2
             id="contact-form-title"
-            className="mb-2 font-heading text-2xl font-bold text-primary"
+            className="mb-2 font-heading text-2xl font-bold text-primary dark:text-primary-dark"
           >
             Get In Touch
           </h2>
-          <p className="text-text/70">
+          <p className="text-text/70 dark:text-text-dark/70">
             Have a project in mind or just want to say hello? Let's talk.
           </p>
         </div>
@@ -241,7 +241,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div>
             <label
               htmlFor="name"
-              className="mb-1 block text-sm font-medium text-text"
+              className="mb-1 block text-sm font-medium text-text dark:text-text-dark"
             >
               Name
             </label>
@@ -255,8 +255,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               onChange={handleInputChange}
               onBlur={handleBlur}
               className={`w-full rounded-lg border ${
-                fieldErrors.name ? "border-red-500" : "border-divider"
-              } bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
+                fieldErrors.name ? "border-red-500" : "border-divider dark:border-divider-dark"
+              } bg-white dark:bg-card-dark px-4 py-2 text-text dark:text-text-dark focus:border-primary dark:focus:border-primary-dark focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary-dark`}
               required
               minLength="2"
               maxLength="100"
@@ -273,7 +273,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div>
             <label
               htmlFor="email"
-              className="mb-1 block text-sm font-medium text-text"
+              className="mb-1 block text-sm font-medium text-text dark:text-text-dark"
             >
               Email
             </label>
@@ -286,8 +286,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               onChange={handleInputChange}
               onBlur={handleBlur}
               className={`w-full rounded-lg border ${
-                fieldErrors.email ? "border-red-500" : "border-divider"
-              } bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
+                fieldErrors.email ? "border-red-500" : "border-divider dark:border-divider-dark"
+              } bg-white dark:bg-card-dark px-4 py-2 text-text dark:text-text-dark focus:border-primary dark:focus:border-primary-dark focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary-dark`}
               required
               maxLength="100"
               aria-invalid={fieldErrors.email ? "true" : "false"}
@@ -303,7 +303,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div>
             <label
               htmlFor="message"
-              className="mb-1 block text-sm font-medium text-text"
+              className="mb-1 block text-sm font-medium text-text dark:text-text-dark"
             >
               Message
             </label>
@@ -315,8 +315,8 @@ const ContactForm = ({ isOpen, onClose }) => {
               onChange={handleInputChange}
               onBlur={handleBlur}
               className={`w-full rounded-lg border ${
-                fieldErrors.message ? "border-red-500" : "border-divider"
-              } bg-white px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`}
+                fieldErrors.message ? "border-red-500" : "border-divider dark:border-divider-dark"
+              } bg-white dark:bg-card-dark px-4 py-2 text-text dark:text-text-dark focus:border-primary dark:focus:border-primary-dark focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary-dark`}
               rows="4"
               required
               minLength="10"
@@ -336,7 +336,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-lg bg-primary px-6 py-2.5 text-center font-medium text-white shadow-sm transition-all duration-300 hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-primary/70"
+            className="w-full rounded-lg bg-primary dark:bg-primary-dark px-6 py-2.5 text-center font-medium text-white shadow-sm transition-all duration-300 hover:bg-primary/90 dark:hover:bg-primary-dark/90 disabled:cursor-not-allowed disabled:bg-primary/70 dark:disabled:bg-primary-dark/70"
           >
             {isSubmitting ? (
               <>
@@ -359,10 +359,10 @@ const ContactForm = ({ isOpen, onClose }) => {
           <div
             className={`mt-4 text-center text-sm ${
               formStatus === "Processing..."
-                ? "text-yellow-600"
+                ? "text-yellow-600 dark:text-yellow-500"
                 : formStatus.includes("error") || formStatus.includes("Failed")
-                  ? "text-red-600"
-                  : "text-accent"
+                  ? "text-red-600 dark:text-red-500"
+                  : "text-accent dark:text-accent-dark"
             }`}
             role="alert"
           >
@@ -376,11 +376,11 @@ const ContactForm = ({ isOpen, onClose }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
           >
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="h-4 w-4 md:h-5 md:w-5"
+              className="h-4 w-4 transition-colors duration-300 group-hover:text-white md:h-5 md:w-5"
             />
           </a>
           <a
@@ -388,11 +388,11 @@ const ContactForm = ({ isOpen, onClose }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
           >
             <FontAwesomeIcon
               icon={faGithub}
-              className="h-4 w-4 md:h-5 md:w-5"
+              className="h-4 w-4 transition-colors duration-300 group-hover:text-white md:h-5 md:w-5"
             />
           </a>
           <a
@@ -400,11 +400,11 @@ const ContactForm = ({ isOpen, onClose }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
           >
             <FontAwesomeIcon
               icon={faTwitter}
-              className="h-4 w-4 md:h-5 md:w-5"
+              className="h-4 w-4 transition-colors duration-300 group-hover:text-white md:h-5 md:w-5"
             />
           </a>
           <a
@@ -412,11 +412,11 @@ const ContactForm = ({ isOpen, onClose }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark"
           >
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="h-4 w-4 md:h-5 md:w-5"
+              className="h-4 w-4 transition-colors duration-300 group-hover:text-white md:h-5 md:w-5"
             />
           </a>
         </div>

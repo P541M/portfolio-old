@@ -43,18 +43,18 @@ const ProjectDetail = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-bg pb-16 pt-20">
+    <div className="min-h-screen bg-bg dark:bg-bg-dark pb-16 pt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to projects navigation */}
         <Link
           to="/"
-          className="mb-8 inline-flex items-center gap-2 text-primary hover:text-primary/80"
+          className="mb-8 inline-flex items-center gap-2 text-primary dark:text-primary-dark hover:text-primary/80 dark:hover:text-primary-dark/80"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
           <span>Back to Home</span>
         </Link>
         {/* Project header */}
-        <div className="overflow-hidden rounded-xl bg-white shadow-md">
+        <div className="overflow-hidden rounded-xl bg-white dark:bg-card-dark shadow-md">
           {/* Project image */}
           <div className="relative h-64 w-full sm:h-80 md:h-96">
             <img
@@ -84,23 +84,23 @@ const ProjectDetail = () => {
           <div className="p-6">
             {/* Description */}
             <div className="mb-8">
-              <h2 className="mb-4 text-xl font-bold text-text">
+              <h2 className="mb-4 text-xl font-bold text-text dark:text-text-dark">
                 Project Overview
               </h2>
-              <p className="leading-relaxed text-text/80">
+              <p className="leading-relaxed text-text/80 dark:text-text-dark/80">
                 {project.description}
               </p>
             </div>
             {/* Technologies */}
             <div className="mb-8">
-              <h2 className="mb-4 text-xl font-bold text-text">
+              <h2 className="mb-4 text-xl font-bold text-text dark:text-text-dark">
                 Technologies Used
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="rounded-full bg-secondary px-3 py-1.5 text-sm"
+                    className="rounded-full bg-secondary dark:bg-secondary-dark px-3 py-1.5 text-sm text-text dark:text-text-dark"
                   >
                     {tech}
                   </span>
@@ -114,7 +114,7 @@ const ProjectDetail = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-primary dark:bg-primary-dark px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90 dark:hover:bg-primary-dark/90"
                 >
                   <FontAwesomeIcon
                     icon={project.github ? faGithub : faExternalLinkAlt}
@@ -128,7 +128,7 @@ const ProjectDetail = () => {
         {/* Related projects */}
         {relatedProjects.length > 0 && (
           <div className="mt-12">
-            <h2 className="mb-6 text-2xl font-bold text-text">
+            <h2 className="mb-6 text-2xl font-bold text-text dark:text-text-dark">
               Related Projects
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -136,7 +136,7 @@ const ProjectDetail = () => {
                 <Link
                   key={relatedProject.id}
                   to={`/project/${relatedProject.id}`}
-                  className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="group flex flex-col overflow-hidden rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark shadow-sm transition-all duration-300 hover:shadow-md"
                 >
                   {/* Image with status badge */}
                   <div className="relative h-48 overflow-hidden">
@@ -155,10 +155,10 @@ const ProjectDetail = () => {
                   </div>
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-4">
-                    <h3 className="mb-2 line-clamp-1 text-lg font-bold text-text">
+                    <h3 className="mb-2 line-clamp-1 text-lg font-bold text-text dark:text-text-dark">
                       {relatedProject.title}
                     </h3>
-                    <p className="mb-3 line-clamp-2 text-sm text-text/70">
+                    <p className="mb-3 line-clamp-2 text-sm text-text/70 dark:text-text-dark/70">
                       {relatedProject.description}
                     </p>
                     {/* Tech tags */}
@@ -169,13 +169,13 @@ const ProjectDetail = () => {
                           .map((tech, idx) => (
                             <span
                               key={idx}
-                              className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs"
+                              className="rounded-full bg-secondary/70 dark:bg-secondary-dark/70 px-2 py-0.5 text-xs text-text dark:text-text-dark"
                             >
                               {tech}
                             </span>
                           ))}
                         {relatedProject.technologies.length > 3 && (
-                          <span className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs">
+                          <span className="rounded-full bg-secondary/70 dark:bg-secondary-dark/70 px-2 py-0.5 text-xs text-text dark:text-text-dark">
                             +{relatedProject.technologies.length - 3}
                           </span>
                         )}

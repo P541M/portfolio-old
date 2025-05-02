@@ -46,20 +46,19 @@ const volunteer = [
 
 export default function Volunteer() {
   return (
-    <section id="volunteer-section" className="section-container min-h-screen">
+    <section id="volunteer-section" className="section-container min-h-screen bg-bg dark:bg-bg-dark">
       <h2 className="section-title">Volunteer Experience</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {volunteer.map(({ company, roles }, index) => (
           <article
             key={index}
-            className="card group relative flex h-full flex-col overflow-hidden p-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg"
+            className="card group relative flex h-full flex-col overflow-hidden bg-white dark:bg-card-dark p-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg"
           >
             {/* Card header with organization name */}
-            <div className="relative bg-gradient-to-r from-primary/90 to-primary p-5">
+            <div className="relative bg-gradient-to-r from-primary/90 to-primary dark:from-primary-dark/90 dark:to-primary-dark p-5">
               <h3 className="font-heading text-xl font-bold text-white">
                 {company}
               </h3>
-
             </div>
             {/* Card content */}
             <div className="flex-grow p-5 pt-6">
@@ -68,17 +67,17 @@ export default function Volunteer() {
                   <div key={idx} className="mb-6">
                     <div className="mb-3 flex items-center">
                       <div className="mr-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 shadow-sm">
-                          <Icon className="h-6 w-6 text-primary" />
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 shadow-sm">
+                          <Icon className="h-6 w-6 text-primary dark:text-primary-dark" />
                         </div>
                       </div>
-                      <h4 className="font-medium text-gray-800">{title}</h4>
+                      <h4 className="font-medium text-text dark:text-text-dark">{title}</h4>
                     </div>
                     <div className="ml-14 pl-7">
-                      <p className="mb-2 text-sm italic text-primary/80">
+                      <p className="mb-2 text-sm italic text-primary/80 dark:text-primary-dark/80">
                         {duration}
                       </p>
-                      <p className="text-sm leading-relaxed text-text/80">
+                      <p className="text-sm leading-relaxed text-text/80 dark:text-text-dark/80">
                         {description}
                       </p>
                     </div>
@@ -87,9 +86,9 @@ export default function Volunteer() {
               )}
             </div>
             {/* Decorative footer element */}
-            <div className="border-t border-primary/10 bg-primary/5 p-3">
+            <div className="border-t border-primary/10 dark:border-primary-dark/10 bg-primary/5 dark:bg-primary-dark/5 p-3">
               <div className="flex justify-end">
-                <span className="text-xs italic text-primary/70">
+                <span className="text-xs italic text-primary/70 dark:text-primary-dark/70">
                   {company === "Google Developer Student Club | UofG"
                     ? "Event Volunteer"
                     : company === "e-NABLE"

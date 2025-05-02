@@ -9,18 +9,18 @@
   height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #bdbdbd;
+  @apply bg-secondary dark:bg-secondary-dark;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9e9e9e;
+  @apply bg-secondary/80 dark:bg-secondary-dark/80;
 }
 ::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+  @apply bg-bg dark:bg-bg-dark;
 }
 
 body {
-  @apply bg-bg text-text;
+  @apply bg-bg dark:bg-bg-dark text-text dark:text-text-dark;
   font-family: "Albert Sans", sans-serif;
   padding-top: env(safe-area-inset-top);
   padding-right: env(safe-area-inset-right);
@@ -42,20 +42,20 @@ h6 {
     @apply mx-auto max-w-6xl px-6 py-16 sm:px-8 md:px-12 lg:px-16;
   }
   .section-title {
-    @apply relative mb-12 text-center font-heading text-3xl font-bold;
+    @apply relative mb-12 text-center font-heading text-3xl font-bold text-text dark:text-text-dark;
   }
   .section-title::after {
     content: "";
-    @apply absolute bottom-0 left-0 right-0 h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent;
+    @apply absolute bottom-0 left-0 right-0 h-px w-full bg-gradient-to-r from-transparent via-primary/30 dark:via-primary-dark/30 to-transparent;
   }
   .card {
-    @apply rounded-lg border border-divider bg-card shadow-sm transition-all duration-300 hover:shadow-md;
+    @apply rounded-lg border border-divider dark:border-divider-dark bg-card dark:bg-card-dark shadow-sm transition-all duration-300 hover:shadow-md;
   }
   .btn-primary {
-    @apply flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-white shadow-sm transition-all duration-300 hover:bg-opacity-90 hover:shadow;
+    @apply flex items-center justify-center rounded-lg bg-primary dark:bg-primary-dark px-6 py-3 font-medium text-white shadow-sm transition-all duration-300 hover:bg-opacity-90 hover:shadow;
   }
   .btn-secondary {
-    @apply flex items-center justify-center rounded-lg bg-secondary px-6 py-3 font-medium text-text shadow-sm transition-all duration-300 hover:bg-opacity-90 hover:shadow;
+    @apply flex items-center justify-center rounded-lg bg-secondary dark:bg-secondary-dark px-6 py-3 font-medium text-text dark:text-text-dark shadow-sm transition-all duration-300 hover:bg-opacity-90 hover:shadow;
   }
 }
 

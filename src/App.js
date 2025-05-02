@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects";
@@ -24,7 +25,7 @@ function ScrollToTop() {
 function Layout() {
   const location = useLocation();
   return (
-    <div className="flex min-h-screen flex-col bg-bg">
+    <div className="flex min-h-screen flex-col bg-bg dark:bg-bg-dark">
       <Navbar className="fade-in-two" />
       <main key={location.pathname} className="fade-in flex-grow pb-0">
         <Routes location={location}>
@@ -33,11 +34,11 @@ function Layout() {
             element={
               <>
                 <Hero />
-                <div className="h-10 w-full bg-bg md:h-12"></div>
+                <div className="h-10 w-full bg-bg dark:bg-bg-dark md:h-12"></div>
                 <Timeline />
-                <div className="h-10 w-full bg-bg md:h-12"></div>
+                <div className="h-10 w-full bg-bg dark:bg-bg-dark md:h-12"></div>
                 <Projects />
-                <div className="h-10 w-full bg-bg md:h-12"></div>
+                <div className="h-10 w-full bg-bg dark:bg-bg-dark md:h-12"></div>
                 <Volunteer />
               </>
             }
@@ -52,10 +53,12 @@ function Layout() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout />
+      </Router>
+    </ThemeProvider>
   );
 }
 

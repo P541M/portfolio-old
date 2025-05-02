@@ -115,7 +115,7 @@ const ProjectsComponent = () => {
 
   // Project card component
   const ProjectCard = ({ project }) => (
-    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark shadow-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg">
       {/* Image with status badge */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -134,15 +134,15 @@ const ProjectsComponent = () => {
       {/* Content */}
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-2">
-          <h3 className="line-clamp-1 text-lg font-bold text-text">
+          <h3 className="line-clamp-1 text-lg font-bold text-text dark:text-text-dark">
             {project.title}
           </h3>
-          <div className="mt-1 flex items-center text-sm text-text/60">
+          <div className="mt-1 flex items-center text-sm text-text/60 dark:text-text-dark/60">
             <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
             <span>{formatDate(project.date)}</span>
           </div>
         </div>
-        <p className="mb-3 line-clamp-2 text-sm text-text/70">
+        <p className="mb-3 line-clamp-2 text-sm text-text/70 dark:text-text-dark/70">
           {project.description}
         </p>
         {/* Tech tags */}
@@ -151,13 +151,13 @@ const ProjectsComponent = () => {
             {project.technologies.slice(0, 3).map((tech, idx) => (
               <span
                 key={idx}
-                className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary"
+                className="rounded-full bg-primary/10 dark:bg-primary-dark/10 px-2 py-0.5 text-xs text-primary dark:text-primary-dark"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">
+              <span className="rounded-full bg-primary/10 dark:bg-primary-dark/10 px-2 py-0.5 text-xs text-primary dark:text-primary-dark">
                 +{project.technologies.length - 3}
               </span>
             )}
@@ -170,7 +170,7 @@ const ProjectsComponent = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all duration-300 hover:bg-primary/90 group-hover:shadow-md"
+              className="flex-1 rounded-lg bg-primary dark:bg-primary-dark py-2 text-center text-xs font-medium text-white transition-all duration-300 hover:bg-primary/90 dark:hover:bg-primary-dark/90 group-hover:shadow-md"
             >
               <FontAwesomeIcon
                 icon={project.github ? faGithub : faExternalLinkAlt}
@@ -181,7 +181,7 @@ const ProjectsComponent = () => {
           )}
           <Link
             to={`/project/${project.id}`}
-            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider px-3 py-2 text-center text-xs font-medium transition-all duration-300 hover:bg-primary/5 group-hover:shadow-md`}
+            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider dark:border-divider-dark px-3 py-2 text-center text-xs font-medium text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 group-hover:shadow-md`}
           >
             <FontAwesomeIcon icon={faInfoCircle} className="mr-1" />
             Details
@@ -196,7 +196,7 @@ const ProjectsComponent = () => {
     if (activeFilters.status.length > 0) {
       return (
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="text-sm text-text/70">Active filters:</span>
+          <span className="text-sm text-text/70 dark:text-text-dark/70">Active filters:</span>
 
           {activeFilters.status.map((status) => (
             <button
@@ -213,7 +213,7 @@ const ProjectsComponent = () => {
 
           <button
             onClick={clearFilters}
-            className="ml-auto rounded-full bg-secondary/30 px-2 py-1 text-xs text-text/70 hover:bg-secondary/50"
+            className="ml-auto rounded-full bg-secondary/30 dark:bg-secondary-dark/30 px-2 py-1 text-xs text-text/70 dark:text-text-dark/70 hover:bg-secondary/50 dark:hover:bg-secondary-dark/50"
           >
             Clear all
           </button>
@@ -227,10 +227,10 @@ const ProjectsComponent = () => {
   const FiltersSection = () => (
     <div className="mb-8">
       <ActiveFiltersBar />
-      <div className="flex flex-col gap-4 rounded-lg border border-divider bg-white p-4">
+      <div className="flex flex-col gap-4 rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark p-4">
         {/* Status filter */}
         <div className="flex items-center gap-2">
-          <span className="text-sm text-text/70">Status:</span>
+          <span className="text-sm text-text/70 dark:text-text-dark/70">Status:</span>
           <div className="flex flex-wrap gap-2">
             {allStatuses.map((status) => (
               <button
@@ -239,7 +239,7 @@ const ProjectsComponent = () => {
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   activeFilters.status.includes(status)
                     ? getStatusColor(status)
-                    : "bg-secondary/50 text-text hover:bg-secondary"
+                    : "bg-secondary/50 dark:bg-secondary-dark/50 text-text dark:text-text-dark hover:bg-secondary dark:hover:bg-secondary-dark"
                 }`}
               >
                 {status}
@@ -250,111 +250,6 @@ const ProjectsComponent = () => {
       </div>
     </div>
   );
-
-  // Pagination component
-  const Pagination = () => {
-    if (totalPages <= 1) return null;
-    
-    // Generate page numbers to display
-    const getPageNumbers = () => {
-      const pageNumbers = [];
-      const maxVisiblePages = 5;
-      
-      if (totalPages <= maxVisiblePages) {
-        // Show all pages if total is less than max visible
-        for (let i = 1; i <= totalPages; i++) {
-          pageNumbers.push(i);
-        }
-      } else {
-        // Always show first page
-        pageNumbers.push(1);
-        
-        // Calculate start and end of visible pages
-        let startPage = Math.max(2, currentPage - 1);
-        let endPage = Math.min(totalPages - 1, currentPage + 1);
-        
-        // Adjust if we're near the beginning or end
-        if (currentPage <= 2) {
-          endPage = 4;
-        } else if (currentPage >= totalPages - 1) {
-          startPage = totalPages - 3;
-        }
-        
-        // Add ellipsis if needed
-        if (startPage > 2) {
-          pageNumbers.push('...');
-        }
-        
-        // Add middle pages
-        for (let i = startPage; i <= endPage; i++) {
-          pageNumbers.push(i);
-        }
-        
-        // Add ellipsis if needed
-        if (endPage < totalPages - 1) {
-          pageNumbers.push('...');
-        }
-        
-        // Always show last page
-        pageNumbers.push(totalPages);
-      }
-      
-      return pageNumbers;
-    };
-    
-    return (
-      <div className="mt-8 flex items-center justify-center">
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={goToPrevPage}
-            disabled={currentPage === 1}
-            className={`flex h-8 w-8 items-center justify-center rounded-full ${
-              currentPage === 1
-                ? "cursor-not-allowed text-text/30"
-                : "text-text hover:bg-secondary/10"
-            }`}
-            aria-label="Previous page"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          
-          {getPageNumbers().map((pageNumber, index) => (
-            <React.Fragment key={index}>
-              {pageNumber === '...' ? (
-                <span className="px-2 text-text/50">...</span>
-              ) : (
-                <button
-                  onClick={() => goToPage(pageNumber)}
-                  className={`flex h-8 w-8 items-center justify-center rounded-full ${
-                    currentPage === pageNumber
-                      ? "bg-primary text-white"
-                      : "text-text hover:bg-secondary/10"
-                  }`}
-                  aria-label={`Page ${pageNumber}`}
-                  aria-current={currentPage === pageNumber ? "page" : undefined}
-                >
-                  {pageNumber}
-                </button>
-              )}
-            </React.Fragment>
-          ))}
-          
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className={`flex h-8 w-8 items-center justify-center rounded-full ${
-              currentPage === totalPages
-                ? "cursor-not-allowed text-text/30"
-                : "text-text hover:bg-secondary/10"
-            }`}
-            aria-label="Next page"
-          >
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
-      </div>
-    );
-  };
 
   // Empty state
   const EmptyState = () => (
@@ -388,7 +283,7 @@ const ProjectsComponent = () => {
   return (
     <section
       id="projects-section"
-      className="section-container min-h-screen"
+      className="section-container min-h-screen bg-bg dark:bg-bg-dark"
       aria-labelledby="projects-title"
     >
       <h2 id="projects-title" className="section-title">
@@ -405,7 +300,37 @@ const ProjectsComponent = () => {
             ))}
           </div>
           {/* Pagination */}
-          <Pagination />
+          <div className="mt-8 flex justify-center">
+            <nav className="flex items-center gap-2">
+              <button
+                onClick={goToPrevPage}
+                disabled={currentPage === 1}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg text-sm transition-all duration-300 ${
+                    currentPage === page
+                      ? "bg-primary dark:bg-primary-dark text-white"
+                      : "bg-white dark:bg-card-dark text-text dark:text-text-dark hover:bg-primary/5 dark:hover:bg-primary-dark/5"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+              <button
+                onClick={goToNextPage}
+                disabled={currentPage === totalPages}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <FontAwesomeIcon icon={faChevronRight} className="h-4 w-4" />
+              </button>
+            </nav>
+          </div>
         </>
       ) : (
         <EmptyState />
