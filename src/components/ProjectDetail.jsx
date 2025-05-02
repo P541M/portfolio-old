@@ -43,18 +43,18 @@ const ProjectDetail = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-bg dark:bg-bg-dark pb-16 pt-20">
+    <div className="min-h-screen bg-bg pb-16 pt-20 dark:bg-bg-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to projects navigation */}
         <Link
           to="/"
-          className="mb-8 inline-flex items-center gap-2 text-primary dark:text-primary-dark hover:text-primary/80 dark:hover:text-primary-dark/80"
+          className="mb-8 inline-flex items-center gap-2 text-primary hover:text-primary/80 dark:text-primary-dark dark:hover:text-primary-dark/80"
         >
           <FontAwesomeIcon icon={faArrowLeft} />
           <span>Back to Home</span>
         </Link>
         {/* Project header */}
-        <div className="overflow-hidden rounded-xl bg-white dark:bg-card-dark shadow-md">
+        <div className="overflow-hidden rounded-xl bg-white shadow-md dark:bg-card-dark">
           {/* Project image */}
           <div className="relative h-64 w-full sm:h-80 md:h-96">
             <img
@@ -100,7 +100,7 @@ const ProjectDetail = () => {
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="rounded-full bg-secondary dark:bg-secondary-dark px-3 py-1.5 text-sm text-text dark:text-text-dark"
+                    className="rounded-full bg-secondary px-3 py-1.5 text-sm text-text dark:bg-secondary-dark dark:text-text-dark"
                   >
                     {tech}
                   </span>
@@ -114,7 +114,7 @@ const ProjectDetail = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-primary dark:bg-primary-dark px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90 dark:hover:bg-primary-dark/90"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-center font-medium text-white transition-all hover:bg-primary/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90"
                 >
                   <FontAwesomeIcon
                     icon={project.github ? faGithub : faExternalLinkAlt}
@@ -136,7 +136,7 @@ const ProjectDetail = () => {
                 <Link
                   key={relatedProject.id}
                   to={`/project/${relatedProject.id}`}
-                  className="group flex flex-col overflow-hidden rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-divider-dark dark:bg-card-dark"
                 >
                   {/* Image with status badge */}
                   <div className="relative h-48 overflow-hidden">
@@ -169,13 +169,13 @@ const ProjectDetail = () => {
                           .map((tech, idx) => (
                             <span
                               key={idx}
-                              className="rounded-full bg-secondary/70 dark:bg-secondary-dark/70 px-2 py-0.5 text-xs text-text dark:text-text-dark"
+                              className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs text-text dark:bg-secondary-dark/70 dark:text-text-dark"
                             >
                               {tech}
                             </span>
                           ))}
                         {relatedProject.technologies.length > 3 && (
-                          <span className="rounded-full bg-secondary/70 dark:bg-secondary-dark/70 px-2 py-0.5 text-xs text-text dark:text-text-dark">
+                          <span className="rounded-full bg-secondary/70 px-2 py-0.5 text-xs text-text dark:bg-secondary-dark/70 dark:text-text-dark">
                             +{relatedProject.technologies.length - 3}
                           </span>
                         )}

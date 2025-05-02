@@ -138,17 +138,20 @@ const timeline = [
 
 export default function Timeline() {
   return (
-    <section id="timeline-section" className="section-container min-h-screen bg-bg dark:bg-bg-dark">
+    <section
+      id="timeline-section"
+      className="section-container min-h-screen bg-bg dark:bg-bg-dark"
+    >
       <h2 className="section-title">Professional Timeline</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {timeline.map(
           ({ company, roles, hasWorkTermReport, reportPath }, index) => (
             <article
               key={index}
-              className="card group relative flex h-full flex-col overflow-hidden bg-white dark:bg-card-dark p-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg"
+              className="card group relative flex h-full flex-col overflow-hidden bg-white p-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg dark:bg-card-dark"
             >
               {/* Card header with company name */}
-              <div className="relative bg-gradient-to-r from-primary/90 to-primary dark:from-primary-dark/90 dark:to-primary-dark p-5">
+              <div className="relative bg-gradient-to-r from-primary/90 to-primary p-5 dark:from-primary-dark/90 dark:to-primary-dark">
                 <h3 className="font-heading text-xl font-bold text-white">
                   {company}
                 </h3>
@@ -159,10 +162,12 @@ export default function Timeline() {
                   ({ title, icon: Icon, description, duration }, idx) => (
                     <div key={idx} className="relative mb-6">
                       <div className="mb-2 flex items-center">
-                        <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 dark:bg-primary-dark/10 shadow-sm">
+                        <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 shadow-sm dark:bg-primary-dark/10">
                           <Icon className="h-5 w-5 text-primary dark:text-primary-dark" />
                         </div>
-                        <h4 className="font-medium text-text dark:text-text-dark">{title}</h4>
+                        <h4 className="font-medium text-text dark:text-text-dark">
+                          {title}
+                        </h4>
                       </div>
                       <div className="ml-12 pl-7">
                         <p className="mb-2 text-sm italic text-primary/80 dark:text-primary-dark/80">
@@ -178,14 +183,16 @@ export default function Timeline() {
               </div>
               {/* Work term report link */}
               {hasWorkTermReport && (
-                <div className="border-t border-divider/60 dark:border-divider-dark/60 bg-primary/5 dark:bg-primary-dark/5 p-4">
+                <div className="border-t border-divider/60 bg-primary/5 p-4 dark:border-divider-dark/60 dark:bg-primary-dark/5">
                   <a
                     href={reportPath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 dark:bg-primary-dark/10 px-4 py-2.5 font-medium text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark hover:text-white dark:hover:text-white"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 px-4 py-2.5 font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white dark:bg-primary-dark/10 dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-white"
                   >
-                    <span className="transition-colors duration-300">View Work Term Report</span>
+                    <span className="transition-colors duration-300">
+                      View Work Term Report
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="ml-2 h-4 w-4 transition-all duration-300 hover:translate-x-1"
@@ -204,7 +211,7 @@ export default function Timeline() {
                 </div>
               )}
               {/* Job type footer */}
-              <div className="border-t border-primary/10 dark:border-primary-dark/10 bg-primary/5 dark:bg-primary-dark/5 p-3">
+              <div className="border-t border-primary/10 bg-primary/5 p-3 dark:border-primary-dark/10 dark:bg-primary-dark/5">
                 <div className="flex justify-end">
                   <span className="text-xs italic text-primary/70 dark:text-primary-dark/70">
                     {company === "Bank of Montreal (BMO)"

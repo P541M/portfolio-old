@@ -61,7 +61,8 @@ const ProjectsComponent = () => {
   const filteredProjects = sortedProjects.filter((project) => {
     // Status filter - match if no statuses selected or if project status is in selected statuses
     const matchesStatus =
-      activeFilters.status.length === 0 || activeFilters.status.includes(project.state);
+      activeFilters.status.length === 0 ||
+      activeFilters.status.includes(project.state);
 
     return matchesStatus;
   });
@@ -70,7 +71,10 @@ const ProjectsComponent = () => {
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
+  const currentProjects = filteredProjects.slice(
+    indexOfFirstProject,
+    indexOfLastProject,
+  );
 
   // Reset to first page when filters change
   useEffect(() => {
@@ -115,7 +119,7 @@ const ProjectsComponent = () => {
 
   // Project card component
   const ProjectCard = ({ project }) => (
-    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark shadow-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-lg border border-divider bg-white shadow-sm transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg dark:border-divider-dark dark:bg-card-dark">
       {/* Image with status badge */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -151,13 +155,13 @@ const ProjectsComponent = () => {
             {project.technologies.slice(0, 3).map((tech, idx) => (
               <span
                 key={idx}
-                className="rounded-full bg-primary/10 dark:bg-primary-dark/10 px-2 py-0.5 text-xs text-primary dark:text-primary-dark"
+                className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary dark:bg-primary-dark/10 dark:text-primary-dark"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="rounded-full bg-primary/10 dark:bg-primary-dark/10 px-2 py-0.5 text-xs text-primary dark:text-primary-dark">
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary dark:bg-primary-dark/10 dark:text-primary-dark">
                 +{project.technologies.length - 3}
               </span>
             )}
@@ -170,7 +174,7 @@ const ProjectsComponent = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-lg bg-primary dark:bg-primary-dark py-2 text-center text-xs font-medium text-white transition-all duration-300 hover:bg-primary/90 dark:hover:bg-primary-dark/90 group-hover:shadow-md"
+              className="flex-1 rounded-lg bg-primary py-2 text-center text-xs font-medium text-white transition-all duration-300 hover:bg-primary/90 group-hover:shadow-md dark:bg-primary-dark dark:hover:bg-primary-dark/90"
             >
               <FontAwesomeIcon
                 icon={project.github ? faGithub : faExternalLinkAlt}
@@ -181,7 +185,7 @@ const ProjectsComponent = () => {
           )}
           <Link
             to={`/project/${project.id}`}
-            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider dark:border-divider-dark px-3 py-2 text-center text-xs font-medium text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 group-hover:shadow-md`}
+            className={`${project.link ? "" : "flex-1"} rounded-lg border border-divider px-3 py-2 text-center text-xs font-medium text-text transition-all duration-300 hover:bg-primary/5 group-hover:shadow-md dark:border-divider-dark dark:text-text-dark dark:hover:bg-primary-dark/5`}
           >
             <FontAwesomeIcon icon={faInfoCircle} className="mr-1" />
             Details
@@ -196,7 +200,9 @@ const ProjectsComponent = () => {
     if (activeFilters.status.length > 0) {
       return (
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="text-sm text-text/70 dark:text-text-dark/70">Active filters:</span>
+          <span className="text-sm text-text/70 dark:text-text-dark/70">
+            Active filters:
+          </span>
 
           {activeFilters.status.map((status) => (
             <button
@@ -213,7 +219,7 @@ const ProjectsComponent = () => {
 
           <button
             onClick={clearFilters}
-            className="ml-auto rounded-full bg-secondary/30 dark:bg-secondary-dark/30 px-2 py-1 text-xs text-text/70 dark:text-text-dark/70 hover:bg-secondary/50 dark:hover:bg-secondary-dark/50"
+            className="ml-auto rounded-full bg-secondary/30 px-2 py-1 text-xs text-text/70 hover:bg-secondary/50 dark:bg-secondary-dark/30 dark:text-text-dark/70 dark:hover:bg-secondary-dark/50"
           >
             Clear all
           </button>
@@ -227,10 +233,12 @@ const ProjectsComponent = () => {
   const FiltersSection = () => (
     <div className="mb-8">
       <ActiveFiltersBar />
-      <div className="flex flex-col gap-4 rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark p-4">
+      <div className="flex flex-col gap-4 rounded-lg border border-divider bg-white p-4 dark:border-divider-dark dark:bg-card-dark">
         {/* Status filter */}
         <div className="flex items-center gap-2">
-          <span className="text-sm text-text/70 dark:text-text-dark/70">Status:</span>
+          <span className="text-sm text-text/70 dark:text-text-dark/70">
+            Status:
+          </span>
           <div className="flex flex-wrap gap-2">
             {allStatuses.map((status) => (
               <button
@@ -239,7 +247,7 @@ const ProjectsComponent = () => {
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   activeFilters.status.includes(status)
                     ? getStatusColor(status)
-                    : "bg-secondary/50 dark:bg-secondary-dark/50 text-text dark:text-text-dark hover:bg-secondary dark:hover:bg-secondary-dark"
+                    : "bg-secondary/50 text-text hover:bg-secondary dark:bg-secondary-dark/50 dark:text-text-dark dark:hover:bg-secondary-dark"
                 }`}
               >
                 {status}
@@ -305,27 +313,29 @@ const ProjectsComponent = () => {
               <button
                 onClick={goToPrevPage}
                 disabled={currentPage === 1}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider bg-white text-text transition-all duration-300 hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-divider-dark dark:bg-card-dark dark:text-text-dark dark:hover:bg-primary-dark/5"
               >
                 <FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
               </button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  onClick={() => goToPage(page)}
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg text-sm transition-all duration-300 ${
-                    currentPage === page
-                      ? "bg-primary dark:bg-primary-dark text-white"
-                      : "bg-white dark:bg-card-dark text-text dark:text-text-dark hover:bg-primary/5 dark:hover:bg-primary-dark/5"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg text-sm transition-all duration-300 ${
+                      currentPage === page
+                        ? "bg-primary text-white dark:bg-primary-dark"
+                        : "bg-white text-text hover:bg-primary/5 dark:bg-card-dark dark:text-text-dark dark:hover:bg-primary-dark/5"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
               <button
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider dark:border-divider-dark bg-white dark:bg-card-dark text-text dark:text-text-dark transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary-dark/5 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider bg-white text-text transition-all duration-300 hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-divider-dark dark:bg-card-dark dark:text-text-dark dark:hover:bg-primary-dark/5"
               >
                 <FontAwesomeIcon icon={faChevronRight} className="h-4 w-4" />
               </button>

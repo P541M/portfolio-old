@@ -40,7 +40,7 @@ const projects = [
       "JWT",
       "Axios",
       "ESLint",
-      "Prettier"
+      "Prettier",
     ],
     date: "2025-04",
     github: false,
