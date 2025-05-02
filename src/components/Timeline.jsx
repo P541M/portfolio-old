@@ -183,12 +183,12 @@ export default function Timeline() {
                     href={reportPath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex w-full items-center justify-center rounded-lg bg-primary/10 dark:bg-primary-dark/10 px-4 py-2.5 font-medium text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark hover:text-white"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary/10 dark:bg-primary-dark/10 px-4 py-2.5 font-medium text-primary dark:text-primary-dark transition-all duration-300 hover:bg-primary dark:hover:bg-primary-dark hover:text-white dark:hover:text-white"
                   >
-                    <span className="transition-colors duration-300 group-hover:text-white">View Work Term Report</span>
+                    <span className="transition-colors duration-300">View Work Term Report</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white"
+                      className="ml-2 h-4 w-4 transition-all duration-300 hover:translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

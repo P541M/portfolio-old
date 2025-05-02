@@ -54,10 +54,10 @@ function Layout() {
 function App() {
   return (
     <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <Layout />
-      </Router>
+    <Router>
+      <ScrollToTop />
+      <Layout />
+    </Router>
     </ThemeProvider>
   );
 }
