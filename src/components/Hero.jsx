@@ -10,7 +10,7 @@ import {
 export default function Hero() {
   const handleOpenResume = () => {
     window.open(
-      "https://docs.google.com/document/d/1kBwruy6PqMBp8PzX9IyazyiDdFTzdeTg/edit?usp=sharing&ouid=100426459370719602883&rtpof=true&sd=true",
+      "https://docs.google.com/document/d/14y5puVSbSHT0-GetZlJhusbWYR7hd1e_/edit?usp=sharing&ouid=100426459370719602883&rtpof=true&sd=true",
       "_blank",
     );
   };
