@@ -39,7 +39,7 @@ h6 {
 
 @layer components {
   .section-container {
-    @apply mx-auto max-w-6xl px-6 py-16 sm:px-8 md:px-12 lg:px-16;
+    @apply mx-auto max-w-7xl px-6 py-16 sm:px-8 md:px-12 lg:px-16;
   }
   .section-title {
     @apply relative mb-12 text-center font-heading text-3xl font-bold text-text dark:text-text-dark;
